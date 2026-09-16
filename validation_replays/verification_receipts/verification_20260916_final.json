@@ -1,0 +1,2761 @@
+{
+  "artifact_count": 393,
+  "checks": [
+    {
+      "actual_sha256": "69aece2f0d7b21c38d2a866efe0f1fc95bf9f2ba290c0b108a3baaa9e9a21b07",
+      "expected_sha256": "69aece2f0d7b21c38d2a866efe0f1fc95bf9f2ba290c0b108a3baaa9e9a21b07",
+      "name": "asus_bounded_multistate_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_multistate_audit_asus_20260915\\current_multistate_campaign_audit.json"
+    },
+    {
+      "actual_sha256": "1a8a91212feaf6f1b49a176e8f4bbf441c97871b858c64f6d23020d07b257f12",
+      "expected_sha256": "1a8a91212feaf6f1b49a176e8f4bbf441c97871b858c64f6d23020d07b257f12",
+      "name": "asus_completed_target_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_query_export_20260915\\asus_rt_be57\\asus_rt_be57.summary.json"
+    },
+    {
+      "actual_sha256": "1d941ecc9cb4e4f1e0d583d6a4de1dcad28c92f41913de76666922b1644c8e8f",
+      "expected_sha256": "1d941ecc9cb4e4f1e0d583d6a4de1dcad28c92f41913de76666922b1644c8e8f",
+      "name": "asus_exact_z3_replay",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\asus_rt_be57_replay\\summary.json"
+    },
+    {
+      "actual_sha256": "0f83c766c6c8eb95d840ae73d5104617b987cce4e4b3ab7cd97e5091d39b2371",
+      "expected_sha256": "0f83c766c6c8eb95d840ae73d5104617b987cce4e4b3ab7cd97e5091d39b2371",
+      "name": "asus_normalized_cvc5_replay",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\asus_rt_be57_cvc5_normalized_replay\\summary.json"
+    },
+    {
+      "actual_sha256": "26b54d3b3884442465bd7b0413db4cb8ac6ae1889d10f5300285643bcaa07d47",
+      "expected_sha256": "26b54d3b3884442465bd7b0413db4cb8ac6ae1889d10f5300285643bcaa07d47",
+      "name": "asus_query_bundle_inventory",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\asus_rt_be57_bundle_inventory.json"
+    },
+    {
+      "actual_sha256": "7b4b3fcb9b0924f59e4f6cb8fc1961d41bccdc8d5c5f4105c6f2f059c83abdfa",
+      "expected_sha256": "7b4b3fcb9b0924f59e4f6cb8fc1961d41bccdc8d5c5f4105c6f2f059c83abdfa",
+      "name": "asus_replay_receipt_accounting_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_replay_receipt_audit_20260915\\asus.json"
+    },
+    {
+      "actual_sha256": "4c262c130ed07bee4bb4f5d208c9c7181b4304c893c1746e2b8a513945d3dd93",
+      "expected_sha256": "4c262c130ed07bee4bb4f5d208c9c7181b4304c893c1746e2b8a513945d3dd93",
+      "name": "blinded_sample",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_ground_truth_blinded_sample_20260915_n60\\audit_blinded.csv"
+    },
+    {
+      "actual_sha256": "15563b8a1d881aa645c93623721f3cdb452a8de3244aea786411e4d92b888b08",
+      "expected_sha256": "15563b8a1d881aa645c93623721f3cdb452a8de3244aea786411e4d92b888b08",
+      "name": "completed_eight_target_current_recursive_multistate_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_full_multistate_audit_20260916_v1\\current_multistate_campaign_audit.json"
+    },
+    {
+      "actual_sha256": "8c461799e350c1f1d71ef44a19903595bba8247fbf7f6f4db52eaa38bd21cd78",
+      "expected_sha256": "8c461799e350c1f1d71ef44a19903595bba8247fbf7f6f4db52eaa38bd21cd78",
+      "name": "completed_five_target_recursive_multistate_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_multistate_audit_completed5_20260915\\current_multistate_campaign_audit.json"
+    },
+    {
+      "actual_sha256": "331c1381d340484b98e4d88e27ae6aff610a8f7d1e8681bce67c373acc2ddac7",
+      "expected_sha256": "331c1381d340484b98e4d88e27ae6aff610a8f7d1e8681bce67c373acc2ddac7",
+      "name": "completed_four_target_recursive_multistate_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_multistate_audit_completed4_20260915\\current_multistate_campaign_audit.json"
+    },
+    {
+      "actual_sha256": "3a67f9bc8f4534aad4336c1b9c538cae6b46e915a8d84e17a300f207874dd3dc",
+      "expected_sha256": "3a67f9bc8f4534aad4336c1b9c538cae6b46e915a8d84e17a300f207874dd3dc",
+      "name": "completed_seven_target_recursive_multistate_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_multistate_audit_completed7_20260915\\current_multistate_campaign_audit.json"
+    },
+    {
+      "actual_sha256": "dd66f519fbfdf8f1f1ffad22c101c7631d8b75dd4e74c5ff3d3bba45a9d1a0f9",
+      "expected_sha256": "dd66f519fbfdf8f1f1ffad22c101c7631d8b75dd4e74c5ff3d3bba45a9d1a0f9",
+      "name": "completed_six_target_recursive_multistate_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_multistate_audit_completed6_20260915\\current_multistate_campaign_audit.json"
+    },
+    {
+      "actual_sha256": "e8b9d9fe11e38eeb7ac14b612d6dda36c2a55d1a41776ba5c706e08b4ed65dd9",
+      "expected_sha256": "e8b9d9fe11e38eeb7ac14b612d6dda36c2a55d1a41776ba5c706e08b4ed65dd9",
+      "name": "completed_three_target_recursive_multistate_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_multistate_audit_completed3_20260915\\current_multistate_campaign_audit.json"
+    },
+    {
+      "actual_sha256": "8001b4fd425464f1616265ca81e692b84f89201cddc33bc51f79ee81d69603c5",
+      "expected_sha256": "8001b4fd425464f1616265ca81e692b84f89201cddc33bc51f79ee81d69603c5",
+      "name": "conditioned_link_adversarial_calibration",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_conditioned_link_adversarial_calibration_20260916_v2\\summary.json"
+    },
+    {
+      "actual_sha256": "48233b3da77cbc3005270933c9025ed3a57ba4692583ebb4b6f4a832107e26ea",
+      "expected_sha256": "48233b3da77cbc3005270933c9025ed3a57ba4692583ebb4b6f4a832107e26ea",
+      "name": "conditioned_link_adversarial_calibration_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\run_conditioned_link_adversarial_calibration.py"
+    },
+    {
+      "actual_sha256": "865f48852ccf707c3568b40e1e7298f6aa2616a671a76b348d4ebe184368f737",
+      "expected_sha256": "865f48852ccf707c3568b40e1e7298f6aa2616a671a76b348d4ebe184368f737",
+      "name": "conditioned_link_adversarial_calibration_source_lock",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_conditioned_link_adversarial_calibration_20260916_v2\\source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "c7225f149bb31a71ea50e74968d4f61701ff9e1961c2470447e0b7e6457709d0",
+      "expected_sha256": "c7225f149bb31a71ea50e74968d4f61701ff9e1961c2470447e0b7e6457709d0",
+      "name": "conditioned_link_adversarial_calibration_test",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\test_conditioned_link_adversarial_calibration.py"
+    },
+    {
+      "actual_sha256": "54929b44d87418d8c1800796770951fff093e85e564f7cf1e6adba904bb1ce9d",
+      "expected_sha256": "54929b44d87418d8c1800796770951fff093e85e564f7cf1e6adba904bb1ce9d",
+      "name": "conditioned_link_property_calibration",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_conditioned_link_property_calibration_20260916_v2\\summary.json"
+    },
+    {
+      "actual_sha256": "c2b62a1522e6d4afa95bab6d065c0fc62bd1e934e8bce2eebc351e424e197caa",
+      "expected_sha256": "c2b62a1522e6d4afa95bab6d065c0fc62bd1e934e8bce2eebc351e424e197caa",
+      "name": "conditioned_link_property_calibration_cases",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_conditioned_link_property_calibration_20260916_v2\\case_results.jsonl"
+    },
+    {
+      "actual_sha256": "7e36a2df205597c149b4d13c16daf41b057dfc82c44d9529a12ec9b81adf0773",
+      "expected_sha256": "7e36a2df205597c149b4d13c16daf41b057dfc82c44d9529a12ec9b81adf0773",
+      "name": "conditioned_link_property_calibration_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\run_conditioned_link_property_calibration.py"
+    },
+    {
+      "actual_sha256": "49ca2e603a35c3a31d9490a148337c7af92f77f0e056399c016d32208fe83e8d",
+      "expected_sha256": "49ca2e603a35c3a31d9490a148337c7af92f77f0e056399c016d32208fe83e8d",
+      "name": "conditioned_link_property_calibration_source_lock",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_conditioned_link_property_calibration_20260916_v2\\source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "cf8d1283d85ed3d91536ce498f48288c500418cea135020042fac09ab96c29d8",
+      "expected_sha256": "cf8d1283d85ed3d91536ce498f48288c500418cea135020042fac09ab96c29d8",
+      "name": "conditioned_link_property_calibration_test",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\test_conditioned_link_property_calibration.py"
+    },
+    {
+      "actual_sha256": "a6cb7d0137f0c50ae4bd414cdaf1a4abdb72f5bbec26df7a39f9e6cbc9ede258",
+      "expected_sha256": "a6cb7d0137f0c50ae4bd414cdaf1a4abdb72f5bbec26df7a39f9e6cbc9ede258",
+      "name": "controlled_benchmark_baseline_comparison",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\saner2027_controlled_benchmark_20260913\\baseline_comparison.json"
+    },
+    {
+      "actual_sha256": "4f7e1f8ccb48285bdd5b1186a17edb3e397b762411bf66476914a379d460ddc8",
+      "expected_sha256": "4f7e1f8ccb48285bdd5b1186a17edb3e397b762411bf66476914a379d460ddc8",
+      "name": "controlled_benchmark_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\saner2027_controlled_benchmark_20260913\\summary.json"
+    },
+    {
+      "actual_sha256": "3b8f8a157ded6382292837f0c9ec7caefbc375cf7bea1c3da48d5c7b1fae7234",
+      "expected_sha256": "3b8f8a157ded6382292837f0c9ec7caefbc375cf7bea1c3da48d5c7b1fae7234",
+      "name": "controlled_ground_truth_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_controlled_ground_truth_audit_20260915\\summary.json"
+    },
+    {
+      "actual_sha256": "d447db845060be8b4e9b9c173018a385423f9274011cf41533ca13309f24b77e",
+      "expected_sha256": "d447db845060be8b4e9b9c173018a385423f9274011cf41533ca13309f24b77e",
+      "name": "controlled_ground_truth_audit_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_controlled_ground_truth.py"
+    },
+    {
+      "actual_sha256": "c3b0fcc42ddc7bfedfaf76e3811d44c5cb6daefd44f095f1acf98308190cfb54",
+      "expected_sha256": "c3b0fcc42ddc7bfedfaf76e3811d44c5cb6daefd44f095f1acf98308190cfb54",
+      "name": "current_campaign_configuration",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_query_export_20260915\\campaign_configuration.json"
+    },
+    {
+      "actual_sha256": "5ad8a94a1434ad285c81b660e6ea2a21c5d0144d100b63d46a88c8cabd46490e",
+      "expected_sha256": "5ad8a94a1434ad285c81b660e6ea2a21c5d0144d100b63d46a88c8cabd46490e",
+      "name": "current_campaign_performance_audit_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_current_campaign_performance.py"
+    },
+    {
+      "actual_sha256": "4f499ae806a9b912ba8da9859749062dffd9a865f4da28e811750bb3386ebfa6",
+      "expected_sha256": "4f499ae806a9b912ba8da9859749062dffd9a865f4da28e811750bb3386ebfa6",
+      "name": "current_campaign_performance_by_target",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_campaign_performance_20260915_v2\\current_campaign_performance_by_target.csv"
+    },
+    {
+      "actual_sha256": "f59ff22f74189bfd4bc1e291959787b9122d749d31885cf150b6a70e2bca9814",
+      "expected_sha256": "f59ff22f74189bfd4bc1e291959787b9122d749d31885cf150b6a70e2bca9814",
+      "name": "current_campaign_performance_ledger",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_campaign_performance_20260915_v2\\current_campaign_performance.json"
+    },
+    {
+      "actual_sha256": "92c05e9604c460290f4d000c833f2d023717e88fc43aa233c16e68b77ad90c8a",
+      "expected_sha256": "92c05e9604c460290f4d000c833f2d023717e88fc43aa233c16e68b77ad90c8a",
+      "name": "current_campaign_resource_records",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_campaign_performance_20260915_v2\\current_campaign_resource_records.csv"
+    },
+    {
+      "actual_sha256": "afd174dd9eb035f315711872101b5a4ed4dc226500abd17631f7144d6fd91163",
+      "expected_sha256": "afd174dd9eb035f315711872101b5a4ed4dc226500abd17631f7144d6fd91163",
+      "name": "current_cross_solver_replay_aggregate",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_replay_cross_solver_20260915\\all_targets.json"
+    },
+    {
+      "actual_sha256": "63740fb65cdb965af3a6a8c5a7211d91c486783ad39e1c705254860dc834a602",
+      "expected_sha256": "63740fb65cdb965af3a6a8c5a7211d91c486783ad39e1c705254860dc834a602",
+      "name": "current_full_multistate_asus_rt_be57_results",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\asus_rt_be57.results.jsonl"
+    },
+    {
+      "actual_sha256": "6c70b149fc2254529687ebff9bcf4cf44357479e625af9bd55ab06f8c66f318c",
+      "expected_sha256": "6c70b149fc2254529687ebff9bcf4cf44357479e625af9bd55ab06f8c66f318c",
+      "name": "current_full_multistate_asus_rt_be57_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\asus_rt_be57.summary.json"
+    },
+    {
+      "actual_sha256": "f4ec9fa293b6233859cbee6ea466f1d63463690a8189a9bae71fd3cd427310e4",
+      "expected_sha256": "f4ec9fa293b6233859cbee6ea466f1d63463690a8189a9bae71fd3cd427310e4",
+      "name": "current_full_multistate_campaign_aggregate",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\full_campaign_aggregate.json"
+    },
+    {
+      "actual_sha256": "f4336df4a106133a309e80953670f15f82b3c38b4053025b83c250dc40f13897",
+      "expected_sha256": "f4336df4a106133a309e80953670f15f82b3c38b4053025b83c250dc40f13897",
+      "name": "current_full_multistate_campaign_aggregate_report",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\full_campaign_aggregate.md"
+    },
+    {
+      "actual_sha256": "15563b8a1d881aa645c93623721f3cdb452a8de3244aea786411e4d92b888b08",
+      "expected_sha256": "15563b8a1d881aa645c93623721f3cdb452a8de3244aea786411e4d92b888b08",
+      "name": "current_full_multistate_campaign_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_full_multistate_audit_20260916_v1\\current_multistate_campaign_audit.json"
+    },
+    {
+      "actual_sha256": "451b473df3fb5bfa7846d38856ab6eb9f527ff9354694a335fa5ac794cb0bfcb",
+      "expected_sha256": "451b473df3fb5bfa7846d38856ab6eb9f527ff9354694a335fa5ac794cb0bfcb",
+      "name": "current_full_multistate_campaign_audit_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_full_multistate_audit_20260916_v1\\README.md"
+    },
+    {
+      "actual_sha256": "965f71ad0accff6f32a395d477219e4fc19e9ec69c9d7aa1a9b47b88bd9eb5d6",
+      "expected_sha256": "965f71ad0accff6f32a395d477219e4fc19e9ec69c9d7aa1a9b47b88bd9eb5d6",
+      "name": "current_full_multistate_campaign_audit_source_lock",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_full_multistate_audit_20260916_v1\\source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "c3fa6022471191c25abafa10f528217ea31f814279f694d0f502b0e276a4fb5f",
+      "expected_sha256": "c3fa6022471191c25abafa10f528217ea31f814279f694d0f502b0e276a4fb5f",
+      "name": "current_full_multistate_campaign_audit_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_full_multistate_audit_20260916_v1\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "0ef71581031662093d6baa7dd3d78493c7ae5f28b420eaecac691b5b009bbb95",
+      "expected_sha256": "0ef71581031662093d6baa7dd3d78493c7ae5f28b420eaecac691b5b009bbb95",
+      "name": "current_full_multistate_campaign_configuration",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\campaign_configuration.json"
+    },
+    {
+      "actual_sha256": "ce30876cad947e0dc9e8949aa4a9f232e7bf1ee37342ed9fa84eeaf0c9787af5",
+      "expected_sha256": "ce30876cad947e0dc9e8949aa4a9f232e7bf1ee37342ed9fa84eeaf0c9787af5",
+      "name": "current_full_multistate_campaign_log",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\campaign.log"
+    },
+    {
+      "actual_sha256": "32666e8f730ae92369df3863a59178ac9931ac127446e8b0d52fb3596c187ab5",
+      "expected_sha256": "32666e8f730ae92369df3863a59178ac9931ac127446e8b0d52fb3596c187ab5",
+      "name": "current_full_multistate_campaign_per_target",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\full_campaign_per_target.csv"
+    },
+    {
+      "actual_sha256": "ea59b376bb0286f280ddb6befb2b92e9ac211c19f849326585680a98d9290ce1",
+      "expected_sha256": "ea59b376bb0286f280ddb6befb2b92e9ac211c19f849326585680a98d9290ce1",
+      "name": "current_full_multistate_dir878_results",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\dir878.results.jsonl"
+    },
+    {
+      "actual_sha256": "50e8b91e951b53e951530803fd5378f0c32e0951a8aae40c3b2c463199433d29",
+      "expected_sha256": "50e8b91e951b53e951530803fd5378f0c32e0951a8aae40c3b2c463199433d29",
+      "name": "current_full_multistate_dir878_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\dir878.summary.json"
+    },
+    {
+      "actual_sha256": "76d607367cdc2c7814ce8996827a428da4a4ba69400951912d0c23de80b9229f",
+      "expected_sha256": "76d607367cdc2c7814ce8996827a428da4a4ba69400951912d0c23de80b9229f",
+      "name": "current_full_multistate_r6400v2_results",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\r6400v2.results.jsonl"
+    },
+    {
+      "actual_sha256": "d8f62e30d813b260730f160b3b812e1b1388c2058946017170bb9e5dd5f8726b",
+      "expected_sha256": "d8f62e30d813b260730f160b3b812e1b1388c2058946017170bb9e5dd5f8726b",
+      "name": "current_full_multistate_r6400v2_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\r6400v2.summary.json"
+    },
+    {
+      "actual_sha256": "f441f832cf25641e5eafd920e650a665640d81a0895166c4a13fc7e4485d612d",
+      "expected_sha256": "f441f832cf25641e5eafd920e650a665640d81a0895166c4a13fc7e4485d612d",
+      "name": "current_full_multistate_r7000_results",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\r7000.results.jsonl"
+    },
+    {
+      "actual_sha256": "c63486f0a7dfd5713c3f5190d2360804e5aac6e87bfcfcfba810ba7683d09777",
+      "expected_sha256": "c63486f0a7dfd5713c3f5190d2360804e5aac6e87bfcfcfba810ba7683d09777",
+      "name": "current_full_multistate_r7000_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\r7000.summary.json"
+    },
+    {
+      "actual_sha256": "b5014a9e511b476dc02dcbb94ac844503e42bbf6db3b731d227163a46073068f",
+      "expected_sha256": "b5014a9e511b476dc02dcbb94ac844503e42bbf6db3b731d227163a46073068f",
+      "name": "current_full_multistate_selection_coverage",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_full_multistate_selection_20260916_v1\\selection_coverage_audit.json"
+    },
+    {
+      "actual_sha256": "7e082ad3d8457b2bd316faa0b9094677438536ff4b437399d2580992c927bef0",
+      "expected_sha256": "7e082ad3d8457b2bd316faa0b9094677438536ff4b437399d2580992c927bef0",
+      "name": "current_full_multistate_selection_coverage_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_full_multistate_selection_20260916_v1\\README.md"
+    },
+    {
+      "actual_sha256": "3e9b4cb5732ef45d13831d17d76d9b0c211bf7d5dd9a67089fb93539c5014701",
+      "expected_sha256": "3e9b4cb5732ef45d13831d17d76d9b0c211bf7d5dd9a67089fb93539c5014701",
+      "name": "current_full_multistate_selection_coverage_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_full_multistate_selection_20260916_v1\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "907fc9c0e9b0ff46651d8ac44207003fdfc8c0b8c8ca86d80613f8dfa79bf535",
+      "expected_sha256": "907fc9c0e9b0ff46651d8ac44207003fdfc8c0b8c8ca86d80613f8dfa79bf535",
+      "name": "current_full_multistate_tenda_ac15_results",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\tenda_ac15.results.jsonl"
+    },
+    {
+      "actual_sha256": "a49c9608824d4a6f7ca4a671609bc040dcf0937e2e90b2c30e46c9c548d48ac8",
+      "expected_sha256": "a49c9608824d4a6f7ca4a671609bc040dcf0937e2e90b2c30e46c9c548d48ac8",
+      "name": "current_full_multistate_tenda_ac15_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\tenda_ac15.summary.json"
+    },
+    {
+      "actual_sha256": "b1573bec90fc2246ae8e73f4726874ad394a3219cc6dab26d51239f67145d99d",
+      "expected_sha256": "b1573bec90fc2246ae8e73f4726874ad394a3219cc6dab26d51239f67145d99d",
+      "name": "current_full_multistate_tenda_ac18_results",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\tenda_ac18.results.jsonl"
+    },
+    {
+      "actual_sha256": "2bd9898b2255c4569c803a358b9b22a2e564b610c01d2c32e959e2ac41d09f3a",
+      "expected_sha256": "2bd9898b2255c4569c803a358b9b22a2e564b610c01d2c32e959e2ac41d09f3a",
+      "name": "current_full_multistate_tenda_ac18_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\tenda_ac18.summary.json"
+    },
+    {
+      "actual_sha256": "57e2087e8addb7eb0b4e65628acaaf8839f2bf60183e85f85e8e3d52ba77593a",
+      "expected_sha256": "57e2087e8addb7eb0b4e65628acaaf8839f2bf60183e85f85e8e3d52ba77593a",
+      "name": "current_full_multistate_tenda_w20e_results",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\tenda_w20e.results.jsonl"
+    },
+    {
+      "actual_sha256": "365cff26ecf98b80647660f7858d18a1e5904611084fef16289dc318fdedbbee",
+      "expected_sha256": "365cff26ecf98b80647660f7858d18a1e5904611084fef16289dc318fdedbbee",
+      "name": "current_full_multistate_tenda_w20e_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\tenda_w20e.summary.json"
+    },
+    {
+      "actual_sha256": "1388f8198197d9fe52f8c0bf774f57155054e74027baa7259a33ee825d6f1295",
+      "expected_sha256": "1388f8198197d9fe52f8c0bf774f57155054e74027baa7259a33ee825d6f1295",
+      "name": "current_full_multistate_xr300_results",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\xr300.results.jsonl"
+    },
+    {
+      "actual_sha256": "065ccec93853d03e253d1231dc8b845813fd11889483a9cb9a6275cf74c9c61e",
+      "expected_sha256": "065ccec93853d03e253d1231dc8b845813fd11889483a9cb9a6275cf74c9c61e",
+      "name": "current_full_multistate_xr300_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916\\xr300.summary.json"
+    },
+    {
+      "actual_sha256": "c2d224902b35ef8cf7bffb65075b306e209165b439354d30e37ee23bbffb609d",
+      "expected_sha256": "c2d224902b35ef8cf7bffb65075b306e209165b439354d30e37ee23bbffb609d",
+      "name": "current_smt_model_binding_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_smt_model_binding_audit_20260916_v3\\summary.json"
+    },
+    {
+      "actual_sha256": "46813ff5a0ca8ceab18ee0b217c708581e5af3931f78d4cc10b313d5cb1c4b90",
+      "expected_sha256": "46813ff5a0ca8ceab18ee0b217c708581e5af3931f78d4cc10b313d5cb1c4b90",
+      "name": "current_smt_model_binding_receipts",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_smt_model_binding_audit_20260916_v3\\model_binding_receipts.jsonl"
+    },
+    {
+      "actual_sha256": "9c942dc23006c86a0ce9f2214013e5336dfde2b47e6c23bea6d9bd4bcaeddcc7",
+      "expected_sha256": "9c942dc23006c86a0ce9f2214013e5336dfde2b47e6c23bea6d9bd4bcaeddcc7",
+      "name": "current_smt_model_binding_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_smt_model_binding_parallel.py"
+    },
+    {
+      "actual_sha256": "7c77e3ecc9a7c91f55fd62b0b7865104fb5ebce8371a0f8cf618a2a9560eacbb",
+      "expected_sha256": "7c77e3ecc9a7c91f55fd62b0b7865104fb5ebce8371a0f8cf618a2a9560eacbb",
+      "name": "current_smt_model_binding_source_lock",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_smt_model_binding_audit_20260916_v3\\source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "617f6d350ff54d028546cc0fdf94577479cf38e14a8fd349956479fd4d29b02a",
+      "expected_sha256": "617f6d350ff54d028546cc0fdf94577479cf38e14a8fd349956479fd4d29b02a",
+      "name": "current_smt_model_binding_test",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\test_audit_smt_model_binding_parallel.py"
+    },
+    {
+      "actual_sha256": "bc508c86f2ffe40e49fc9e8ab3d24733496ef3bc44235488b8a3e68f63c6b822",
+      "expected_sha256": "bc508c86f2ffe40e49fc9e8ab3d24733496ef3bc44235488b8a3e68f63c6b822",
+      "name": "current_source_dependency_manifest",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_evidence_completion_20260915\\current_source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "4ea4f4763f625fe83f95825792b8c03328eb6580113fee15b1dc30e6686d975a",
+      "expected_sha256": "4ea4f4763f625fe83f95825792b8c03328eb6580113fee15b1dc30e6686d975a",
+      "name": "current_witness_replay_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_campaign_witness_replay_20260916_v1\\audit.json"
+    },
+    {
+      "actual_sha256": "384f1a121abe28297f0754631c819a8ae183d3bf3bd67d4a871b53705b1d8052",
+      "expected_sha256": "384f1a121abe28297f0754631c819a8ae183d3bf3bd67d4a871b53705b1d8052",
+      "name": "current_witness_replay_audit_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_current_campaign_witness_replay.py"
+    },
+    {
+      "actual_sha256": "dcfbb5b5eaf93195b9abbbd88d243c9141446a3847aab848c1ebe60f2f711d57",
+      "expected_sha256": "dcfbb5b5eaf93195b9abbbd88d243c9141446a3847aab848c1ebe60f2f711d57",
+      "name": "current_witness_replay_bash_receipts",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_campaign_witness_replay_20260916_v1\\receipts_bash.json"
+    },
+    {
+      "actual_sha256": "8dc8fb99230626602b66436bbd495c15f2131439f16942aa964b828b9b32d024",
+      "expected_sha256": "8dc8fb99230626602b66436bbd495c15f2131439f16942aa964b828b9b32d024",
+      "name": "current_witness_replay_dash_receipts",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_campaign_witness_replay_20260916_v1\\receipts_dash.json"
+    },
+    {
+      "actual_sha256": "0112649a8ff2c4aa34255bc22ff34eef8e33619f364e3bc0b2c8c10016b9fcb5",
+      "expected_sha256": "0112649a8ff2c4aa34255bc22ff34eef8e33619f364e3bc0b2c8c10016b9fcb5",
+      "name": "current_witness_replay_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_campaign_witness_replay_20260916_v1\\README.md"
+    },
+    {
+      "actual_sha256": "3905c6c2f28a3c16a79f60e115110725f057538f52831e7588ed56433709ac44",
+      "expected_sha256": "3905c6c2f28a3c16a79f60e115110725f057538f52831e7588ed56433709ac44",
+      "name": "current_witness_replay_records_csv",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_campaign_witness_replay_20260916_v1\\witness_replay_records.csv"
+    },
+    {
+      "actual_sha256": "41bd4def9e836e00f2a6a0d9becb9e60b619f9b20f08ad6075ad551494c369eb",
+      "expected_sha256": "41bd4def9e836e00f2a6a0d9becb9e60b619f9b20f08ad6075ad551494c369eb",
+      "name": "current_witness_replay_records_json",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_campaign_witness_replay_20260916_v1\\witness_replay_records.json"
+    },
+    {
+      "actual_sha256": "2492d491105a39995456d69993362ddbf02a2c1c1245805fff94a6d06068a077",
+      "expected_sha256": "2492d491105a39995456d69993362ddbf02a2c1c1245805fff94a6d06068a077",
+      "name": "current_witness_replay_runner_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\run_current_campaign_witness_replay.py"
+    },
+    {
+      "actual_sha256": "487392e0523f9718d2118a780aac9ce70f53a65c66eb64b91ebcae31797c0dce",
+      "expected_sha256": "487392e0523f9718d2118a780aac9ce70f53a65c66eb64b91ebcae31797c0dce",
+      "name": "current_witness_replay_source_lock",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_campaign_witness_replay_20260916_v1\\source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "5eb895093f82b5c76991259e936853d467d71cacea861696e1c30a7e213f0d67",
+      "expected_sha256": "5eb895093f82b5c76991259e936853d467d71cacea861696e1c30a7e213f0d67",
+      "name": "current_witness_replay_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_campaign_witness_replay_20260916_v1\\summary.json"
+    },
+    {
+      "actual_sha256": "41f0af1522a29998a212b619b290af5f730df6cf31e0614a7db87f4020543f32",
+      "expected_sha256": "41f0af1522a29998a212b619b290af5f730df6cf31e0614a7db87f4020543f32",
+      "name": "current_witness_replay_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_campaign_witness_replay_20260916_v1\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "8acfdbbec09ae17fdecb370953e93c6d2a8cc68bea9fea46779fe22cd61974eb",
+      "expected_sha256": "8acfdbbec09ae17fdecb370953e93c6d2a8cc68bea9fea46779fe22cd61974eb",
+      "name": "current_witness_replay_test",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\test_current_campaign_witness_replay.py"
+    },
+    {
+      "actual_sha256": "a3a18658c5bd453cea9a2eb58b535d12df12edaf410eb590d199fac7244cee21",
+      "expected_sha256": "a3a18658c5bd453cea9a2eb58b535d12df12edaf410eb590d199fac7244cee21",
+      "name": "dir878_bounded_multistate_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_multistate_audit_dir878_20260915\\current_multistate_campaign_audit.json"
+    },
+    {
+      "actual_sha256": "6dae2397d99e0cbfe02a69be7bf7e1fa5938934213edc8e993b6c597234629ab",
+      "expected_sha256": "6dae2397d99e0cbfe02a69be7bf7e1fa5938934213edc8e993b6c597234629ab",
+      "name": "dir878_completed_target_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_query_export_20260915\\dir878.summary.json"
+    },
+    {
+      "actual_sha256": "c04369db973c3aa756fc05cada9b17101eaa14ede7f0d4b9a4a4ae83476835e6",
+      "expected_sha256": "c04369db973c3aa756fc05cada9b17101eaa14ede7f0d4b9a4a4ae83476835e6",
+      "name": "high_budget_incomplete_replay_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_incomplete_full_20260916\\audit\\summary.json"
+    },
+    {
+      "actual_sha256": "589850a13325f397bb333fdf19a2fc653f99c4978a9e03a071e9d1afb1f048df",
+      "expected_sha256": "589850a13325f397bb333fdf19a2fc653f99c4978a9e03a071e9d1afb1f048df",
+      "name": "high_budget_incomplete_replay_audit_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_high_budget_incomplete_replay_suite.py"
+    },
+    {
+      "actual_sha256": "fa63f3e353cc6f87fd6be656d1c8dd353fae85ff38738aaf5fbc864883e2bb9c",
+      "expected_sha256": "fa63f3e353cc6f87fd6be656d1c8dd353fae85ff38738aaf5fbc864883e2bb9c",
+      "name": "high_budget_incomplete_replay_audit_test",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\test_audit_high_budget_incomplete_replay_suite.py"
+    },
+    {
+      "actual_sha256": "e2f2feda1fb09789476f6f5493b5fa77f05e14d51de6c0f8236d8e6f18ff7aaa",
+      "expected_sha256": "e2f2feda1fb09789476f6f5493b5fa77f05e14d51de6c0f8236d8e6f18ff7aaa",
+      "name": "high_budget_incomplete_replay_executed_runner",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_incomplete_full_20260916\\source\\run_high_budget_incomplete_replay_suite.py.executed.py"
+    },
+    {
+      "actual_sha256": "bb5ebee5ef27c11c0d194c0cc341226dad883444e358bcb410703d84b322c8ab",
+      "expected_sha256": "bb5ebee5ef27c11c0d194c0cc341226dad883444e358bcb410703d84b322c8ab",
+      "name": "high_budget_incomplete_replay_package_manifest",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_incomplete_full_20260916\\manifest.json"
+    },
+    {
+      "actual_sha256": "0712f1bdef911cd3b6a3ab2ab724213dfe3f7a49424b1438c21081c4ef9bfc48",
+      "expected_sha256": "0712f1bdef911cd3b6a3ab2ab724213dfe3f7a49424b1438c21081c4ef9bfc48",
+      "name": "high_budget_incomplete_replay_package_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_incomplete_full_20260916\\README.md"
+    },
+    {
+      "actual_sha256": "8be201f7cb4f8480790df9970d909cb6e746c6956e300ae627da99966e697194",
+      "expected_sha256": "8be201f7cb4f8480790df9970d909cb6e746c6956e300ae627da99966e697194",
+      "name": "high_budget_incomplete_replay_package_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_incomplete_full_20260916\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "75165ef2f8ab5c4b056abc90b640c81ff606c6e796310ec14a78a0cfdf2072e8",
+      "expected_sha256": "75165ef2f8ab5c4b056abc90b640c81ff606c6e796310ec14a78a0cfdf2072e8",
+      "name": "high_budget_incomplete_replay_runner_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\run_high_budget_incomplete_replay_suite.py"
+    },
+    {
+      "actual_sha256": "d3a846d77ba4ebe8684e838ab5fcd1401d8efed35df180a01dad7a9503ef3b3c",
+      "expected_sha256": "d3a846d77ba4ebe8684e838ab5fcd1401d8efed35df180a01dad7a9503ef3b3c",
+      "name": "high_budget_positive_replay_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_positive_full_20260916\\audit\\summary.json"
+    },
+    {
+      "actual_sha256": "cecaec20a446d2bd306993021973136a1541d7535e5fcc18cd8c288dc341bd09",
+      "expected_sha256": "cecaec20a446d2bd306993021973136a1541d7535e5fcc18cd8c288dc341bd09",
+      "name": "high_budget_positive_replay_audit_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_positive_full_20260916\\audit\\README.md"
+    },
+    {
+      "actual_sha256": "f755fe96c3418c8ad5c04e02c25121e47c6f686774cd46f8dc5e55607b391b59",
+      "expected_sha256": "f755fe96c3418c8ad5c04e02c25121e47c6f686774cd46f8dc5e55607b391b59",
+      "name": "high_budget_positive_replay_audit_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_high_budget_positive_replay_suite.py"
+    },
+    {
+      "actual_sha256": "80175720ed5586e8276080f40eea8d8b1fbb64c042ec95a310133c9932aaa39b",
+      "expected_sha256": "80175720ed5586e8276080f40eea8d8b1fbb64c042ec95a310133c9932aaa39b",
+      "name": "high_budget_positive_replay_audit_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_positive_full_20260916\\audit\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "f4b52b814fd09cf18abc78ff8262249e863759e5e63bd74e6688b913f49572f9",
+      "expected_sha256": "f4b52b814fd09cf18abc78ff8262249e863759e5e63bd74e6688b913f49572f9",
+      "name": "high_budget_positive_replay_executed_runner",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_positive_full_20260916\\run_high_budget_positive_replay_suite.executed.py"
+    },
+    {
+      "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "high_budget_positive_replay_launcher_stderr",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_positive_full_20260916.launcher.stderr.log"
+    },
+    {
+      "actual_sha256": "ae19d73bff58ebc23eff7b791cbc4ba45951b373d8c9346ecce8f627e06b5a21",
+      "expected_sha256": "ae19d73bff58ebc23eff7b791cbc4ba45951b373d8c9346ecce8f627e06b5a21",
+      "name": "high_budget_positive_replay_launcher_stdout",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_positive_full_20260916.launcher.stdout.log"
+    },
+    {
+      "actual_sha256": "0fea599e91a2c560533becbbfe54ebcd6d6ff6b3a3a427dcea086562afe2e71d",
+      "expected_sha256": "0fea599e91a2c560533becbbfe54ebcd6d6ff6b3a3a427dcea086562afe2e71d",
+      "name": "high_budget_positive_replay_normalized_run_manifest",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_positive_full_20260916\\run_manifest.normalized.json"
+    },
+    {
+      "actual_sha256": "2b5361ece2e6de5b7174ff9f785b15bdc9fe2db8e5da40953fc2ca6d4847ac56",
+      "expected_sha256": "2b5361ece2e6de5b7174ff9f785b15bdc9fe2db8e5da40953fc2ca6d4847ac56",
+      "name": "high_budget_positive_replay_package_manifest",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_positive_full_20260916\\manifest.json"
+    },
+    {
+      "actual_sha256": "201f81bba8b474f6727ad7b0f938e95fac399c7ba89c7f238c1cd7f4737153d4",
+      "expected_sha256": "201f81bba8b474f6727ad7b0f938e95fac399c7ba89c7f238c1cd7f4737153d4",
+      "name": "high_budget_positive_replay_package_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_positive_full_20260916\\README.md"
+    },
+    {
+      "actual_sha256": "9283edd54866ccb2365bba5af99ea892f37b1f23781bdd60e2142f49fff154cc",
+      "expected_sha256": "9283edd54866ccb2365bba5af99ea892f37b1f23781bdd60e2142f49fff154cc",
+      "name": "high_budget_positive_replay_package_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_positive_full_20260916\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "6f3399e6aeafae6cc7043099aeba27eb8079a6cb447294f7127c36f6ce9c8d8a",
+      "expected_sha256": "6f3399e6aeafae6cc7043099aeba27eb8079a6cb447294f7127c36f6ce9c8d8a",
+      "name": "high_budget_positive_replay_raw_integrity",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_positive_full_20260916\\raw_integrity.json"
+    },
+    {
+      "actual_sha256": "31638f93326802951088dcc9fb7d7badc16912a19ce4bc1564a45bb71eb325d5",
+      "expected_sha256": "31638f93326802951088dcc9fb7d7badc16912a19ce4bc1564a45bb71eb325d5",
+      "name": "high_budget_positive_replay_raw_run_manifest",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_positive_full_20260916\\run_manifest.json"
+    },
+    {
+      "actual_sha256": "4618357b5a6af240ce19800ef8d2f4be137b78d99a33edad84a80a5679045357",
+      "expected_sha256": "4618357b5a6af240ce19800ef8d2f4be137b78d99a33edad84a80a5679045357",
+      "name": "high_budget_positive_replay_reconstructed_progress",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_positive_full_20260916\\progress.reconstructed.json"
+    },
+    {
+      "actual_sha256": "0d23408c02c1fee7e2199ffb6b8fcb0175f8ce2b000badb98567f6e6184b02d3",
+      "expected_sha256": "0d23408c02c1fee7e2199ffb6b8fcb0175f8ce2b000badb98567f6e6184b02d3",
+      "name": "high_budget_positive_replay_runner_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\run_high_budget_positive_replay_suite.py"
+    },
+    {
+      "actual_sha256": "814aa81250bfb08cb5cedcb0af1d5de747bde645bc53e6bd462b5e7f0b66fe0a",
+      "expected_sha256": "814aa81250bfb08cb5cedcb0af1d5de747bde645bc53e6bd462b5e7f0b66fe0a",
+      "name": "high_budget_positive_replay_source_dependency_lock",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_positive_full_20260916\\source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "aa08ea72e59b78773bd274009cf889ed3179bc52f3048dddb17eb92b21a8c229",
+      "expected_sha256": "aa08ea72e59b78773bd274009cf889ed3179bc52f3048dddb17eb92b21a8c229",
+      "name": "high_budget_positive_replay_suite_config",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_positive_full_20260916\\suite_config.json"
+    },
+    {
+      "actual_sha256": "ea943843f3b3700a7fbc0b3d1d71aaab59734b953b0b1676f26c9e208819b6c7",
+      "expected_sha256": "ea943843f3b3700a7fbc0b3d1d71aaab59734b953b0b1676f26c9e208819b6c7",
+      "name": "high_budget_positive_replay_test",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\test_audit_high_budget_positive_replay_suite.py"
+    },
+    {
+      "actual_sha256": "7a47d07ba611c805ba6fd61b0433d746a91a4ef85c1866ccc0d1e8b226fa5e3e",
+      "expected_sha256": "7a47d07ba611c805ba6fd61b0433d746a91a4ef85c1866ccc0d1e8b226fa5e3e",
+      "name": "high_budget_recovery_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_recovery_audit_20260916_v2\\targeted_multistate_recovery_matrix.json"
+    },
+    {
+      "actual_sha256": "d051ed8f9c84fe5f222be488cff8ccfc89427fb1d2f4004615a93af284603b11",
+      "expected_sha256": "d051ed8f9c84fe5f222be488cff8ccfc89427fb1d2f4004615a93af284603b11",
+      "name": "high_budget_recovery_audit_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_recovery_audit_20260916_v2\\README.md"
+    },
+    {
+      "actual_sha256": "2487743851e32794f50b4ad01e69aa77d0a24aa97aec7fc77413c4739a6582ea",
+      "expected_sha256": "2487743851e32794f50b4ad01e69aa77d0a24aa97aec7fc77413c4739a6582ea",
+      "name": "high_budget_recovery_audit_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_recovery_audit_20260916_v2\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "571b8985222863a4b2dec6a735aef7d6b3a60351454a1574eb187ccd89c48d00",
+      "expected_sha256": "571b8985222863a4b2dec6a735aef7d6b3a60351454a1574eb187ccd89c48d00",
+      "name": "historical_conditioned_field_completeness",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_conditioned_field_completeness_20260916_v1\\summary.json"
+    },
+    {
+      "actual_sha256": "00ca196409a443f0a4d627a0d7fffc26d35b3b55f43bfdd48ef9b0602ae8e283",
+      "expected_sha256": "00ca196409a443f0a4d627a0d7fffc26d35b3b55f43bfdd48ef9b0602ae8e283",
+      "name": "historical_conditioned_field_completeness_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_conditioned_field_completeness_20260916_v1\\README.md"
+    },
+    {
+      "actual_sha256": "c9a4968c124dd744635784404b2915a7b83475106b639c274605ec1c1756fbfa",
+      "expected_sha256": "c9a4968c124dd744635784404b2915a7b83475106b639c274605ec1c1756fbfa",
+      "name": "historical_conditioned_field_completeness_rows",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_conditioned_field_completeness_20260916_v1\\field_completeness.jsonl"
+    },
+    {
+      "actual_sha256": "78ab0e31467348a52d3e4b6f274d09af2633265f0df8584e007deb7800bff2fd",
+      "expected_sha256": "78ab0e31467348a52d3e4b6f274d09af2633265f0df8584e007deb7800bff2fd",
+      "name": "historical_conditioned_field_completeness_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_historical_conditioned_field_completeness.py"
+    },
+    {
+      "actual_sha256": "92bc4e87975b7f20b0dea164a8227b0d3db3470ec10d7cb8f01e994743b74cc3",
+      "expected_sha256": "92bc4e87975b7f20b0dea164a8227b0d3db3470ec10d7cb8f01e994743b74cc3",
+      "name": "historical_conditioned_field_completeness_source_lock",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_conditioned_field_completeness_20260916_v1\\source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "df3861e05df5ef56b9e419b195e379861c0c0f01874d3bb7a8e81bc33da7e1c0",
+      "expected_sha256": "df3861e05df5ef56b9e419b195e379861c0c0f01874d3bb7a8e81bc33da7e1c0",
+      "name": "historical_conditioned_field_completeness_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_conditioned_field_completeness_20260916_v1\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "32d55f9457c32edfc27e6017a0d7d2e4ba07252170f39d438c63965c5d5be8c7",
+      "expected_sha256": "32d55f9457c32edfc27e6017a0d7d2e4ba07252170f39d438c63965c5d5be8c7",
+      "name": "historical_conditioned_field_completeness_test",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\test_audit_historical_conditioned_field_completeness.py"
+    },
+    {
+      "actual_sha256": "bedf96485855ebf6d0328b02da2da08598af584da8ea8af0fdb09e1691e23ea9",
+      "expected_sha256": "bedf96485855ebf6d0328b02da2da08598af584da8ea8af0fdb09e1691e23ea9",
+      "name": "historical_conditioned_link_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_conditioned_link_audit_20260915\\summary.json"
+    },
+    {
+      "actual_sha256": "762a1bbb6f8bf34c06d936b87900e70ce99db4c119affabf42c6cb5c22a50f4d",
+      "expected_sha256": "762a1bbb6f8bf34c06d936b87900e70ce99db4c119affabf42c6cb5c22a50f4d",
+      "name": "historical_conditioned_link_audit_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_conditioned_links.py"
+    },
+    {
+      "actual_sha256": "f11b8040bcbaeacfd1fc00c8cc59707d55ce6f6796496deb97607dd354445e03",
+      "expected_sha256": "f11b8040bcbaeacfd1fc00c8cc59707d55ce6f6796496deb97607dd354445e03",
+      "name": "historical_conditioned_rerun_boundary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_conditioned_rerun_boundary_20260916\\summary.json"
+    },
+    {
+      "actual_sha256": "56195832a97d09cbb7c81c991d2ad17eff88af58e1f041891803503932c98634",
+      "expected_sha256": "56195832a97d09cbb7c81c991d2ad17eff88af58e1f041891803503932c98634",
+      "name": "historical_conditioned_rerun_boundary_rows",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_conditioned_rerun_boundary_20260916\\conditioned_rerun_boundary.jsonl"
+    },
+    {
+      "actual_sha256": "11f524d50750e8aca9fa640ec4d11881d0bfbf587bd2da9520de66c21e38ce6a",
+      "expected_sha256": "11f524d50750e8aca9fa640ec4d11881d0bfbf587bd2da9520de66c21e38ce6a",
+      "name": "historical_conditioned_rerun_boundary_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_historical_conditioned_rerun_boundary.py"
+    },
+    {
+      "actual_sha256": "145579f27d92a4643e8569216da3494d0eb2bdc25aa58fb3cbd5504385a26857",
+      "expected_sha256": "145579f27d92a4643e8569216da3494d0eb2bdc25aa58fb3cbd5504385a26857",
+      "name": "historical_conditioned_rerun_boundary_source_lock",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_conditioned_rerun_boundary_20260916\\source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "e674e30ecde01387154c5b39dfa37fcdff7fb47a6ff401f7bcda6abe278df369",
+      "expected_sha256": "e674e30ecde01387154c5b39dfa37fcdff7fb47a6ff401f7bcda6abe278df369",
+      "name": "historical_conditioned_rerun_boundary_test",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\test_audit_historical_conditioned_rerun_boundary.py"
+    },
+    {
+      "actual_sha256": "4d9559133ba5164ee3ad6f25fc2c53300114ccdbc6a24fce8749b67f00ce972b",
+      "expected_sha256": "4d9559133ba5164ee3ad6f25fc2c53300114ccdbc6a24fce8749b67f00ce972b",
+      "name": "historical_conditioned_snapshot_boundary_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_v20_conditioned_snapshot_boundary_20260916\\summary.json"
+    },
+    {
+      "actual_sha256": "98ae674de8f1126ab663d28eb002410d7b4a273c68aec80737e6a3e67acc2ecc",
+      "expected_sha256": "98ae674de8f1126ab663d28eb002410d7b4a273c68aec80737e6a3e67acc2ecc",
+      "name": "historical_conditioned_snapshot_boundary_audit_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_historical_v20_conditioned_snapshot_boundary.py"
+    },
+    {
+      "actual_sha256": "cf2f5497a10dfb3f34122f2919b8ed0bf32eb98f43138bbb5ec8e0905e021c07",
+      "expected_sha256": "cf2f5497a10dfb3f34122f2919b8ed0bf32eb98f43138bbb5ec8e0905e021c07",
+      "name": "historical_conditioned_snapshot_boundary_audit_test",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\test_audit_historical_v20_conditioned_snapshot_boundary.py"
+    },
+    {
+      "actual_sha256": "f64eaf17c89f3c308984e6c0bc379d3692bef390149ad75b59a37fca49c08d58",
+      "expected_sha256": "f64eaf17c89f3c308984e6c0bc379d3692bef390149ad75b59a37fca49c08d58",
+      "name": "historical_conditioned_snapshot_boundary_source_lock",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_v20_conditioned_snapshot_boundary_20260916\\source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "3726a90def894715a6fdd978a944f3063c6f58f221b86265ef1e7d55f9d2ab00",
+      "expected_sha256": "3726a90def894715a6fdd978a944f3063c6f58f221b86265ef1e7d55f9d2ab00",
+      "name": "historical_current_multistate_alignment",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_current_multistate_alignment_20260916_v1\\historical_current_multistate_alignment.json"
+    },
+    {
+      "actual_sha256": "960f03963987442043c39bf0e846f467bfd9ae3f0b2cce5a75d6d8f11931d45f",
+      "expected_sha256": "960f03963987442043c39bf0e846f467bfd9ae3f0b2cce5a75d6d8f11931d45f",
+      "name": "historical_current_multistate_alignment_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_current_multistate_alignment_20260916_v1\\README.md"
+    },
+    {
+      "actual_sha256": "6d4c1da3c02a6f320d32d46ff66c76a0afece66e22291eee6a9dca3a5b09b449",
+      "expected_sha256": "6d4c1da3c02a6f320d32d46ff66c76a0afece66e22291eee6a9dca3a5b09b449",
+      "name": "historical_current_multistate_alignment_source_lock",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_current_multistate_alignment_20260916_v1\\source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "aefcdcb2064553e3a4d0e1b566a77a7665d1d6e5f2b3d29c6917f1bde3f29048",
+      "expected_sha256": "aefcdcb2064553e3a4d0e1b566a77a7665d1d6e5f2b3d29c6917f1bde3f29048",
+      "name": "historical_current_multistate_alignment_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_current_multistate_alignment_20260916_v1\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "afe6dcd3bb91466ec54453753e205ba8df8f6e5df2c8d398ed884704c5bbe624",
+      "expected_sha256": "afe6dcd3bb91466ec54453753e205ba8df8f6e5df2c8d398ed884704c5bbe624",
+      "name": "historical_v20_campaign_configuration",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\tsds_v20_release_20260718_r7_v8\\tsds_v20_accepted_repeat_20260718_r7\\campaign\\campaign_configuration.json"
+    },
+    {
+      "actual_sha256": "3dd77889756d398abe30380809c901f9be5090192cac83bc40ab44bd4fdb195a",
+      "expected_sha256": "3dd77889756d398abe30380809c901f9be5090192cac83bc40ab44bd4fdb195a",
+      "name": "historical_v20_campaign_conservation_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\tsds_v20_release_20260718_r7_v8\\tsds_v20_accepted_repeat_20260718_r7\\campaign_conservation\\campaign_conservation_audit.json"
+    },
+    {
+      "actual_sha256": "1b032b8c0596710975434e37b679cc06e95afe5a42470289f0925512cd97ed57",
+      "expected_sha256": "1b032b8c0596710975434e37b679cc06e95afe5a42470289f0925512cd97ed57",
+      "name": "historical_v20_campaign_conservation_audit_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\tsds_v20_release_20260718_r7_v8\\tsds_v20_accepted_repeat_20260718_r7\\source_snapshot\\experiments\\audit_campaign_conservation.py"
+    },
+    {
+      "actual_sha256": "2fef301ece2a2df7097f62097b6a52ed27fe301a65f2b45099e3cbee1c7331a7",
+      "expected_sha256": "2fef301ece2a2df7097f62097b6a52ed27fe301a65f2b45099e3cbee1c7331a7",
+      "name": "historical_v20_certificate_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\tsds_v20_release_20260718_r7_v8\\tsds_v20_accepted_repeat_20260718_r7\\evidence_certificates\\evidence_certificate_audit.json"
+    },
+    {
+      "actual_sha256": "182138bf40b0aca21ed8144ff2cc24f133b6348605468cf5aec05dbb55e1fc39",
+      "expected_sha256": "182138bf40b0aca21ed8144ff2cc24f133b6348605468cf5aec05dbb55e1fc39",
+      "name": "historical_v20_full_campaign_aggregate",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\tsds_v20_release_20260718_r7_v8\\tsds_v20_accepted_repeat_20260718_r7\\campaign\\full_campaign_aggregate.json"
+    },
+    {
+      "actual_sha256": "14299a6a2cf4402970f64163cb81d0190e7efc1351c7dfe269b324488284d271",
+      "expected_sha256": "14299a6a2cf4402970f64163cb81d0190e7efc1351c7dfe269b324488284d271",
+      "name": "historical_v20_independent_certificate_verifier",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\tsds_v20_release_20260718_r7_v8\\tsds_v20_accepted_repeat_20260718_r7\\independent_certificate_verifier\\independent_certificate_verification.json"
+    },
+    {
+      "actual_sha256": "160e13d699684feb89f84858ff0f269bd64e657edc957e9dbf68455eecfeae08",
+      "expected_sha256": "160e13d699684feb89f84858ff0f269bd64e657edc957e9dbf68455eecfeae08",
+      "name": "historical_v20_matrix_conservation",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_v20_matrix_conservation_20260915\\matrix_profile_conservation.json"
+    },
+    {
+      "actual_sha256": "25da5bfafc1bbc69766f7704edb206abcfb113f6da4e35b9d3c1b993ff601c2a",
+      "expected_sha256": "25da5bfafc1bbc69766f7704edb206abcfb113f6da4e35b9d3c1b993ff601c2a",
+      "name": "historical_v20_matrix_conservation_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_matrix_profile_conservation.py"
+    },
+    {
+      "actual_sha256": "0c052ba00738d62062575bec1af226c434baa55df43e74dfaa026e97861fb4c0",
+      "expected_sha256": "0c052ba00738d62062575bec1af226c434baa55df43e74dfaa026e97861fb4c0",
+      "name": "historical_v20_matrix_integrity_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_v20_matrix_integrity_20260915\\matrix_integrity.json"
+    },
+    {
+      "actual_sha256": "705f65a761419c80e627f9ef1e5d556f87636b0b22d759608f86280636d748ad",
+      "expected_sha256": "705f65a761419c80e627f9ef1e5d556f87636b0b22d759608f86280636d748ad",
+      "name": "historical_v20_matrix_integrity_audit_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_historical_v20_matrix_integrity.py"
+    },
+    {
+      "actual_sha256": "cef4b594eb3ade7b01ee815ff9b10fb05305c74aabe318e6798ba7066e77fe39",
+      "expected_sha256": "cef4b594eb3ade7b01ee815ff9b10fb05305c74aabe318e6798ba7066e77fe39",
+      "name": "historical_v20_multistate_schema_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_v20_multistate_schema_audit_20260915\\schema_audit.json"
+    },
+    {
+      "actual_sha256": "d109ce106388b007a9b1f3a8d000bafe3f00159908575671e877f718500c5da1",
+      "expected_sha256": "d109ce106388b007a9b1f3a8d000bafe3f00159908575671e877f718500c5da1",
+      "name": "historical_v20_multistate_schema_audit_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_historical_v20_multistate_schema.py"
+    },
+    {
+      "actual_sha256": "c3d945b9dd72faf5ce1710c82bec3a8577cdc40af27f814c462680aabbbddbeb",
+      "expected_sha256": "c3d945b9dd72faf5ce1710c82bec3a8577cdc40af27f814c462680aabbbddbeb",
+      "name": "historical_v20_release_fetch_manifest",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\tsds_v20_release_20260718_r7_v8\\fetch_manifest.json"
+    },
+    {
+      "actual_sha256": "d4c3d01d1913bb59fc037c5546ad5c04efbbaac9dd8e883f97fbe678d453dd86",
+      "expected_sha256": "d4c3d01d1913bb59fc037c5546ad5c04efbbaac9dd8e883f97fbe678d453dd86",
+      "name": "historical_v20_source_reconciliation",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_v20_source_reconciliation_20260915\\source_reconciliation.json"
+    },
+    {
+      "actual_sha256": "02caefd20c04ee83fe7c8c9ad28948b4a1a7fcd746a2f04d8a3e1ffc3638ae3b",
+      "expected_sha256": "02caefd20c04ee83fe7c8c9ad28948b4a1a7fcd746a2f04d8a3e1ffc3638ae3b",
+      "name": "historical_v20_source_reconciliation_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_historical_v20_source_reconciliation.py"
+    },
+    {
+      "actual_sha256": "af581a692fafe8850a8c048c38befcd5c1427bd850a8c5288625558fe3126f34",
+      "expected_sha256": "af581a692fafe8850a8c048c38befcd5c1427bd850a8c5288625558fe3126f34",
+      "name": "historical_v20_taxonomy_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_v20_taxonomy_audit_20260915\\taxonomy_audit.json"
+    },
+    {
+      "actual_sha256": "46031970cf5fac4c7d1cd67e69b0236a821dadc1741551b79377cc41172d4ea6",
+      "expected_sha256": "46031970cf5fac4c7d1cd67e69b0236a821dadc1741551b79377cc41172d4ea6",
+      "name": "historical_v20_taxonomy_audit_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_historical_v20_taxonomy.py"
+    },
+    {
+      "actual_sha256": "8c3eb4230a78f8e05e6f27c812a928fe753827fcc2f54393a9fc3a4b9876080e",
+      "expected_sha256": "8c3eb4230a78f8e05e6f27c812a928fe753827fcc2f54393a9fc3a4b9876080e",
+      "name": "historical_v20_vector_decision_integrity_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_v20_vector_integrity_20260915\\vector_decision_integrity_audit.json"
+    },
+    {
+      "actual_sha256": "752ed0e3419ac498f4a11e05f4618ffc81c10c3ca97db3d4aeffd2e8469c3b0c",
+      "expected_sha256": "752ed0e3419ac498f4a11e05f4618ffc81c10c3ca97db3d4aeffd2e8469c3b0c",
+      "name": "historical_v20_vector_decision_integrity_audit_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_vector_decision_integrity.py"
+    },
+    {
+      "actual_sha256": "67166b3291dbe97551ae47df909f2f9c658acd1afb817ba290cced4b977ef8c9",
+      "expected_sha256": "67166b3291dbe97551ae47df909f2f9c658acd1afb817ba290cced4b977ef8c9",
+      "name": "iceccs_evidence_cross_consistency_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_evidence_completion_20260915\\evidence_consistency_audit.json"
+    },
+    {
+      "actual_sha256": "17eff498f3362cff9d3c9068356e1694210a0faa46c9677545842a5bdfdee257",
+      "expected_sha256": "17eff498f3362cff9d3c9068356e1694210a0faa46c9677545842a5bdfdee257",
+      "name": "iceccs_evidence_cross_consistency_audit_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\verify_iceccs_evidence_consistency.py"
+    },
+    {
+      "actual_sha256": "36cbb1b0cb02a46b1874d5d4a0b47192b1713e5ed9e94961adfbfa866bdc34ff",
+      "expected_sha256": "36cbb1b0cb02a46b1874d5d4a0b47192b1713e5ed9e94961adfbfa866bdc34ff",
+      "name": "iceccs_reviewer_gap_closure_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v33\\reviewer_gap_closure_audit.json"
+    },
+    {
+      "actual_sha256": "4ddcd6c1388e3d3a28ebee167396a7e92ee886f8247e89d55305bcb29ab517ba",
+      "expected_sha256": "4ddcd6c1388e3d3a28ebee167396a7e92ee886f8247e89d55305bcb29ab517ba",
+      "name": "iceccs_reviewer_gap_closure_audit_latest",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v35\\reviewer_gap_closure_audit.json"
+    },
+    {
+      "actual_sha256": "747f4521246d692e52f1c0499ba57be5afc69dbff55c1b0d101c64f2a9a2211f",
+      "expected_sha256": "747f4521246d692e52f1c0499ba57be5afc69dbff55c1b0d101c64f2a9a2211f",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v35\\README.md"
+    },
+    {
+      "actual_sha256": "5d5cddf8bbfe5fcbf8646c4880e59874ae095da4621aa5e4bc61a7c95b45c06e",
+      "expected_sha256": "5d5cddf8bbfe5fcbf8646c4880e59874ae095da4621aa5e4bc61a7c95b45c06e",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_iceccs_reviewer_gap_closure.py"
+    },
+    {
+      "actual_sha256": "db0384e2eba4110308acc7888583cd1ecfe725a62183d58025b59c5e2b787ac7",
+      "expected_sha256": "db0384e2eba4110308acc7888583cd1ecfe725a62183d58025b59c5e2b787ac7",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v35\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "f27f14651a47e0d779bc863c938346b48b100c68fc6b60289ce4a9ef6318295f",
+      "expected_sha256": "f27f14651a47e0d779bc863c938346b48b100c68fc6b60289ce4a9ef6318295f",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_test",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\test_audit_iceccs_reviewer_gap_closure.py"
+    },
+    {
+      "actual_sha256": "ea493c966d545cf2844fb96047a22ecd5019cd96b39ed2393f22406b0f4394ef",
+      "expected_sha256": "ea493c966d545cf2844fb96047a22ecd5019cd96b39ed2393f22406b0f4394ef",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v36",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v36\\reviewer_gap_closure_audit.json"
+    },
+    {
+      "actual_sha256": "f01da553f93f787d2e133adc05f30f903782433910cfa1526eb7fd075e5a26a5",
+      "expected_sha256": "f01da553f93f787d2e133adc05f30f903782433910cfa1526eb7fd075e5a26a5",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v36_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v36\\README.md"
+    },
+    {
+      "actual_sha256": "7c1a2eaf553007dcfa0d68ad5bdbb1fb38103e4b523f7844d641fef6c54f734a",
+      "expected_sha256": "7c1a2eaf553007dcfa0d68ad5bdbb1fb38103e4b523f7844d641fef6c54f734a",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v36_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v36\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "b2580af3fd1dc345f8748330cb13e02b3b1aa40e5a2112360fbb1ab387abe451",
+      "expected_sha256": "b2580af3fd1dc345f8748330cb13e02b3b1aa40e5a2112360fbb1ab387abe451",
+      "name": "iceccs_reviewer_gap_closure_audit_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v33\\README.md"
+    },
+    {
+      "actual_sha256": "5d5cddf8bbfe5fcbf8646c4880e59874ae095da4621aa5e4bc61a7c95b45c06e",
+      "expected_sha256": "5d5cddf8bbfe5fcbf8646c4880e59874ae095da4621aa5e4bc61a7c95b45c06e",
+      "name": "iceccs_reviewer_gap_closure_audit_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_iceccs_reviewer_gap_closure.py"
+    },
+    {
+      "actual_sha256": "b10541c4c169191f342adbe373302a2bd893b1ff1b3fbd9e70dd552fc22d6569",
+      "expected_sha256": "b10541c4c169191f342adbe373302a2bd893b1ff1b3fbd9e70dd552fc22d6569",
+      "name": "iceccs_reviewer_gap_closure_audit_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v33\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "f27f14651a47e0d779bc863c938346b48b100c68fc6b60289ce4a9ef6318295f",
+      "expected_sha256": "f27f14651a47e0d779bc863c938346b48b100c68fc6b60289ce4a9ef6318295f",
+      "name": "iceccs_reviewer_gap_closure_audit_test",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\test_audit_iceccs_reviewer_gap_closure.py"
+    },
+    {
+      "actual_sha256": "16255cc50898c7a22e90fec760dae98ebe160efe666f1c079883590e3e972e36",
+      "expected_sha256": "16255cc50898c7a22e90fec760dae98ebe160efe666f1c079883590e3e972e36",
+      "name": "late_positive_symbolic_fixture",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_late_positive_symbolic_fixture_20260915_v2\\summary.json"
+    },
+    {
+      "actual_sha256": "851039adbcf1dbb78632fe242773e905cfa7dc2114c33bd9c3c326da3408009e",
+      "expected_sha256": "851039adbcf1dbb78632fe242773e905cfa7dc2114c33bd9c3c326da3408009e",
+      "name": "late_positive_symbolic_fixture_audit_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_late_positive_symbolic_fixture_20260915_v2\\audit_summary.json"
+    },
+    {
+      "actual_sha256": "792718ab54144aa57b3ad4dede6f1c624d31b94dd68d5f2fb8ca396bbb9b70ac",
+      "expected_sha256": "792718ab54144aa57b3ad4dede6f1c624d31b94dd68d5f2fb8ca396bbb9b70ac",
+      "name": "latest_experiment_results_20260916",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_evidence_completion_20260915\\latest_experiment_results_20260916.md"
+    },
+    {
+      "actual_sha256": "f684428a981367819f74ba0eaa3f8758b7a9a8f99cc46e6573cf2be4fb7b7aea",
+      "expected_sha256": "f684428a981367819f74ba0eaa3f8758b7a9a8f99cc46e6573cf2be4fb7b7aea",
+      "name": "manuscript_guard",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_evidence_completion_20260915\\manuscript_guard.json"
+    },
+    {
+      "actual_sha256": "54fb6f1a8332d1a2d1ad974f1fb7c69907bd8cce1205bba099846ad127ea3576",
+      "expected_sha256": "54fb6f1a8332d1a2d1ad974f1fb7c69907bd8cce1205bba099846ad127ea3576",
+      "name": "multistate_exhaustive_property_calibration",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_multistate_exhaustive_property_calibration_20260916_v3\\summary.json"
+    },
+    {
+      "actual_sha256": "932658711a74133ebb8091a5c475e54a1cc56563da531792026d08b3cf7cd21a",
+      "expected_sha256": "932658711a74133ebb8091a5c475e54a1cc56563da531792026d08b3cf7cd21a",
+      "name": "multistate_exhaustive_property_calibration_cases",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_multistate_exhaustive_property_calibration_20260916_v3\\case_results.jsonl"
+    },
+    {
+      "actual_sha256": "ae412cf80ada36e22e4ec134b39c48fc313f084ed65d477e6203c736a40723b0",
+      "expected_sha256": "ae412cf80ada36e22e4ec134b39c48fc313f084ed65d477e6203c736a40723b0",
+      "name": "multistate_exhaustive_property_calibration_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\run_multistate_exhaustive_property_calibration.py"
+    },
+    {
+      "actual_sha256": "55f2e4a8cc0508a7af1c40c92d7b9e516dd47faa9c4e0671eccade842ef2a015",
+      "expected_sha256": "55f2e4a8cc0508a7af1c40c92d7b9e516dd47faa9c4e0671eccade842ef2a015",
+      "name": "multistate_exhaustive_property_calibration_source_lock",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_multistate_exhaustive_property_calibration_20260916_v3\\source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "580669d4b108417d194ec04d067ce2833da6a133b740bc4c38a024cb6413e23b",
+      "expected_sha256": "580669d4b108417d194ec04d067ce2833da6a133b740bc4c38a024cb6413e23b",
+      "name": "multistate_exhaustive_property_calibration_test",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\test_multistate_exhaustive_property_calibration.py"
+    },
+    {
+      "actual_sha256": "b5014a9e511b476dc02dcbb94ac844503e42bbf6db3b731d227163a46073068f",
+      "expected_sha256": "b5014a9e511b476dc02dcbb94ac844503e42bbf6db3b731d227163a46073068f",
+      "name": "multistate_selection_coverage_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_full_multistate_selection_20260916_v1\\selection_coverage_audit.json"
+    },
+    {
+      "actual_sha256": "d9c0a9bfe7f065ecb57631324270f36497eb72b1c7923f0775cdcf5d6dedaa29",
+      "expected_sha256": "d9c0a9bfe7f065ecb57631324270f36497eb72b1c7923f0775cdcf5d6dedaa29",
+      "name": "multistate_selection_coverage_audit_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_multistate_selection_coverage.py"
+    },
+    {
+      "actual_sha256": "ae5169d1b5a150d1434b82d51f860807b58160be969519b533ed3858250530f3",
+      "expected_sha256": "ae5169d1b5a150d1434b82d51f860807b58160be969519b533ed3858250530f3",
+      "name": "native_source_link_calibration",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_native_source_link_calibration_20260915_v3\\summary.json"
+    },
+    {
+      "actual_sha256": "0c1d251f04d6bf42e7f3a67dfa41926dd983d41b8c4d152e2cd293ad2d8a5954",
+      "expected_sha256": "0c1d251f04d6bf42e7f3a67dfa41926dd983d41b8c4d152e2cd293ad2d8a5954",
+      "name": "negative_gate_adversarial_calibration",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_negative_gate_adversarial_calibration_20260916_v2\\summary.json"
+    },
+    {
+      "actual_sha256": "0613e78ab3c1f0c5318b2afa03244851d6c7d223551d3f73fabe95d424c5ece4",
+      "expected_sha256": "0613e78ab3c1f0c5318b2afa03244851d6c7d223551d3f73fabe95d424c5ece4",
+      "name": "negative_gate_adversarial_calibration_cases",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_negative_gate_adversarial_calibration_20260916_v2\\case_results.jsonl"
+    },
+    {
+      "actual_sha256": "e04d556a976fdb09be7486ee58e804e92349eaf180f6a1a6eb21157da54f8b62",
+      "expected_sha256": "e04d556a976fdb09be7486ee58e804e92349eaf180f6a1a6eb21157da54f8b62",
+      "name": "negative_gate_adversarial_calibration_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\run_multistate_negative_gate_adversarial_calibration.py"
+    },
+    {
+      "actual_sha256": "3c53507695b6b8fac8bf41468af8dc3048fe3c4bb799f14c57955b58122d5f2b",
+      "expected_sha256": "3c53507695b6b8fac8bf41468af8dc3048fe3c4bb799f14c57955b58122d5f2b",
+      "name": "negative_gate_adversarial_calibration_source_lock",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_negative_gate_adversarial_calibration_20260916_v2\\source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "87185f7ec378fe9fbcba07f43e7a1bfe356a10aacfb128cb05956ba86302b64c",
+      "expected_sha256": "87185f7ec378fe9fbcba07f43e7a1bfe356a10aacfb128cb05956ba86302b64c",
+      "name": "negative_gate_adversarial_calibration_test",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\test_multistate_negative_gate_adversarial_calibration.py"
+    },
+    {
+      "actual_sha256": "a8f8bf1aaf1fe996d681b95b0cd2031898fe85d9aed76e3f59da82f33f33210b",
+      "expected_sha256": "a8f8bf1aaf1fe996d681b95b0cd2031898fe85d9aed76e3f59da82f33f33210b",
+      "name": "positive_recovery_suite_manifest",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_positive_suite_20260916\\manifest.json"
+    },
+    {
+      "actual_sha256": "42fbba1f74153e578e11df5a09eb6ef0fed51b4bf4ac7e8401b82e59044f3aa7",
+      "expected_sha256": "42fbba1f74153e578e11df5a09eb6ef0fed51b4bf4ac7e8401b82e59044f3aa7",
+      "name": "positive_recovery_suite_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_positive_suite_20260916\\README.md"
+    },
+    {
+      "actual_sha256": "41c5c1cfeb2f912092256e28148d6824325706d18e1f43baa5beb24953b3319b",
+      "expected_sha256": "41c5c1cfeb2f912092256e28148d6824325706d18e1f43baa5beb24953b3319b",
+      "name": "positive_recovery_suite_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_positive_suite_20260916\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "c861f79d0445adcb383d40b108720f6d1776e7c12ce424fb0115f3825008d847",
+      "expected_sha256": "c861f79d0445adcb383d40b108720f6d1776e7c12ce424fb0115f3825008d847",
+      "name": "positive_recovery_suite_verification",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_positive_suite_20260916\\verification.json"
+    },
+    {
+      "actual_sha256": "7ab4d1d60b75abe3ab8f87d5960a077a5e4b49657e92566d508e1f82ec085990",
+      "expected_sha256": "7ab4d1d60b75abe3ab8f87d5960a077a5e4b49657e92566d508e1f82ec085990",
+      "name": "prior_completed_eight_target_multistate_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_campaign_audit_20260915\\current_multistate_campaign_audit.json"
+    },
+    {
+      "actual_sha256": "20d2aa38f577458275195b55de75855059493e622c405efbdcfd1b3631b3ae44",
+      "expected_sha256": "20d2aa38f577458275195b55de75855059493e622c405efbdcfd1b3631b3ae44",
+      "name": "prior_full_eight_target_recursive_multistate_reaudit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_prior_full_campaign_recursive_reaudit_20260915\\current_multistate_campaign_audit.json"
+    },
+    {
+      "actual_sha256": "690b826b64412f09c4e9cc826aa7356baf17be596deddd267f1041f01cae5f3b",
+      "expected_sha256": "690b826b64412f09c4e9cc826aa7356baf17be596deddd267f1041f01cae5f3b",
+      "name": "prior_iceccs_reviewer_gap_closure_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v22\\reviewer_gap_closure_audit.json"
+    },
+    {
+      "actual_sha256": "581519d839c78c236ac4203634c1499db8b877375311f94783dde4d104535d43",
+      "expected_sha256": "581519d839c78c236ac4203634c1499db8b877375311f94783dde4d104535d43",
+      "name": "prior_multistate_selection_coverage_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_multistate_selection_coverage_20260915_v3\\selection_coverage_audit.json"
+    },
+    {
+      "actual_sha256": "6817ef38b5a38ab63898f4ab0cb904666fbddec9ef0ed488d5f0c7827b62db26",
+      "expected_sha256": "6817ef38b5a38ab63898f4ab0cb904666fbddec9ef0ed488d5f0c7827b62db26",
+      "name": "r6400v2_bounded_multistate_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_multistate_audit_r6400v2_20260915\\current_multistate_campaign_audit.json"
+    },
+    {
+      "actual_sha256": "fc58eda40da1efada5d83ebe9740fdecf8f2922c9cccdcb1d6e6f02438c21791",
+      "expected_sha256": "fc58eda40da1efada5d83ebe9740fdecf8f2922c9cccdcb1d6e6f02438c21791",
+      "name": "r6400v2_completed_target_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_query_export_20260915\\r6400v2\\r6400v2.summary.json"
+    },
+    {
+      "actual_sha256": "65c15dd68326e06d47cac6ca8d6de781c1e7647538927a3757cf9278e89673ea",
+      "expected_sha256": "65c15dd68326e06d47cac6ca8d6de781c1e7647538927a3757cf9278e89673ea",
+      "name": "r6400v2_exact_z3_replay",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\r6400v2_z3_replay\\summary.json"
+    },
+    {
+      "actual_sha256": "1058b504777d07b9b723823acd5bab1b54a46768d251d567bffac99c8ec8918f",
+      "expected_sha256": "1058b504777d07b9b723823acd5bab1b54a46768d251d567bffac99c8ec8918f",
+      "name": "r6400v2_exact_z3_replay_receipts",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\r6400v2_z3_replay\\replay_receipts.jsonl"
+    },
+    {
+      "actual_sha256": "e65da5917b9e53ffae693b1da28aa963df32ca0f78b4cd5cca62414565a9b771",
+      "expected_sha256": "e65da5917b9e53ffae693b1da28aa963df32ca0f78b4cd5cca62414565a9b771",
+      "name": "r6400v2_normalized_cvc5_availability_check",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\r6400v2_cvc5_normalized_replay\\summary.json"
+    },
+    {
+      "actual_sha256": "a19992c3d3dbe142dce37f508a8fa3c234d8dffa488463b665a359ef3f578c0d",
+      "expected_sha256": "a19992c3d3dbe142dce37f508a8fa3c234d8dffa488463b665a359ef3f578c0d",
+      "name": "r6400v2_normalized_cvc5_replay_receipts",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\r6400v2_cvc5_normalized_replay\\replay_receipts.jsonl"
+    },
+    {
+      "actual_sha256": "4df35ea1d2ca8d3b0953dc1bb334c8bfe18f5bcc0d523de7ddf6d2db3d0e3541",
+      "expected_sha256": "4df35ea1d2ca8d3b0953dc1bb334c8bfe18f5bcc0d523de7ddf6d2db3d0e3541",
+      "name": "r6400v2_normalized_cvc5_replay_v2",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\r6400v2_cvc5_normalized_replay_v2\\summary.json"
+    },
+    {
+      "actual_sha256": "fe5cfbbfbb8ade15503d795bd1c9c057a141997dee1e727901d87b6eb5de8148",
+      "expected_sha256": "fe5cfbbfbb8ade15503d795bd1c9c057a141997dee1e727901d87b6eb5de8148",
+      "name": "r6400v2_normalized_cvc5_replay_v2_accounting_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_replay_receipt_audit_20260915\\r6400v2_cvc5_v2.json"
+    },
+    {
+      "actual_sha256": "9c6cfd5176c330cb1be0c1dbce3641d6c8a7930d26ea3333b5bae29dcfee7fd3",
+      "expected_sha256": "9c6cfd5176c330cb1be0c1dbce3641d6c8a7930d26ea3333b5bae29dcfee7fd3",
+      "name": "r6400v2_normalized_cvc5_replay_v2_receipts",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\r6400v2_cvc5_normalized_replay_v2\\replay_receipts.jsonl"
+    },
+    {
+      "actual_sha256": "528037223521d8b191f7daf25535e4aec6dc4bf6513159f9933dcf80d682051f",
+      "expected_sha256": "528037223521d8b191f7daf25535e4aec6dc4bf6513159f9933dcf80d682051f",
+      "name": "r6400v2_query_bundle_inventory",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\r6400v2_bundle_inventory.json"
+    },
+    {
+      "actual_sha256": "ced05d271baafc7bc875aa5ecd8acdb480dde6e448c0c08351355d2a185e3a7e",
+      "expected_sha256": "ced05d271baafc7bc875aa5ecd8acdb480dde6e448c0c08351355d2a185e3a7e",
+      "name": "r6400v2_replay_receipt_accounting_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_replay_receipt_audit_20260915\\r6400v2.json"
+    },
+    {
+      "actual_sha256": "03f58c5787834ba35d9474bf75ba3a1e6f2be752cc27224a724776b831a85d2b",
+      "expected_sha256": "03f58c5787834ba35d9474bf75ba3a1e6f2be752cc27224a724776b831a85d2b",
+      "name": "r7000_bounded_multistate_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_multistate_audit_r7000_20260915_v2\\current_multistate_campaign_audit.json"
+    },
+    {
+      "actual_sha256": "2617d86dec499e11ce10d379ec521534ee635285f226476529a1c265e5ca99a4",
+      "expected_sha256": "2617d86dec499e11ce10d379ec521534ee635285f226476529a1c265e5ca99a4",
+      "name": "r7000_completed_target_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_query_export_20260915\\r7000\\r7000.summary.json"
+    },
+    {
+      "actual_sha256": "034e25c27d1338c13423ea33ea613ee7429ff7939feaa6d4456ce6aeaf94cbdd",
+      "expected_sha256": "034e25c27d1338c13423ea33ea613ee7429ff7939feaa6d4456ce6aeaf94cbdd",
+      "name": "r7000_exact_z3_replay",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\r7000_z3_replay\\summary.json"
+    },
+    {
+      "actual_sha256": "68b7317178c09a82d3b6c4c01ff3628fd583f260deeeef8be605e00d0f3307f5",
+      "expected_sha256": "68b7317178c09a82d3b6c4c01ff3628fd583f260deeeef8be605e00d0f3307f5",
+      "name": "r7000_exact_z3_replay_receipt_accounting_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_replay_receipt_audit_20260915\\r7000_z3.json"
+    },
+    {
+      "actual_sha256": "a3c39247e033608b3342eb0750194a4587a1e02e2c820aea53743110919c352c",
+      "expected_sha256": "a3c39247e033608b3342eb0750194a4587a1e02e2c820aea53743110919c352c",
+      "name": "r7000_exact_z3_replay_receipts",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\r7000_z3_replay\\replay_receipts.jsonl"
+    },
+    {
+      "actual_sha256": "bdac066e98cfd9a7aa2378a83a6788f1f1a1e4fa30b9628504021c34df95ef27",
+      "expected_sha256": "bdac066e98cfd9a7aa2378a83a6788f1f1a1e4fa30b9628504021c34df95ef27",
+      "name": "r7000_normalized_cvc5_replay",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\r7000_cvc5_normalized_replay\\summary.json"
+    },
+    {
+      "actual_sha256": "91e6cd160efc89126a5f9d5e7cc891c44e93ec265a6fbbbbc7e7ef7046d1680e",
+      "expected_sha256": "91e6cd160efc89126a5f9d5e7cc891c44e93ec265a6fbbbbc7e7ef7046d1680e",
+      "name": "r7000_normalized_cvc5_replay_receipt_accounting_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_replay_receipt_audit_20260915\\r7000_cvc5.json"
+    },
+    {
+      "actual_sha256": "dd5e2b5d54ad4954b0070f3677733160048aa3b5c4d3d050eadb14f11a68166c",
+      "expected_sha256": "dd5e2b5d54ad4954b0070f3677733160048aa3b5c4d3d050eadb14f11a68166c",
+      "name": "r7000_normalized_cvc5_replay_receipts",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\r7000_cvc5_normalized_replay\\replay_receipts.jsonl"
+    },
+    {
+      "actual_sha256": "b986fed65fa6c72636357b226c8d9c07e7bdd05f0b8d25e5b112e0db4f28b24e",
+      "expected_sha256": "b986fed65fa6c72636357b226c8d9c07e7bdd05f0b8d25e5b112e0db4f28b24e",
+      "name": "r7000_query_bundle_inventory",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\r7000_bundle_inventory.json"
+    },
+    {
+      "actual_sha256": "fe2a5f75dbd1cbb6c05dccd618b79ef0c599b45f9e73249c663290707a033b59",
+      "expected_sha256": "fe2a5f75dbd1cbb6c05dccd618b79ef0c599b45f9e73249c663290707a033b59",
+      "name": "recovery_suite_ac15_report",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_suite_20260916\\tenda_ac15_idx25\\report.md"
+    },
+    {
+      "actual_sha256": "b5752c59e1aef1ebb6ebc386801f104c6dfa9ed562d1d8023e0c5c52a1065910",
+      "expected_sha256": "b5752c59e1aef1ebb6ebc386801f104c6dfa9ed562d1d8023e0c5c52a1065910",
+      "name": "recovery_suite_ac15_results",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_suite_20260916\\tenda_ac15_idx25\\results.jsonl"
+    },
+    {
+      "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "recovery_suite_ac15_stderr",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_suite_20260916\\tenda_ac15_idx25\\stderr.log"
+    },
+    {
+      "actual_sha256": "f3ff0925e46c255f29f75a32a5c4ee8b5591f10b3664dd524060730180d41cd2",
+      "expected_sha256": "f3ff0925e46c255f29f75a32a5c4ee8b5591f10b3664dd524060730180d41cd2",
+      "name": "recovery_suite_ac15_stdout",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_suite_20260916\\tenda_ac15_idx25\\stdout.log"
+    },
+    {
+      "actual_sha256": "058cf67ae6e854e2bd8fc32ccdffbd2820facdb20c8f865d59a9371b26d3eb05",
+      "expected_sha256": "058cf67ae6e854e2bd8fc32ccdffbd2820facdb20c8f865d59a9371b26d3eb05",
+      "name": "recovery_suite_ac15_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_suite_20260916\\tenda_ac15_idx25\\summary.json"
+    },
+    {
+      "actual_sha256": "5db4321799f53217364520193d0c40baa97d6d3569e0f8135c331c12458d0661",
+      "expected_sha256": "5db4321799f53217364520193d0c40baa97d6d3569e0f8135c331c12458d0661",
+      "name": "recovery_suite_ac18_report",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_suite_20260916\\tenda_ac18_idx2\\report.md"
+    },
+    {
+      "actual_sha256": "80da329b2efdf6db61e0f724b315431aa910ad727c3839b996c9643ea20f9d41",
+      "expected_sha256": "80da329b2efdf6db61e0f724b315431aa910ad727c3839b996c9643ea20f9d41",
+      "name": "recovery_suite_ac18_results",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_suite_20260916\\tenda_ac18_idx2\\results.jsonl"
+    },
+    {
+      "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "recovery_suite_ac18_stderr",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_suite_20260916\\tenda_ac18_idx2\\stderr.log"
+    },
+    {
+      "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "recovery_suite_ac18_stdout",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_suite_20260916\\tenda_ac18_idx2\\stdout.log"
+    },
+    {
+      "actual_sha256": "d0bb7b3eb4c94f6a7d7a1dea1d7789e70a64314d0f4a3b1945a8655394727fdf",
+      "expected_sha256": "d0bb7b3eb4c94f6a7d7a1dea1d7789e70a64314d0f4a3b1945a8655394727fdf",
+      "name": "recovery_suite_ac18_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_suite_20260916\\tenda_ac18_idx2\\summary.json"
+    },
+    {
+      "actual_sha256": "f5afe113994a4e637bcb6fc054ed95285792a734343c63764c2733f877f34869",
+      "expected_sha256": "f5afe113994a4e637bcb6fc054ed95285792a734343c63764c2733f877f34869",
+      "name": "recovery_suite_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_recovery_suite_20260916\\audit_v3\\multistate_recovery_suite_audit.json"
+    },
+    {
+      "actual_sha256": "9761839dc98acd08329bf24cfbc49f373b40bd659b020de1948080615b16be28",
+      "expected_sha256": "9761839dc98acd08329bf24cfbc49f373b40bd659b020de1948080615b16be28",
+      "name": "recovery_suite_audit_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_recovery_suite_20260916\\audit_v3\\README.md"
+    },
+    {
+      "actual_sha256": "14d4f1342d66ce1c960d4adea4e1729bac1f4bcf92bc6e9358038d2b744add78",
+      "expected_sha256": "14d4f1342d66ce1c960d4adea4e1729bac1f4bcf92bc6e9358038d2b744add78",
+      "name": "recovery_suite_audit_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_recovery_suite_20260916\\audit_v3\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "cc242350ee38dbcff89814c421f61e01eb113fbe5d0f631a60d92c542e3a1551",
+      "expected_sha256": "cc242350ee38dbcff89814c421f61e01eb113fbe5d0f631a60d92c542e3a1551",
+      "name": "recovery_suite_config",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_recovery_suite_20260916\\suite_config.json"
+    },
+    {
+      "actual_sha256": "684fce5938c91a95a5ec6671afa881e068203de39044c5866ba4d804764ff04d",
+      "expected_sha256": "684fce5938c91a95a5ec6671afa881e068203de39044c5866ba4d804764ff04d",
+      "name": "recovery_suite_dir878_watchdog",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_high_budget_recovery_suite_20260916\\dir878_idx2_watchdog.json"
+    },
+    {
+      "actual_sha256": "fd990f6de58c8b5cc0684f39fd6644d61e4f27f41ee76674ada8c4b39375f334",
+      "expected_sha256": "fd990f6de58c8b5cc0684f39fd6644d61e4f27f41ee76674ada8c4b39375f334",
+      "name": "recovery_suite_dir878_watchdog_stdout",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_suite_20260916\\dir878_idx2\\stdout.log"
+    },
+    {
+      "actual_sha256": "96bbe4b02d04a4596d82719d2ba42414bb2b7d626a992deffbfeb21800be3539",
+      "expected_sha256": "96bbe4b02d04a4596d82719d2ba42414bb2b7d626a992deffbfeb21800be3539",
+      "name": "recovery_suite_r7000_report",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_suite_20260916\\r7000_idx157\\report.md"
+    },
+    {
+      "actual_sha256": "dbfb4b562f4f8f6e222612cbea99828a5beffdd040dace8185db35e2a4156c1c",
+      "expected_sha256": "dbfb4b562f4f8f6e222612cbea99828a5beffdd040dace8185db35e2a4156c1c",
+      "name": "recovery_suite_r7000_results",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_suite_20260916\\r7000_idx157\\results.jsonl"
+    },
+    {
+      "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "recovery_suite_r7000_stderr",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_suite_20260916\\r7000_idx157\\stderr.log"
+    },
+    {
+      "actual_sha256": "e008d590ebfd3f91b2883f43c186e6ff1ca85b96cb94699a495ab18af417a0ad",
+      "expected_sha256": "e008d590ebfd3f91b2883f43c186e6ff1ca85b96cb94699a495ab18af417a0ad",
+      "name": "recovery_suite_r7000_stdout",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_suite_20260916\\r7000_idx157\\stdout.log"
+    },
+    {
+      "actual_sha256": "021557c9bd4b345b173cec7534d7004c1de3c593cb5a0e2fa888634b4ea8dc27",
+      "expected_sha256": "021557c9bd4b345b173cec7534d7004c1de3c593cb5a0e2fa888634b4ea8dc27",
+      "name": "recovery_suite_r7000_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_suite_20260916\\r7000_idx157\\summary.json"
+    },
+    {
+      "actual_sha256": "f1575d361ae21db801c7fc8fc2e71bc7793fe71c06d8d6fdecdaedeebdf8d893",
+      "expected_sha256": "f1575d361ae21db801c7fc8fc2e71bc7793fe71c06d8d6fdecdaedeebdf8d893",
+      "name": "recovery_suite_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_multistate_recovery_suite.py"
+    },
+    {
+      "actual_sha256": "0d1560953daa453740e4bc2e5f2808087874ac3d674e08988fabe35d25bbeba2",
+      "expected_sha256": "0d1560953daa453740e4bc2e5f2808087874ac3d674e08988fabe35d25bbeba2",
+      "name": "reviewer_gap_calibration",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_calibration_20260915\\summary.json"
+    },
+    {
+      "actual_sha256": "3c1fe1fd97521d039d0c3b38d566018cb861c07e3fa3784e5c472684b80f9a29",
+      "expected_sha256": "3c1fe1fd97521d039d0c3b38d566018cb861c07e3fa3784e5c472684b80f9a29",
+      "name": "reviewer_gap_status",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_evidence_completion_20260915\\reviewer_gap_status.md"
+    },
+    {
+      "actual_sha256": "e4b99e229a4651b1c534a1a609d98babad34e07e3bc0a63f1fd15f495a81f924",
+      "expected_sha256": "e4b99e229a4651b1c534a1a609d98babad34e07e3bc0a63f1fd15f495a81f924",
+      "name": "runtime_current_input_alignment_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_runtime_current_input_alignment_20260916_v1\\runtime_current_input_alignment.json"
+    },
+    {
+      "actual_sha256": "73dbc53f2c8da9abd9ccfc87cb411346ec5a1cd11e192ad6e396835602589b69",
+      "expected_sha256": "73dbc53f2c8da9abd9ccfc87cb411346ec5a1cd11e192ad6e396835602589b69",
+      "name": "runtime_current_input_alignment_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_runtime_current_input_alignment_20260916_v1\\README.md"
+    },
+    {
+      "actual_sha256": "89d2fef8ee1bac69b6c1b7d7f706e4173979a825eea088129c1ca0d7f93bd983",
+      "expected_sha256": "89d2fef8ee1bac69b6c1b7d7f706e4173979a825eea088129c1ca0d7f93bd983",
+      "name": "runtime_current_input_alignment_rows",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_runtime_current_input_alignment_20260916_v1\\runtime_current_input_alignment.csv"
+    },
+    {
+      "actual_sha256": "55387ca6e0e9a6805f033dae2e8409a0b4128c507627d20e5c9f0eb8016b8b4d",
+      "expected_sha256": "55387ca6e0e9a6805f033dae2e8409a0b4128c507627d20e5c9f0eb8016b8b4d",
+      "name": "runtime_current_input_alignment_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_runtime_current_input_alignment.py"
+    },
+    {
+      "actual_sha256": "dbfa41f7d5a70f808db5a858de71691d6f4e0999e0c979c5a8622d1c23838c48",
+      "expected_sha256": "dbfa41f7d5a70f808db5a858de71691d6f4e0999e0c979c5a8622d1c23838c48",
+      "name": "runtime_current_input_alignment_source_lock",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_runtime_current_input_alignment_20260916_v1\\source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "eb0e75333f64bf9b73c6cd5a42824fdb7239f1237362fe55352b071ca9cbf1ef",
+      "expected_sha256": "eb0e75333f64bf9b73c6cd5a42824fdb7239f1237362fe55352b071ca9cbf1ef",
+      "name": "runtime_current_input_alignment_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_runtime_current_input_alignment_20260916_v1\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "a001fd91cb829325cbef2f06b4601a3de3b3f49b47a4033491b2504591d77b31",
+      "expected_sha256": "a001fd91cb829325cbef2f06b4601a3de3b3f49b47a4033491b2504591d77b31",
+      "name": "runtime_current_input_alignment_test",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\test_audit_runtime_current_input_alignment.py"
+    },
+    {
+      "actual_sha256": "1ce593d6593ef6993731174f62a0982d6ec1980f0dee73f03c1ce82e432331e8",
+      "expected_sha256": "1ce593d6593ef6993731174f62a0982d6ec1980f0dee73f03c1ce82e432331e8",
+      "name": "runtime_historical_alignment_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_runtime_historical_alignment_20260916_v2\\runtime_alignment_audit.json"
+    },
+    {
+      "actual_sha256": "39e781d1ff37a89136e129a49670e77e7bb60deea33c89150a9e711b99829848",
+      "expected_sha256": "39e781d1ff37a89136e129a49670e77e7bb60deea33c89150a9e711b99829848",
+      "name": "runtime_historical_alignment_rows",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_runtime_historical_alignment_20260916_v2\\runtime_alignment_rows.csv"
+    },
+    {
+      "actual_sha256": "5c4e645407cf2fe40df233b0f5cb4035c2aeb46fe0a03b251b3dcb8ef7586014",
+      "expected_sha256": "5c4e645407cf2fe40df233b0f5cb4035c2aeb46fe0a03b251b3dcb8ef7586014",
+      "name": "runtime_historical_alignment_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_runtime_historical_alignment.py"
+    },
+    {
+      "actual_sha256": "bb61e8545123f8b90dc979f89ec6476149b98f297cbf5b18ca3e0f1c1217f770",
+      "expected_sha256": "bb61e8545123f8b90dc979f89ec6476149b98f297cbf5b18ca3e0f1c1217f770",
+      "name": "runtime_historical_alignment_source_lock",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_runtime_historical_alignment_20260916_v2\\source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "cf9b409656b7f1e2dccd269a6d4e393e0255a9653ce2c172d13de9a6682ff666",
+      "expected_sha256": "cf9b409656b7f1e2dccd269a6d4e393e0255a9653ce2c172d13de9a6682ff666",
+      "name": "runtime_historical_alignment_test",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\test_audit_runtime_historical_alignment.py"
+    },
+    {
+      "actual_sha256": "e96da889fdb21f3478bbd25a5d56f322211559065fe5fdc24f60833679d27546",
+      "expected_sha256": "e96da889fdb21f3478bbd25a5d56f322211559065fe5fdc24f60833679d27546",
+      "name": "semantic_benchmark",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_semantic_benchmark_20260915\\summary.json"
+    },
+    {
+      "actual_sha256": "4f5389625bf23f2ff8a25933aded39c499775b3db281f2f3b14f680da2756dc7",
+      "expected_sha256": "4f5389625bf23f2ff8a25933aded39c499775b3db281f2f3b14f680da2756dc7",
+      "name": "semantic_differential_analysis",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_semantic_benchmark_20260915\\differential_analysis.json"
+    },
+    {
+      "actual_sha256": "818c7140dd8412441daf34c785e78d4af0bdcf3fbc35caf4529f0bd9268b63bd",
+      "expected_sha256": "818c7140dd8412441daf34c785e78d4af0bdcf3fbc35caf4529f0bd9268b63bd",
+      "name": "targeted_multistate_recovery_matrix",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_targeted_multistate_recovery_matrix_20260916_v1\\targeted_multistate_recovery_matrix.json"
+    },
+    {
+      "actual_sha256": "fe4efd4351c144b4f81ee5c43ea9c848ad5e7fd8ded9d7b709281a3028321d14",
+      "expected_sha256": "fe4efd4351c144b4f81ee5c43ea9c848ad5e7fd8ded9d7b709281a3028321d14",
+      "name": "targeted_multistate_recovery_matrix_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_targeted_multistate_recovery_matrix_20260916_v1\\README.md"
+    },
+    {
+      "actual_sha256": "2f4c070ce8e5823fc1f089d66812a4f0c59b6a635b63d6f5075881c9db5d9472",
+      "expected_sha256": "2f4c070ce8e5823fc1f089d66812a4f0c59b6a635b63d6f5075881c9db5d9472",
+      "name": "targeted_multistate_recovery_matrix_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_targeted_multistate_recovery_matrix.py"
+    },
+    {
+      "actual_sha256": "92eec7513564339efa1cd7b9a1d58b34eb994a696786596d0139d44697c234e0",
+      "expected_sha256": "92eec7513564339efa1cd7b9a1d58b34eb994a696786596d0139d44697c234e0",
+      "name": "targeted_multistate_recovery_matrix_source_lock",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_targeted_multistate_recovery_matrix_20260916_v1\\source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "a5e51e927a4f005769d097b7fea15705b79d4193ecead00287623228c774a2ff",
+      "expected_sha256": "a5e51e927a4f005769d097b7fea15705b79d4193ecead00287623228c774a2ff",
+      "name": "targeted_multistate_recovery_matrix_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_targeted_multistate_recovery_matrix_20260916_v1\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "547c4a22ab9937a6f3974ad4465186ff2753f7bef020e9da1056d6dd87e09120",
+      "expected_sha256": "547c4a22ab9937a6f3974ad4465186ff2753f7bef020e9da1056d6dd87e09120",
+      "name": "targeted_multistate_recovery_matrix_test",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\test_audit_targeted_multistate_recovery_matrix.py"
+    },
+    {
+      "actual_sha256": "d426ab1d040c29730f048166f77beeddff682f525bb4dd5342216f310e86d90a",
+      "expected_sha256": "d426ab1d040c29730f048166f77beeddff682f525bb4dd5342216f310e86d90a",
+      "name": "targeted_recovery_ac15_baseline_report",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac15_idx10\\report.md"
+    },
+    {
+      "actual_sha256": "6cccb6fce08e3ebc308481f569a20458ed7a2bbf8cf5a7c6a53d4e498435f6f0",
+      "expected_sha256": "6cccb6fce08e3ebc308481f569a20458ed7a2bbf8cf5a7c6a53d4e498435f6f0",
+      "name": "targeted_recovery_ac15_baseline_results",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac15_idx10\\results.jsonl"
+    },
+    {
+      "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "targeted_recovery_ac15_baseline_stderr",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac15_idx10\\stderr.log"
+    },
+    {
+      "actual_sha256": "da7d82a7d38f4dab41e8fd5fe8fed110f667fa715d39d88cc41656057f1a3777",
+      "expected_sha256": "da7d82a7d38f4dab41e8fd5fe8fed110f667fa715d39d88cc41656057f1a3777",
+      "name": "targeted_recovery_ac15_baseline_stdout",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac15_idx10\\stdout.log"
+    },
+    {
+      "actual_sha256": "0bce2d73d7697cb595be7342ceed8985202c70074c48006c142b402273f2ed62",
+      "expected_sha256": "0bce2d73d7697cb595be7342ceed8985202c70074c48006c142b402273f2ed62",
+      "name": "targeted_recovery_ac15_baseline_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac15_idx10\\summary.json"
+    },
+    {
+      "actual_sha256": "e7f4a68b11b71f6395c8d0b6b71bacc54ff58ac00bb3c3701cb73b6ef96b5c7f",
+      "expected_sha256": "e7f4a68b11b71f6395c8d0b6b71bacc54ff58ac00bb3c3701cb73b6ef96b5c7f",
+      "name": "targeted_recovery_ac15_fullwidth_report",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_20260916\\ac15_idx10_fullwidth\\report.md"
+    },
+    {
+      "actual_sha256": "a9a2858f9843a8b4cad85fc5718c412eb9c8339a97beacd29913379e42e3042b",
+      "expected_sha256": "a9a2858f9843a8b4cad85fc5718c412eb9c8339a97beacd29913379e42e3042b",
+      "name": "targeted_recovery_ac15_fullwidth_results",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_20260916\\ac15_idx10_fullwidth\\results.jsonl"
+    },
+    {
+      "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "targeted_recovery_ac15_fullwidth_stderr",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_20260916\\ac15_idx10_fullwidth\\stderr.log"
+    },
+    {
+      "actual_sha256": "841e550eb8119bc00c6c00ef044803647d713a239140ce332b181a21ac2ddd6e",
+      "expected_sha256": "841e550eb8119bc00c6c00ef044803647d713a239140ce332b181a21ac2ddd6e",
+      "name": "targeted_recovery_ac15_fullwidth_stdout",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_20260916\\ac15_idx10_fullwidth\\stdout.log"
+    },
+    {
+      "actual_sha256": "4ebad6325aedfa2d5d5eb69ba60a24dbbde1727b6101138434a253cab7929553",
+      "expected_sha256": "4ebad6325aedfa2d5d5eb69ba60a24dbbde1727b6101138434a253cab7929553",
+      "name": "targeted_recovery_ac15_fullwidth_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_high_budget_recovery_20260916\\ac15_idx10_fullwidth\\summary.json"
+    },
+    {
+      "actual_sha256": "dc239a99b17139cd60e70a8f18bfbc35c47667c72339b6e310bd2a25213b957b",
+      "expected_sha256": "dc239a99b17139cd60e70a8f18bfbc35c47667c72339b6e310bd2a25213b957b",
+      "name": "targeted_recovery_ac15_less_pruned_report",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac15_idx10_noprune\\report.md"
+    },
+    {
+      "actual_sha256": "3173fdcae058b92c971e43abc9443ef83927be7bd4fe5d34a18646fe8b1d9097",
+      "expected_sha256": "3173fdcae058b92c971e43abc9443ef83927be7bd4fe5d34a18646fe8b1d9097",
+      "name": "targeted_recovery_ac15_less_pruned_results",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac15_idx10_noprune\\results.jsonl"
+    },
+    {
+      "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "targeted_recovery_ac15_less_pruned_stderr",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac15_idx10_noprune\\stderr.log"
+    },
+    {
+      "actual_sha256": "1c28a362afcc37d53d8d26e5e0a7df12ea10f3f335ab4a2f7aca365e33749302",
+      "expected_sha256": "1c28a362afcc37d53d8d26e5e0a7df12ea10f3f335ab4a2f7aca365e33749302",
+      "name": "targeted_recovery_ac15_less_pruned_stdout",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac15_idx10_noprune\\stdout.log"
+    },
+    {
+      "actual_sha256": "f35497c59e4413ed2dd78e3a1e0e911f112783cefec6ba249bad1ec5c6786760",
+      "expected_sha256": "f35497c59e4413ed2dd78e3a1e0e911f112783cefec6ba249bad1ec5c6786760",
+      "name": "targeted_recovery_ac15_less_pruned_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac15_idx10_noprune\\summary.json"
+    },
+    {
+      "actual_sha256": "3d071f067e78219d65cd288e9a7132d2de250f87bbcaceede611422427bce054",
+      "expected_sha256": "3d071f067e78219d65cd288e9a7132d2de250f87bbcaceede611422427bce054",
+      "name": "targeted_recovery_ac18_baseline_report",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac18_idx4\\report.md"
+    },
+    {
+      "actual_sha256": "048aa72023e1f60fc9158b010d6e0975a2384d27034d8c66914f195a9e4cedbb",
+      "expected_sha256": "048aa72023e1f60fc9158b010d6e0975a2384d27034d8c66914f195a9e4cedbb",
+      "name": "targeted_recovery_ac18_baseline_results",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac18_idx4\\results.jsonl"
+    },
+    {
+      "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "targeted_recovery_ac18_baseline_stderr",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac18_idx4\\stderr.log"
+    },
+    {
+      "actual_sha256": "63f151acf47e80cac293f725bdf8242ce35501db643a7d57b10f76709022cc33",
+      "expected_sha256": "63f151acf47e80cac293f725bdf8242ce35501db643a7d57b10f76709022cc33",
+      "name": "targeted_recovery_ac18_baseline_stdout",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac18_idx4\\stdout.log"
+    },
+    {
+      "actual_sha256": "86bee62ab3ede34871fa43641eb85386a4395aa3267a4ec8958107d6cf358b15",
+      "expected_sha256": "86bee62ab3ede34871fa43641eb85386a4395aa3267a4ec8958107d6cf358b15",
+      "name": "targeted_recovery_ac18_baseline_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac18_idx4\\summary.json"
+    },
+    {
+      "actual_sha256": "67213f15936bdd8540625ca536fb0537bb57675cf91e13da90b0ddfaef1ce272",
+      "expected_sha256": "67213f15936bdd8540625ca536fb0537bb57675cf91e13da90b0ddfaef1ce272",
+      "name": "targeted_recovery_ac18_less_pruned_report",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac18_idx4_noprune\\report.md"
+    },
+    {
+      "actual_sha256": "d0e128ec4c40ac482042af0ff372f80b7b175894e8ccbe375c13d47941a311dd",
+      "expected_sha256": "d0e128ec4c40ac482042af0ff372f80b7b175894e8ccbe375c13d47941a311dd",
+      "name": "targeted_recovery_ac18_less_pruned_results",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac18_idx4_noprune\\results.jsonl"
+    },
+    {
+      "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "targeted_recovery_ac18_less_pruned_stderr",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac18_idx4_noprune\\stderr.log"
+    },
+    {
+      "actual_sha256": "cc223b48670f2e7616828197274bc88d4f0192f1d4645fbaf28e4bc701071c64",
+      "expected_sha256": "cc223b48670f2e7616828197274bc88d4f0192f1d4645fbaf28e4bc701071c64",
+      "name": "targeted_recovery_ac18_less_pruned_stdout",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac18_idx4_noprune\\stdout.log"
+    },
+    {
+      "actual_sha256": "50ffdb276356a1f7718816e8d638cc429aa178b9d3ddd10bbd4aee1aad8c59d6",
+      "expected_sha256": "50ffdb276356a1f7718816e8d638cc429aa178b9d3ddd10bbd4aee1aad8c59d6",
+      "name": "targeted_recovery_ac18_less_pruned_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_targeted_multistate_recovery_pilot_20260916\\ac18_idx4_noprune\\summary.json"
+    },
+    {
+      "actual_sha256": "35f1b5c04da6239978f9601c408198772d83689a77a2fd19e2f92bc4e14e68f6",
+      "expected_sha256": "35f1b5c04da6239978f9601c408198772d83689a77a2fd19e2f92bc4e14e68f6",
+      "name": "targeted_timeout_recovery_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_targeted_multistate_timeout_recovery_full_20260916_v2\\audit\\summary.json"
+    },
+    {
+      "actual_sha256": "0066e80c0e29079f1531407d39cdf151ec162b64bbe008da6aefd61c8dfcaa12",
+      "expected_sha256": "0066e80c0e29079f1531407d39cdf151ec162b64bbe008da6aefd61c8dfcaa12",
+      "name": "targeted_timeout_recovery_audit_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\audit_targeted_multistate_timeout_recovery.py"
+    },
+    {
+      "actual_sha256": "8c50721e12a85260e562add4b129f2203f15133a7a96f6be15b6cf843d8d2443",
+      "expected_sha256": "8c50721e12a85260e562add4b129f2203f15133a7a96f6be15b6cf843d8d2443",
+      "name": "targeted_timeout_recovery_executed_runner",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_targeted_multistate_timeout_recovery_full_20260916_v2\\source\\run_targeted_multistate_timeout_recovery.py.executed.py"
+    },
+    {
+      "actual_sha256": "32a9e2a1c94850fdc2d4d3a4c62c1cfdb9fb15e6f9278b0664326fcb748374b5",
+      "expected_sha256": "32a9e2a1c94850fdc2d4d3a4c62c1cfdb9fb15e6f9278b0664326fcb748374b5",
+      "name": "targeted_timeout_recovery_package_manifest",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_targeted_multistate_timeout_recovery_full_20260916_v2\\manifest.json"
+    },
+    {
+      "actual_sha256": "b20b9246a1a728a08512fd8e37b6eb4fcf802197f057a897b5657f71e17fbdf3",
+      "expected_sha256": "b20b9246a1a728a08512fd8e37b6eb4fcf802197f057a897b5657f71e17fbdf3",
+      "name": "targeted_timeout_recovery_package_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_targeted_multistate_timeout_recovery_full_20260916_v2\\README.md"
+    },
+    {
+      "actual_sha256": "94ceb6fc4838d6c3b6061c55d8b40b81d0572391c98cd8d6d5aa3e8777448297",
+      "expected_sha256": "94ceb6fc4838d6c3b6061c55d8b40b81d0572391c98cd8d6d5aa3e8777448297",
+      "name": "targeted_timeout_recovery_package_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_targeted_multistate_timeout_recovery_full_20260916_v2\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "8c50721e12a85260e562add4b129f2203f15133a7a96f6be15b6cf843d8d2443",
+      "expected_sha256": "8c50721e12a85260e562add4b129f2203f15133a7a96f6be15b6cf843d8d2443",
+      "name": "targeted_timeout_recovery_runner_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiments\\run_targeted_multistate_timeout_recovery.py"
+    },
+    {
+      "actual_sha256": "4c32a7f7128523d44606d337fc0588cfe124f6975cec3c4d05d32a076357384b",
+      "expected_sha256": "4c32a7f7128523d44606d337fc0588cfe124f6975cec3c4d05d32a076357384b",
+      "name": "tenda_ac15_bounded_multistate_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_multistate_audit_tenda_ac15_20260915\\current_multistate_campaign_audit.json"
+    },
+    {
+      "actual_sha256": "7c05160a1ac5f6807e3e4590e71a54e3bf9d7be1b8969542194ed322b90ca028",
+      "expected_sha256": "7c05160a1ac5f6807e3e4590e71a54e3bf9d7be1b8969542194ed322b90ca028",
+      "name": "tenda_ac15_completed_target_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_query_export_20260915\\tenda_ac15\\tenda_ac15.summary.json"
+    },
+    {
+      "actual_sha256": "8ac49a47c7745017d78c77084a4b342579eddbcecacd155292317e9bff27c90e",
+      "expected_sha256": "8ac49a47c7745017d78c77084a4b342579eddbcecacd155292317e9bff27c90e",
+      "name": "tenda_ac15_exact_z3_replay",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\tenda_ac15_z3_replay\\summary.json"
+    },
+    {
+      "actual_sha256": "00c0b8c6462b59b18f4d391ee4601475a8317616f6a1119e842f36f9e5d9f126",
+      "expected_sha256": "00c0b8c6462b59b18f4d391ee4601475a8317616f6a1119e842f36f9e5d9f126",
+      "name": "tenda_ac15_exact_z3_replay_receipt_accounting_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_replay_receipt_audit_20260915\\tenda_ac15_z3.json"
+    },
+    {
+      "actual_sha256": "72c541ddbc4fb7ea3ecd6dfa48e13b4421f9f5bb36f8d179700f0d42b521d3cb",
+      "expected_sha256": "72c541ddbc4fb7ea3ecd6dfa48e13b4421f9f5bb36f8d179700f0d42b521d3cb",
+      "name": "tenda_ac15_exact_z3_replay_receipts",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\tenda_ac15_z3_replay\\replay_receipts.jsonl"
+    },
+    {
+      "actual_sha256": "026291ef5a4d0c8abceb84b8202a9fdf41ae0a41026560a4bcd08a41e3a4ba80",
+      "expected_sha256": "026291ef5a4d0c8abceb84b8202a9fdf41ae0a41026560a4bcd08a41e3a4ba80",
+      "name": "tenda_ac15_normalized_cvc5_replay",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\tenda_ac15_cvc5_normalized_replay\\summary.json"
+    },
+    {
+      "actual_sha256": "83ae35243e2b28c469f028eeb816d1b9377a2fd6b9f97850a4539998f00fe094",
+      "expected_sha256": "83ae35243e2b28c469f028eeb816d1b9377a2fd6b9f97850a4539998f00fe094",
+      "name": "tenda_ac15_normalized_cvc5_replay_receipt_accounting_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_replay_receipt_audit_20260915\\tenda_ac15_cvc5.json"
+    },
+    {
+      "actual_sha256": "53c9614ed096325b32adaeea6f4d207b83e770ba33f533c91806b4ffc5885532",
+      "expected_sha256": "53c9614ed096325b32adaeea6f4d207b83e770ba33f533c91806b4ffc5885532",
+      "name": "tenda_ac15_normalized_cvc5_replay_receipts",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\tenda_ac15_cvc5_normalized_replay\\replay_receipts.jsonl"
+    },
+    {
+      "actual_sha256": "f28bb76ff554d6f0b082de07e3d3b3d5703023ae39ad4ffbacfd9f026678521c",
+      "expected_sha256": "f28bb76ff554d6f0b082de07e3d3b3d5703023ae39ad4ffbacfd9f026678521c",
+      "name": "tenda_ac15_query_bundle_inventory",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\tenda_ac15_bundle_inventory.json"
+    },
+    {
+      "actual_sha256": "926e4b3001b812b70d57a46377b307f77bdfc2099d3baf38c009a9722bd79c18",
+      "expected_sha256": "926e4b3001b812b70d57a46377b307f77bdfc2099d3baf38c009a9722bd79c18",
+      "name": "tenda_ac18_bounded_multistate_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_multistate_audit_tenda_ac18_20260915\\current_multistate_campaign_audit.json"
+    },
+    {
+      "actual_sha256": "81c9b07d2f0607ce02fe646677cf00b34cc87e851859ab4f875e7b601633f8a6",
+      "expected_sha256": "81c9b07d2f0607ce02fe646677cf00b34cc87e851859ab4f875e7b601633f8a6",
+      "name": "tenda_ac18_completed_target_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_query_export_20260915\\tenda_ac18\\tenda_ac18.summary.json"
+    },
+    {
+      "actual_sha256": "be8bee76ebc0a593ffaab84ee63c3c976552b2f1738decb39e844f60f2fa2a11",
+      "expected_sha256": "be8bee76ebc0a593ffaab84ee63c3c976552b2f1738decb39e844f60f2fa2a11",
+      "name": "tenda_ac18_exact_z3_replay",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\tenda_ac18_z3_replay\\summary.json"
+    },
+    {
+      "actual_sha256": "aadd82fda5022a7454ee47c809436c49ed8b00b1aec51e0abcf4711b4167fbd2",
+      "expected_sha256": "aadd82fda5022a7454ee47c809436c49ed8b00b1aec51e0abcf4711b4167fbd2",
+      "name": "tenda_ac18_exact_z3_replay_receipt_accounting_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_replay_receipt_audit_20260915\\tenda_ac18_z3.json"
+    },
+    {
+      "actual_sha256": "ac104a34294fb0026e31c187722000bc1cf078fff3f08e9223849bdd0c562dfb",
+      "expected_sha256": "ac104a34294fb0026e31c187722000bc1cf078fff3f08e9223849bdd0c562dfb",
+      "name": "tenda_ac18_exact_z3_replay_receipts",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\tenda_ac18_z3_replay\\replay_receipts.jsonl"
+    },
+    {
+      "actual_sha256": "52e71b453bc47729ff679f971c14b997c1bbaee489c69e8183b2981574e6c4d4",
+      "expected_sha256": "52e71b453bc47729ff679f971c14b997c1bbaee489c69e8183b2981574e6c4d4",
+      "name": "tenda_ac18_normalized_cvc5_replay",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\tenda_ac18_cvc5_normalized_replay\\summary.json"
+    },
+    {
+      "actual_sha256": "cc269724de42c52a57076e422bb6c9bb26af253e72b69db12f05a8eceb852e56",
+      "expected_sha256": "cc269724de42c52a57076e422bb6c9bb26af253e72b69db12f05a8eceb852e56",
+      "name": "tenda_ac18_normalized_cvc5_replay_receipt_accounting_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_replay_receipt_audit_20260915\\tenda_ac18_cvc5.json"
+    },
+    {
+      "actual_sha256": "f829c425c4c34ec68337aa9d7946fe478f49b6f0be2dd367210e93d79ad75464",
+      "expected_sha256": "f829c425c4c34ec68337aa9d7946fe478f49b6f0be2dd367210e93d79ad75464",
+      "name": "tenda_ac18_normalized_cvc5_replay_receipts",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\tenda_ac18_cvc5_normalized_replay\\replay_receipts.jsonl"
+    },
+    {
+      "actual_sha256": "6d8ecc4c9e0316a985c29aa8ba0e3c56e63421d335a9f32bb926fdd2c51a3ecc",
+      "expected_sha256": "6d8ecc4c9e0316a985c29aa8ba0e3c56e63421d335a9f32bb926fdd2c51a3ecc",
+      "name": "tenda_ac18_query_bundle_inventory",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\tenda_ac18_bundle_inventory.json"
+    },
+    {
+      "actual_sha256": "078013b6b1c00aee25acf0776708c51123f60a420d59365fee953d54ae1b59c1",
+      "expected_sha256": "078013b6b1c00aee25acf0776708c51123f60a420d59365fee953d54ae1b59c1",
+      "name": "tenda_w20e_bounded_multistate_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_multistate_audit_tenda_w20e_20260915\\current_multistate_campaign_audit.json"
+    },
+    {
+      "actual_sha256": "6ac91627cc90ad3efbff28b7ca620f88cdb6b774c48bc16e4dbd205b0ce92818",
+      "expected_sha256": "6ac91627cc90ad3efbff28b7ca620f88cdb6b774c48bc16e4dbd205b0ce92818",
+      "name": "tenda_w20e_completed_target_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_query_export_20260915\\tenda_w20e\\tenda_w20e.summary.json"
+    },
+    {
+      "actual_sha256": "1cc1cec74aa3005fb1c58d67ac7e066a837fa9653d5e6dfe0609bac60f0f01af",
+      "expected_sha256": "1cc1cec74aa3005fb1c58d67ac7e066a837fa9653d5e6dfe0609bac60f0f01af",
+      "name": "tenda_w20e_exact_z3_replay",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\tenda_w20e_z3_replay\\summary.json"
+    },
+    {
+      "actual_sha256": "106c64792f9c8c2e13da11b7e062cc7d4ef27c1d9b720734b35c58c045bc9c52",
+      "expected_sha256": "106c64792f9c8c2e13da11b7e062cc7d4ef27c1d9b720734b35c58c045bc9c52",
+      "name": "tenda_w20e_exact_z3_replay_receipt_accounting_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_replay_receipt_audit_20260915\\tenda_w20e_z3.json"
+    },
+    {
+      "actual_sha256": "5df851d77dbd723c43d66d69db9becc1b6981021a8a0dffcbdaa10de0d5bdd8a",
+      "expected_sha256": "5df851d77dbd723c43d66d69db9becc1b6981021a8a0dffcbdaa10de0d5bdd8a",
+      "name": "tenda_w20e_exact_z3_replay_receipts",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\tenda_w20e_z3_replay\\replay_receipts.jsonl"
+    },
+    {
+      "actual_sha256": "74c6ecb1e8d12f24dbbd4ec33daf0e7a76264317644bb99d5f172e91ff012f22",
+      "expected_sha256": "74c6ecb1e8d12f24dbbd4ec33daf0e7a76264317644bb99d5f172e91ff012f22",
+      "name": "tenda_w20e_normalized_cvc5_replay",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\tenda_w20e_cvc5_normalized_replay\\summary.json"
+    },
+    {
+      "actual_sha256": "cbca25a342dfac7751c36db2812d0001808d5298555b18a62545fe9963f631bc",
+      "expected_sha256": "cbca25a342dfac7751c36db2812d0001808d5298555b18a62545fe9963f631bc",
+      "name": "tenda_w20e_normalized_cvc5_replay_receipt_accounting_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_replay_receipt_audit_20260915\\tenda_w20e_cvc5.json"
+    },
+    {
+      "actual_sha256": "b272a994d2a3e2b800481931ea48e4e8c2915f7ea48bb1eb31ac1b98e14737df",
+      "expected_sha256": "b272a994d2a3e2b800481931ea48e4e8c2915f7ea48bb1eb31ac1b98e14737df",
+      "name": "tenda_w20e_normalized_cvc5_replay_receipts",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\tenda_w20e_cvc5_normalized_replay\\replay_receipts.jsonl"
+    },
+    {
+      "actual_sha256": "cdc846ba9b22d948231b4825c54588d622601272e9aa027a2d8141850603985f",
+      "expected_sha256": "cdc846ba9b22d948231b4825c54588d622601272e9aa027a2d8141850603985f",
+      "name": "tenda_w20e_query_bundle_inventory",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\tenda_w20e_bundle_inventory.json"
+    },
+    {
+      "actual_sha256": "a23d16475b5555385e3cdca720f2ccfc4d23f22ff0089ab0e51274921f3a4c25",
+      "expected_sha256": "a23d16475b5555385e3cdca720f2ccfc4d23f22ff0089ab0e51274921f3a4c25",
+      "name": "xr300_bounded_multistate_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_current_multistate_audit_xr300_20260915\\current_multistate_campaign_audit.json"
+    },
+    {
+      "actual_sha256": "e1fdf7fc9a261bd3e6e907cac41642b3aed65ee0bc543c2415bf92286a800d0d",
+      "expected_sha256": "e1fdf7fc9a261bd3e6e907cac41642b3aed65ee0bc543c2415bf92286a800d0d",
+      "name": "xr300_completed_target_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_query_export_20260915\\xr300\\xr300.summary.json"
+    },
+    {
+      "actual_sha256": "ca0401660ed2b9ef1dad6da666ad36cd90f8e00fa27e91059be2a63a2fe17d77",
+      "expected_sha256": "ca0401660ed2b9ef1dad6da666ad36cd90f8e00fa27e91059be2a63a2fe17d77",
+      "name": "xr300_parallel_exact_z3_replay",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\xr300_z3_parallel_replay_v2\\summary.json"
+    },
+    {
+      "actual_sha256": "7ede50c4f3a4fa568f2dae136d8b88dc77fb55d563ee133390153136f245fece",
+      "expected_sha256": "7ede50c4f3a4fa568f2dae136d8b88dc77fb55d563ee133390153136f245fece",
+      "name": "xr300_parallel_exact_z3_replay_receipt_accounting_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_replay_receipt_audit_20260915\\xr300_z3_parallel_v2.json"
+    },
+    {
+      "actual_sha256": "36992e287dd4347094c18a3b9ade158fd2e41515b865ea1827c27cb5d63c2cb1",
+      "expected_sha256": "36992e287dd4347094c18a3b9ade158fd2e41515b865ea1827c27cb5d63c2cb1",
+      "name": "xr300_parallel_exact_z3_replay_receipts",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\xr300_z3_parallel_replay_v2\\replay_receipts.jsonl"
+    },
+    {
+      "actual_sha256": "41d6353c5f49830696a97e8bc49a9eb316573038a67d7d23a038194e156db981",
+      "expected_sha256": "41d6353c5f49830696a97e8bc49a9eb316573038a67d7d23a038194e156db981",
+      "name": "xr300_parallel_normalized_cvc5_replay",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\xr300_cvc5_parallel_replay_v2\\summary.json"
+    },
+    {
+      "actual_sha256": "00e1c40c4ebfc99941ce9bd02cc69e54795a16b2fb481c263d3200921363fb54",
+      "expected_sha256": "00e1c40c4ebfc99941ce9bd02cc69e54795a16b2fb481c263d3200921363fb54",
+      "name": "xr300_parallel_normalized_cvc5_replay_receipt_accounting_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_replay_receipt_audit_20260915\\xr300_cvc5_parallel_v2.json"
+    },
+    {
+      "actual_sha256": "16fbfbafe78c872fba861c2580ba54b79dadb988bf9abafb2dd1e53ed15fb24a",
+      "expected_sha256": "16fbfbafe78c872fba861c2580ba54b79dadb988bf9abafb2dd1e53ed15fb24a",
+      "name": "xr300_parallel_normalized_cvc5_replay_receipts",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\xr300_cvc5_parallel_replay_v2\\replay_receipts.jsonl"
+    },
+    {
+      "actual_sha256": "2dc3907f0a96e8cf53e1db4258d9061ea1fa3983abdb1764b340ac073b6d5523",
+      "expected_sha256": "2dc3907f0a96e8cf53e1db4258d9061ea1fa3983abdb1764b340ac073b6d5523",
+      "name": "xr300_query_bundle_inventory",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_full_query_replay_20260915\\xr300_bundle_inventory.json"
+    },
+    {
+      "actual_sha256": "54fb6f1a8332d1a2d1ad974f1fb7c69907bd8cce1205bba099846ad127ea3576",
+      "expected_sha256": "54fb6f1a8332d1a2d1ad974f1fb7c69907bd8cce1205bba099846ad127ea3576",
+      "name": "current_multistate_property_calibration_v4_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_multistate_exhaustive_property_calibration_20260916_v4\\summary.json"
+    },
+    {
+      "actual_sha256": "932658711a74133ebb8091a5c475e54a1cc56563da531792026d08b3cf7cd21a",
+      "expected_sha256": "932658711a74133ebb8091a5c475e54a1cc56563da531792026d08b3cf7cd21a",
+      "name": "current_multistate_property_calibration_v4_cases",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_multistate_exhaustive_property_calibration_20260916_v4\\case_results.jsonl"
+    },
+    {
+      "actual_sha256": "6cdb0e45433bbf6b54d7a142b683cca8f12eb6f7fe0fcc63b028375c3c415451",
+      "expected_sha256": "6cdb0e45433bbf6b54d7a142b683cca8f12eb6f7fe0fcc63b028375c3c415451",
+      "name": "current_multistate_property_calibration_v4_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_multistate_exhaustive_property_calibration_20260916_v4\\README.md"
+    },
+    {
+      "actual_sha256": "55f2e4a8cc0508a7af1c40c92d7b9e516dd47faa9c4e0671eccade842ef2a015",
+      "expected_sha256": "55f2e4a8cc0508a7af1c40c92d7b9e516dd47faa9c4e0671eccade842ef2a015",
+      "name": "current_multistate_property_calibration_v4_source_lock",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_multistate_exhaustive_property_calibration_20260916_v4\\source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "632a069c74e2f09a6b6c75beed9d5afc1e456ddb75a38387283129100ef88dcd",
+      "expected_sha256": "632a069c74e2f09a6b6c75beed9d5afc1e456ddb75a38387283129100ef88dcd",
+      "name": "current_multistate_property_calibration_v4_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_multistate_exhaustive_property_calibration_20260916_v4\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "433aed44909b5f088a246a1f1c4dedc1947e990fbe71fc2b6b7fd39bb2570f70",
+      "expected_sha256": "433aed44909b5f088a246a1f1c4dedc1947e990fbe71fc2b6b7fd39bb2570f70",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v37",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v37\\reviewer_gap_closure_audit.json"
+    },
+    {
+      "actual_sha256": "00ecf474f86dbd1e994cc8bbb6eb52513e41c98dee666ab6eec5ce40dc103885",
+      "expected_sha256": "00ecf474f86dbd1e994cc8bbb6eb52513e41c98dee666ab6eec5ce40dc103885",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v37_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v37\\README.md"
+    },
+    {
+      "actual_sha256": "d41a7a2f8dfb81e54bb404c0597e29081fe933b5156cc745d5f50163e8093c8f",
+      "expected_sha256": "d41a7a2f8dfb81e54bb404c0597e29081fe933b5156cc745d5f50163e8093c8f",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v37_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v37\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "0d1560953daa453740e4bc2e5f2808087874ac3d674e08988fabe35d25bbeba2",
+      "expected_sha256": "0d1560953daa453740e4bc2e5f2808087874ac3d674e08988fabe35d25bbeba2",
+      "name": "reviewer_gap_calibration_linux_latest_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_calibration_20260916_remote_v1\\summary.json"
+    },
+    {
+      "actual_sha256": "f29f9fe911f797481c44e92da3d522a832b8e1613d56266bd2f3f189aeac3d26",
+      "expected_sha256": "f29f9fe911f797481c44e92da3d522a832b8e1613d56266bd2f3f189aeac3d26",
+      "name": "reviewer_gap_calibration_linux_latest_matrix_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_calibration_20260916_remote_v1\\matrix\\matrix_replay_summary.json"
+    },
+    {
+      "actual_sha256": "32931f3468ede11a3338bf90297a8ad63fa4c1db4eccd5dc274112c54be32c72",
+      "expected_sha256": "32931f3468ede11a3338bf90297a8ad63fa4c1db4eccd5dc274112c54be32c72",
+      "name": "reviewer_gap_calibration_linux_latest_multistate_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_calibration_20260916_remote_v1\\multistate\\multistate_audit_summary.json"
+    },
+    {
+      "actual_sha256": "e4d7565c1b5d38ff522c92cbfca41c89bf196d52111e8d120b23436c13c9485c",
+      "expected_sha256": "e4d7565c1b5d38ff522c92cbfca41c89bf196d52111e8d120b23436c13c9485c",
+      "name": "reviewer_gap_calibration_linux_latest_execution_metadata",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_calibration_20260916_remote_v1\\execution_metadata.json"
+    },
+    {
+      "actual_sha256": "e8cc06771e2aec8b50ab27bc83b807f1c2a5a2c1c1f40eab6a0e815a1649a2cc",
+      "expected_sha256": "e8cc06771e2aec8b50ab27bc83b807f1c2a5a2c1c1f40eab6a0e815a1649a2cc",
+      "name": "reviewer_gap_calibration_linux_latest_runner_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_calibration_20260916_remote_v1\\source\\run_reviewer_gap_calibration.py"
+    },
+    {
+      "actual_sha256": "1c05ec49d0ac52c26644d9ce3948c2460dee0fa3779ad5d314765349c8d920e5",
+      "expected_sha256": "1c05ec49d0ac52c26644d9ce3948c2460dee0fa3779ad5d314765349c8d920e5",
+      "name": "reviewer_gap_calibration_linux_latest_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_calibration_20260916_remote_v1\\README.md"
+    },
+    {
+      "actual_sha256": "4869e8fa0709983dd99e0000672352b22ffd689fc91e3dd209afca3f0c6a2858",
+      "expected_sha256": "4869e8fa0709983dd99e0000672352b22ffd689fc91e3dd209afca3f0c6a2858",
+      "name": "reviewer_gap_calibration_linux_latest_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_calibration_20260916_remote_v1\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "89722697e06f71fa86b658faea04dd783cf7755c8938baeb53364a6301497635",
+      "expected_sha256": "89722697e06f71fa86b658faea04dd783cf7755c8938baeb53364a6301497635",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v38",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v38\\reviewer_gap_closure_audit.json"
+    },
+    {
+      "actual_sha256": "1f9ea9f92bdcaf557f860be077d92ca603d5bdd5291c2ff012cf2b6560f233ad",
+      "expected_sha256": "1f9ea9f92bdcaf557f860be077d92ca603d5bdd5291c2ff012cf2b6560f233ad",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v38_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v38\\README.md"
+    },
+    {
+      "actual_sha256": "2a1b502787858e588ef4636f05b58486d2876d5c43e3e695b72388e8d8309412",
+      "expected_sha256": "2a1b502787858e588ef4636f05b58486d2876d5c43e3e695b72388e8d8309412",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v38_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v38\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "5b912c2141fe51d82beed292aada65aaca1d12739caa5db58d32a8852948fbab",
+      "expected_sha256": "5b912c2141fe51d82beed292aada65aaca1d12739caa5db58d32a8852948fbab",
+      "name": "dir878_bounded_recovery_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dir878_timeout_recovery_20260916_v3\\audit\\summary.json"
+    },
+    {
+      "actual_sha256": "b4304372bec26f7288ef4b17a63cd52f6817b6a8ac6514bc7f58ac0df0bb280d",
+      "expected_sha256": "b4304372bec26f7288ef4b17a63cd52f6817b6a8ac6514bc7f58ac0df0bb280d",
+      "name": "dir878_bounded_recovery_result",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dir878_timeout_recovery_20260916_v3\\raw_run\\dir878_idx2\\results.jsonl"
+    },
+    {
+      "actual_sha256": "3815b7227e7d039648311dcaa32b89a49fe62498117d161974c6d6b24924b4ed",
+      "expected_sha256": "3815b7227e7d039648311dcaa32b89a49fe62498117d161974c6d6b24924b4ed",
+      "name": "dir878_bounded_recovery_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dir878_timeout_recovery_20260916_v3\\raw_run\\dir878_idx2\\summary.json"
+    },
+    {
+      "actual_sha256": "72d81adea1535061d2cb8ce638905f71e892bf513153f0e6792ec43670ab2c85",
+      "expected_sha256": "72d81adea1535061d2cb8ce638905f71e892bf513153f0e6792ec43670ab2c85",
+      "name": "dir878_bounded_recovery_report",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dir878_timeout_recovery_20260916_v3\\raw_run\\dir878_idx2\\report.md"
+    },
+    {
+      "actual_sha256": "6d8b5a9ea692fde62b529160ef08c3534f2417cc688e47e884b18979a3f01335",
+      "expected_sha256": "6d8b5a9ea692fde62b529160ef08c3534f2417cc688e47e884b18979a3f01335",
+      "name": "dir878_bounded_recovery_execution_metadata",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dir878_timeout_recovery_20260916_v3\\execution_metadata.json"
+    },
+    {
+      "actual_sha256": "1d85a66df2769ae4f14c878dceba2768ee87647f93ca5f69e15ff5c14397e9c5",
+      "expected_sha256": "1d85a66df2769ae4f14c878dceba2768ee87647f93ca5f69e15ff5c14397e9c5",
+      "name": "dir878_bounded_recovery_command",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dir878_timeout_recovery_20260916_v3\\command.json"
+    },
+    {
+      "actual_sha256": "5329144c21c6c1204c0e2e375740965b96e711a2e8862457c7dc47b16d88eefa",
+      "expected_sha256": "5329144c21c6c1204c0e2e375740965b96e711a2e8862457c7dc47b16d88eefa",
+      "name": "dir878_bounded_recovery_package_manifest",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dir878_timeout_recovery_20260916_v3\\manifest.json"
+    },
+    {
+      "actual_sha256": "5cccb178d1f55497cc80c46da0a66dd78423ad04e717fba0b38b928fec2dba80",
+      "expected_sha256": "5cccb178d1f55497cc80c46da0a66dd78423ad04e717fba0b38b928fec2dba80",
+      "name": "dir878_bounded_recovery_source_lock",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dir878_timeout_recovery_20260916_v3\\source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "8930be9bb79538e76d182d0a20572ac95b0ac87d387e4fc1a9678f00b1109302",
+      "expected_sha256": "8930be9bb79538e76d182d0a20572ac95b0ac87d387e4fc1a9678f00b1109302",
+      "name": "dir878_bounded_recovery_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dir878_timeout_recovery_20260916_v3\\README.md"
+    },
+    {
+      "actual_sha256": "703a5ade62de472274a9e5dc80d5bcf6943d662c0f31238efa867b57b1c4b7e0",
+      "expected_sha256": "703a5ade62de472274a9e5dc80d5bcf6943d662c0f31238efa867b57b1c4b7e0",
+      "name": "dir878_bounded_recovery_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dir878_timeout_recovery_20260916_v3\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "0d562cbc7639652401bad1c7ba25a22498d9566d25e1a507f86f533fbf816481",
+      "expected_sha256": "0d562cbc7639652401bad1c7ba25a22498d9566d25e1a507f86f533fbf816481",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v39",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v39\\reviewer_gap_closure_audit.json"
+    },
+    {
+      "actual_sha256": "f11d9869338d8750878de21f386ce492d70991b7768e71c628b31e5ca9084430",
+      "expected_sha256": "f11d9869338d8750878de21f386ce492d70991b7768e71c628b31e5ca9084430",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v39_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v39\\README.md"
+    },
+    {
+      "actual_sha256": "f29d5a44a9d5ee2bf2f04fb6ce577b2cd8a8e46fe25cf74b012896ae71a79af7",
+      "expected_sha256": "f29d5a44a9d5ee2bf2f04fb6ce577b2cd8a8e46fe25cf74b012896ae71a79af7",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v39_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v39\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "9de760fed14475e3801872f8e75ac951d7f31b348bfe3f384ca706db8bd0f7a3",
+      "expected_sha256": "9de760fed14475e3801872f8e75ac951d7f31b348bfe3f384ca706db8bd0f7a3",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v40",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v40\\reviewer_gap_closure_audit.json"
+    },
+    {
+      "actual_sha256": "5b874a5c3270c4148c17ff00ef688b35c07c2582f08e2652a31fa2ec81d107e3",
+      "expected_sha256": "5b874a5c3270c4148c17ff00ef688b35c07c2582f08e2652a31fa2ec81d107e3",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v40_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v40\\README.md"
+    },
+    {
+      "actual_sha256": "8e8ee172b64782cc9eabf6085f212e2612ffb23d7c18f819d5d331f744f0862a",
+      "expected_sha256": "8e8ee172b64782cc9eabf6085f212e2612ffb23d7c18f819d5d331f744f0862a",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v40_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v40\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "845e31770d38ab52d4ba8ee9da97e8a839a4c875f5effcfdfdf9abbcbd91d39c",
+      "expected_sha256": "845e31770d38ab52d4ba8ee9da97e8a839a4c875f5effcfdfdf9abbcbd91d39c",
+      "name": "historical_conditioned_recovery_audit",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_conditioned_recovery_20260916_v1\\audit\\summary.json"
+    },
+    {
+      "actual_sha256": "edef101c2d13b43151c728d4e1f347e4af2f8831050c00d7215fceeb4c70862c",
+      "expected_sha256": "edef101c2d13b43151c728d4e1f347e4af2f8831050c00d7215fceeb4c70862c",
+      "name": "historical_conditioned_recovery_result_dir878",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_conditioned_recovery_20260916_v1\\raw_run\\dir878_idx16\\results.jsonl"
+    },
+    {
+      "actual_sha256": "1646127d2317333e482d6c9d86dc6669d67bffa018bae110b5e788673128d93f",
+      "expected_sha256": "1646127d2317333e482d6c9d86dc6669d67bffa018bae110b5e788673128d93f",
+      "name": "historical_conditioned_recovery_result_ac15",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_conditioned_recovery_20260916_v1\\raw_run\\tenda_ac15_idx2\\results.jsonl"
+    },
+    {
+      "actual_sha256": "46b19c3ce95db87682f0f360a108439b34654f1a575264026e785cda624796ac",
+      "expected_sha256": "46b19c3ce95db87682f0f360a108439b34654f1a575264026e785cda624796ac",
+      "name": "historical_conditioned_recovery_result_ac18",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_conditioned_recovery_20260916_v1\\raw_run\\tenda_ac18_idx2\\results.jsonl"
+    },
+    {
+      "actual_sha256": "4e1775cf5608536d424459cb57671ade706c60888fea432cc56f6ae7ad1ce8b8",
+      "expected_sha256": "4e1775cf5608536d424459cb57671ade706c60888fea432cc56f6ae7ad1ce8b8",
+      "name": "historical_conditioned_recovery_execution_metadata",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_conditioned_recovery_20260916_v1\\execution_metadata.json"
+    },
+    {
+      "actual_sha256": "c406cca41f558f5ae37208b89e89f7153c2d28184c8d912663c69e6caa89455f",
+      "expected_sha256": "c406cca41f558f5ae37208b89e89f7153c2d28184c8d912663c69e6caa89455f",
+      "name": "historical_conditioned_recovery_commands",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_conditioned_recovery_20260916_v1\\commands.json"
+    },
+    {
+      "actual_sha256": "b0ad04525dce08db872c14020940bdc13619fc0ad1a5454263644f96d7a98a91",
+      "expected_sha256": "b0ad04525dce08db872c14020940bdc13619fc0ad1a5454263644f96d7a98a91",
+      "name": "historical_conditioned_recovery_package_manifest",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_conditioned_recovery_20260916_v1\\manifest.json"
+    },
+    {
+      "actual_sha256": "da031f932808b2a12f21ea3917b0994742cd3fb73851dcb787021935e13054d8",
+      "expected_sha256": "da031f932808b2a12f21ea3917b0994742cd3fb73851dcb787021935e13054d8",
+      "name": "historical_conditioned_recovery_source_lock",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_conditioned_recovery_20260916_v1\\source_dependency_manifest.json"
+    },
+    {
+      "actual_sha256": "5af16d225c758f93a7bf0ed0b1c7ed909016e0d7e5eb82233b52694664ecb15b",
+      "expected_sha256": "5af16d225c758f93a7bf0ed0b1c7ed909016e0d7e5eb82233b52694664ecb15b",
+      "name": "historical_conditioned_recovery_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_conditioned_recovery_20260916_v1\\README.md"
+    },
+    {
+      "actual_sha256": "6a14fa5f931c91ce13bb4ae2045125a2b537a6a5e27c64f6b9c3c5132ab58824",
+      "expected_sha256": "6a14fa5f931c91ce13bb4ae2045125a2b537a6a5e27c64f6b9c3c5132ab58824",
+      "name": "historical_conditioned_recovery_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_historical_conditioned_recovery_20260916_v1\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "1271a168fa31b6a7360af901d13110ef71c2321bebda718fa3b32b54d652fd5b",
+      "expected_sha256": "1271a168fa31b6a7360af901d13110ef71c2321bebda718fa3b32b54d652fd5b",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v41",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v41\\reviewer_gap_closure_audit.json"
+    },
+    {
+      "actual_sha256": "49c2ac3cc870b5d2f4b23758000995019d3188951e84a396d458cb7023ff2b83",
+      "expected_sha256": "49c2ac3cc870b5d2f4b23758000995019d3188951e84a396d458cb7023ff2b83",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v41_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v41\\README.md"
+    },
+    {
+      "actual_sha256": "c9607e6805fe655f7aced10faa9672e3bf5f5444f6a6f36bf9bd6722be00310c",
+      "expected_sha256": "c9607e6805fe655f7aced10faa9672e3bf5f5444f6a6f36bf9bd6722be00310c",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v41_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v41\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "2638816437d4da764d7e06fe4b7f60ed0484005c18e329caed62cc54aea9b1a8",
+      "expected_sha256": "2638816437d4da764d7e06fe4b7f60ed0484005c18e329caed62cc54aea9b1a8",
+      "name": "dynamic_validation_boundary_preflight_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dynamic_validation_boundary_20260916_v1\\preflight\\dynamic_validation_preflight_summary.json"
+    },
+    {
+      "actual_sha256": "630c29aba058e71db50179d84504ab9f0b8e096d58bfc7f4310d51e644781fc1",
+      "expected_sha256": "630c29aba058e71db50179d84504ab9f0b8e096d58bfc7f4310d51e644781fc1",
+      "name": "dynamic_validation_boundary_rootfs_smoke_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dynamic_validation_boundary_20260916_v1\\rootfs_smoke\\target_rootfs_smoke_summary.json"
+    },
+    {
+      "actual_sha256": "aea3f620d55c53e93b0a1bdc5d3cdbe9e4c1e96369bb7ab9c24095b1c5c4a623",
+      "expected_sha256": "aea3f620d55c53e93b0a1bdc5d3cdbe9e4c1e96369bb7ab9c24095b1c5c4a623",
+      "name": "dynamic_validation_boundary_loader_smoke_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dynamic_validation_boundary_20260916_v1\\loader_smoke\\target_loader_smoke_summary.json"
+    },
+    {
+      "actual_sha256": "879f86a1b7039d89e5674e39f7c1412372bb8ac5044fd2d9c8d9381978aca902",
+      "expected_sha256": "879f86a1b7039d89e5674e39f7c1412372bb8ac5044fd2d9c8d9381978aca902",
+      "name": "dynamic_validation_boundary_execution_metadata",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dynamic_validation_boundary_20260916_v1\\execution_metadata.json"
+    },
+    {
+      "actual_sha256": "e77b7a6db3ded7fc14c4e126a8fc75edc3a0d60a2833fc1585491bb0edbd62e9",
+      "expected_sha256": "e77b7a6db3ded7fc14c4e126a8fc75edc3a0d60a2833fc1585491bb0edbd62e9",
+      "name": "dynamic_validation_boundary_package_manifest",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dynamic_validation_boundary_20260916_v1\\manifest.json"
+    },
+    {
+      "actual_sha256": "6adeb969007b96487f71666b89cc7b9c054e4074b3a01f717f81b01d4fadc91e",
+      "expected_sha256": "6adeb969007b96487f71666b89cc7b9c054e4074b3a01f717f81b01d4fadc91e",
+      "name": "dynamic_validation_boundary_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dynamic_validation_boundary_20260916_v1\\README.md"
+    },
+    {
+      "actual_sha256": "9a8cacdb4f9f49fea84fcf997e05bf3d61497c4b8c1010d1ae7d3b068b78ea48",
+      "expected_sha256": "9a8cacdb4f9f49fea84fcf997e05bf3d61497c4b8c1010d1ae7d3b068b78ea48",
+      "name": "dynamic_validation_boundary_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dynamic_validation_boundary_20260916_v1\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "f9c8e60765c2d4b196334b8869c6d12a7bdabb5d5909bb1453dc3065d04d214d",
+      "expected_sha256": "f9c8e60765c2d4b196334b8869c6d12a7bdabb5d5909bb1453dc3065d04d214d",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v42",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v42\\reviewer_gap_closure_audit.json"
+    },
+    {
+      "actual_sha256": "c2c8928ce2b1ca14ca26a4339a8d5a1b44f993c464a88de753af8fff1a627f21",
+      "expected_sha256": "c2c8928ce2b1ca14ca26a4339a8d5a1b44f993c464a88de753af8fff1a627f21",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v42_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v42\\README.md"
+    },
+    {
+      "actual_sha256": "d62df8ef937d67f53e5169e1d81c325c93e6d47193818414ab43c06486cf8d79",
+      "expected_sha256": "d62df8ef937d67f53e5169e1d81c325c93e6d47193818414ab43c06486cf8d79",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v42_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v42\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "18fe09aa8e2221cda636d6b4cd05741da80467b41dba665c1b66ce70986ea7c0",
+      "expected_sha256": "18fe09aa8e2221cda636d6b4cd05741da80467b41dba665c1b66ce70986ea7c0",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v43",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v43\\reviewer_gap_closure_audit.json"
+    },
+    {
+      "actual_sha256": "05e712fc4c33f2a301591e8a6a9d613bc7fac32b81f05c73a9ecfed5014c19f7",
+      "expected_sha256": "05e712fc4c33f2a301591e8a6a9d613bc7fac32b81f05c73a9ecfed5014c19f7",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v43_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v43\\README.md"
+    },
+    {
+      "actual_sha256": "802008fdf85a632bb9127dd657cb941f5124044eb12505ffcf2cf7a18512612c",
+      "expected_sha256": "802008fdf85a632bb9127dd657cb941f5124044eb12505ffcf2cf7a18512612c",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v43_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v43\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "e29089206525fa661b54cc8f541d495c37f459da3c76800ac365faa401a27d6f",
+      "expected_sha256": "e29089206525fa661b54cc8f541d495c37f459da3c76800ac365faa401a27d6f",
+      "name": "threat_matrix_boundary_cases",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_threat_matrix_boundary_20260916_v1\\threat_matrix_executable_cases.csv"
+    },
+    {
+      "actual_sha256": "1954632f4c69b6f9cf8addcb19e01b94632c49f3b07692c10d5333c7f209edbc",
+      "expected_sha256": "1954632f4c69b6f9cf8addcb19e01b94632c49f3b07692c10d5333c7f209edbc",
+      "name": "threat_matrix_boundary_report",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_threat_matrix_boundary_20260916_v1\\threat_matrix_executable_cases.md"
+    },
+    {
+      "actual_sha256": "b74481c75ec3fa5537df6e460fbd2976bfff45c167036029e5b4ca5e00ff334d",
+      "expected_sha256": "b74481c75ec3fa5537df6e460fbd2976bfff45c167036029e5b4ca5e00ff334d",
+      "name": "threat_matrix_boundary_summary",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_threat_matrix_boundary_20260916_v1\\threat_matrix_executable_summary.json"
+    },
+    {
+      "actual_sha256": "89706ca389e46a52561fe8460643956983fc833600aa16f47820c612ebb71be6",
+      "expected_sha256": "89706ca389e46a52561fe8460643956983fc833600aa16f47820c612ebb71be6",
+      "name": "threat_matrix_boundary_execution_metadata",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_threat_matrix_boundary_20260916_v1\\execution_metadata.json"
+    },
+    {
+      "actual_sha256": "fa1b92f1426f1dcbe6432520a5517b6a1ec1fa46bd4589ec95c3dd95222cad5a",
+      "expected_sha256": "fa1b92f1426f1dcbe6432520a5517b6a1ec1fa46bd4589ec95c3dd95222cad5a",
+      "name": "threat_matrix_boundary_source",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_threat_matrix_boundary_20260916_v1\\source\\run_threat_matrix_boundary_suite.py"
+    },
+    {
+      "actual_sha256": "cf8bb0e0527c0a45405f25faa1ab53201ff0e4f66c3961d14d2fbe4b860fec13",
+      "expected_sha256": "cf8bb0e0527c0a45405f25faa1ab53201ff0e4f66c3961d14d2fbe4b860fec13",
+      "name": "threat_matrix_boundary_package_manifest",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_threat_matrix_boundary_20260916_v1\\manifest.json"
+    },
+    {
+      "actual_sha256": "941343d56a6e3f7ba1d91a6ad944fdabc22409d0856ea22dd135115ef60b73d3",
+      "expected_sha256": "941343d56a6e3f7ba1d91a6ad944fdabc22409d0856ea22dd135115ef60b73d3",
+      "name": "threat_matrix_boundary_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_threat_matrix_boundary_20260916_v1\\README.md"
+    },
+    {
+      "actual_sha256": "6eec5633125effbfdfb94f12dce516527aa65287477bd7dce1135c93923869ed",
+      "expected_sha256": "6eec5633125effbfdfb94f12dce516527aa65287477bd7dce1135c93923869ed",
+      "name": "threat_matrix_boundary_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_threat_matrix_boundary_20260916_v1\\SHA256SUMS"
+    },
+    {
+      "actual_sha256": "f71246105149819e1599b4c79dfa151eb5636bb535ae5e800c2e50953b5bd616",
+      "expected_sha256": "f71246105149819e1599b4c79dfa151eb5636bb535ae5e800c2e50953b5bd616",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v44",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v44\\reviewer_gap_closure_audit.json"
+    },
+    {
+      "actual_sha256": "b0fa9aac90ab8665b11ff333c3d23a6dfb7da3273b46f658faeb432b8f7a2f5b",
+      "expected_sha256": "b0fa9aac90ab8665b11ff333c3d23a6dfb7da3273b46f658faeb432b8f7a2f5b",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v44_readme",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v44\\README.md"
+    },
+    {
+      "actual_sha256": "147141f3d3827e449646df779b710c5a885062fda2d3ab37007aacd171cf924e",
+      "expected_sha256": "147141f3d3827e449646df779b710c5a885062fda2d3ab37007aacd171cf924e",
+      "name": "iceccs_reviewer_gap_closure_audit_latest_v44_sums",
+      "pass": true,
+      "path": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_reviewer_gap_closure_audit_20260916_v44\\SHA256SUMS"
+    }
+  ],
+  "failed_count": 0,
+  "failures": [],
+  "manifest": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_evidence_completion_20260915\\manifest.json",
+  "pass": true,
+  "schema": "tsds-iceccs-evidence-completion-verification-v1"
+}

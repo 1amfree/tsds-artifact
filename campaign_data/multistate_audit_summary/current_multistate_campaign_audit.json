@@ -1,0 +1,97 @@
+{
+  "admissible_claim_counts": {
+    "direct_observed_prefix_vector_sat": 5,
+    "direct_sink_byte_vector_sat": 36,
+    "explicit_residual_obligation": 326,
+    "static_fixed_command_reduction": 120,
+    "static_source_slot_obligation": 31
+  },
+  "campaign_dir": "experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916",
+  "claim_boundary": "This audit checks record conservation, matrix-ledger integrity, and the bounded multi-state negative gate. It does not validate solver semantics, source realizability, or device exploitability.",
+  "evidence_provenance_counts": {
+    "DIRECT_SINK_BYTE": 41,
+    "RESIDUAL": 326,
+    "STATIC_SOURCE_INFERENCE": 31,
+    "STATIC_WARNING_REDUCTION": 120
+  },
+  "issues": [],
+  "matrix_cell_count": 704,
+  "matrix_cell_decisions": {
+    "INCONCLUSIVE": 279,
+    "MATRIX_UNSAT": 150,
+    "VECTOR_SAT": 275
+  },
+  "matrix_profile_count": 64,
+  "matrix_profile_issues": [],
+  "matrix_profile_verdicts": {
+    "RESIDUAL": 23,
+    "VECTOR_SAT": 41
+  },
+  "multi_state": {
+    "aggregate_classes": {
+      "all_collected_inconclusive": 17,
+      "all_collected_no_modeled_source": 31,
+      "all_collected_nonpositive_mixed": 41,
+      "bounded_incomplete": 63,
+      "exists_positive": 41,
+      "missing": 325
+    },
+    "candidate_wide_negative": 0,
+    "capture_count_distribution": {
+      "0": 325,
+      "1": 2,
+      "10": 14,
+      "11": 1,
+      "12": 3,
+      "15": 6,
+      "18": 2,
+      "19": 2,
+      "2": 7,
+      "20": 4,
+      "21": 3,
+      "24": 1,
+      "25": 1,
+      "27": 1,
+      "3": 5,
+      "30": 3,
+      "32": 2,
+      "4": 2,
+      "45": 1,
+      "5": 66,
+      "50": 4,
+      "6": 15,
+      "60": 1,
+      "7": 11,
+      "8": 27,
+      "9": 9
+    },
+    "collection_complete": 124,
+    "collection_incomplete": 69,
+    "primary_selection_blocked": 129,
+    "records_with_audit": 193,
+    "sink_reached_records": 193
+  },
+  "record_count": 518,
+  "schema": "tsds-current-multistate-campaign-audit-v1",
+  "status_counts": {
+    "crashed": 3,
+    "residual": 157,
+    "static_source_inference": 31,
+    "static_warning_reduction": 120,
+    "timeout": 88,
+    "unreachable": 78,
+    "vulnerable": 41
+  },
+  "target_count": 8,
+  "target_record_counts": {
+    "asus_rt_be57": 19,
+    "dir878": 49,
+    "r6400v2": 75,
+    "r7000": 157,
+    "tenda_ac15": 64,
+    "tenda_ac18": 54,
+    "tenda_w20e": 21,
+    "xr300": 79
+  },
+  "valid": true
+}

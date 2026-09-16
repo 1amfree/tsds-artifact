@@ -1,0 +1,18 @@
+{
+  "closures": [
+    {
+      "sink": {
+        "function": "system",
+        "ins_addr": "0x401617",
+        "string": "system(<symbolic-command>)"
+      },
+      "trace": [
+        {
+          "function": "tsds_case_00",
+          "ins_addr": "0x4015be",
+          "string": "tsds_case_00(<symbolic-input>)"
+        }
+      ]
+    }
+  ]
+}

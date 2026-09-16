@@ -1,0 +1,40 @@
+{
+  "claim_boundary": "Finite replay of serialized grammar-complete witnesses from the current eight-target TSDS ledger. Commands are restricted to the existing inert template allowlist, run under empty environment and isolated temporary directories. This calibrates shell syntax and interface return behavior; it does not establish original-program source realizability, firmware precision/recall, human ground truth, or device-level exploitability.",
+  "controlled_offset_subset_failures": 0,
+  "current_record_count": 518,
+  "direct_positive_record_count": 41,
+  "input_dir": "/home/ubuntu/work/sanitizer/experiment_reports/full_firmware_campaign_current_tsds_multistate_full_20260916",
+  "input_file_sha256": {
+    "asus_rt_be57.results.jsonl": "63740fb65cdb965af3a6a8c5a7211d91c486783ad39e1c705254860dc834a602",
+    "dir878.results.jsonl": "ea59b376bb0286f280ddb6befb2b92e9ac211c19f849326585680a98d9290ce1",
+    "r6400v2.results.jsonl": "76d607367cdc2c7814ce8996827a428da4a4ba69400951912d0c23de80b9229f",
+    "r7000.results.jsonl": "f441f832cf25641e5eafd920e650a665640d81a0895166c4a13fc7e4485d612d",
+    "tenda_ac15.results.jsonl": "907fc9c0e9b0ff46651d8ac44207003fdfc8c0b8c8ca86d80613f8dfa79bf535",
+    "tenda_ac18.results.jsonl": "b1573bec90fc2246ae8e73f4726874ad394a3219cc6dab26d51239f67145d99d",
+    "tenda_w20e.results.jsonl": "57e2087e8addb7eb0b4e65628acaaf8839f2bf60183e85f85e8e3d52ba77593a",
+    "xr300.results.jsonl": "1388f8198197d9fe52f8c0bf774f57155054e74027baa7259a33ee825d6f1295"
+  },
+  "schema": "tsds-current-campaign-witness-replay-v1",
+  "shells": {
+    "/usr/bin/bash": {
+      "execution_admitted": 22,
+      "execution_not_run": 155,
+      "execution_pass": 10,
+      "safety_gate_pass": 22,
+      "syntax_pass": 177,
+      "unexpected_files": 0,
+      "unique_witnesses": 177
+    },
+    "/usr/bin/dash": {
+      "execution_admitted": 22,
+      "execution_not_run": 155,
+      "execution_pass": 10,
+      "safety_gate_pass": 22,
+      "syntax_pass": 177,
+      "unexpected_files": 0,
+      "unique_witnesses": 177
+    }
+  },
+  "unique_rendered_witnesses": 177,
+  "vector_sat_entries": 275
+}

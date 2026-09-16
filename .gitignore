@@ -1,0 +1,14 @@
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE configs
+.idea/
+.vscode/
+*.swp
+*~

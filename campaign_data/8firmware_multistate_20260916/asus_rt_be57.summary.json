@@ -1,0 +1,284 @@
+{
+  "avg_closure_time_sec": 26.3243,
+  "avg_engine_steps": 44.79,
+  "avg_matrix_time_sec": 0.8988,
+  "avg_sanitizer_coverage": 0.1429,
+  "binary_path": "/home/ubuntu/work/sanitizer/ASUS_RT-BE57/httpd",
+  "env_fixture_summary": null,
+  "env_fixture_usage": null,
+  "evidence_cache_path": null,
+  "evidence_contract_ledger": {
+    "admissible_claims": {
+      "direct_sink_byte_vector_sat": 3,
+      "explicit_residual_obligation": 16
+    },
+    "conditioned_claims": {},
+    "contract_downgraded": 0,
+    "contract_valid": 19,
+    "contract_violations": {},
+    "fixture_conditioned_claims": 0,
+    "negative_confirmation_required": 0,
+    "primary_aggregate_eligible": 19,
+    "provenance": {
+      "DIRECT_SINK_BYTE": 3,
+      "RESIDUAL": 16
+    },
+    "records": 19,
+    "schema": "tsds-evidence-contract-aggregate-v2",
+    "verdicts": {
+      "RESIDUAL": 16,
+      "VECTOR_SAT": 3
+    }
+  },
+  "features": {
+    "arch_seeding": true,
+    "byte_provenance": true,
+    "constraint_projection_cache_size": 2048,
+    "emit_provenance_graph": false,
+    "environment_fixture": false,
+    "environment_fixture_digest": "52a76f5de8b7ca65",
+    "evidence_aware_scheduler": true,
+    "execution_backend": "forkserver",
+    "firmware_summaries": true,
+    "loop_semantic_bucket_limit": 1,
+    "loop_semantic_min_states": 50,
+    "loop_semantic_min_visits": 3,
+    "loop_semantic_saturation_limit": 3,
+    "loop_semantic_summary": true,
+    "loop_semantic_weak_static": false,
+    "multi_state_audit": true,
+    "multi_state_settle_steps": 8,
+    "online_refinement_candidates": 3,
+    "online_refinement_rounds": 1,
+    "refinement_bundle": false,
+    "resource_limit_enforcement": "not_requested",
+    "scheduler_active_cap_range": [
+      20,
+      120
+    ],
+    "scheduler_base_active_cap": 60,
+    "scheduler_constraint_soft_limit": 800,
+    "scheduler_escape_quota": 4,
+    "semantic_frontier": true,
+    "shell_lexical_gate": "tsds-shell-lexical-gate-v1",
+    "sink_corridor": true,
+    "sink_semantic_plugins": true,
+    "solver_query_export": false,
+    "source_dead_state_cap": 20,
+    "source_liveness_limit": 4,
+    "source_projected_constraints": true,
+    "static_dynamic_reconciliation": true,
+    "subprocess_memory_limit_mib": 0,
+    "summary_database": false,
+    "threat_matrix": true,
+    "weak_evidence_equiv_limit": 2
+  },
+  "json_path": "/home/ubuntu/work/sanitizer/ASUS_RT-BE57/result/cmdi_results.json",
+  "mode": "full",
+  "model_gap_request_ledger": {
+    "kinds": {
+      "config_key": 4
+    },
+    "reasons": {
+      "mango_possible_input": 4
+    },
+    "top_keys": {
+      "config_key:apg0_ssid": 1,
+      "config_key:lan_ifname": 1,
+      "config_key:lan_ipaddr": 1,
+      "config_key:wl_unit": 1
+    },
+    "total": 4
+  },
+  "path_control_ledger": {
+    "budget_pressure": {
+      "not_applicable": 11,
+      "residual_risk": 4,
+      "resolved": 3,
+      "semantically_bounded": 1
+    },
+    "classes": {
+      "direct_sink_evidence": 3,
+      "residual_budget_stop": 4,
+      "semantic_saturation": 1,
+      "unclassified": 11
+    },
+    "events": {
+      "seed_equivalence": 2,
+      "semantic_frontier": 1,
+      "source_liveness": 1
+    },
+    "totals": {
+      "path_control_pruned_states": 36,
+      "path_control_seed_pruned": 3,
+      "path_control_semantic_pruned_states": 4,
+      "path_control_source_liveness_cuts": 4
+    }
+  },
+  "refinement_bundle": null,
+  "refinement_bundle_path": null,
+  "report_file": "/home/ubuntu/work/sanitizer/experiment_reports/full_firmware_campaign_current_tsds_multistate_full_20260916/asus_rt_be57.report.md",
+  "residual_diagnosis_ledger": {
+    "classes": {
+      "bounded_multi_state_collection_incomplete": 1,
+      "bounded_multi_state_no_admissible_primary": 7,
+      "evidence_contract_residual": 3,
+      "path_explosion_residual": 4,
+      "weak_candidate_unreached": 1
+    },
+    "next_actions": {
+      "add a targeted parser or wrapper summary if the trace repeats around one helper": 4,
+      "increase max steps or closure timeout for this closure": 4,
+      "inspect contract violations and vector decisions": 11,
+      "inspect loop-semantic and frontier-pruning events": 4,
+      "keep the record outside SV-SAT, M-Filt, and NMS aggregates": 11,
+      "manually inspect the static closure before increasing symbolic budget": 1,
+      "prioritize lower than strong-source unreachable closures": 1,
+      "rerun unknown quote contexts or pruned negative paths conservatively": 11
+    },
+    "severities": {
+      "high": 15,
+      "medium": 1
+    },
+    "total": 16
+  },
+  "residual_recovery_plan_ledger": {
+    "config_overrides": {
+      "closure_timeout=180": 4,
+      "loop_semantic_saturation_limit=5": 4,
+      "loop_semantic_weak_static=True": 1,
+      "max_steps=1000": 4,
+      "semantic_frontier_bucket_limit=3": 4
+    },
+    "model_gaps": {
+      "loop_or_parser_summary": 4,
+      "sink_distance_model": 4
+    },
+    "priorities": {
+      "high": 4,
+      "low": 1,
+      "medium": 11
+    },
+    "strategies": {
+      "manual_review": 11,
+      "semantic_path_refinement": 4,
+      "static_candidate_triage": 1
+    },
+    "total": 16
+  },
+  "residual_refinement_jsonl_path": null,
+  "residual_refinement_summary": {
+    "avg_elapsed_sec": 0.0,
+    "changed": 0,
+    "new_statuses": {},
+    "old_statuses": {},
+    "priorities": {},
+    "records": 0,
+    "resolved": 0,
+    "strategies": {},
+    "unchanged": 0
+  },
+  "resource_limit_enforcement_ledger": {
+    "all_executed_workers_enforced": false,
+    "claim_boundary": "This ledger reports recorded worker resource-limit enforcement. It does not establish semantic completeness or exploitability.",
+    "configured_limit_mib": 0,
+    "enforcement_counts": {
+      "not_requested": 19
+    },
+    "executed_records": 19,
+    "records_with_limit_enforced": 0,
+    "records_with_limit_requested": 0,
+    "records_with_unavailable_worker_metrics": 0,
+    "resource_limit_hits": 0,
+    "schema": "tsds-worker-memory-limit-ledger-v1"
+  },
+  "results": {
+    "blocked_vector_categories": {
+      "Background Execution": 1,
+      "Bypass Spaces": 1,
+      "Command Chaining": 1,
+      "Command Substitution": 1,
+      "Piping": 1,
+      "Redirection": 1,
+      "Variable Expansion": 1
+    },
+    "bypass_vector_categories": {
+      "Background Execution": 3,
+      "Bypass Spaces": 3,
+      "Command Chaining": 3,
+      "Command Substitution": 3,
+      "Piping": 3,
+      "Redirection": 3,
+      "Variable Expansion": 3
+    },
+    "crashed": 0,
+    "elapsed_sec_count": 19,
+    "elapsed_sec_sum": 500.1613,
+    "empty_trace": 0,
+    "engine_steps_count": 19,
+    "engine_steps_sum": 851,
+    "engine_stop_reasons": {
+      "active_empty": 17,
+      "guided_stagnation_saturated": 1,
+      "source_liveness_saturated": 1
+    },
+    "eval_error": 0,
+    "evidence_cache_hits": 0,
+    "evidence_cache_updates": 0,
+    "filtered": 0,
+    "inconclusive_vector_categories": {
+      "Background Execution": 3,
+      "Bypass Spaces": 3,
+      "Command Chaining": 3,
+      "Command Substitution": 3,
+      "Piping": 3,
+      "Redirection": 3,
+      "Variable Expansion": 3
+    },
+    "invalid_closure": 0,
+    "loop_semantic_adaptive_caps_sum": 0,
+    "loop_semantic_cap_pruned_sum": 0,
+    "loop_semantic_max_buckets": 0,
+    "loop_semantic_pruned_sum": 0,
+    "loop_semantic_rounds_sum": 0,
+    "loop_semantic_saturated_keys_sum": 0,
+    "matrix_elapsed_sec_count": 7,
+    "matrix_elapsed_sec_sum": 6.2913,
+    "matrix_fast_all_secure": 1,
+    "matrix_solver_queries_sum": 0,
+    "memoized_closures": 0,
+    "no_taint_sink": 0,
+    "partial_vulnerable": 0,
+    "post_sink_delay_slot_captures": 0,
+    "residual": 11,
+    "sanitizer_coverage_count": 7,
+    "sanitizer_coverage_sum": 1.0,
+    "sanitizer_gap_strengths": {
+      "broadly_bypassable": 3,
+      "fully_filtered": 1,
+      "unresolved_filter": 3
+    },
+    "secure_vectors": 11,
+    "seed_states_pruned_sum": 3,
+    "seed_states_tried_sum": 96,
+    "semantic_frontier_max_buckets": 20,
+    "semantic_frontier_pruned_sum": 4,
+    "semantic_frontier_rounds_sum": 4,
+    "skipped_dup": 13,
+    "source_dead_cap_hits_sum": 4,
+    "source_liveness_cuts": 1,
+    "state_error": 0,
+    "static_source_inference": 0,
+    "static_warning_reduction": 0,
+    "timeout": 0,
+    "unreachable": 5,
+    "vulnerable": 3,
+    "vulnerable_vectors": 33
+  },
+  "results_jsonl_path": "/home/ubuntu/work/sanitizer/experiment_reports/full_firmware_campaign_current_tsds_multistate_full_20260916/asus_rt_be57.results.jsonl",
+  "summary_json_path": "/home/ubuntu/work/sanitizer/experiment_reports/full_firmware_campaign_current_tsds_multistate_full_20260916/asus_rt_be57.summary.json",
+  "total_closures": 32,
+  "unique_pairs_analyzed": 19,
+  "unique_pairs_expected": 19,
+  "wall_time_sec": 502.4755
+}

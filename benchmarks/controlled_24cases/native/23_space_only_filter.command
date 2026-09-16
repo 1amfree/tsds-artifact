@@ -1,0 +1,3 @@
+LEN=31
+echo SAFE:  "TSDS_TRIGGER_PATH"
+---

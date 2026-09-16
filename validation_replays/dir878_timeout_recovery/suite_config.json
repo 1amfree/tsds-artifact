@@ -1,0 +1,12 @@
+{
+  "schema": "tsds-multistate-recovery-suite-config-v1",
+  "baseline_campaign": "experiment_reports/full_firmware_campaign_current_tsds_multistate_full_20260916",
+  "claim_boundary": "Finite identity-bound higher-budget replay of one previously missing current-campaign receipt. The result supports receipt recovery and bounded non-escalation accounting only; it does not establish exhaustive sink-state coverage, solver soundness, source realizability, firmware ground truth, or device exploitability.",
+  "cases": [
+    {
+      "target": "dir878",
+      "closure_idx": 2,
+      "recovery_dir": "paper_work/iceccs_dir878_idx2_recovery_20260916_v1/raw"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+	Command being timed: "/home/ubuntu/work/sanitizer/operation-mango-public/.venv/bin/python /home/ubuntu/work/sanitizer/Taint_demo/sanitizer_demo/advanced_sanitizer_evaluator.py /home/ubuntu/work/sanitizer/R7000/httpd /home/ubuntu/work/sanitizer/R7000/R7000_result/cmdi_results.json --engine-timeout 45 --max-steps 500 --closure-timeout 90 --subprocess-timeout 150 --subprocess-memory-limit-mib 0 --execution-backend forkserver --multi-state-audit --scheduler-base-active-cap 60 --scheduler-min-active-cap 20 --scheduler-max-active-cap 120 --scheduler-constraint-soft-limit 800 --scheduler-escape-quota 4 --constraint-projection-cache-size 2048 --online-refinement-rounds 1 --online-refinement-candidates 3 --summary-json /home/ubuntu/work/sanitizer/experiment_reports/full_firmware_campaign_current_tsds_multistate_full_20260916/r7000.summary.json --results-jsonl /home/ubuntu/work/sanitizer/experiment_reports/full_firmware_campaign_current_tsds_multistate_full_20260916/r7000.results.jsonl --report-file /home/ubuntu/work/sanitizer/experiment_reports/full_firmware_campaign_current_tsds_multistate_full_20260916/r7000.report.md --no-evidence-cache"
+	User time (seconds): 5639.63
+	System time (seconds): 220.43
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:37:22
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3654056
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 3
+	Minor (reclaiming a frame) page faults: 31231437
+	Voluntary context switches: 440222
+	Involuntary context switches: 25955
+	Swaps: 0
+	File system inputs: 560
+	File system outputs: 20208
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

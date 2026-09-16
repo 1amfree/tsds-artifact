@@ -1,0 +1,5 @@
+{
+  "schema": "tsds-high-budget-incomplete-replay-suite-config-v1",
+  "selection": "multi_state_audit.collection_complete == false",
+  "claim_boundary": "Finite identity-bound higher-budget replay of one explicitly incomplete current record. Outcome changes are reported as observations only; no residual is promoted and no candidate-wide negative conclusion is inferred."
+}

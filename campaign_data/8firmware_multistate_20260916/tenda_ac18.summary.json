@@ -1,0 +1,290 @@
+{
+  "avg_closure_time_sec": 38.89,
+  "avg_engine_steps": 113.44,
+  "avg_matrix_time_sec": 0.7243,
+  "avg_sanitizer_coverage": 0.2424,
+  "binary_path": "/home/ubuntu/work/sanitizer/Tenda_AC18/httpd",
+  "env_fixture_summary": null,
+  "env_fixture_usage": null,
+  "evidence_cache_path": null,
+  "evidence_contract_ledger": {
+    "admissible_claims": {
+      "direct_sink_byte_vector_sat": 3,
+      "explicit_residual_obligation": 37,
+      "static_source_slot_obligation": 14
+    },
+    "conditioned_claims": {},
+    "contract_downgraded": 0,
+    "contract_valid": 54,
+    "contract_violations": {},
+    "fixture_conditioned_claims": 0,
+    "negative_confirmation_required": 0,
+    "primary_aggregate_eligible": 54,
+    "provenance": {
+      "DIRECT_SINK_BYTE": 3,
+      "RESIDUAL": 37,
+      "STATIC_SOURCE_INFERENCE": 14
+    },
+    "records": 54,
+    "schema": "tsds-evidence-contract-aggregate-v2",
+    "verdicts": {
+      "RESIDUAL": 37,
+      "STATIC_SOURCE_INFERENCE": 14,
+      "VECTOR_SAT": 3
+    }
+  },
+  "features": {
+    "arch_seeding": true,
+    "byte_provenance": true,
+    "constraint_projection_cache_size": 2048,
+    "emit_provenance_graph": false,
+    "environment_fixture": false,
+    "environment_fixture_digest": "52a76f5de8b7ca65",
+    "evidence_aware_scheduler": true,
+    "execution_backend": "forkserver",
+    "firmware_summaries": true,
+    "loop_semantic_bucket_limit": 1,
+    "loop_semantic_min_states": 50,
+    "loop_semantic_min_visits": 3,
+    "loop_semantic_saturation_limit": 3,
+    "loop_semantic_summary": true,
+    "loop_semantic_weak_static": false,
+    "multi_state_audit": true,
+    "multi_state_settle_steps": 8,
+    "online_refinement_candidates": 3,
+    "online_refinement_rounds": 1,
+    "refinement_bundle": false,
+    "resource_limit_enforcement": "not_requested",
+    "scheduler_active_cap_range": [
+      20,
+      120
+    ],
+    "scheduler_base_active_cap": 60,
+    "scheduler_constraint_soft_limit": 800,
+    "scheduler_escape_quota": 4,
+    "semantic_frontier": true,
+    "shell_lexical_gate": "tsds-shell-lexical-gate-v1",
+    "sink_corridor": true,
+    "sink_semantic_plugins": true,
+    "solver_query_export": false,
+    "source_dead_state_cap": 20,
+    "source_liveness_limit": 4,
+    "source_projected_constraints": true,
+    "static_dynamic_reconciliation": true,
+    "subprocess_memory_limit_mib": 0,
+    "summary_database": false,
+    "threat_matrix": true,
+    "weak_evidence_equiv_limit": 2
+  },
+  "json_path": "/home/ubuntu/work/sanitizer/Tenda_AC18/results/cmdi_results.json",
+  "mode": "full",
+  "model_gap_request_ledger": {
+    "kinds": {
+      "config_key": 107,
+      "file": 2,
+      "web": 33
+    },
+    "reasons": {
+      "mango_likely_input": 30,
+      "mango_possible_input": 52,
+      "trace_expression_token": 29,
+      "trace_uses_config_api": 12,
+      "trace_uses_web_parser": 19
+    },
+    "top_keys": {
+      "config_key:formSetFirewallCfg": 12,
+      "config_key:lan.gst.1.ip": 2,
+      "config_key:lan.ip": 26,
+      "config_key:lan.mask": 24,
+      "config_key:security.ddos.map": 12,
+      "config_key:security.ipop.map": 12,
+      "config_key:usb.samba.enable": 2,
+      "config_key:usb.samba.guest.user": 3,
+      "config_key:wans.flag": 4,
+      "config_key:wl0_ifname": 2,
+      "web:formSetFirewallCfg": 12,
+      "web:lan.webport": 12
+    },
+    "total": 142
+  },
+  "path_control_ledger": {
+    "budget_pressure": {
+      "not_applicable": 40,
+      "residual_risk": 11,
+      "resolved": 3
+    },
+    "classes": {
+      "direct_sink_evidence": 3,
+      "residual_budget_stop": 11,
+      "unclassified": 40
+    },
+    "events": {
+      "seed_equivalence": 16,
+      "semantic_frontier": 19
+    },
+    "totals": {
+      "path_control_pruned_states": 1019,
+      "path_control_seed_pruned": 63,
+      "path_control_semantic_pruned_states": 932,
+      "path_control_source_liveness_cuts": 0
+    }
+  },
+  "refinement_bundle": null,
+  "refinement_bundle_path": null,
+  "report_file": "/home/ubuntu/work/sanitizer/experiment_reports/full_firmware_campaign_current_tsds_multistate_full_20260916/tenda_ac18.report.md",
+  "residual_diagnosis_ledger": {
+    "classes": {
+      "bounded_multi_state_no_admissible_primary": 32,
+      "path_explosion_residual": 4,
+      "static_source_inference_unconfirmed": 14,
+      "time_budget_exhaustion": 1
+    },
+    "next_actions": {
+      "add a targeted parser or wrapper summary if the trace repeats around one helper": 4,
+      "do not aggregate this record as SV-SAT or NMS": 14,
+      "enable evidence cache and same-run memoization": 1,
+      "increase max steps or closure timeout for this closure": 4,
+      "inspect contract violations and vector decisions": 32,
+      "inspect loop-semantic and frontier-pruning events": 4,
+      "inspect missing wrapper, parser, and environment summaries": 14,
+      "inspect path-control events for repeated frontier classes": 1,
+      "keep the record outside SV-SAT, M-Filt, and NMS aggregates": 32,
+      "replay with a larger reachability budget": 14,
+      "rerun unknown quote contexts or pruned negative paths conservatively": 32,
+      "rerun with a larger closure/subprocess timeout": 1
+    },
+    "severities": {
+      "high": 51
+    },
+    "total": 51
+  },
+  "residual_recovery_plan_ledger": {
+    "config_overrides": {
+      "closure_timeout=180": 10,
+      "engine_timeout=90": 6,
+      "loop_semantic_saturation_limit=5": 4,
+      "max_steps=1000": 10,
+      "semantic_frontier_bucket_limit=3": 4,
+      "subprocess_timeout=240": 6
+    },
+    "model_gaps": {
+      "loop_or_parser_summary": 4,
+      "sink_distance_model": 4
+    },
+    "priorities": {
+      "high": 10,
+      "medium": 41
+    },
+    "strategies": {
+      "budget_extension_rerun": 6,
+      "manual_review": 41,
+      "semantic_path_refinement": 4
+    },
+    "total": 51
+  },
+  "residual_refinement_jsonl_path": null,
+  "residual_refinement_summary": {
+    "avg_elapsed_sec": 0.0,
+    "changed": 0,
+    "new_statuses": {},
+    "old_statuses": {},
+    "priorities": {},
+    "records": 0,
+    "resolved": 0,
+    "strategies": {},
+    "unchanged": 0
+  },
+  "resource_limit_enforcement_ledger": {
+    "all_executed_workers_enforced": false,
+    "claim_boundary": "This ledger reports recorded worker resource-limit enforcement. It does not establish semantic completeness or exploitability.",
+    "configured_limit_mib": 0,
+    "enforcement_counts": {
+      "not_requested": 54
+    },
+    "executed_records": 54,
+    "records_with_limit_enforced": 0,
+    "records_with_limit_requested": 0,
+    "records_with_unavailable_worker_metrics": 0,
+    "resource_limit_hits": 0,
+    "schema": "tsds-worker-memory-limit-ledger-v1"
+  },
+  "results": {
+    "blocked_vector_categories": {
+      "Background Execution": 1,
+      "Bypass Spaces": 1,
+      "Command Chaining": 1,
+      "Piping": 1,
+      "Redirection": 1
+    },
+    "bypass_vector_categories": {
+      "Background Execution": 2,
+      "Bypass Spaces": 2,
+      "Command Chaining": 2,
+      "Command Substitution": 3,
+      "Piping": 2,
+      "Redirection": 2,
+      "Variable Expansion": 3
+    },
+    "crashed": 0,
+    "elapsed_sec_count": 54,
+    "elapsed_sec_sum": 2100.061,
+    "empty_trace": 0,
+    "engine_steps_count": 54,
+    "engine_steps_sum": 6126,
+    "engine_stop_reasons": {
+      "active_empty": 24,
+      "engine_timeout": 6,
+      "multi_state_settle_budget_exhausted": 21,
+      "step_budget_exhausted": 3
+    },
+    "eval_error": 0,
+    "evidence_cache_hits": 0,
+    "evidence_cache_updates": 0,
+    "filtered": 0,
+    "inconclusive_vector_categories": {},
+    "invalid_closure": 0,
+    "loop_semantic_adaptive_caps_sum": 0,
+    "loop_semantic_cap_pruned_sum": 0,
+    "loop_semantic_max_buckets": 0,
+    "loop_semantic_pruned_sum": 0,
+    "loop_semantic_rounds_sum": 0,
+    "loop_semantic_saturated_keys_sum": 0,
+    "matrix_elapsed_sec_count": 3,
+    "matrix_elapsed_sec_sum": 2.173,
+    "matrix_fast_all_secure": 0,
+    "matrix_solver_queries_sum": 0,
+    "memoized_closures": 0,
+    "no_taint_sink": 0,
+    "partial_vulnerable": 1,
+    "post_sink_delay_slot_captures": 0,
+    "residual": 32,
+    "sanitizer_coverage_count": 3,
+    "sanitizer_coverage_sum": 0.7273,
+    "sanitizer_gap_strengths": {
+      "broadly_bypassable": 2,
+      "partial_filter": 1
+    },
+    "secure_vectors": 8,
+    "seed_states_pruned_sum": 63,
+    "seed_states_tried_sum": 280,
+    "semantic_frontier_max_buckets": 28,
+    "semantic_frontier_pruned_sum": 932,
+    "semantic_frontier_rounds_sum": 575,
+    "skipped_dup": 2,
+    "source_dead_cap_hits_sum": 4,
+    "source_liveness_cuts": 0,
+    "state_error": 0,
+    "static_source_inference": 14,
+    "static_warning_reduction": 0,
+    "timeout": 1,
+    "unreachable": 4,
+    "vulnerable": 3,
+    "vulnerable_vectors": 25
+  },
+  "results_jsonl_path": "/home/ubuntu/work/sanitizer/experiment_reports/full_firmware_campaign_current_tsds_multistate_full_20260916/tenda_ac18.results.jsonl",
+  "summary_json_path": "/home/ubuntu/work/sanitizer/experiment_reports/full_firmware_campaign_current_tsds_multistate_full_20260916/tenda_ac18.summary.json",
+  "total_closures": 56,
+  "unique_pairs_analyzed": 54,
+  "unique_pairs_expected": 54,
+  "wall_time_sec": 2105.8017
+}

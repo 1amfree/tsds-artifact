@@ -1,0 +1,24 @@
+{
+  "claim_boundary": "Structural audit of bounded shell-interface replay receipts from the current campaign; it does not prove source realizability, firmware-wide accuracy, or device-level exploitability.",
+  "issues": [],
+  "output": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\iceccs_current_campaign_witness_replay_20260916_v3",
+  "record_count": 275,
+  "schema": "tsds-current-campaign-witness-replay-audit-v1",
+  "shell_count": 2,
+  "shells": [
+    "bash",
+    "dash"
+  ],
+  "source_ledger": "C:\\Users\\1amfree\\Desktop\\sanitizer\\experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916",
+  "source_ledger_sha256": {
+    "asus_rt_be57.results.jsonl": "63740fb65cdb965af3a6a8c5a7211d91c486783ad39e1c705254860dc834a602",
+    "dir878.results.jsonl": "ea59b376bb0286f280ddb6befb2b92e9ac211c19f849326585680a98d9290ce1",
+    "r6400v2.results.jsonl": "76d607367cdc2c7814ce8996827a428da4a4ba69400951912d0c23de80b9229f",
+    "r7000.results.jsonl": "f441f832cf25641e5eafd920e650a665640d81a0895166c4a13fc7e4485d612d",
+    "tenda_ac15.results.jsonl": "907fc9c0e9b0ff46651d8ac44207003fdfc8c0b8c8ca86d80613f8dfa79bf535",
+    "tenda_ac18.results.jsonl": "b1573bec90fc2246ae8e73f4726874ad394a3219cc6dab26d51239f67145d99d",
+    "tenda_w20e.results.jsonl": "57e2087e8addb7eb0b4e65628acaaf8839f2bf60183e85f85e8e3d52ba77593a",
+    "xr300.results.jsonl": "1388f8198197d9fe52f8c0bf774f57155054e74027baa7259a33ee825d6f1295"
+  },
+  "valid": true
+}

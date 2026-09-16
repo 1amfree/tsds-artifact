@@ -1,0 +1,21 @@
+# TSDS Reproduction Requirements
+#
+# NOTE: The primary evidence audit script (scripts/verify_all_receipts.py)
+# requires ZERO external dependencies and runs on pure Python 3.8+ standard library.
+#
+# The dependencies below are only required if you wish to re-execute SMT constraint
+# solving, binary symbolic execution, or figure generation from scratch.
+
+# --- SMT Constraint Solving (Required for backward path projection) ---
+z3-solver>=4.12.0
+
+# --- Binary Lifting & Symbolic Execution (Optional for firmware analysis) ---
+angr>=9.2.0
+claripy>=9.2.0
+
+# --- Metrics & Figure Plotting (Optional for paper graphs) ---
+numpy>=1.24.0
+matplotlib>=3.7.0
+
+# --- Testing & Auditing (Optional) ---
+pytest>=7.0.0

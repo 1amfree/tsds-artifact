@@ -1,0 +1,269 @@
+{
+  "avg_closure_time_sec": 68.383,
+  "avg_engine_steps": 67.39,
+  "avg_matrix_time_sec": 0.0,
+  "avg_sanitizer_coverage": 0.0,
+  "binary_path": "/home/ubuntu/work/sanitizer/DIR-878/rc",
+  "env_fixture_summary": null,
+  "env_fixture_usage": null,
+  "evidence_cache_path": null,
+  "evidence_contract_ledger": {
+    "admissible_claims": {
+      "explicit_residual_obligation": 47,
+      "static_fixed_command_reduction": 2
+    },
+    "conditioned_claims": {},
+    "contract_downgraded": 0,
+    "contract_valid": 49,
+    "contract_violations": {},
+    "fixture_conditioned_claims": 0,
+    "negative_confirmation_required": 0,
+    "primary_aggregate_eligible": 49,
+    "provenance": {
+      "RESIDUAL": 47,
+      "STATIC_WARNING_REDUCTION": 2
+    },
+    "records": 49,
+    "schema": "tsds-evidence-contract-aggregate-v2",
+    "verdicts": {
+      "RESIDUAL": 47,
+      "STATIC_WARNING_REDUCTION": 2
+    }
+  },
+  "features": {
+    "arch_seeding": true,
+    "byte_provenance": true,
+    "constraint_projection_cache_size": 2048,
+    "emit_provenance_graph": false,
+    "environment_fixture": false,
+    "environment_fixture_digest": "52a76f5de8b7ca65",
+    "evidence_aware_scheduler": true,
+    "execution_backend": "forkserver",
+    "firmware_summaries": true,
+    "loop_semantic_bucket_limit": 1,
+    "loop_semantic_min_states": 50,
+    "loop_semantic_min_visits": 3,
+    "loop_semantic_saturation_limit": 3,
+    "loop_semantic_summary": true,
+    "loop_semantic_weak_static": false,
+    "multi_state_audit": true,
+    "multi_state_settle_steps": 8,
+    "online_refinement_candidates": 3,
+    "online_refinement_rounds": 1,
+    "refinement_bundle": false,
+    "resource_limit_enforcement": "not_requested",
+    "scheduler_active_cap_range": [
+      20,
+      120
+    ],
+    "scheduler_base_active_cap": 60,
+    "scheduler_constraint_soft_limit": 800,
+    "scheduler_escape_quota": 4,
+    "semantic_frontier": true,
+    "shell_lexical_gate": "tsds-shell-lexical-gate-v1",
+    "sink_corridor": true,
+    "sink_semantic_plugins": true,
+    "solver_query_export": false,
+    "source_dead_state_cap": 20,
+    "source_liveness_limit": 4,
+    "source_projected_constraints": true,
+    "static_dynamic_reconciliation": true,
+    "subprocess_memory_limit_mib": 0,
+    "summary_database": false,
+    "threat_matrix": true,
+    "weak_evidence_equiv_limit": 2
+  },
+  "json_path": "/home/ubuntu/work/sanitizer/DIR-878/DIR_878_results/cmdi_results.json",
+  "mode": "full",
+  "model_gap_request_ledger": {
+    "kinds": {
+      "argv_env": 2,
+      "config_key": 166,
+      "file": 14
+    },
+    "reasons": {
+      "mango_likely_input": 43,
+      "mango_possible_input": 139
+    },
+    "top_keys": {
+      "config_key:Radio24On": 6,
+      "config_key:Radio24Vap1En": 6,
+      "config_key:WscConfMode": 6,
+      "config_key:WscCusPBCEnable": 6,
+      "config_key:WscCusPINEnable": 6,
+      "config_key:WscVendorPinCode": 6,
+      "config_key:lan0_ifname": 11,
+      "config_key:lan0_ipaddr": 8,
+      "config_key:lan0_mac": 5,
+      "config_key:lan0_port_member": 11,
+      "config_key:wan_wan0_ifname": 5,
+      "file:/proc/mtd": 4
+    },
+    "total": 182
+  },
+  "path_control_ledger": {
+    "budget_pressure": {
+      "not_applicable": 16,
+      "residual_risk": 33
+    },
+    "classes": {
+      "residual_budget_stop": 33,
+      "unclassified": 16
+    },
+    "events": {
+      "loop_summary": 1,
+      "seed_equivalence": 26,
+      "semantic_frontier": 14,
+      "source_liveness": 1
+    },
+    "totals": {
+      "path_control_pruned_states": 1079,
+      "path_control_seed_pruned": 139,
+      "path_control_semantic_pruned_states": 725,
+      "path_control_source_liveness_cuts": 6
+    }
+  },
+  "refinement_bundle": null,
+  "refinement_bundle_path": null,
+  "report_file": "/home/ubuntu/work/sanitizer/experiment_reports/full_firmware_campaign_current_tsds_multistate_full_20260916/dir878.report.md",
+  "residual_diagnosis_ledger": {
+    "classes": {
+      "bounded_multi_state_no_admissible_primary": 16,
+      "path_explosion_residual": 5,
+      "residual_budget_pressure": 2,
+      "time_budget_exhaustion": 26
+    },
+    "next_actions": {
+      "add a targeted parser or wrapper summary if the trace repeats around one helper": 5,
+      "enable evidence cache and same-run memoization": 26,
+      "increase max steps or closure timeout for this closure": 5,
+      "inspect contract violations and vector decisions": 16,
+      "inspect loop-semantic and frontier-pruning events": 5,
+      "inspect path-control events for repeated frontier classes": 26,
+      "keep the record outside SV-SAT, M-Filt, and NMS aggregates": 16,
+      "rerun unknown quote contexts or pruned negative paths conservatively": 16,
+      "rerun with a larger closure/subprocess timeout": 26,
+      "rerun with larger path budgets if the closure is central to a case study": 2,
+      "review the path-control ledger before using this record as high-confidence evidence": 2
+    },
+    "severities": {
+      "high": 47,
+      "medium": 2
+    },
+    "total": 49
+  },
+  "residual_recovery_plan_ledger": {
+    "config_overrides": {
+      "closure_timeout=180": 31,
+      "engine_timeout=90": 26,
+      "loop_semantic_saturation_limit=5": 5,
+      "loop_semantic_weak_static=True": 4,
+      "max_steps=1000": 31,
+      "semantic_frontier_bucket_limit=3": 5,
+      "subprocess_timeout=240": 26
+    },
+    "model_gaps": {
+      "loop_or_parser_summary": 5,
+      "sink_distance_model": 5
+    },
+    "priorities": {
+      "high": 31,
+      "medium": 18
+    },
+    "strategies": {
+      "budget_extension_rerun": 26,
+      "manual_review": 18,
+      "semantic_path_refinement": 5
+    },
+    "total": 49
+  },
+  "residual_refinement_jsonl_path": null,
+  "residual_refinement_summary": {
+    "avg_elapsed_sec": 0.0,
+    "changed": 0,
+    "new_statuses": {},
+    "old_statuses": {},
+    "priorities": {},
+    "records": 0,
+    "resolved": 0,
+    "strategies": {},
+    "unchanged": 0
+  },
+  "resource_limit_enforcement_ledger": {
+    "all_executed_workers_enforced": false,
+    "claim_boundary": "This ledger reports recorded worker resource-limit enforcement. It does not establish semantic completeness or exploitability.",
+    "configured_limit_mib": 0,
+    "enforcement_counts": {
+      "not_requested": 49
+    },
+    "executed_records": 49,
+    "records_with_limit_enforced": 0,
+    "records_with_limit_requested": 0,
+    "records_with_unavailable_worker_metrics": 0,
+    "resource_limit_hits": 0,
+    "schema": "tsds-worker-memory-limit-ledger-v1"
+  },
+  "results": {
+    "blocked_vector_categories": {},
+    "bypass_vector_categories": {},
+    "crashed": 0,
+    "elapsed_sec_count": 49,
+    "elapsed_sec_sum": 3350.7691999999997,
+    "empty_trace": 0,
+    "engine_steps_count": 49,
+    "engine_steps_sum": 3302,
+    "engine_stop_reasons": {
+      "active_empty": 14,
+      "adaptive_source_liveness_saturated": 1,
+      "engine_timeout": 13,
+      "guided_stagnation_saturated": 6,
+      "multi_state_settle_budget_exhausted": 15
+    },
+    "eval_error": 0,
+    "evidence_cache_hits": 0,
+    "evidence_cache_updates": 0,
+    "filtered": 0,
+    "inconclusive_vector_categories": {},
+    "invalid_closure": 0,
+    "loop_semantic_adaptive_caps_sum": 0,
+    "loop_semantic_cap_pruned_sum": 0,
+    "loop_semantic_max_buckets": 32,
+    "loop_semantic_pruned_sum": 214,
+    "loop_semantic_rounds_sum": 41,
+    "loop_semantic_saturated_keys_sum": 648,
+    "matrix_elapsed_sec_count": 0,
+    "matrix_elapsed_sec_sum": 0.0,
+    "matrix_fast_all_secure": 0,
+    "matrix_solver_queries_sum": 0,
+    "memoized_closures": 0,
+    "no_taint_sink": 0,
+    "partial_vulnerable": 0,
+    "post_sink_delay_slot_captures": 0,
+    "residual": 16,
+    "sanitizer_coverage_count": 0,
+    "sanitizer_coverage_sum": 0.0,
+    "sanitizer_gap_strengths": {},
+    "secure_vectors": 0,
+    "seed_states_pruned_sum": 139,
+    "seed_states_tried_sum": 283,
+    "semantic_frontier_max_buckets": 44,
+    "semantic_frontier_pruned_sum": 511,
+    "semantic_frontier_rounds_sum": 185,
+    "skipped_dup": 3,
+    "source_dead_cap_hits_sum": 0,
+    "source_liveness_cuts": 1,
+    "state_error": 0,
+    "static_source_inference": 0,
+    "static_warning_reduction": 2,
+    "timeout": 26,
+    "unreachable": 5,
+    "vulnerable": 0,
+    "vulnerable_vectors": 0
+  },
+  "results_jsonl_path": "/home/ubuntu/work/sanitizer/experiment_reports/full_firmware_campaign_current_tsds_multistate_full_20260916/dir878.results.jsonl",
+  "summary_json_path": "/home/ubuntu/work/sanitizer/experiment_reports/full_firmware_campaign_current_tsds_multistate_full_20260916/dir878.summary.json",
+  "total_closures": 52,
+  "unique_pairs_analyzed": 49,
+  "unique_pairs_expected": 49,
+  "wall_time_sec": 3355.0177
+}

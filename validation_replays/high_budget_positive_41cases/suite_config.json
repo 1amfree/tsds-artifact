@@ -1,0 +1,445 @@
+{
+  "baseline": "/home/ubuntu/work/sanitizer/experiment_reports/full_firmware_campaign_current_tsds_multistate_full_20260916",
+  "baseline_sha256": "f4ec9fa293b6233859cbee6ea466f1d63463690a8189a9bae71fd3cd427310e4",
+  "cases": [
+    {
+      "baseline_row_sha256": "2477dc6406f3c4f14f3c736080c0fedbee9495db6af84bc00680f3f1aeceb4a0",
+      "baseline_sink_addr": "0x407cc",
+      "baseline_snapshot_digest": "744b55938feaf13b452f2c3e99dfe65108d99cd482a09fab6504941104b8bd02",
+      "baseline_source_addr": "0x40758",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 2,
+      "target": "asus_rt_be57"
+    },
+    {
+      "baseline_row_sha256": "640f08e868c7b4f745f61024a8f4cbf4491e7eff2789262098a5872ce492304c",
+      "baseline_sink_addr": "0x406d4",
+      "baseline_snapshot_digest": "70c2b34985259827dec3fe574a68bdfbdefc07b003eec3c3fc84eea75a00c1c7",
+      "baseline_source_addr": "0x406b4",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 3,
+      "target": "asus_rt_be57"
+    },
+    {
+      "baseline_row_sha256": "5674ea53683d06787810d07eba0cadac7c45073540180d84b25199353b91bee2",
+      "baseline_sink_addr": "0x75e9c",
+      "baseline_snapshot_digest": "537f5844be4df3bcf86e2d7f53b18110f3db1bcd3975f5b9541ec786b8cb2b07",
+      "baseline_source_addr": "0x75e40",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 7,
+      "target": "asus_rt_be57"
+    },
+    {
+      "baseline_row_sha256": "7a60022217c263e47671db16085a65b284df92e2b0bed1f02782514437c80cf3",
+      "baseline_sink_addr": "0x65508",
+      "baseline_snapshot_digest": "2b5dbe9a343b5b7cd0f7a3aec9ae79dbb6b1bf6eeb908bc9508eaec407762420",
+      "baseline_source_addr": "0x654ac",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 40,
+      "target": "r6400v2"
+    },
+    {
+      "baseline_row_sha256": "f3e1e254c938a6d18c916cdf2ef46191dfb6d72b6b775fdf1621978d29ae6388",
+      "baseline_sink_addr": "0x656a8",
+      "baseline_snapshot_digest": "0025cf9f9fa87fd7cf7b5f7a1e9f64e84c798f856b7ad6f58ec4b151492bb99b",
+      "baseline_source_addr": "0x65660",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 51,
+      "target": "r6400v2"
+    },
+    {
+      "baseline_row_sha256": "e2707c7249b281ce25c9303b0e0c293281ef251f854e3dded97d5c829b14458f",
+      "baseline_sink_addr": "0x65780",
+      "baseline_snapshot_digest": "7c3a747cdb1a36f23c69241230e21600d8325b9d920031ecac15732607a19d6a",
+      "baseline_source_addr": "0x65724",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 56,
+      "target": "r6400v2"
+    },
+    {
+      "baseline_row_sha256": "61fe8d6cde875ba5e516c82b8e147157091b6cc9d43e95437162b0b2eccb5b74",
+      "baseline_sink_addr": "0x99f38",
+      "baseline_snapshot_digest": "cb682fe59e02d3fff68c668ca9a4ab8f2671d5b0a57f484cba1f3f7c43010292",
+      "baseline_source_addr": "0x99ec8",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 59,
+      "target": "r6400v2"
+    },
+    {
+      "baseline_row_sha256": "02a4a2601c1e4e20d476bc9818fd93d5f705e33d88c284c887865edc8f1f52db",
+      "baseline_sink_addr": "0xa2e2c",
+      "baseline_snapshot_digest": "4b4d1a24cdae797e352dda9a551c4888722780d82a5670382e5f4645db1134ac",
+      "baseline_source_addr": "0xa2ccc",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 75,
+      "target": "r7000"
+    },
+    {
+      "baseline_row_sha256": "c54a237b94a1ccdc4292681ab6de9d2823f98f8b3ffd9ddddf01e58bd4cb5bd9",
+      "baseline_sink_addr": "0x64b40",
+      "baseline_snapshot_digest": "d0cb7f9bfaa3ee4f528042bac1e75d1e21af0c6ce712fed420feb4b4e05b24ef",
+      "baseline_source_addr": "0x64a9c",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 79,
+      "target": "r7000"
+    },
+    {
+      "baseline_row_sha256": "f2c81001ccd8bd5423a254adbf5912f0059f6c769def304b885c59f2b7362547",
+      "baseline_sink_addr": "0xa33a8",
+      "baseline_snapshot_digest": "d1186e58cff0cc09813b7fb3707caf2c667e956aee926e46c26d1248b66bd50e",
+      "baseline_source_addr": "0xa32f8",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 81,
+      "target": "r7000"
+    },
+    {
+      "baseline_row_sha256": "87ff728bfee20635c47df03b1011be060e0cbc50c1021c9502bdd1cb23956a6a",
+      "baseline_sink_addr": "0xa342c",
+      "baseline_snapshot_digest": "92901f5813ccd1adc88eb4b09d09b1438379533fdc62e772782bd3760d916a1d",
+      "baseline_source_addr": "0xa32f8",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 82,
+      "target": "r7000"
+    },
+    {
+      "baseline_row_sha256": "c1d487859d7d218e892a7316029a416e01545a5a6d2922e9df5764edd6f60eef",
+      "baseline_sink_addr": "0x68790",
+      "baseline_snapshot_digest": "7880e0b7085211f48c56814fdfe521b9519ecc13e92d9657b9793c33bf39c6bf",
+      "baseline_source_addr": "0x686f4",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 84,
+      "target": "r7000"
+    },
+    {
+      "baseline_row_sha256": "eb427146a184fa3ca7cbf0b8095ac730d7f72511479c77e08cf1b91db6e392f5",
+      "baseline_sink_addr": "0xa3538",
+      "baseline_snapshot_digest": "6afef2bd5ff6dd5d2e0101d0dd01dab536bbcfbb7bba5bc75b82173030f68b80",
+      "baseline_source_addr": "0xa345c",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 91,
+      "target": "r7000"
+    },
+    {
+      "baseline_row_sha256": "623095cbc0703daf7ca0c479b973f44904bafb169893970f81ebd976edaf3be8",
+      "baseline_sink_addr": "0x6cea4",
+      "baseline_snapshot_digest": "2b5dbe9a343b5b7cd0f7a3aec9ae79dbb6b1bf6eeb908bc9508eaec407762420",
+      "baseline_source_addr": "0x6ce48",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 94,
+      "target": "r7000"
+    },
+    {
+      "baseline_row_sha256": "03e7da8492ba334132512be8b1809e625c81e831ba2d0a00f7b4bbe9a54803a9",
+      "baseline_sink_addr": "0x8b0cc",
+      "baseline_snapshot_digest": "585fda9d5164f67f71cf47c6261cfcc070b657c39485ff625e7723979af7d451",
+      "baseline_source_addr": "0x8aff8",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 98,
+      "target": "r7000"
+    },
+    {
+      "baseline_row_sha256": "5ff5de67131b4eced266145b9fc05bad568e1aa4fe0de233c8cd587b2cc3471e",
+      "baseline_sink_addr": "0x6d044",
+      "baseline_snapshot_digest": "0025cf9f9fa87fd7cf7b5f7a1e9f64e84c798f856b7ad6f58ec4b151492bb99b",
+      "baseline_source_addr": "0x6cffc",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 105,
+      "target": "r7000"
+    },
+    {
+      "baseline_row_sha256": "db227844f563466552aaea77c6833c9cf25d09dd0c176435d7fad485c978e9a1",
+      "baseline_sink_addr": "0x6d11c",
+      "baseline_snapshot_digest": "7c3a747cdb1a36f23c69241230e21600d8325b9d920031ecac15732607a19d6a",
+      "baseline_source_addr": "0x6d0c0",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 106,
+      "target": "r7000"
+    },
+    {
+      "baseline_row_sha256": "7e8dcfa7a90ba1d86b78056306b0d5adb62bbbe47d884f375d74386683930994",
+      "baseline_sink_addr": "0xa8060",
+      "baseline_snapshot_digest": "cb682fe59e02d3fff68c668ca9a4ab8f2671d5b0a57f484cba1f3f7c43010292",
+      "baseline_source_addr": "0xa7ff0",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 114,
+      "target": "r7000"
+    },
+    {
+      "baseline_row_sha256": "5c164613bc2ed9569081c5a0618f4c1cd6dc7852bc5b21779cb39991769af7f2",
+      "baseline_sink_addr": "0x8ec3c",
+      "baseline_snapshot_digest": "296d11fa2181d1cbccbfbb96ed96322ba81df4e403ddcebf37a510a389c2139a",
+      "baseline_source_addr": "0x8ebd8",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 124,
+      "target": "r7000"
+    },
+    {
+      "baseline_row_sha256": "3f69970b4625af7dbf25899ad1dbb99fa132a60c3af8b77517052047d7d694e2",
+      "baseline_sink_addr": "0xa2acc",
+      "baseline_snapshot_digest": "634ee2ae4ed563af3e945a73495ca6bd57a00a3c5dd6e3abaef6005cf9dbc531",
+      "baseline_source_addr": "0xa2a1c",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 129,
+      "target": "r7000"
+    },
+    {
+      "baseline_row_sha256": "1c85b2b440b032e017b306eb7783017c855c7f068691c53de66435067f1a2790",
+      "baseline_sink_addr": "0x83820",
+      "baseline_snapshot_digest": "2736402de02919190cc8c6cfe9f63888964c63567dfcd586ecc9975b53a7dafb",
+      "baseline_source_addr": "0x837c4",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 130,
+      "target": "r7000"
+    },
+    {
+      "baseline_row_sha256": "7f530b51107279830c12c43047ee0bddec13dca597082632c070a2b3ccc239c7",
+      "baseline_sink_addr": "0x6865c",
+      "baseline_snapshot_digest": "fb93113fc264cce6158588ffcf79f4538f6b9afc4c394d76c98fd2bf3470a817",
+      "baseline_source_addr": "0x68584",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 141,
+      "target": "r7000"
+    },
+    {
+      "baseline_row_sha256": "c7211dac8983d7e7aebfc30243ba3fec39ca3f4529b5629e923daac4dc8c95f2",
+      "baseline_sink_addr": "0xa7f5c",
+      "baseline_snapshot_digest": "4eabcfa7c0d7d86297305b44fa7c02f78848274a521318e7ab69949e1a3ac3a1",
+      "baseline_source_addr": "0xa7e98",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 22,
+      "target": "tenda_ac15"
+    },
+    {
+      "baseline_row_sha256": "84bbcfc6bc6bb48b8e57924958a4ff81a9b6de66e7e8bef5a0b1540377d40bbe",
+      "baseline_sink_addr": "0x3171c",
+      "baseline_snapshot_digest": "236a54143d70381a5e3ca264cd37e69eedab1041aa9a539f7f451dc154cc80dd",
+      "baseline_source_addr": "0x316bc",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 31,
+      "target": "tenda_ac15"
+    },
+    {
+      "baseline_row_sha256": "af3a1b6bd97ada4184dd68c357002715dc99b7b49424a2f7720b3c2a0bef0b32",
+      "baseline_sink_addr": "0xa0fa8",
+      "baseline_snapshot_digest": "17985b9de976feb822f69fea4bc0703920d5b3beb79ddfa20933e03903e33f7d",
+      "baseline_source_addr": "0xa0f14",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 46,
+      "target": "tenda_ac15"
+    },
+    {
+      "baseline_row_sha256": "652d700b6af37a962495668fcfd828c2d95bc0d43718679746927ec9967e7919",
+      "baseline_sink_addr": "0xa7c14",
+      "baseline_snapshot_digest": "6a93b7ccf6f4b269ca2885e30caa66074a15e733f8b9e69a1ff6e049e3c89806",
+      "baseline_source_addr": "0xa7b50",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 4,
+      "target": "tenda_ac18"
+    },
+    {
+      "baseline_row_sha256": "ec8eae54f54e5d1cd100ba9672278e1db975e39843b700ac116d31f6fa22fc5d",
+      "baseline_sink_addr": "0x31278",
+      "baseline_snapshot_digest": "93229efc43fc62b51bc2ed4b4e05a707fc9a8f60ad1b86af30ae2c4d439f389c",
+      "baseline_source_addr": "0x31218",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 18,
+      "target": "tenda_ac18"
+    },
+    {
+      "baseline_row_sha256": "4c7aa85de9218a9546f6227ebe713e3e371f615a62be682527e8e80da6ab4729",
+      "baseline_sink_addr": "0xa0c60",
+      "baseline_snapshot_digest": "379bed5f027e31df17334267449bc8c238cd239b45e70dad70d84816aabd565c",
+      "baseline_source_addr": "0xa0bcc",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 38,
+      "target": "tenda_ac18"
+    },
+    {
+      "baseline_row_sha256": "9837f3ecadb26606ab138c66b99e6b01cdb90c12f78c1a3b6f0b79abbbfa0223",
+      "baseline_sink_addr": "0xa9154",
+      "baseline_snapshot_digest": "acd578ba6e4b624fc2bb160ac3f5a2e39b93627b02df6f3a317d03dec2a9db96",
+      "baseline_source_addr": "0xa90a8",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 18,
+      "target": "tenda_w20e"
+    },
+    {
+      "baseline_row_sha256": "3246e5fdfff5de1bd16bddea9b0e177d59ea0e0129408c8c1ecc135b0e649e6b",
+      "baseline_sink_addr": "0x8acbc",
+      "baseline_snapshot_digest": "27698520daeb144b110843454300cd0c4826fa14789147fa63f531b1bee1bd45",
+      "baseline_source_addr": "0x8ac18",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 16,
+      "target": "xr300"
+    },
+    {
+      "baseline_row_sha256": "0fd8777921150aecf3b0e189f88ed44a559388758537471fe00c566a7e124cbf",
+      "baseline_sink_addr": "0xc12b0",
+      "baseline_snapshot_digest": "b4824427a4e25f83bfb19e592926ce63ba98f8e1d39250383ed4dfbca8bbc0a6",
+      "baseline_source_addr": "0xc11d4",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 17,
+      "target": "xr300"
+    },
+    {
+      "baseline_row_sha256": "c33aa55553678d70ed18f96cff7549a1600690acc0387b580d97ed65298053af",
+      "baseline_sink_addr": "0x5d88c",
+      "baseline_snapshot_digest": "56ce0a57b038d8bd7d0e27d698d3ec60f9df4d876209dc291dbc033a2a64e1bc",
+      "baseline_source_addr": "0x5d7f8",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 18,
+      "target": "xr300"
+    },
+    {
+      "baseline_row_sha256": "d4c9135223d0211817e0463e9344ce1c1be444cef7e150996273887056d39773",
+      "baseline_sink_addr": "0x5d988",
+      "baseline_snapshot_digest": "7f11b576f5f9f603ac6a177b07bc3100051f6f8ff964e0c43fd09b839203503d",
+      "baseline_source_addr": "0x5d8e4",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 19,
+      "target": "xr300"
+    },
+    {
+      "baseline_row_sha256": "a9f11d207d62442a8e4ce32d50bf907e154957e87a3d9d85546bab752ba469b5",
+      "baseline_sink_addr": "0x5d9e0",
+      "baseline_snapshot_digest": "635ae9a6649a03836dccc740b4e55dd423c89b1a9b07d58b4064203ec6a78fc6",
+      "baseline_source_addr": "0x5d8e4",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 20,
+      "target": "xr300"
+    },
+    {
+      "baseline_row_sha256": "0fc135b3dc76d6bb30d5bd3d674abbc1f6f49d87713bf3b9b66cafd392454bb2",
+      "baseline_sink_addr": "0x8b1e8",
+      "baseline_snapshot_digest": "1a8dfaeaaa9bffe9dd326e86777279145faa0544c178bed903ec943247bac20e",
+      "baseline_source_addr": "0x8b138",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 21,
+      "target": "xr300"
+    },
+    {
+      "baseline_row_sha256": "ef325b53fa9ad47483f5091834de8615b59457989c4530cf3cde5b0aafa74d51",
+      "baseline_sink_addr": "0x8e25c",
+      "baseline_snapshot_digest": "9b877b858ca9be121a59570b2f141ef184f9d7c7fb387a9af64dcca7f91bf48f",
+      "baseline_source_addr": "0x8e1c0",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 24,
+      "target": "xr300"
+    },
+    {
+      "baseline_row_sha256": "db9e9d560d7e620678a4507913304653bb0447abe3c513637bae8941e46eef9e",
+      "baseline_sink_addr": "0x95928",
+      "baseline_snapshot_digest": "80f236795dac6fc61edcd092a6d397cdb1cc5aafe1e1c4b731cb6f1ae38054d9",
+      "baseline_source_addr": "0x958dc",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 30,
+      "target": "xr300"
+    },
+    {
+      "baseline_row_sha256": "377a05a61ce32b021908cbe512db76b9c6149d9499469173b1e1f282f9c24049",
+      "baseline_sink_addr": "0xc1120",
+      "baseline_snapshot_digest": "d1186e58cff0cc09813b7fb3707caf2c667e956aee926e46c26d1248b66bd50e",
+      "baseline_source_addr": "0xc1070",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 31,
+      "target": "xr300"
+    },
+    {
+      "baseline_row_sha256": "7dd2cf2b482d36d99a710c1d4b8ed0dc021faf7dfbca41f67ed8b57110228f86",
+      "baseline_sink_addr": "0xc11a4",
+      "baseline_snapshot_digest": "92901f5813ccd1adc88eb4b09d09b1438379533fdc62e772782bd3760d916a1d",
+      "baseline_source_addr": "0xc1070",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 32,
+      "target": "xr300"
+    },
+    {
+      "baseline_row_sha256": "b43270e539d6e91b85e541c2936216b431ea5ddab323412b3357c354e2400e83",
+      "baseline_sink_addr": "0xadcd8",
+      "baseline_snapshot_digest": "634c52dc7d340d576f582d93a9e4b9871b17883eb5c41f0f9423a26df2907574",
+      "baseline_source_addr": "0xadc04",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 37,
+      "target": "xr300"
+    },
+    {
+      "baseline_row_sha256": "e7ef40a7d8f621f651999556a094a211ebbbd31ea69568c42027421a05009c62",
+      "baseline_sink_addr": "0xc07f8",
+      "baseline_snapshot_digest": "a4b41e93cca4d0ccfa5f8aeec156b347cdd08fa33bd5473f8da3d7fa873a688e",
+      "baseline_source_addr": "0xc0748",
+      "baseline_status": "vulnerable",
+      "baseline_verdict": "VECTOR_SAT",
+      "closure_idx": 49,
+      "target": "xr300"
+    }
+  ],
+  "claim_boundary": "Finite identity-bound high-budget replay of direct positive rows; no exhaustive coverage, source-realizability, firmware ground truth, solver soundness, or device exploitability claim.",
+  "evaluator": "/home/ubuntu/work/sanitizer/Taint_demo/sanitizer_demo/advanced_sanitizer_evaluator.py",
+  "evaluator_sha256": "9340af217a152ab2b15cde9c3d90c5f0e4562b5cd6f2eec613b53e40b6656988",
+  "runner_sha256": "f4b52b814fd09cf18abc78ff8262249e863759e5e63bd74e6688b913f49572f9",
+  "schema": "tsds-high-budget-positive-replay-suite-config-v1",
+  "settings": {
+    "closure_timeout": 360,
+    "constraint_projection_cache_size": 4096,
+    "engine_timeout": 180,
+    "execution_backend": "forkserver",
+    "max_steps": 3000,
+    "multi_state_audit": true,
+    "multi_state_settle_steps": 96,
+    "no_evidence_aware_scheduler": true,
+    "no_evidence_cache": true,
+    "no_loop_semantic_summary": true,
+    "no_semantic_frontier": true,
+    "online_refinement_candidates": 3,
+    "online_refinement_rounds": 1,
+    "scheduler_base_active_cap": 500,
+    "scheduler_constraint_soft_limit": 4000,
+    "scheduler_escape_quota": 32,
+    "scheduler_max_active_cap": 500,
+    "scheduler_min_active_cap": 500,
+    "source_dead_state_cap": 500,
+    "source_liveness_limit": 0,
+    "stagnation_limit": 0,
+    "subprocess_timeout": 420
+  }
+}

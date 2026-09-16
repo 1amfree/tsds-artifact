@@ -1,0 +1,3 @@
+LEN=26
+echo SAFETSDS_TRIGGER_PATH
+---

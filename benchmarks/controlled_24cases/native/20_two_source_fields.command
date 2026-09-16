@@ -1,0 +1,3 @@
+LEN=64
+echo SAFE;: > "$TSDS_TRIGGER_PATH"-SAFE;: > "$TSDS_TRIGGER_PATH"
+---

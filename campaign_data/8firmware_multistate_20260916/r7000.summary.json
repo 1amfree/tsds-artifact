@@ -1,0 +1,311 @@
+{
+  "avg_closure_time_sec": 34.1475,
+  "avg_engine_steps": 62.49,
+  "avg_matrix_time_sec": 2.1424,
+  "avg_sanitizer_coverage": 0.2091,
+  "binary_path": "/home/ubuntu/work/sanitizer/R7000/httpd",
+  "env_fixture_summary": null,
+  "env_fixture_usage": null,
+  "evidence_cache_path": null,
+  "evidence_contract_ledger": {
+    "admissible_claims": {
+      "direct_observed_prefix_vector_sat": 3,
+      "direct_sink_byte_vector_sat": 12,
+      "explicit_residual_obligation": 71,
+      "static_fixed_command_reduction": 71
+    },
+    "conditioned_claims": {},
+    "contract_downgraded": 0,
+    "contract_valid": 157,
+    "contract_violations": {},
+    "fixture_conditioned_claims": 0,
+    "negative_confirmation_required": 0,
+    "primary_aggregate_eligible": 157,
+    "provenance": {
+      "DIRECT_SINK_BYTE": 15,
+      "RESIDUAL": 71,
+      "STATIC_WARNING_REDUCTION": 71
+    },
+    "records": 157,
+    "schema": "tsds-evidence-contract-aggregate-v2",
+    "verdicts": {
+      "RESIDUAL": 71,
+      "STATIC_WARNING_REDUCTION": 71,
+      "VECTOR_SAT": 15
+    }
+  },
+  "features": {
+    "arch_seeding": true,
+    "byte_provenance": true,
+    "constraint_projection_cache_size": 2048,
+    "emit_provenance_graph": false,
+    "environment_fixture": false,
+    "environment_fixture_digest": "52a76f5de8b7ca65",
+    "evidence_aware_scheduler": true,
+    "execution_backend": "forkserver",
+    "firmware_summaries": true,
+    "loop_semantic_bucket_limit": 1,
+    "loop_semantic_min_states": 50,
+    "loop_semantic_min_visits": 3,
+    "loop_semantic_saturation_limit": 3,
+    "loop_semantic_summary": true,
+    "loop_semantic_weak_static": false,
+    "multi_state_audit": true,
+    "multi_state_settle_steps": 8,
+    "online_refinement_candidates": 3,
+    "online_refinement_rounds": 1,
+    "refinement_bundle": false,
+    "resource_limit_enforcement": "not_requested",
+    "scheduler_active_cap_range": [
+      20,
+      120
+    ],
+    "scheduler_base_active_cap": 60,
+    "scheduler_constraint_soft_limit": 800,
+    "scheduler_escape_quota": 4,
+    "semantic_frontier": true,
+    "shell_lexical_gate": "tsds-shell-lexical-gate-v1",
+    "sink_corridor": true,
+    "sink_semantic_plugins": true,
+    "solver_query_export": false,
+    "source_dead_state_cap": 20,
+    "source_liveness_limit": 4,
+    "source_projected_constraints": true,
+    "static_dynamic_reconciliation": true,
+    "subprocess_memory_limit_mib": 0,
+    "summary_database": false,
+    "threat_matrix": true,
+    "weak_evidence_equiv_limit": 2
+  },
+  "json_path": "/home/ubuntu/work/sanitizer/R7000/R7000_result/cmdi_results.json",
+  "mode": "full",
+  "model_gap_request_ledger": {
+    "kinds": {
+      "config_key": 25,
+      "file": 19,
+      "web": 2
+    },
+    "reasons": {
+      "mango_likely_input": 7,
+      "mango_possible_input": 39
+    },
+    "top_keys": {
+      "config_key:lan_ifname": 1,
+      "config_key:lan_ipaddr": 4,
+      "config_key:lan_netmask": 1,
+      "config_key:max_download_speed": 2,
+      "config_key:max_upload_speed": 1,
+      "config_key:quick_qos_lan_port_high": 1,
+      "config_key:quick_qos_lan_port_highest": 1,
+      "config_key:quick_qos_lan_port_low": 1,
+      "config_key:quick_qos_lan_port_normal": 1,
+      "config_key:tmp_wla_wds_enable": 1,
+      "file:/tmp/ps.txt": 10,
+      "file:/tmp/usb_mnt_table": 8
+    },
+    "total": 46
+  },
+  "path_control_ledger": {
+    "budget_pressure": {
+      "not_applicable": 79,
+      "residual_risk": 52,
+      "resolved": 15,
+      "semantically_bounded": 11
+    },
+    "classes": {
+      "direct_sink_evidence": 15,
+      "residual_budget_stop": 52,
+      "semantic_saturation": 11,
+      "unclassified": 79
+    },
+    "events": {
+      "loop_summary": 1,
+      "seed_equivalence": 58,
+      "semantic_frontier": 26,
+      "source_liveness": 12
+    },
+    "totals": {
+      "path_control_pruned_states": 2050,
+      "path_control_seed_pruned": 211,
+      "path_control_semantic_pruned_states": 176,
+      "path_control_source_liveness_cuts": 24
+    }
+  },
+  "refinement_bundle": null,
+  "refinement_bundle_path": null,
+  "report_file": "/home/ubuntu/work/sanitizer/experiment_reports/full_firmware_campaign_current_tsds_multistate_full_20260916/r7000.report.md",
+  "residual_diagnosis_ledger": {
+    "classes": {
+      "bounded_multi_state_no_admissible_primary": 14,
+      "evidence_contract_residual": 6,
+      "path_explosion_residual": 14,
+      "residual_budget_pressure": 1,
+      "time_budget_exhaustion": 36,
+      "weak_candidate_unreached": 1
+    },
+    "next_actions": {
+      "add a targeted parser or wrapper summary if the trace repeats around one helper": 14,
+      "enable evidence cache and same-run memoization": 36,
+      "increase max steps or closure timeout for this closure": 14,
+      "inspect contract violations and vector decisions": 20,
+      "inspect loop-semantic and frontier-pruning events": 14,
+      "inspect path-control events for repeated frontier classes": 36,
+      "keep the record outside SV-SAT, M-Filt, and NMS aggregates": 20,
+      "manually inspect the static closure before increasing symbolic budget": 1,
+      "prioritize lower than strong-source unreachable closures": 1,
+      "rerun unknown quote contexts or pruned negative paths conservatively": 20,
+      "rerun with a larger closure/subprocess timeout": 36,
+      "rerun with larger path budgets if the closure is central to a case study": 1,
+      "review the path-control ledger before using this record as high-confidence evidence": 1
+    },
+    "severities": {
+      "high": 70,
+      "medium": 2
+    },
+    "total": 72
+  },
+  "residual_recovery_plan_ledger": {
+    "config_overrides": {
+      "closure_timeout=180": 50,
+      "engine_timeout=90": 36,
+      "loop_semantic_saturation_limit=5": 14,
+      "loop_semantic_weak_static=True": 2,
+      "max_steps=1000": 50,
+      "semantic_frontier_bucket_limit=3": 14,
+      "subprocess_timeout=240": 36
+    },
+    "model_gaps": {
+      "loop_or_parser_summary": 14,
+      "sink_distance_model": 14
+    },
+    "priorities": {
+      "high": 50,
+      "low": 1,
+      "medium": 21
+    },
+    "strategies": {
+      "budget_extension_rerun": 36,
+      "manual_review": 21,
+      "semantic_path_refinement": 14,
+      "static_candidate_triage": 1
+    },
+    "total": 72
+  },
+  "residual_refinement_jsonl_path": null,
+  "residual_refinement_summary": {
+    "avg_elapsed_sec": 0.0,
+    "changed": 0,
+    "new_statuses": {},
+    "old_statuses": {},
+    "priorities": {},
+    "records": 0,
+    "resolved": 0,
+    "strategies": {},
+    "unchanged": 0
+  },
+  "resource_limit_enforcement_ledger": {
+    "all_executed_workers_enforced": false,
+    "claim_boundary": "This ledger reports recorded worker resource-limit enforcement. It does not establish semantic completeness or exploitability.",
+    "configured_limit_mib": 0,
+    "enforcement_counts": {
+      "not_requested": 157
+    },
+    "executed_records": 157,
+    "records_with_limit_enforced": 0,
+    "records_with_limit_requested": 0,
+    "records_with_unavailable_worker_metrics": 4,
+    "resource_limit_hits": 0,
+    "schema": "tsds-worker-memory-limit-ledger-v1"
+  },
+  "results": {
+    "blocked_vector_categories": {
+      "Background Execution": 6,
+      "Bypass Spaces": 6,
+      "Command Chaining": 6,
+      "Piping": 6,
+      "Redirection": 6
+    },
+    "bypass_vector_categories": {
+      "Background Execution": 6,
+      "Bypass Spaces": 10,
+      "Command Chaining": 6,
+      "Command Substitution": 15,
+      "Piping": 6,
+      "Redirection": 6,
+      "Variable Expansion": 15
+    },
+    "crashed": 0,
+    "elapsed_sec_count": 153,
+    "elapsed_sec_sum": 5224.568300000001,
+    "empty_trace": 0,
+    "engine_steps_count": 98,
+    "engine_steps_sum": 6124,
+    "engine_stop_reasons": {
+      "active_empty": 45,
+      "engine_timeout": 24,
+      "guided_stagnation_saturated": 10,
+      "multi_state_settle_budget_exhausted": 7,
+      "source_liveness_saturated": 11,
+      "state_explosion_saturated": 1,
+      "static_fixed_command_shortcut": 55
+    },
+    "eval_error": 0,
+    "evidence_cache_hits": 0,
+    "evidence_cache_updates": 0,
+    "filtered": 0,
+    "inconclusive_vector_categories": {
+      "Background Execution": 8,
+      "Bypass Spaces": 8,
+      "Command Chaining": 8,
+      "Command Substitution": 5,
+      "Piping": 8,
+      "Redirection": 8,
+      "Variable Expansion": 5
+    },
+    "invalid_closure": 0,
+    "loop_semantic_adaptive_caps_sum": 0,
+    "loop_semantic_cap_pruned_sum": 0,
+    "loop_semantic_max_buckets": 85,
+    "loop_semantic_pruned_sum": 6,
+    "loop_semantic_rounds_sum": 1,
+    "loop_semantic_saturated_keys_sum": 11,
+    "matrix_elapsed_sec_count": 20,
+    "matrix_elapsed_sec_sum": 42.8478,
+    "matrix_fast_all_secure": 0,
+    "matrix_solver_queries_sum": 0,
+    "memoized_closures": 0,
+    "no_taint_sink": 0,
+    "partial_vulnerable": 6,
+    "post_sink_delay_slot_captures": 0,
+    "residual": 20,
+    "sanitizer_coverage_count": 20,
+    "sanitizer_coverage_sum": 4.1819999999999995,
+    "sanitizer_gap_strengths": {
+      "broadly_bypassable": 9,
+      "partial_filter": 6,
+      "unresolved_filter": 5
+    },
+    "secure_vectors": 46,
+    "seed_states_pruned_sum": 211,
+    "seed_states_tried_sum": 394,
+    "semantic_frontier_max_buckets": 59,
+    "semantic_frontier_pruned_sum": 170,
+    "semantic_frontier_rounds_sum": 117,
+    "skipped_dup": 4,
+    "source_dead_cap_hits_sum": 47,
+    "source_liveness_cuts": 11,
+    "state_error": 0,
+    "static_source_inference": 0,
+    "static_warning_reduction": 71,
+    "timeout": 36,
+    "unreachable": 15,
+    "vulnerable": 15,
+    "vulnerable_vectors": 97
+  },
+  "results_jsonl_path": "/home/ubuntu/work/sanitizer/experiment_reports/full_firmware_campaign_current_tsds_multistate_full_20260916/r7000.results.jsonl",
+  "summary_json_path": "/home/ubuntu/work/sanitizer/experiment_reports/full_firmware_campaign_current_tsds_multistate_full_20260916/r7000.summary.json",
+  "total_closures": 161,
+  "unique_pairs_analyzed": 157,
+  "unique_pairs_expected": 157,
+  "wall_time_sec": 5841.1967
+}

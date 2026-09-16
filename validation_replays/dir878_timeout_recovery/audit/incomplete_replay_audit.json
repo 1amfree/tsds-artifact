@@ -1,0 +1,76 @@
+{
+  "all_checks_pass": true,
+  "baseline": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dir878_idx2_recovery_20260916_v1\\baseline_single",
+  "baseline_incomplete_rows": 1,
+  "candidate_wide_negative_count": 0,
+  "cases": [
+    {
+      "baseline": {
+        "collection_complete": false,
+        "sink_addr": "0x442fdc",
+        "source_addr": "0x4429d0",
+        "status": "residual",
+        "verdict": "RESIDUAL"
+      },
+      "closure_idx": 2,
+      "issues": [],
+      "observations": [
+        "outcome_changed_under_higher_budget",
+        "bounded_vector_sat_observed",
+        "collection_completed_under_higher_budget"
+      ],
+      "replay": {
+        "candidate_wide_negative": false,
+        "collection_complete": true,
+        "profile_count": 160,
+        "sink_addr": "0x442fdc",
+        "source_addr": "0x4429d0",
+        "status": "vulnerable",
+        "verdict": "VECTOR_SAT"
+      },
+      "returncode": "0",
+      "target": "dir878"
+    }
+  ],
+  "claim_boundary": "Finite identity-bound higher-budget replay of explicitly incomplete current records.  Outcome changes and recovered profiles are reported as observations only; no residual is promoted and no candidate-wide negative conclusion is inferred.  The audit does not establish exhaustive sink-state coverage, solver soundness, source realizability, firmware ground truth, or device exploitability.",
+  "complete_collection_count": 1,
+  "identity": {
+    "baseline_configuration": null,
+    "baseline_configuration_sha256": null,
+    "baseline_evaluator_sha256": null,
+    "issues": [],
+    "suite_configuration": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dir878_idx2_recovery_20260916_v1\\suite_single\\suite_config.json",
+    "suite_configuration_sha256": "93516d79064fc0db9e752d01469f72990f1535585ff5ee377fec1e008eb92db1",
+    "suite_evaluator_sha256": null
+  },
+  "identity_stable_count": 0,
+  "incomplete_collection_count": 0,
+  "issues": [],
+  "observations": [
+    {
+      "closure_idx": 2,
+      "observation": "outcome_changed_under_higher_budget",
+      "target": "dir878"
+    },
+    {
+      "closure_idx": 2,
+      "observation": "bounded_vector_sat_observed",
+      "target": "dir878"
+    },
+    {
+      "closure_idx": 2,
+      "observation": "collection_completed_under_higher_budget",
+      "target": "dir878"
+    }
+  ],
+  "outcome_changed_count": 1,
+  "outcome_counts": {
+    "VECTOR_SAT": 1
+  },
+  "positive_outcome_count": 1,
+  "receipt_count": 1,
+  "replay_case_count": 1,
+  "returncode_zero_count": 1,
+  "schema": "tsds-high-budget-incomplete-replay-audit-v1",
+  "suite": "C:\\Users\\1amfree\\Desktop\\sanitizer\\paper_work\\iceccs_dir878_idx2_recovery_20260916_v1\\suite_single"
+}

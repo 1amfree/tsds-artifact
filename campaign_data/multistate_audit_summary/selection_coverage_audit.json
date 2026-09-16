@@ -1,0 +1,407 @@
+{
+  "aggregate_classes": {
+    "all_collected_inconclusive": 17,
+    "all_collected_no_modeled_source": 31,
+    "all_collected_nonpositive_mixed": 41,
+    "bounded_incomplete": 63,
+    "exists_positive": 41
+  },
+  "audited_records": 193,
+  "by_target": {
+    "asus_rt_be57": {
+      "aggregate_classes": {
+        "all_collected_inconclusive": 3,
+        "all_collected_no_modeled_source": 3,
+        "all_collected_nonpositive_mixed": 2,
+        "bounded_incomplete": 3,
+        "exists_positive": 3
+      },
+      "audited_rows": 14,
+      "complete": 11,
+      "first_nonpositive_later_positive": 1,
+      "incomplete": 3,
+      "selected_late_positive": 1,
+      "selected_nonpositive_later_positive": 0,
+      "selected_rows": 7
+    },
+    "dir878": {
+      "aggregate_classes": {
+        "all_collected_no_modeled_source": 3,
+        "all_collected_nonpositive_mixed": 8,
+        "bounded_incomplete": 5
+      },
+      "audited_rows": 16,
+      "complete": 11,
+      "first_nonpositive_later_positive": 0,
+      "incomplete": 5,
+      "selected_late_positive": 0,
+      "selected_nonpositive_later_positive": 0,
+      "selected_rows": 0
+    },
+    "r6400v2": {
+      "aggregate_classes": {
+        "all_collected_inconclusive": 1,
+        "all_collected_no_modeled_source": 2,
+        "bounded_incomplete": 9,
+        "exists_positive": 4
+      },
+      "audited_rows": 16,
+      "complete": 7,
+      "first_nonpositive_later_positive": 1,
+      "incomplete": 9,
+      "selected_late_positive": 1,
+      "selected_nonpositive_later_positive": 0,
+      "selected_rows": 7
+    },
+    "r7000": {
+      "aggregate_classes": {
+        "all_collected_inconclusive": 5,
+        "all_collected_no_modeled_source": 7,
+        "bounded_incomplete": 7,
+        "exists_positive": 15
+      },
+      "audited_rows": 34,
+      "complete": 26,
+      "first_nonpositive_later_positive": 1,
+      "incomplete": 8,
+      "selected_late_positive": 1,
+      "selected_nonpositive_later_positive": 0,
+      "selected_rows": 20
+    },
+    "tenda_ac15": {
+      "aggregate_classes": {
+        "all_collected_no_modeled_source": 5,
+        "all_collected_nonpositive_mixed": 7,
+        "bounded_incomplete": 17,
+        "exists_positive": 3
+      },
+      "audited_rows": 32,
+      "complete": 13,
+      "first_nonpositive_later_positive": 0,
+      "incomplete": 19,
+      "selected_late_positive": 0,
+      "selected_nonpositive_later_positive": 0,
+      "selected_rows": 3
+    },
+    "tenda_ac18": {
+      "aggregate_classes": {
+        "all_collected_no_modeled_source": 5,
+        "all_collected_nonpositive_mixed": 13,
+        "bounded_incomplete": 14,
+        "exists_positive": 3
+      },
+      "audited_rows": 35,
+      "complete": 19,
+      "first_nonpositive_later_positive": 0,
+      "incomplete": 16,
+      "selected_late_positive": 0,
+      "selected_nonpositive_later_positive": 0,
+      "selected_rows": 3
+    },
+    "tenda_w20e": {
+      "aggregate_classes": {
+        "all_collected_no_modeled_source": 6,
+        "all_collected_nonpositive_mixed": 9,
+        "bounded_incomplete": 1,
+        "exists_positive": 1
+      },
+      "audited_rows": 17,
+      "complete": 16,
+      "first_nonpositive_later_positive": 0,
+      "incomplete": 1,
+      "selected_late_positive": 0,
+      "selected_nonpositive_later_positive": 0,
+      "selected_rows": 1
+    },
+    "xr300": {
+      "aggregate_classes": {
+        "all_collected_inconclusive": 8,
+        "all_collected_nonpositive_mixed": 2,
+        "bounded_incomplete": 7,
+        "exists_positive": 12
+      },
+      "audited_rows": 29,
+      "complete": 21,
+      "first_nonpositive_later_positive": 0,
+      "incomplete": 8,
+      "selected_late_positive": 0,
+      "selected_nonpositive_later_positive": 0,
+      "selected_rows": 23
+    }
+  },
+  "campaign_dir": "experiment_reports\\full_firmware_campaign_current_tsds_multistate_full_20260916",
+  "claim_boundary": "This audit recomputes selection and bounded-collection facts from the serialized current campaign. It does not establish exhaustive sink-state coverage, solver soundness, source realizability, firmware precision, or device exploitability.",
+  "collection_completeness": {
+    "complete": 124,
+    "incomplete": 69
+  },
+  "input_result_files": {
+    "asus_rt_be57.results.jsonl": "63740fb65cdb965af3a6a8c5a7211d91c486783ad39e1c705254860dc834a602",
+    "dir878.results.jsonl": "ea59b376bb0286f280ddb6befb2b92e9ac211c19f849326585680a98d9290ce1",
+    "r6400v2.results.jsonl": "76d607367cdc2c7814ce8996827a428da4a4ba69400951912d0c23de80b9229f",
+    "r7000.results.jsonl": "f441f832cf25641e5eafd920e650a665640d81a0895166c4a13fc7e4485d612d",
+    "tenda_ac15.results.jsonl": "907fc9c0e9b0ff46651d8ac44207003fdfc8c0b8c8ca86d80613f8dfa79bf535",
+    "tenda_ac18.results.jsonl": "b1573bec90fc2246ae8e73f4726874ad394a3219cc6dab26d51239f67145d99d",
+    "tenda_w20e.results.jsonl": "57e2087e8addb7eb0b4e65628acaaf8839f2bf60183e85f85e8e3d52ba77593a",
+    "xr300.results.jsonl": "1388f8198197d9fe52f8c0bf774f57155054e74027baa7259a33ee825d6f1295"
+  },
+  "late_positive_cases": [
+    {
+      "aggregate_class": "exists_positive",
+      "candidate_wide_negative": false,
+      "closure_idx": 3,
+      "closure_ordinal": 4,
+      "collection_complete": true,
+      "first_nonpositive_later_positive": true,
+      "first_profile_positive": false,
+      "first_profile_status": "NO_MODELED_SOURCE",
+      "issues": [],
+      "later_positive_after_first": true,
+      "profile_count": 5,
+      "profile_positive_indices": [
+        2
+      ],
+      "profile_statuses": [
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE",
+        "VECTOR_SAT",
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE"
+      ],
+      "selected_nonpositive_later_positive": false,
+      "selected_positive": true,
+      "selected_reason": "later_collected_positive",
+      "selected_state_index": 2,
+      "serialized_positive_profile_indices": [
+        2
+      ],
+      "sink_addr": "0x406d4",
+      "sink_function": "system",
+      "source_addr": "0x406b4",
+      "status": "vulnerable",
+      "target": "asus_rt_be57"
+    },
+    {
+      "aggregate_class": "exists_positive",
+      "candidate_wide_negative": false,
+      "closure_idx": 59,
+      "closure_ordinal": 60,
+      "collection_complete": true,
+      "first_nonpositive_later_positive": true,
+      "first_profile_positive": false,
+      "first_profile_status": "NO_MODELED_SOURCE",
+      "issues": [],
+      "later_positive_after_first": true,
+      "profile_count": 9,
+      "profile_positive_indices": [
+        3,
+        4
+      ],
+      "profile_statuses": [
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE",
+        "VECTOR_SAT",
+        "VECTOR_SAT",
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE"
+      ],
+      "selected_nonpositive_later_positive": false,
+      "selected_positive": true,
+      "selected_reason": "later_collected_positive",
+      "selected_state_index": 3,
+      "serialized_positive_profile_indices": [
+        3,
+        4
+      ],
+      "sink_addr": "0x99f38",
+      "sink_function": "system",
+      "source_addr": "0x99ec8",
+      "status": "vulnerable",
+      "target": "r6400v2"
+    },
+    {
+      "aggregate_class": "exists_positive",
+      "candidate_wide_negative": false,
+      "closure_idx": 114,
+      "closure_ordinal": 115,
+      "collection_complete": true,
+      "first_nonpositive_later_positive": true,
+      "first_profile_positive": false,
+      "first_profile_status": "NO_MODELED_SOURCE",
+      "issues": [],
+      "later_positive_after_first": true,
+      "profile_count": 9,
+      "profile_positive_indices": [
+        3,
+        4
+      ],
+      "profile_statuses": [
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE",
+        "VECTOR_SAT",
+        "VECTOR_SAT",
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE"
+      ],
+      "selected_nonpositive_later_positive": false,
+      "selected_positive": true,
+      "selected_reason": "later_collected_positive",
+      "selected_state_index": 3,
+      "serialized_positive_profile_indices": [
+        3,
+        4
+      ],
+      "sink_addr": "0xa8060",
+      "sink_function": "system",
+      "source_addr": "0xa7ff0",
+      "status": "vulnerable",
+      "target": "r7000"
+    }
+  ],
+  "profile_count_total": 1862,
+  "record_count": 518,
+  "row_issues": [],
+  "schema": "tsds-multistate-selection-coverage-v1",
+  "selected_late_positive_cases": [
+    {
+      "aggregate_class": "exists_positive",
+      "candidate_wide_negative": false,
+      "closure_idx": 3,
+      "closure_ordinal": 4,
+      "collection_complete": true,
+      "first_nonpositive_later_positive": true,
+      "first_profile_positive": false,
+      "first_profile_status": "NO_MODELED_SOURCE",
+      "issues": [],
+      "later_positive_after_first": true,
+      "profile_count": 5,
+      "profile_positive_indices": [
+        2
+      ],
+      "profile_statuses": [
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE",
+        "VECTOR_SAT",
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE"
+      ],
+      "selected_nonpositive_later_positive": false,
+      "selected_positive": true,
+      "selected_reason": "later_collected_positive",
+      "selected_state_index": 2,
+      "serialized_positive_profile_indices": [
+        2
+      ],
+      "sink_addr": "0x406d4",
+      "sink_function": "system",
+      "source_addr": "0x406b4",
+      "status": "vulnerable",
+      "target": "asus_rt_be57"
+    },
+    {
+      "aggregate_class": "exists_positive",
+      "candidate_wide_negative": false,
+      "closure_idx": 59,
+      "closure_ordinal": 60,
+      "collection_complete": true,
+      "first_nonpositive_later_positive": true,
+      "first_profile_positive": false,
+      "first_profile_status": "NO_MODELED_SOURCE",
+      "issues": [],
+      "later_positive_after_first": true,
+      "profile_count": 9,
+      "profile_positive_indices": [
+        3,
+        4
+      ],
+      "profile_statuses": [
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE",
+        "VECTOR_SAT",
+        "VECTOR_SAT",
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE"
+      ],
+      "selected_nonpositive_later_positive": false,
+      "selected_positive": true,
+      "selected_reason": "later_collected_positive",
+      "selected_state_index": 3,
+      "serialized_positive_profile_indices": [
+        3,
+        4
+      ],
+      "sink_addr": "0x99f38",
+      "sink_function": "system",
+      "source_addr": "0x99ec8",
+      "status": "vulnerable",
+      "target": "r6400v2"
+    },
+    {
+      "aggregate_class": "exists_positive",
+      "candidate_wide_negative": false,
+      "closure_idx": 114,
+      "closure_ordinal": 115,
+      "collection_complete": true,
+      "first_nonpositive_later_positive": true,
+      "first_profile_positive": false,
+      "first_profile_status": "NO_MODELED_SOURCE",
+      "issues": [],
+      "later_positive_after_first": true,
+      "profile_count": 9,
+      "profile_positive_indices": [
+        3,
+        4
+      ],
+      "profile_statuses": [
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE",
+        "VECTOR_SAT",
+        "VECTOR_SAT",
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE",
+        "NO_MODELED_SOURCE"
+      ],
+      "selected_nonpositive_later_positive": false,
+      "selected_positive": true,
+      "selected_reason": "later_collected_positive",
+      "selected_state_index": 3,
+      "serialized_positive_profile_indices": [
+        3,
+        4
+      ],
+      "sink_addr": "0xa8060",
+      "sink_function": "system",
+      "source_addr": "0xa7ff0",
+      "status": "vulnerable",
+      "target": "r7000"
+    }
+  ],
+  "selection": {
+    "candidate_wide_negative_flags": 0,
+    "first_nonpositive_later_positive_records": 3,
+    "selected_first_positive_records": 38,
+    "selected_late_positive_records": 3,
+    "selected_nonpositive_later_positive_records": 0,
+    "selected_positive_records": 41,
+    "selected_records": 64,
+    "selection_blocked_records": 129
+  },
+  "sink_reached_records": 193,
+  "status_counts": {
+    "residual": 152,
+    "vulnerable": 41
+  },
+  "target_count": 8,
+  "valid": true
+}
