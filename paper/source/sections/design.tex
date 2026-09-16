@@ -1,0 +1,394 @@
+\section{Design}
+\label{sec:design}
+
+\subsection{Candidate-Bound Context Reconstruction}
+\label{sec:candidate-context}
+
+\tool validates a reported closure rather than rediscovering arbitrary flows.
+Its candidate contract binds the front-end and record digests, source/sink
+addresses, trace, inputs, and sink name while rejecting outcome fields.
+Duplicate identities are rejected; distinct front-end closures remain
+auditable. Because traces often begin without a caller frame, architecture-aware
+seed families initialize ARM argument/callee-saved carriers or MIPS
+\texttt{a0--a3}, \texttt{t9}, \texttt{gp}, and \texttt{ra}; main-like entries
+receive bounded \texttt{argc}/\texttt{argv} memory. Recorded seed assumptions
+must still reach the declared sink and satisfy the contract.
+
+Firmware-aware summaries preserve evidence-relevant effects: sources return
+labeled strings; string summaries model copies, concatenation, tokenization,
+and bounded transfer; and format summaries retain fixed command fragments while
+binding only source-derived slots. Numeric conversions preserve lineage when
+their byte representation becomes constrained.
+
+\begin{algorithm}[!t]
+\caption{Contract-guided evidence construction}
+\label{alg:evidence}
+\small
+\begin{algorithmic}[1]
+\Require candidate $c$, binary $F$, matrix $\mathcal{V}$
+\Statex \hspace{\algorithmicindent}policy $b\in\{\textsc{bounded},\textsc{legacy}\}$
+\Ensure one candidate-bound ledger record $r$
+\Statex \textbf{Phase I: candidate binding}
+\State $\hat c\gets\Call{NormalizeAndBind}{c,F}$
+\If{$\neg\Call{ValidCandidate}{\hat c}$}
+  \State \Return $\Call{RecordResidual}{\hat c,\textsc{InvalidCandidate}}$
+\EndIf
+\State $S\gets\Call{SeedStates}{F,\hat c}$; $\mathcal H_D,\mathcal H_P\gets\varnothing$
+\State $O\gets\Call{NewObligation}{\hat c}$
+\Statex \textbf{Phase II: bounded search and instance collection}
+\While{$S\neq\varnothing$ and budgets remain}
+  \State $S\gets\Call{ScheduleCorridor}{S,\hat c}$
+  \State $S\gets\Call{Step}{S}$
+  \State Sort sink hits in scheduler order $\prec_c$
+  \ForAll{$s\in\Call{SinkHits}{S}$}
+    \State $(\kappa,B)\gets\Call{BindAndCaptureSink}{s,\hat c}$
+    \If{$\Call{Ready}{\kappa,B}$ or $\Call{PrefixReady}{\kappa,B}$}
+      \State $(\widetilde B,I_X,G,\mu)\gets\Call{ResolveByteView}{s,B,\hat c}$
+      \If{$\mu=\bot$}
+        \State $O\gets\Call{UpdateObligation}{O,\textsc{ByteView}}$
+      \Else
+        \State $\rho_s\gets\langle\hat c,s,\widetilde B,\Phi_s,\kappa,\mu\rangle$
+        \State $\mathbf d_s\gets\Call{EvaluateInstance}{\rho_s,I_X,G,\mathcal{V}}$
+        \If{$\Call{CompleteCString}{\widetilde B}$}
+          \State $\mathcal H_D\gets\mathcal H_D\cup\{(\rho_s,\mathbf d_s)\}$
+        \Else
+          \State $\mathcal H_P\gets\mathcal H_P\cup\{(\rho_s,\mathbf d_s)\}$
+        \EndIf
+        \If{$b=\textsc{legacy}$}
+          \State \Return $\Call{EmitRecord}{\rho_s,\mathbf d_s}$
+        \EndIf
+      \EndIf
+    \Else
+      \State $O\gets\Call{UpdateObligation}{O,\kappa,B}$
+    \EndIf
+  \EndFor
+  \If{$b=\textsc{bounded}\land\operatorname{SettleReached}(S,\mathcal H_D\cup\mathcal H_P)$}
+    \State \textbf{break}
+  \EndIf
+\EndWhile
+\Statex \textbf{Phase III: select, aggregate, and close}
+\State $\operatorname{Complete}_b\gets
+  \Call{CollectionComplete}{S,O,b}$
+\If{$\mathcal H_D\neq\varnothing$}
+  \State $\rho_c\gets\Call{SelectPrimary}{\mathcal H_D,\prec_c}$
+  \If{$\rho_c=\bot$}
+    \State \Return $\Call{RecordResidual}{\hat c,O,\textsc{NoPrimary}}$
+  \EndIf
+  \State $\mathcal A_b\gets
+    \Call{AggregateBounded}{\mathcal H_D,\operatorname{Complete}_b,O}$
+  \State \Return $\Call{EmitRecord}{\rho_c,\mathcal A_b}$
+\EndIf
+\If{$\Call{HasPositivePrefix}{\mathcal H_P}$}
+  \State \Return $\Call{EmitPrefixRecord}{\mathcal H_P,O,\textsc{PrefixOnly}}$
+\EndIf
+\If{$\Call{AdmitStaticRule}{\hat c,O}$}
+  \State \Return $\Call{RecordStaticClass}{\hat c,O}$
+\EndIf
+\State \Return $\Call{RecordResidual}{\hat c,O}$
+\end{algorithmic}
+\end{algorithm}
+\vspace{-4pt}
+
+Algorithm~\ref{alg:evidence} presents the current bounded collection policy.
+\textsc{EvaluateInstance} applies the complete-direct, prefix-only, or conditioned byte-view gate,
+the projected query rule, and full-store validation before a profile enters
+$\mathcal H_D$ and $\mathcal H_P$ through the settle budget;
+\textsc{SelectPrimary} implements Eq.~\ref{eq:selected-instance} and admits
+only complete, claimable direct matrix profiles. If none is collected, a
+positive prefix sidecar is emitted only as \psat; otherwise the algorithm emits
+a typed residual. \textsc{AggregateBounded} implements
+Eq.~\ref{eq:bounded-aggregation}. The
+explicit \texttt{--first-ready-legacy} mode returns at the first Ready
+snapshot only for compatibility and ablation. The frozen V20 ledger is a
+historical first-Ready run and is reported as such rather than silently
+regenerated under the current default. A later positive snapshot can therefore
+be exposed within the bounded window, while an incomplete or non-positive
+collection cannot be promoted to a candidate-wide negative result.
+
+\subsection{Sink Corridor and Evidence-Aware Scheduling}
+\label{sec:scheduler}
+
+A front-end trace is incomplete around indirect calls and wrappers. \tool
+merges it with a recovered CFG to form a closure-specific \emph{sink corridor}.
+Reverse search from the sink and registered wrappers assigns structural
+distance $d_k$; trace-only nodes receive monotonic guide distances, and nodes
+beside unresolved indirect edges form a bounded escape set. Program counters
+are classified as target, corridor, guide, escape, unknown, or outside.
+
+At each step, the execution engine forms three groups of scheduling keys:
+\begin{equation}
+\begin{aligned}
+\mathcal{F}(s)&\triangleq
+(pc,d_k,\gamma\ ;\ \sigma_c,\sigma_p,\pi,\chi\ ;\ \delta_{\Phi},\sigma_{\rm ret}),\\[-1mm]
+\pi(s)&\triangleq \sigma_p(s)\land\operatorname{NearSink}(s).
+\end{aligned}
+\label{eq:state-projection}
+\end{equation}
+Semicolons separate corridor, evidence, and diversity keys. Here
+$\sigma_c/\sigma_p$ denote source carriage and propagation, $\chi$ quote
+context, $\delta_{\Phi}$ a constraint digest, $\sigma_{\rm ret}$ a return signature, and
+$\gamma$ the corridor class. The bit $\pi$ protects propagated source near the
+sink. Lexicographic ranking prioritizes protection, corridor class, source
+progress, and distance, then preserves bounded semantic diversity by
+constraint, quote, program-counter, and return signatures. The adaptive cap
+reserves protected near-sink, best source-carrying, and escape states before
+ranked fill; pressure contracts the remaining quota.
+Register-local source liveness is intentionally incomplete. A source-dead stop
+is admissible only after its configured horizon and only when no strong source
+obligation, near-sink frontier, or protected state remains:
+\begin{equation}
+\begin{aligned}
+\mathcal G_{\rm live}(S,c)&\triangleq\operatorname{StrongSource}(c)
+ \lor\operatorname{NearSink}(S)\\[-1mm]
+ &\quad\lor\operatorname{Protected}(S),\\[-1mm]
+\operatorname{LivenessStop}(S)&\iff D(S)\geq L\\[-1mm]
+ &\quad\land\neg\mathcal G_{\rm live}(S,c).
+\end{aligned}
+\label{eq:liveness-stop}
+\end{equation}
+Here $D(S)$ counts consecutive source-dead rounds, $L$ is the horizon, and both
+set predicates are existential over $S$. Suppressed stops are logged to prevent
+a liveness heuristic from silently becoming a final classification.
+
+\subsection{Semantic Sink Binding and Byte Provenance}
+\label{sec:sink-semantics}
+
+Name matching alone is insufficient because firmware wrappers expose different
+argument contracts. The sink registry maps verified functions to semantic
+plugins. \texttt{system} and \texttt{popen} use a shell-string contract with a
+direct first-argument ABI binding. Recognized vendor wrappers use a
+format-command contract and must materialize the rendered command. Direct
+\texttt{exec*} calls receive a non-shell \texttt{argv} contract; unknown
+wrappers remain unbound. A shell-vector claim is possible only when the plugin's
+semantic class and the observed binding jointly satisfy the claimable predicate
+$\operatorname{Claimable}(s)$ in Section~\ref{sec:contract}.
+
+The command capture records the first verified C-string terminator, the maximum
+modeled extent, fixed bytes, symbolic bytes, and quote-prefix context. An
+incomplete snapshot can support a residual diagnosis but cannot support
+\mfilt or \nms. For each captured byte, \tool constructs a bounded provenance
+DAG with source-variable, symbolic-variable, constant, transformation,
+annotation, sink-byte, and final-argument nodes. A controlled offset is accepted
+only if a source-variable node reaches that sink-byte node. The graph digest and
+all active paths are stored in the record. Thus a taint count cannot disagree
+silently with the serialized offset set.
+
+Dynamic execution can preserve a command while losing source lineage inside a
+vendor helper. \tool therefore separates \emph{direct} variables $X_c$ observed
+in $B(s)$ from fresh \emph{conditioned} variables $X_c^{\rm rec}$. Let
+$A_{\rm fmt}(s,B)$ denote an explicit format slot observed by the verified
+wrapper plugin (e.g., a rendered \texttt{\%s}); it is a slot fact, not source
+ownership. Conditioned admission accepts $A_{\rm st}(c,T)\lor
+A_{\rm fmt}(s,B(s))$, together with a Ready sink and a compatible template.
+Let $a_c\triangleq\operatorname{Anchor}(T,B(s))$ and
+$\Lambda_c\triangleq\operatorname{Link}_c(X_c^{\rm rec},X_c,B(s))$. Admission,
+reconstruction, and the promotion gate are
+\begin{equation}
+\begin{aligned}
+\operatorname{Rec}(c,s,T)&\triangleq\operatorname{Ready}(s)
+  \land\bigl(A_{\rm st}(c,T)\lor A_{\rm fmt}(s,B(s))\bigr)\\[-1mm]
+ &\quad\land\operatorname{Compat}(T,B(s))\land(a_c\neq\bot),\\[-1mm]
+\widetilde B_c&\triangleq\operatorname{Instantiate}(T,a_c,X_c^{\rm rec}),\\[-1mm]
+\Psi^{\rm C}_v&\triangleq\Phi_s\cup\Gamma_T
+  \cup\{P_v(\widetilde B_c)\},\\[-1mm]
+\operatorname{CTF}_v(\rho,T)&\iff\operatorname{SAT}(\Psi^{\rm C}_v),\\[-1mm]
+\operatorname{Promote}_{\rm D}(\rho,v)&\Rightarrow\Lambda_c\\[-1mm]
+ &\quad\land\operatorname{SAT}\!\left(\Psi^{\rm C}_v\cup\{\Lambda_c\}\right).
+\end{aligned}
+\label{eq:conditioned-evidence}
+\end{equation}
+Here $\operatorname{Link}_c$ is a semantic relation, not a label: it binds each
+reconstructed slot byte to an admitted source through recorded copy, format,
+truncation, or encoding constraints. Template compatibility and full-store SAT
+over a fresh slot cannot create that relation or restore missing dependence.
+The link admission checker further requires source offsets to remain within
+the declared input bound, sink offsets to precede the verified C-string
+terminator, and every mapped sink offset to belong to the declared output
+domain of its transform step; a failure leaves the record conditioned or
+residual rather than promoting it.
+Freshness makes the distinction explicit:
+\begin{equation}
+\begin{aligned}
+X_c^{\rm rec}\cap\operatorname{Vars}(\Phi_s\cup B(s))
+  &=\varnothing,\\[-1mm]
+\operatorname{CTF}_v(\rho,T)\land(\Lambda_c=\bot)
+  &\Rightarrow\operatorname{Mode}(\rho)=\mathrm C.
+\end{aligned}
+\label{eq:conditioned-nonescalation}
+\end{equation}
+until $\operatorname{Link}_c$ is conjoined. No conditioned record in this
+evaluation establishes $\Lambda_c$; all remain \ctsat rather than direct
+\svsat. Thus \texttt{cmd "\%s"} may support conditioned feasibility for a
+double-quoted substitution without proving source-to-slot traversal. $\Gamma_T$
+fixes the template and a 24-byte non-NUL slot; records bind its anchor, digest,
+offsets, constraint count, and recovery rule. Conditioned UNSAT or incomplete
+admission remains residual and cannot emit \mfilt or \nms.
+
+\subsection{Quote-Aware Shell-Vector Matrix}
+\label{sec:matrix}
+
+The 11-vector matrix spans four syntax families derived from POSIX.1-2024~\cite{posix2024,smoosh2020} and BusyBox \texttt{ash} semantics: (1)~\emph{Chaining} (\texttt{;}, \texttt{\textbackslash n}, \texttt{|}, \texttt{\&}) for sequential/concurrent execution; (2)~\emph{Substitution} (\texttt{\$(\!:\!)}, \texttt{\textasciigrave:\textasciigrave}, \texttt{\$A}) for subshell evaluation in double quotes; (3)~\emph{Redirection} (\texttt{>}, \texttt{<}) for file access; and (4)~\emph{Word splitting} (\texttt{\$\{IFS\}}, \texttt{\textbackslash t}) for space-filtered injection. Querying all 11 vectors ensures comprehensive syntax coverage over partial sanitizers. An automaton tracks quoting contexts (Table~\ref{tab:vectors}).
+
+\begin{table}[!t]
+\centering
+\caption{Versioned shell-vector specification (U: unquoted; DQ: double
+quoted). ``:'' is the shell no-op used in complete witness templates.}
+\label{tab:vectors}
+\footnotesize
+\setlength{\tabcolsep}{1.5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{tabularx}{\columnwidth}{@{}P{.20\columnwidth}P{.20\columnwidth}P{.42\columnwidth}Y@{}}
+\toprule
+Effect & Vector ID(s) & Canonical witness(es) & Ctx. \\
+\midrule
+Shell list & semi., newline & \texttt{:;:;\#}, \texttt{:\textbackslash n:;\#} & U \\
+Pipe. / async & pipe, amp. & \texttt{:|:;\#}, \texttt{:\&:;\#} & U \\
+Cmd. subst. & backtick, \$-sub. &
+\texttt{\textasciigrave:\textasciigrave}, \texttt{\$(\!:\!)} & U, DQ \\
+Param. exp. & \$-exp. & \texttt{\$A} & U, DQ \\
+I/O redirect & output, input & \texttt{>/dev/null}, \texttt{</dev/null} & U \\
+Word split & IFS, tab & \texttt{\$\{IFS\}:}, \texttt{\textbackslash t:} & U \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Let $W_v=\langle w_0,\ldots,w_{m_v-1}\rangle$ be a canonical witness and let
+$\Pi_v(B,\chi)$ denote starts admitted by its grammar and quote contexts. With
+$\operatorname{Ext}(I_X)$ the maximal contiguous controlled extents, the
+placement predicate is
+\begin{equation}
+\begin{aligned}
+P_{v,p}(B,I_X)
+ &\triangleq \exists E\in\operatorname{Ext}(I_X)\;:\;\\[-1mm]
+ &\qquad [p,p+m_v)\subseteq E
+          \land B[p:p+m_v]=W_v,\\[-1mm]
+P_v(B,I_X,\chi)
+ &\triangleq \exists p\in\Pi_v(B,\chi)\;:\;
+          P_{v,p}(B,I_X).
+\end{aligned}
+\label{eq:vector-placement}
+\end{equation}
+Here $B[p:p+m_v]$ is byte-slice equality with the complete witness. The
+evaluator rejects starts that cross $\tau_s$, require concrete source
+bytes, violate quote context, or leave one controlled extent. Here
+\texttt{\textbackslash n} and \texttt{\textbackslash t} are the single bytes
+0x0A and 0x09; parser calibration and the 16-case matrix replay are separate
+tracks.
+Table~\ref{tab:vectors} therefore gives complete templates rather than isolated
+metacharacters.
+
+For single- or double-quoted prefixes, a quote-breakout candidate is considered
+only when its closing quote, witness, and suffix are all controlled. Unknown
+context, incomplete syntax, or solver error yields an inconclusive cell and
+blocks \mfilt. For the current witness-bound revision, the matrix digest covers
+the complete witness strings together with their contexts and effect
+identities; changing a template therefore creates a new evidence domain. The
+matrix is a reviewable effect specification, not a claim of complete POSIX-shell
+coverage. Its digest binds one contiguous extent and the
+constructs in Table~\ref{tab:vectors}; multi-extent composition, here-documents,
+arithmetic expansion, or nested interaction requires a new revision. Records
+remain comparable to the exact templates and contexts under which they were
+decided.
+
+\subsection{Source-Projected Constraint Solving}
+\label{sec:projection}
+
+Firmware states often contain constraints unrelated to the source bytes or
+vector predicate. Inspired by program slicing and targeted symbolic execution~\cite{weiser1984,chopped2018}, \tool projects the path store through a variable
+hypergraph. Let $\Phi=\langle\phi_1,\ldots,\phi_m\rangle$, and let
+$\mathcal{N}_{\Phi}(R)$ collect variables from constraints incident on $R$:
+\begin{equation}
+\begin{aligned}
+R_0&\triangleq \operatorname{Vars}(P_v)
+                  \cup\operatorname{Vars}(B[I_X]),\\
+R_{j+1}&\triangleq R_j\cup\mathcal{N}_{\Phi}(R_j),\\
+\Phi^\star&\triangleq \{\,\phi\in\Phi\mid
+  \operatorname{Vars}(\phi)=\varnothing\ \lor\
+  \operatorname{Vars}(\phi)\cap R_\infty\neq\varnothing\,\}.
+\end{aligned}
+\label{eq:projected-store}
+\end{equation}
+Because $\Phi$ contains finitely many variables, the monotone sequence reaches
+the least fixed point $R_\infty$.
+Variable-free constraints are retained, and both full and projected stores
+receive structural digests for caching and record binding.
+
+Projection uses an asymmetric proof rule. Since $\Phi^\star\subseteq\Phi$,
+\begin{equation}
+\operatorname{UNSAT}(\Phi^\star\cup\{P_v\})\Rightarrow
+\operatorname{UNSAT}(\Phi\cup\{P_v\}).
+\label{eq:projection-unsat}
+\end{equation}
+Removing constraints can introduce models but cannot remove them. Projected
+UNSAT is therefore an authoritative shortcut. Projected SAT is only a candidate
+model and must be revalidated under $\Phi$. Algorithm~\ref{alg:projection}
+implements this rule and fail-closes solver exceptions to inconclusive.
+
+\begin{algorithm}[!t]
+\caption{Source-projected vector decision}
+\label{alg:projection}
+\small
+\begin{algorithmic}[1]
+\Require full store $\Phi$, command $B$, controlled offsets $I_X$, vector $v$
+\Ensure decision $d_v\in\mathbb{D}$ and optional witness $w_v$
+\Statex \textbf{Phase I: instantiate a controlled placement}
+\State $\chi\gets\Call{QuoteContext}{B}$
+\State $P_v\gets\Call{InstantiatePredicate}{v,B,I_X,\chi}$
+\If{$P_v$ has no grammar-complete controlled placement}
+  \State \Return $(\mathsf{INC},\bot)$
+\EndIf
+\Statex \textbf{Phase II: projected decision}
+\State $(\Phi^\star,h_f,h_p)\gets\Call{ProjectFixedPoint}{\Phi,P_v,B[I_X]}$
+\State $a_p\gets\Call{Solve}{\Phi^\star\cup\{P_v\}}$
+\If{$a_p=\mathsf{UNSAT}$}
+  \State \Return $(\mathsf{UNSAT},\bot)$
+\ElsIf{$a_p\neq\mathsf{SAT}$}
+  \State \Return $(\mathsf{INC},\bot)$
+\EndIf
+\Statex \textbf{Phase III: full-store validation}
+\State $a_f\gets\Call{Solve}{\Phi\cup\{P_v\}}$
+\If{$a_f=\mathsf{SAT}$}
+  \State $w_v\gets\Call{SerializeWitness}{a_f,h_f,h_p}$
+  \State \Return $(\mathsf{SAT},w_v)$
+\ElsIf{$a_f=\mathsf{UNSAT}$}
+  \State \Return $(\mathsf{UNSAT},\bot)$
+\Else
+  \State \Return $(\mathsf{INC},\bot)$
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Guarded Refinement and Residual Accountability}
+\label{sec:refinement}
+
+Only an explicit residual can trigger a bounded summary. Admission requires a
+resolvable target, medium/high confidence, and kind-specific evidence: strong
+static source evidence for source/format summaries, a source slot for format
+binding, or an explicit branch signal for environment summaries. For replay
+sink state $s_h$ and command $B_h$, let
+$\rho_h=\langle c,s_h,B_h,\Phi_h,\kappa_h\rangle$ denote the corresponding
+selected replay instance. Admission obeys:
+\begin{equation}
+\begin{aligned}
+\operatorname{Direct}(h,c)&\triangleq\operatorname{Claimable}(s_h)\\[-1mm]
+ &\quad\land\operatorname{CompleteCString}(B_h)\\[-1mm]
+ &\quad\land\operatorname{ObservedProv}_{X_c}(B_h)\\[-1mm]
+ &\quad\land I_{X_c}(B_h)\neq\varnothing\\[-1mm]
+ &\quad\land\exists v\in\mathcal V\;:\;
+ Q_v(\rho_h)=\mathsf{SAT},\\[-1mm]
+\operatorname{Admit}(h,c)&\Rightarrow\operatorname{Replay}(h,c),\\[-1mm]
+\operatorname{Promote}_{\mathrm{SV\text{-}D}}(h,c)&\Rightarrow
+ \operatorname{Admit}(h,c)\\[-1mm]
+ &\quad\land\operatorname{Direct}(h,c).
+\end{aligned}
+\label{eq:refinement-admission}
+\end{equation}
+The replay must reconstruct observed controlled bytes and satisfy
+Eq.~\ref{eq:vector-query} to enter direct \svsat. A replay satisfying only the
+conditioned gate in Eq.~\ref{eq:conditioned-evidence} remains \ctsat. All
+refinement outputs are labeled and remain outside the primary aggregate.
+
+Every remaining residual records one root cause, confidence, sink distance, and
+follow-up obligation. Causes cover bounded-search exits, incomplete snapshots,
+post-sink transfer, and binding/semantic gaps to keep unresolved work measurable
+without assigning vulnerability or safety.

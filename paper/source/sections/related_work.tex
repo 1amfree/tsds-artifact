@@ -1,0 +1,8 @@
+\section{Related Work}
+\label{sec:related}
+
+\textbf{Firmware Security Ecosystem.}
+Auditing edge firmware spans three tiers: (1)~\emph{Candidate discovery} (e.g., SaTC, HermeScan, Mango~\cite{firmalice2015,karonte2020,satc2021,hermescan2024,mango2024,ye2024cmd,costin2014firmware}) flags raw dataflow paths across archives, emitting unranked warnings that induce severe triage fatigue; (2)~\emph{Evidence triage} (\tool) applies corridor-bounded symbolic analysis and shell contracts to eliminate false alarms; and (3)~\emph{Dynamic verification} (e.g., AVATAR, Firmadyne, FirmAE~\cite{avatar2014,firmadyne2016,firmae2020}) attempts full emulation. While rehosting surveys~\cite{wright2021rehosting}, peripheral modeling~\cite{lee2023peripheral}, and specialized analyzers~\cite{firmwire2022,firmusb2017} improve emulation, missing proprietary NVRAM prevents $>70\%$ of vendor daemons from booting.
+
+\textbf{Symbolic Execution and Shell Semantics.}
+S2E pioneered multi-path analysis~\cite{s2e2011}. Mayhem, veritesting, Driller, SymQEMU, and FUZZOLIC advance binary exploration via indexed memory, path merging, hybrid fuzzing, and SMT compilation~\cite{mayhem2012,veritesting2014,driller2016,symqemu2021,fuzzolic2021,sage2012,surveyse2018}. Program slicing and chopped execution prune irrelevant paths~\cite{chopped2018,weiser1984,cegar2000}. While POSIX and Smoosh formalize shell semantics~\cite{posix2024,smoosh2020}, general tools like angr~\cite{angr2016,z3solver2008} lack string-level quote reasoning. \tool bridges this by evaluating quote contexts directly at sink buffers without whole-system emulation bottlenecks.

@@ -1,0 +1,329 @@
+\section{Evidence Contract}
+\label{sec:contract}
+
+\subsection{Analysis Boundary and Threat Model}
+
+The input to \tool is a binary and a front-end closure
+$c=\langle x,t,k\rangle$, where $x$ identifies a candidate source, $t$ is an
+optional interprocedural trace, and $k$ identifies a command sink. The front
+end supplies search guidance, not outcome evidence. Candidate documents are
+normalized under a schema that rejects leaked verdicts, controlled offsets,
+or matrix decisions. A digest binds the original closure, binary, source and
+sink addresses, and front-end identity.
+
+The modeled adversary controls bytes returned by configured Web, NVRAM,
+configuration, environment, file, and entry-argument summaries. The query asks
+whether those bytes can activate declared shell syntax at a claimable sink.
+Authentication, routing, deployment state, and post-shell effects are included
+only when materialized as constraints or command bytes. \tool verifies command-byte shell syntax feasibility at the reached callee, not device-level post-exploitation or weaponized exploit chains.
+
+\subsection{Final-Byte Semantics}
+
+For a reached state $s$, write
+$B=B(s)=\langle b_0,\ldots,b_{n-1}\rangle$ for the captured command C string up
+to the first verified terminator $\tau_s$. Let $X_c$ denote the symbolic
+variables introduced by the admitted source model for $c$. The source-controlled
+offset set is
+\begin{equation}
+I_{X_c}(B)\triangleq
+\{\,i\in[0,\tau_s)\cap\mathbb N\mid
+  \operatorname{Vars}(b_i)\cap X_c\neq\varnothing\,\}.
+\label{eq:controlled-offsets}
+\end{equation}
+The terminator may have source lineage for provenance purposes, but it is not
+an active shell-vector offset.
+
+A captured argument is claimable only if both callee semantics and argument
+binding are explicit: $\operatorname{Claimable}(s)\triangleq\operatorname{Sem}(s)\in\mathcal{S}_{\rm sh}\land\operatorname{Trust}(s)\in\mathcal{T}_{\rm arg}$,
+where $\mathcal{S}_{\rm sh}=\{\mathsf{shell\_command},\mathsf{shell\_format\_wrapper}\}$
+and $\mathcal{T}_{\rm arg}=\{\mathsf{direct\_abi\_arg0},\mathsf{rendered\_format\_wrapper}\}$.
+Direct \texttt{exec} calls and unknown wrappers require different interpreter
+models and therefore remain non-claimable under this contract.
+
+The dynamic unit is a selected command instance, not the complete path space of
+$c$. Write $\operatorname{Ready}(s)\triangleq\operatorname{Claimable}(s)\land
+\operatorname{CompleteCString}(B(s))$, and define the complete direct-ready premise
+$\mathsf{DR}(s)\triangleq\operatorname{Ready}(s)\land
+\operatorname{Mode}(s)=\mathrm D$. Let $\mathcal H_c^{(b)}$ be the Ready
+sink states retained by the bounded collector. A separate
+$\operatorname{PrefixReady}(s)$ predicate denotes a claimable source-bearing
+prefix whose terminator or suffix is not verified; such a view is retained as
+a weaker sidecar and is excluded from the complete direct aggregate. Let
+$\mathcal H_{c,\mathrm P}^{(b)}$ contain those prefix-only views. After matrix evaluation,
+$\operatorname{PosComplete}(s)$ denotes a direct-ready state with a complete
+matrix and at least one SAT cell. Let
+$\operatorname{AdmissibleMatrix}(s)$ denote a complete, claimable direct
+matrix profile, including non-positive profiles. For nonempty
+$\mathcal H_c^{(b)}$, the primary selector first prefers the earliest positive
+profile, then the earliest admissible complete profile, and otherwise returns
+$\bot$ rather than promoting an incomplete or non-admissible snapshot:
+\begin{equation}
+\begin{aligned}
+ s_c&\triangleq\operatorname{Select}_b(\mathcal H_c^{(b)},\prec_c),\\[-1mm]
+ \mathcal P(\mathcal H)&\triangleq
+   \{s\in\mathcal H\mid\mathsf{DR}(s)\land\operatorname{PosComplete}(s)\},\\[-1mm]
+ \mathcal Q(\mathcal H)&\triangleq
+   \{s\in\mathcal H\mid\mathsf{DR}(s)\land\operatorname{AdmissibleMatrix}(s)\},\\[-1mm]
+ \operatorname{Select}_b(\mathcal H,\prec)&\triangleq
+ \begin{cases}
+ \min\nolimits_{\prec}\mathcal P(\mathcal H),
+   &\mathcal P(\mathcal H)\neq\varnothing,\\[-1mm]
+ \min\nolimits_{\prec}\mathcal Q(\mathcal H),
+   &\mathcal P(\mathcal H)=\varnothing\land
+    \mathcal Q(\mathcal H)\neq\varnothing,\\[-1mm]
+ \bot, &\text{otherwise},
+ \end{cases}\\[-1mm]
+\rho_c&\triangleq\langle c,s_c,B_c,\Phi_c,\kappa_c\rangle,
+  \quad s_c\neq\bot.
+\end{aligned}
+\label{eq:selected-instance}
+\end{equation}
+For $s_c\neq\bot$, $B_c=B(s_c)$, $\Phi_c=\Phi_{s_c}$, and $\kappa_c=\kappa_{s_c}$. If
+$\mathcal H_c^{(b)}=\varnothing$, the selector is bypassed and Algorithm~\ref{alg:evidence}
+continues to a static or residual record. If the selector returns $\bot$,
+the collected snapshots remain audit evidence but cannot drive the primary
+semantic classification. The explicit
+\texttt{--first-ready-legacy} option replaces $\operatorname{Select}_b$ by the
+first Ready state for compatibility and ablation. Equation~\ref{eq:selected-instance}
+is a deterministic selection rule, not an assertion that $s_c$ is the only
+reachable sink state. Every dynamic claim below is scoped to $\rho_c$.
+
+Let $\mathcal{V}$ be the declared 11-vector matrix. Predicate
+$P_v(B_c,I_{X_c}(B_c),\chi_c)$ represents vector $v$ under quote context
+$\chi_c$ and constrains syntax only at source-controlled offsets.
+The authoritative decision has a three-valued domain:
+\begin{equation}
+\begin{aligned}
+\mathbb{D}&\triangleq\{\mathsf{SAT},\mathsf{UNSAT},\mathsf{INC}\},\\[-1mm]
+Q_v(\rho_c)&\triangleq\operatorname{Solve}_{\mathbb{D}}
+\!\left(\Phi_c\cup\{P_v(B_c,I_{X_c}(B_c),\chi_c)\}\right).
+\end{aligned}
+\label{eq:vector-query}
+\end{equation}
+$\operatorname{Solve}_{\mathbb{D}}$ returns \textsf{INC} when no complete
+placement exists or a context or solver obligation is unresolved. A SAT model
+is serialized as a minimal command-byte witness; UNSAT remains scoped to
+$\rho_c$, the source model, and the versioned matrix.
+
+\begin{figure*}[!t]
+\centering
+\input{figures/evidence_contract}
+\caption{Worked final-byte contract for XR300 closure 30. The request and
+assembly snippets are schematic context; the selected sink instance has 31
+controlled offsets, a 4-SAT/7-UNSAT profile, and a digest-bound direct
+\svsat record. The figure reports no shell execution or device-level trigger.}
+\label{fig:contract}
+\end{figure*}
+
+\subsection{Evidence Classes and Claims}
+
+Figure~\ref{fig:contract} instantiates the contract on Netgear XR300 (\texttt{todo=qos\_dev\_edit}). An unauthenticated Web request formats an interface name into \texttt{tc qdisc del dev <dev> root} before invoking \texttt{system} at \texttt{0x19a48}. Static prefix bytes 0--16 establish an unquoted context ($S_{\mathrm{unq}}$) at offset 17. The adversary controls 31 bytes (offsets 17--47). Command substitution \texttt{\$(\!:\!)} and chaining (\texttt{;}, \texttt{\&}, \texttt{|}) are satisfiable (\svsat), with minimal witness \texttt{tc qdisc del dev A\$(\!:\!)AA... root} and a 4-SAT/7-UNSAT profile. The contract binds these offsets, quote states, decisions, and witness under a SHA-256 digest for zero-recomputation cloud audit. A \svsat profile is \emph{partial} when it also contains UNSAT or inconclusive cells.
+For a directly observed complete instance $\rho$ belonging to candidate $c$, the
+source-variable set is the candidate-bound set $X_c$ from
+Eq.~\ref{eq:controlled-offsets}. Define the explicit direct-ready premise
+$\mathsf{DR}(\rho)\triangleq\operatorname{Mode}(\rho)=\mathrm D\land
+\operatorname{Claimable}(\rho)\land\operatorname{CompleteCString}(B_\rho)$;
+for compactness, let
+$\mathsf{A}_{\rm D}(\rho)\triangleq\mathsf{DR}(\rho)\land
+I_{X_c}(B_\rho)\neq\varnothing\land\operatorname{CM}(\rho)$ be the
+complete direct-matrix premise. The three dynamic predicates are
+\begin{equation}
+\begin{aligned}
+\operatorname{SV}_{\rm D}(\rho)&\iff\mathsf{A}_{\rm D}(\rho)\land
+  \exists v\in\mathcal V\;:\;Q_v(\rho)=\mathsf{SAT},\\[-1mm]
+\operatorname{MF}(\rho)&\iff\mathsf{A}_{\rm D}(\rho)\land
+  \forall v\in\mathcal V\;:\;Q_v(\rho)=\mathsf{UNSAT},\\[-1mm]
+\operatorname{NMS}(\rho)&\iff \mathsf{DR}(\rho)\land
+  I_{X_c}(B_\rho)=\varnothing.
+\end{aligned}
+\label{eq:instance-classes}
+\end{equation}
+For a prefix-only view $\rho^{\rm P}$, let $B^{\rm P}$ stop at the last
+observed byte and let $\operatorname{CM}^{\rm P}$ mean that the declared
+vectors were evaluated only over that prefix. Define
+$\mathsf A_{\rm P}(\rho^{\rm P})\triangleq\operatorname{PrefixReady}(\rho^{\rm P})
+\land I_{X_c}(B^{\rm P})\neq\varnothing\land\operatorname{CM}^{\rm P}(\rho^{\rm P})$.
+Its weaker positive predicate is
+\begin{equation}
+\operatorname{P\!\text{-}SAT}(\rho^{\rm P})\iff
+\mathsf A_{\rm P}(\rho^{\rm P})\land
+\exists v\in\mathcal V\;:\;Q_v^{\rm P}(\rho^{\rm P})=\mathsf{SAT}.
+\label{eq:prefix-class}
+\end{equation}
+The prefix-local result does not establish a complete-string \svsat profile.
+For the 5 observed-prefix records, the terminator was not observed, their suffix is
+unknown, and their quote context has a truncation boundary. Therefore, they do
+not inherit the syntactic inference privileges of the 36 complete-string \svsat profiles,
+and cannot support \mfilt or \nms. Complete \svsat carries an existential witness.
+\mfilt and \nms are matrix-local and source-model-local descriptors of $\rho$;
+they do not quantify over other sink instances and are never candidate-wide
+negative conclusions. Conditioned reconstruction uses a separate class, \ctsat,
+because satisfiability over a fresh slot does not prove an admitted input can
+reach that slot. \mfilt means ``matrix-UNSAT at the selected instance,'' not
+warning elimination.
+Table~\ref{tab:claims} summarizes this vocabulary. When no dynamic instance completes, strong source-slot evidence
+creates a static source obligation, while a fixed template without a source
+slot creates a template observation. Neither rule creates controlled offsets
+or matrix decisions.
+
+\begin{table}[!t]
+\centering
+\caption{Record vocabulary and logical scope. Conditioned template
+feasibility is separated from observed final-byte dependence.}
+\label{tab:claims}
+\footnotesize
+\setlength{\tabcolsep}{1.5pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\columnwidth}{@{}P{.16\columnwidth}P{.16\columnwidth}P{.42\columnwidth}Y@{}}
+\toprule
+Record & Unit & Admission & Logical force \\
+\midrule
+\svsat & Inst. (direct) & Complete; obs. extent; $\exists v$ SAT & Existential complete-string vector \\
+\psat & Inst. (prefix) & Prefix only; $\exists v$ SAT & Prefix-local positive; no suffix claim \\
+\ctsat & Inst. + tpl. & Reconstructed slot; $\exists v$ SAT & Conditioned template feasibility \\
+\mfilt & Inst. (direct) & Complete; $\forall v$ UNSAT & 11-vector local profile \\
+\nms & Inst. (direct) & Complete; $I_X=\varnothing$ & Source-model-local snapshot \\
+Static src & Candidate & Strong source slot; open & Follow-up obligation \\
+Static tpl & Candidate & Fixed template; no slot & Template observation \\
+\residual & Candidate & Unresolved boundary & No semantic claim \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{Conservation invariant and soundness boundary}
+Let $\mathcal C$ be the normalized candidates, let $\mathcal R_c$ contain the
+modeled Ready instances for candidate $c$, and let $\mathcal L$ be the record
+classes in Table~\ref{tab:claims}, including the prefix-only class $\psat$. We write
+$\operatorname{Scope}(\cdot)$ for the instances to which a record is allowed
+to speak. Algorithm~\ref{alg:evidence} and the admission rules enforce
+\begin{equation}
+\begin{gathered}
+\textstyle\sum_{\ell\in\mathcal L}\mathbf{1}
+ [\operatorname{Class}(c)=\ell]=1,\\[-1mm]
+\operatorname{SV}_{\rm D}(\rho_c)\Rightarrow
+ \exists\rho\in\mathcal R_c\;:\;
+ \operatorname{SV}_{\rm D}(\rho),\\[-1mm]
+\operatorname{Scope}\!\left(\mathcal K(\rho_c)\right)
+ =\{\rho_c\}\subseteq\mathcal R_c,
+ \quad\mathcal K\in\{\operatorname{MF},\operatorname{NMS}\}.
+\end{gathered}
+\label{eq:contract-invariants}
+\end{equation}
+The first line proves the \emph{Candidate Conservation Invariant} (no warning is dropped or double-counted). The remaining lines establish the \emph{Soundness Boundary}: an existential positive witness proves satisfiability at a modeled instance, whereas local non-positive profiles hold strictly over their selected instance with no false promotion to candidate-wide safety.
+
+For the bounded collector, let
+$\mathcal H_c^{(b)}\subseteq\mathcal R_c$ be the sink instances collected during
+a configured settle window, and let $\operatorname{Complete}_b$ mean that the
+bounded execution frontier, rather than the complete program path space, was
+exhausted. The producer records this bit together with seed and engine
+accounting; an explicit incomplete accounting bit or any blocker forces
+$\operatorname{Complete}_b$ to be false. We separate the observed direct instances from any conditioned
+sidecar profiles:
+\[
+\begin{aligned}
+\mathcal H_{c,\mathrm D}^{(b)}
+ &\triangleq \{\rho\in\mathcal H_c^{(b)}\mid\\[-1mm]
+ &\qquad \operatorname{Mode}(\rho)=\mathrm D\}.
+\end{aligned}
+\]
+Here $\mathrm D$ denotes observed source provenance at complete sink bytes.
+Prefix-only views are written $\mathcal H_{c,\mathrm P}^{(b)}$ and conditioned
+profiles are written $\mathcal H_{c,\mathrm C}^{(b)}$; both are retained as
+separately scoped sidecars. Only complete $\mathcal H_{c,\mathrm D}^{(b)}$
+participates in the primary bounded aggregate. A positive prefix sidecar may be
+serialized as $\psat$, but it cannot satisfy $\operatorname{Pos}_{\mathrm D}$. Let
+$\operatorname{CompleteMatrix}(\rho)$ mean that all 11 declared vector
+identities have a decision in $\mathbb D$, and let $\operatorname{CM}(\rho)$ be
+its abbreviation. Define $\operatorname{Pos}_{\mathrm D}(\rho)$ as a positive
+direct profile. The abbreviation $\operatorname{AllUNSAT}(\rho)$ below means a
+complete matrix profile in which every declared vector is explicitly
+$\mathsf{UNSAT}$; an $\mathsf{INC}$ cell is not negative evidence. The
+bounded aggregation uses an existential rule for positive evidence and a
+non-escalating rule for non-positive observations. For compactness below, write
+$\mathcal H_D$ for $\mathcal H_{c,\mathrm D}^{(b)}$ and $A_b(c)$ for
+$\operatorname{Complete}_b\land\mathcal H_D\neq\varnothing$. We distinguish complete
+matrix-UNSAT from complete no-source profiles, and abbreviate the four
+outcomes as $\mathsf{EP}$ (exists-positive), $\mathsf{ANP}$
+(all-collected matrix-UNSAT), $\mathsf{ANS}$ (all-collected no-source), and
+$\mathsf{BI}$ (bounded-incomplete):
+
+{\small
+\setlength{\jot}{0pt}
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{2pt}
+\begin{equation}
+\begin{aligned}
+\operatorname{Pos}_{\mathrm D}(\rho)&\iff
+  \mathsf{DR}(\rho)\land\operatorname{CM}(\rho)\land
+  \exists v\in\mathcal V\;:\;Q_v(\rho)=\mathsf{SAT},\\[-1mm]
+\operatorname{Pos}_b(c)&\iff
+  \exists\rho\in\mathcal H_D\;:\;
+  \operatorname{Pos}_{\mathrm D}(\rho),\\[-1mm]
+\operatorname{NonPos}_b(c)&\iff
+  A_b(c)\land\forall\rho\in\mathcal H_D\;:\;
+  \operatorname{AllUNSAT}(\rho),\\[-1mm]
+\operatorname{NoSource}_b(c)&\iff
+  A_b(c)\land\forall\rho\in\mathcal H_D\;:\;
+  \operatorname{NMS}(\rho),\\[-1mm]
+\operatorname{Agg}_b(c)&\triangleq
+  \begin{cases}
+    \mathsf{EP},  & \operatorname{Pos}_b(c),\\[-1mm]
+    \mathsf{ANP}, & \operatorname{NonPos}_b(c),\\[-1mm]
+    \mathsf{ANS}, & \operatorname{NoSource}_b(c),\\[-1mm]
+    \mathsf{BI},  & \text{otherwise},
+  \end{cases}\\[-1mm]
+\mathsf{ANP}\lor\mathsf{ANS}&\Rightarrow
+  \operatorname{Scope}\!\left(\operatorname{Agg}_b(c)\right)
+  =\mathcal H_D\subseteq\mathcal R_c.
+\end{aligned}
+\label{eq:bounded-aggregation}
+\end{equation}
+}
+
+The bounded aggregation record is therefore an explicit collected-instance
+summary. It can recover a positive instance missed by a first-hit-only
+observation within the configured window, but it cannot turn a finite
+non-positive collection into a candidate-wide safety or filtering claim. The
+current evaluator uses this bounded policy by default; the published V20 ledger
+is a frozen historical run and is not retroactively relabeled. The legacy
+first-Ready mode remains available only for compatibility and ablation.
+
+Network/device reachability, post-shell effects, universal sanitizer
+correctness, and source-model completeness remain explicit downstream
+confirmation dimensions rather than implicit ledger claims.
+
+\subsection{Integrity-Bound Evidence Record}
+
+For record $r$, let $L_r$ be its normalized source-ledger row,
+$I_r=I_{X_c}(B_r)$, and $M_r^{\mathrm{sink}}$ denote sink metadata; let
+$\mathbf d_r$ serialize the possibly empty sequence of instantiated triples
+$(v,Q_v(\rho_r),w_v)$. The canonical payload and record digest are:
+\begin{equation}
+\begin{aligned}
+\mathcal R_r&\triangleq\bigl\langle
+ \mathit{id}_r,H(L_r),\mathit{claim}_r,I_r,M_r^{\mathrm{sink}},\\[-1mm]
+ &\qquad H(\mathcal{V}),\mathbf d_r,\mathit{recovery}_r,
+   \mathit{conditioning}_r
+\bigr\rangle,\\
+h_r&\triangleq H\bigl(\operatorname{canon}(\mathcal R_r)\bigr).
+\end{aligned}
+\label{eq:evidence-record}
+\end{equation}
+$M_r^{\mathrm{sink}}$ stores reachability, binding trust, and snapshot metadata;
+$H$ is SHA-256 over canonical JSON, and $w_v=\bot$ denotes no witness. The
+source-ledger digest binds candidate, binary, command projection, provenance,
+and analyzer metadata. Without importing the analyzer, a standalone auditor
+checks serialization, offsets, matrix/witness completeness, sink admission,
+recovery, and conditioning. It establishes record integrity and admission
+consistency. The auditor's trust boundary is
+\begin{equation}
+\begin{aligned}
+\operatorname{Audit}(r)=\mathsf{accept}
+ &\Rightarrow \operatorname{Integrity}(r)\land\operatorname{Admission}(r),\\[-1mm]
+\operatorname{Checked}_{\rm Audit}(r)
+ &=\{\operatorname{Integrity}(r),\operatorname{Admission}(r)\}.
+\end{aligned}
+\label{eq:auditor-boundary}
+\end{equation}
+The record is therefore an integrity-bound audit object; independent replay or
+an UNSAT proof remains a separate semantic-verification layer.

@@ -1,0 +1,833 @@
+          TSDS: Auditable Final-Byte Evidence for
+         Command-Injection Triage in Edge Firmware
+                                                             Author Name
+                                                      Institution Name
+                                                        City, Country
+                                            corresponding.author@example.edu
+
+
+   Abstract—Cloud-connected edge services inherit security risk    model, but does not identify dependent final bytes, establish
+from the firmware that executes them. Static firmware analyzers    shell semantics at the reached callee, or show that a feasible
+scale candidate discovery, but a source-to-sink closure does not   source assignment activates shell syntax. For a cloud-side batch
+identify which bytes reach the final shell command or which
+declared shell effects remain feasible. We present TSDS, a         workflow or a maintainer reviewing heterogeneous edge images,
+candidate-conserving post-discovery layer for batch triage of      the missing chain spans candidate identity, symbolic state, ABI
+edge-firmware warnings, built around an executable final-byte      binding, C-string materialization, shell grammar, and artifact
+evidence contract. It binds sink semantics, reconstructs complete  trust. A taint bit or an isolated metacharacter does not encode
+C strings, tracks byte provenance, and solves a versioned quote-   this chain.
+aware 11-vector matrix. Observed provenance is separated from
+conditioned feasibility; projected UNSAT uses subset monotonicity,    The central insight is that evidence must be ordered by
+projected SAT is rechecked on the full store, and unresolved cases logical strength across that chain. TSDS therefore enforces four
+remain typed obligations.                                          non-escalation rules: a front-end closure is not observed final-
+   In a bounded multi-state campaign over the same eight router    byte dependence; conditioned template feasibility is not source
+images, 546 closures normalize to 518 records. The ledger retains  linkage; projected SAT is rechecked under the full path store;
+36 complete-string direct profiles, 4 observed-prefix profiles, 33
+                                                                   and incomplete search yields an explicit obligation rather than
+static source-slot obligations, 120 static template observations, and
+325 typed residual obligations. Among 188 sink-reached records,    a negative conclusion. These rules form an executable evidence
+123 collections are complete within the declared frontier and 65   calculus whose transitions remain reviewable across analysis
+remain incomplete; no candidate-wide negative flag is emitted. The components. The contribution is thus an evidence boundary
+63 matrix profiles contain 693 cells: 271 SAT, 150 UNSAT, and 272  and its enforceable admission path for high-confidence, batch-
+inconclusive. These current results are bounded evidence, rather
+                                                                   oriented warning triage, rather than another candidate-discovery
+than firmware ground truth or device exploitability. In a separately
+specified 24-case ELF calibration, TSDS matches all pre-specified  heuristic.
+reference labels; simple reachability and full-command metadata       TSDS supplies an evidence contract stating what is observed,
+baselines produce 10 and 5 false positives, while a source-owned-  what is conditioned, and what remains open. It treats each
+byte baseline ties the labels. A separate exported-query replay    closure as a hypothesis and the final shell-facing bytes as
+matches all 154 applicable SAT/UNSAT decisions; 22 boundary
+rows remain outside the replay scope. These calibrations support   the evidence boundary. Outcomes range from a multi-vector
+the stated contract and its audit boundary.                        witness to a local filtering profile; uncertain bindings and
+   Index Terms—Cloud computing, edge security, IoT firmware        incomplete commands remain explicit obligations. Figure 1
+analysis, symbolic execution, command injection, evidence con-     shows the contract on one complete command instance before
+tracts                                                             the aggregate results are discussed.
+                                                                         a) Approach: Rather than detect more candidates, TSDS
+                       I. I NTRODUCTION                            makes an admitted class depend on semantic sink binding,
+   Cloud services increasingly depend on fog, edge, and source-controlled final bytes, and effect-specific satisfiability.
+embedded devices whose firmware constructs privileged shell Evidence-directed execution preserves source-carrying states
+commands through system, popen, and vendor wrappers. in a sink corridor; a quote-aware matrix asks 11 effect-local
+A command-injection warning in such firmware is therefore queries only at controlled offsets. Projected UNSAT is accepted
+relevant to both device security and the systems that manage by subset monotonicity, whereas SAT is validated against the
+these devices. Existing firmware analyses span authentication, full store. A digest-bound ledger records the witness profile,
+cross-binary flows, command-injection discovery, reaching provenance mode, assumptions, and open obligations. These
+definitions, and scalable taint analysis [1]–[6]; rehosting admission invariants prevent upstream labels, reconstructed
+complements them when device state is recoverable [7]–[9]. templates, and incomplete searches from inheriting stronger
+Symbolic execution preserves path and data constraints, yet evidence, enabling auditable batch-oriented triage.
+binary exploration still faces path growth, uncertain calling            b) Results and scope: In the current bounded campaign,
+contexts, and incomplete firmware semantics [10], [11].            546 closures normalize to 518 records across eight router
+   After discovery, a static closure still leaves several evidence images. The ledger retains 36 complete-string direct profiles
+questions open. It relates a source and sink under the front end’s and 4 observed-prefix profiles, alongside 33 static source-
+slot obligations, 120 static template observations, and 325 The terminator may have source lineage for provenance
+residual obligations. Its 63 matrix profiles contain 693 effect- purposes, but it is not an active shell-vector offset.
+local decisions; 188 sink-reached records are audited, with           A captured argument is claimable only if both
+123 bounded-complete and 65 bounded-incomplete collections. callee semantics and argument binding are explicit.
+These are scoped contract results, not firmware-wide precision, Let Ssh = {shell_command, shell_format_wrapper} and
+candidate-wide safety, or device exploitability. The frozen V20 Targ = {direct_abi_arg0, rendered_format_wrapper}. Then
+First-Ready ledger is retained only as a historical comparison,
+and Section VI-F reports separately bound calibrations and             Claimable(s) ≜ Sem(s) ∈ Ssh ∧ Trust(s) ∈ Targ . (2)
+replays.
+      c) Contributions: This paper makes three contributions Direct exec calls and unknown wrappers require different
+to cloud and edge security analysis.                              interpreter models and therefore remain non-claimable under
+   1) An executable final-command-byte evidence calculus with this contract.
+       explicit admission rules and selected-instance quantifiers     The dynamic unit is a selected command instance, not the
+       for observed dependence, conditioned feasibility, local    complete   path space of c. Write Ready(s) ≜ Claimable(s) ∧
+       profiles, static obligations, and unresolved work.         CompleteCString(B(s)),        and define the direct-ready premise
+                                                                                                                         (b)
+   2) Evidence-directed symbolic execution that integrates sink-  DR(s)     ≜  Ready(s)     ∧  Mode(s)       = D. Let Hc be the
+       corridor scheduling, semantic argument binding, byte Ready sink states retained by the bounded collector. After
+       provenance, a versioned quote-aware shell-effect ma- matrix evaluation, PosComplete(s) denotes a direct-ready
+       trix, and asymmetric source-projected solving. Projected state with a complete matrix and at least one SAT cell. Let
+       UNSAT follows subset monotonicity; projected SAT is AdmissibleMatrix(s) denote a complete, claimable direct
+       validated against the full store, and reconstructed slots matrix profile, including non-positive profiles. For nonempty
+                                                                     (b)
+       cannot masquerade as observed provenance.                  Hc , the primary selector first prefers the earliest positive
+   3) A content-bound ledger and audit boundary for cloud- profile, then the earliest admissible complete profile, and
+       compatible batch triage, with bounded multi-state aggre- otherwise returns ⊥ rather than promoting an incomplete or
+       gation, external query replay, controlled baselines, and non-admissible snapshot:
+       explicit residual obligations. The evaluation states the
+       scope of each validation layer rather than treating any                  sc ≜ Selectb (Hc(b) , ≺c ),
+       one layer as firmware ground truth.                                  P(H) ≜ {s ∈ H | DR(s) ∧ PosComplete(s)},
+                                                                            Q(H) ≜   {s ∈ H | DR(s) ∧ AdmissibleMatrix(s)},
+                    II. E VIDENCE C ONTRACT                                           min≺ P(H), P(H) ̸= ∅,
+A. Analysis Boundary and Threat Model                              Selectb (H, ≺) ≜ min≺ Q(H), P(H) = ∅ ∧ Q(H) ̸= ∅,
+                                                                                         ⊥,                 otherwise,
+                                                                                      
+   The input to TSDS is a binary and a front-end closure                        ρc ≜ ⟨c, sc , Bc , Φc , κc ⟩, sc ̸= ⊥.
+c = ⟨x, t, k⟩, where x identifies a candidate source, t is an                                                                   (3)
+optional interprocedural trace, and k identifies a command sink. For s ̸= ⊥, B = B(s ) and Φ = Φ . If Hc(b) = ∅, the
+                                                                         c          c         c           c      sc
+The front end supplies search guidance, not outcome evidence. selector is bypassed and Algorithm 1 continues to a static or
+Candidate documents are normalized under a schema that residual record. If the selector returns ⊥, the collected snapshots
+rejects leaked verdicts, controlled offsets, or matrix decisions. remain audit evidence but cannot drive the primary semantic
+A digest binds the original closure, binary, source and sink classification. The explicit -first-ready-legacy option
+addresses, and front-end identity.                                replaces Selectb by the first Ready state for compatibility and
+   The modeled adversary controls bytes returned by configured ablation. Equation 3 is a deterministic selection rule, not an
+Web, NVRAM, configuration, environment, file, and entry- assertion that sc is the only reachable sink state. Every dynamic
+argument summaries. The query asks whether those bytes can claim below is scoped to ρc .
+activate declared shell syntax at a claimable sink. Authenti-         Let V be the declared 11-vector matrix. Predicate
+cation, routing, deployment state, and post-shell effects are P (B , I (B ), χ ) represents vector v under quote context
+                                                                    v    c Xc     c    c
+included only when materialized as constraints or command χ and constrains syntax only at source-controlled offsets. The
+                                                                    c
+bytes.                                                            authoritative decision has a three-valued domain:
+B. Final-Byte Semantics                                                       D ≜ {SAT, UNSAT, INC},
+                                                                                                                                 (4)
+   For a reached state s, write B = B(s) = ⟨b0 , . . . , bn−1 ⟩          Qv (ρc ) ≜ SolveD (Φc ∪ {Pv (Bc , IXc (Bc ), χc )}) .
+for the captured command C string up to the first verified
+terminator τs . Let Xc denote the symbolic variables introduced    SolveD returns INC when no complete placement exists or
+by the admitted source model for c. The source-controlled          a context or solver obligation is unresolved. A SAT model
+offset set is                                                      is serialized as a minimal command-byte witness; UNSAT
+                                                                   remains scoped to ρc , the source model, and the versioned
+     IXc (B) ≜ { i ∈ [0, τs ) ∩ N | Vars(bi ) ∩ Xc ̸= ∅ }.   (1)   matrix.
+           Illustrative Source Context (/apply.cgi)                                                      CPU     Sink ABI Binding Slice (system @ 0x95928)
+     Context: POST /apply.cgi                               [schematic]Cross-Component                     0x0009591c: lw $s0, 16($sp) /* Buffer ptr */
+     Example source bytes:                                                 Dataflow                        0x00095920: move $a0, $s0 /* Bind cmd ABI arg0 */
+     submit_flag=ping&ping_ip=127.0.0.1;reboot                                                             0x00095928: jal system /* Sink @ 0x95928 */
+     Source-model binding: Field "ping_ip" −→ Symbolic Slot Xping_ip                                       0x0009592c: nop /* Delay slot pad */
+                                                                                                                                                  Captured Command Argument B
+    >_     Captured Shell Argument Byte Strip B & Deterministic Quote Automaton                           Binding: Claimable(s) ≜ shell_command ∧ direct_abi_arg0 = true
+           Static Prefix (b0 . . . b16 , 17 B)                  Source-Controlled Slot IX = [17, 47] (31 Bytes, Highlighted)            Static Suffix (b48 . . . b51 )   NUL (b52 )
+
+            tc qdisc del dev                              127.0.0.1;reboot......                 (Witness: A$(:)AA...)                              root                    \0
+
+      Deterministic Quote Automaton: Prefix b0 . . . b16 has no open quotes =⇒ q0 = Sunq (Unquoted context, direct shell exposure)                            PlaceCond = true
+      C-string: τs = 52 verified =⇒ complete C string ∧ claimable sink =⇒ Ready                                                                             Controlled: |IX | = 31 B
+                                                 Syntax obligations                                                                          Directional SMT query
+
+           11-Dimensional Shell Effect Decision Matrix V                                         CPU    Directional SMT Projection & Counterexample Witness
+     • Effect vector: ; (0x3B) =⇒ v[0] = 1 (modeled separator)                                    • Source-directed slice: Φ∗ ⊆ Φ; SAT is rechecked against the full store
+     • Witness effect: reboot / id is represented as a separate command node                      • Matrix profile: an 11-cell selected-instance fragment with explicit
+     • Syntax result: the selected instance admits a shell-effect template                        SAT/UNSAT/INC outcomes
+     ▶ Classification: SV-SAT (Direct Source-Local Evidence)                                      • Command-byte witness: "submit_flag=ping&ping_ip=127.0.0.1;id"
+                                                                                                  ▶ Audit outcome: integrity/admission checks pass; shell execution is not performed
+
+                  Claimable(s) ∧ CompleteCString(B) ∧ |IX | = 31 ∧ (4 SAT, 7 UNSAT)    =⇒      SV-SAT (direct, selected-instance profile)
+                                                                                | Conserved Record Digest hr = H(canon(Rr )) = 0x7e29 . . . f14a
+         Auditor Trust Boundary: Audit(r) = accept =⇒ Integrity(r) ∧ Admission(r)
+
+
+Fig. 1. Worked final-byte contract for XR300 closure 30. The request and assembly snippets are schematic context; the selected sink instance has 31 controlled
+offsets, a 4-SAT/7-UNSAT profile, and a digest-bound direct SV-SAT record. The figure reports no shell execution or device-level trigger.
+
+C. Evidence Classes and Claims                                                                                                 TABLE I
+                                                                                                   R ECORD VOCABULARY AND LOGICAL SCOPE . C ONDITIONED TEMPLATE
+   Figure 1 instantiates the contract; its command-substitution                                    FEASIBILITY IS SEPARATED FROM OBSERVED FINAL - BYTE DEPENDENCE .
+cell constrains controlled offsets 18–21 to $(:) and yields
+the complete witness tc qdisc del dev A$(:)AA ...                                                 Record          Unit          Admission                                 Logical force
+root. A SV-SAT profile is partial when it also contains                                           SV-SAT     Inst. (direct) Obs. controlled extent; ∃v SAT Existential
+UNSAT or inconclusive cells. For a directly observed in-                                                                                                   modeled-instance
+                                                                                                                                                           vector
+stance ρ belonging to candidate c, the source-variable set                                        CT-SAT     Inst. + tpl. Reconstructed slot; ∃v SAT       Conditioned
+is the candidate-bound set Xc from Eq. 1. Define the                                                                                                       template
+explicit direct-ready premise DR(ρ) ≜ Mode(ρ) = D ∧                                                                                                        feasibility
+Claimable(ρ) ∧ CompleteCString(Bρ ); for compactness, let                                         M-F ILT    Inst. (direct) Complete; ∀v UNSAT             11-vector local
+                                                                                                                                                           profile
+AD (ρ) ≜ DR(ρ) ∧ IXc (Bρ ) ̸= ∅ ∧ CM(ρ) be the complete                                           NMS        Inst. (direct) Complete; IX = ∅               Source-model-
+direct-matrix premise. The three dynamic predicates are                                                                                                    local snapshot
+                                                                                                  Static src Candidate Strong source slot; open            Follow-up
+   SVD (ρ) ⇐⇒ AD (ρ) ∧ ∃v ∈ V : Qv (ρ) = SAT,                                                                                                              obligation
+    MF(ρ) ⇐⇒ AD (ρ) ∧ ∀v ∈ V : Qv (ρ) = UNSAT,                                           (5)      Static tpl Candidate Fixed template; no slot             Template
+   NMS(ρ) ⇐⇒ DR(ρ) ∧ IXc (Bρ ) = ∅.                                                                                                                        observation
+                                                                                                  R ESIDUAL Candidate Unresolved boundary                  No semantic
+Thus direct SV-SAT carries an existential modeled-instance                                                                                                 claim
+witness. M-F ILT and NMS are matrix-local and source-model-
+local descriptors of ρ, respectively; they do not quantify over                                   record is allowed to speak. Algorithm 1 and the admission
+other feasible sink instances and are never candidate-wide                                        rules enforce
+negative conclusions. Conditioned reconstruction has a separate
+                                                                                                                  P
+                                                                                                                     ℓ∈L 1[Class(c) = ℓ] = 1,
+class, CT-SAT, because satisfiability over a fresh reconstructed                                                SVD (ρc ) ⇒ ∃ρ ∈ Rc : SVD (ρ),           (6)
+slot does not by itself prove that an input admitted by Xc                                              Scope(K(ρc )) = {ρc } ⊆ Rc , K ∈ {MF, NMS}.
+can traverse the program and produce that slot. Accordingly,
+M-F ILT means “matrix-UNSAT at the selected instance,” not                                        The first line expresses candidate conservation. The remaining
+warning elimination. Table I summarizes this vocabulary. When                                     lines make the path quantifiers explicit: a direct witness
+no dynamic instance completes, strong source-slot evidence                                        establishes one modeled instance, whereas a local filtered or
+creates a static source obligation, while a fixed template without                                no-source profile has scope only over its selected instance; the
+a source slot creates a template observation. Neither rule creates                                contract records that scope directly.
+                                                                                                                                         (b)
+controlled offsets or matrix decisions.                                                              For the bounded collector, let Hc ⊆ Rc be the sink
+     a) Quantifier and conservation invariants: Let C be the                                      instances collected during a configured settle window, and
+normalized candidates, let Rc contain the modeled Ready                                           let Completeb mean that the bounded execution frontier,
+instances for candidate c, and let L be the seven record classes                                  rather than the complete program path space, was exhausted.
+in Table I. We write Scope(·) for the instances to which a                                        The producer records this bit together with seed and engine
+accounting; an explicit incomplete accounting bit or any blocker       witness. The source-ledger digest binds candidate, binary, com-
+forces Completeb to be false. We separate the observed direct          mand projection, provenance, and analyzer metadata. Without
+instances from any conditioned sidecar profiles:                       importing the analyzer, a standalone auditor checks serialization,
+                     (b)                                               offsets, matrix/witness completeness, sink admission, recovery,
+                   Hc,D ≜ {ρ ∈ Hc(b) |
+                                                                       and conditioning. It establishes record integrity and admission
+                            Mode(ρ) = D}.                              consistency. The auditor’s trust boundary is
+Here D denotes observed source provenance at the sink bytes.
+                                                          (b)           Audit(r) = accept ⇒ Integrity(r) ∧ Admission(r),
+The remaining conditioned profiles are written Hc,C and                                                                                  (9)
+                                                  (b)
+                                                                          CheckedAudit (r) = {Integrity(r), Admission(r)}.
+retained as a separately scoped sidecar. Only Hc,D participates
+in the primary bounded aggregate. Let CompleteMatrix(ρ) The record is therefore an integrity-bound audit object; indepen-
+mean that all 11 declared vector identities have a decision in dent replay or an UNSAT proof remains a separate semantic-
+D, and let CM(ρ) be its abbreviation. Define PosD (ρ) as a verification layer.
+positive direct profile. The abbreviation AllUNSAT(ρ) below                                III. S YSTEM OVERVIEW
+means a complete matrix profile in which every declared
+                                                                       Figure 2 summarizes how the contract closes four gaps
+vector is explicitly UNSAT; an INC cell is not negative
+                                                                    left by discovery. A digest-checked adapter binds candidate
+evidence. The bounded aggregation uses an existential rule
+                                                                    identity without importing a front-end verdict. Evidence search
+for positive evidence and a non-escalating rule for non-
+                                                                    preserves source-carrying states through the recovered sink
+positive observations. For compactness below, write HD for
+  (b)                                                               corridor. A semantic plugin resolves the shell contract and
+Hc,D and Ab (c) for Completeb ∧HD ̸= ∅. We distinguish
+                                                                    materializes the final C string, after which matrix solving
+complete matrix-UNSAT from complete no-source profiles,
+                                                                    tests only source-dependent offsets. The ledger serializes the
+and abbreviate the four outcomes as EP (exists-positive), ANP
+                                                                    resulting instance profile and every remaining obligation under
+(all-collected matrix-UNSAT), ANS (all-collected no-source),
+                                                                    one content identity.
+and BI (bounded-incomplete):
+                                                                       Algorithm 1 makes candidate conservation explicit: every ad-
+      PosD (ρ) ⇐⇒ DR(ρ) ∧ CM(ρ) ∧ ∃v ∈ V : Qv (ρ) = SAT,            mitted  candidate produces one record. R ESOLVE B YTE V IEW re-
+       Posb (c) ⇐⇒ ∃ρ ∈ HD : PosD (ρ),                              turns  an admitted direct or conditioned mode, or an unresolved
+  NonPosb (c) ⇐⇒ Ab (c) ∧ ∀ρ ∈ HD : AllUNSAT(ρ),
+ NoSourceb (c) ⇐⇒  Ab (c) ∧ ∀ρ ∈ HD : NMS(ρ),                      byte-view obligation; other search, capture, binding, prove-
+                  EP,
+                            Posb (c),
+                                                                    nance, or solver failures remain typed. A direct instance with
+       Aggb (c) ≜ ANP, NonPosb (c),                                 no controlled extent is classified as NMS before matrix solving,
+                  ANS, NoSourceb (c),
+                  
+                     BI,     otherwise,                             while an unresolved byte view cannot enter a semantic class.
+  ANP ∨ ANS ⇒ Scope(Aggb (c)) = HD ⊆ Rc .
+                                                               (7) Write Ready(κ, B) ≜ Claimable(κ) ∧ CompleteCString(B).
+   The bounded aggregation record is therefore an explicit             The bounded collector visits sink hits in scheduler order and
+collected-instance summary. It can recover a positive instance      retains  every Ready snapshot observed through the configured
+missed by a first-hit-only observation within the configured        settle  window.     A deterministic primary selector prefers the
+window, but it cannot turn a finite non-positive collection         earliest  complete     positive profile, then the earliest complete
+into a candidate-wide safety or filtering claim. The current        claimable   direct    matrix  profile. If neither exists, the candidate
+evaluator uses this bounded policy by default; the published        is retained  as  a typed  residual;   no incomplete or non-admissible
+V20 ledger is a frozen historical run and is not retroactively      snapshot   is promoted     to  primary   evidence. The explicit legacy
+relabeled. The legacy first-Ready mode remains available only       option   uses   first  Ready   only   for  compatibility and ablation.
+for compatibility and ablation.                                     In  direct mode,     a  SAT   cell  supplies  a existential witness for
+   Network/device reachability, post-shell effects, universal       that modeled     instance;  M-F   ILT  and  NMS    remain local profiles
+sanitizer correctness, and source-model completeness remain         and  do  not  authorize   candidate-wide     elimination.  CT-SAT has
+explicit downstream confirmation dimensions rather than             the  same   selected-instance      scope  plus  the reconstruction-link
+implicit ledger claims.                                             gate in Eq. 12. States outside the captured instance are not
+                                                                    silently universalized: if no admissible instance completes, the
+D. Integrity-Bound Evidence Record                                  candidate is conserved as a static obligation or residual.
+   For record r, let Lr be its normalized source-ledger row, Ir =      Guarded refinement synthesizes summaries only for residuals.
+IXc (Br ), and Mrsink denote sink metadata; let dr serialize the Each admitted bundle configures a bounded replay through
+possibly empty sequence of instantiated triples (v, Qv (ρr ), wv ). Algorithm 1; the result remains conditioned and outside the
+The canonical payload and record digest are:                        primary aggregate.
+        Rr ≜ id r , H(Lr ), claim r , Ir , Mrsink ,                                               IV. D ESIGN
+              H(V), dr , recovery r , conditioning r ,           (8)
+                                                                      A. Candidate-Bound Context Reconstruction
+        hr ≜ H canon(Rr ) .
+                                                                         TSDS validates a reported closure rather than rediscovering
+Mrsink stores reachability, binding trust, and snapshot metadata;      arbitrary flows. Its candidate contract binds the front-end and
+H is SHA-256 over canonical JSON, and wv = ⊥ denotes no                record digests, source/sink addresses, trace, inputs, and sink
+       S TAGE 1: Terminal Command Snapshot Delimitation & Deterministic Grammar Modeling
+                  Sink Snapshot & Interval Delimitation                                          Deterministic Quote Automaton Aquote                                        11-D POSIX Effect Matrix
+          [Sink Snap] ELF
+                                       \0 Delim                                                                            Sunq                                               ;     |     & `...` $( )
+         > system(cmd)                                  IX               \0                                        ’                  "
+                                                                                                                                                          Map                     $A > < ${IFS} \n \t
+                                                                                  Scan            ¬′         Ssq                      Sdq        ¬”
+         + eval "$I_X"                            0   [Li , Ri ]     τ                                                 ’          "
+                                                                                                                                                                          V = [vsep , vpipe , vbg , . . . ]11
+                Snapshot Capture: Bc = Snap(s, asink )                                               Context: χ(IX ) ∈ {Sunq , Ssq , Sdq }
+               Controlled Extent: IX = [Li , Ri ] ⊆ [0, τ )                                                                                                              Violation: Pv ≜ [p, p + mv ) ⊆ IX
+                                                                                                       Escape Boundary Analysis · Escape Lock
+
+
+                                                                                         Handoff: Formal Constraint Tuple ⟨Φ, IX , Pv ⟩
+
+       S TAGE 2: Directional Constraint Projection & Isolated Sandbox Solving
+              Global Causal Hypergraph                                                       Hypergraph Monotonic Closure Slicing                                                 Forkserver Isolated Solving
+
+                                                                              Monotonic Closure Φ∗
+                  x1                                                                                    Pruned                    Source-directed slice
+                               y         zsk                                   x1                        u1                                                               Master fork() Sandbox                 Bounded
+                  x2                                         Slice                            zsk                                                               Solve     Daemon                Worker       primary selector
+                                                                                         y
+                                                                               x2                         u2                   UNSAT Subset Rule
+                                                                                                                            Φ∗ ⊆ Φ: UNSAT preserved
+                   HV = ⟨V, E⟩, Φ                                                                                                                                            Witness: SAT(Φ ∪ {Pv }) ⇒ W
+                                                                              Φ∗ = Proj(Φ, IX )
+                Global Symbolic Constraints                                                   Fixed-Point Slice · Full-Store SAT Recheck                                  Envelope: 150s | 8 GiB | Process Fuse & Recovery
+
+
+                                                                                    Handoff: Solving Verdict & Counterexample Witness W
+
+       S TAGE 3: Evidence Classification, Runtime Checks & Audit
+              Current Campaign (518 Records)                                                     Runtime Grounding / Selected Bridge                                          Standardized Audit Provenance
+       Direct          Complete-byte SV-SAT             36                                       [Console: Separate Runtime Tracks]                                                     [Conservation] 518 Closed
+       Prefix          Observed-prefix direct            4                     ROUTER HW         [receipt] wrapper / process binding
+                                                                 Witness                                                                                        Ledger              [Provenance] SHA-256 Chain
+       Local           Source-slot obligation           33                                       [profile] 63 / 693 matrix cells
+                                                                                8 Routers
+       Static          Template observation            120                                       [bridge] QEMU/GDB: 10 / 17 token                                                         [Scope] Local / Typed
+                                                                                 MIPS/ARM
+       Open            Residual obligations            325
+              P                                                                                         83 / 83 wrapper/runtime receipts                                                [Fail-Safe] Typed Isolation
+                  = 518 candidate records conserved                                              selected QEMU/GDB bridge only; shell disabled
+
+
+
+Fig. 2. TSDS realizes a final-byte evidence contract across candidate binding, evidence-directed search, semantic command reconstruction, and effect-local
+solving. The outcome card reports the current bounded campaign: 36 complete-byte direct profiles, 4 observed-prefix profiles, 33 source-slot obligations, 120
+template observations, and 325 typed residuals. The runtime panel separates 83/83 wrapper/runtime receipts from the 10/17 QEMU/GDB selected-token
+observations; these auxiliary tracks do not imply device-level exploitability. Refinement and record auditing consume the conserved ledger without bypassing
+its admission path.
+
+name while rejecting outcome fields. Duplicate identities are                                                              B. Sink Corridor and Evidence-Aware Scheduling
+rejected; distinct front-end closures remain auditable. Because
+traces often begin without a caller frame, architecture-aware          A front-end trace is incomplete around indirect calls and
+seed families initialize ARM argument/callee-saved carriers         wrappers. TSDS merges it with a recovered CFG to form a
+or MIPS a0-a3, t9, gp, and ra; main-like entries receive            closure-specific sink corridor. Reverse search from the sink
+bounded argc/argv memory. Recorded seed assumptions                 and registered wrappers assigns structural distance dk ; trace-
+must still reach the declared sink and satisfy the contract.        only nodes receive monotonic guide distances, and nodes
+                                                                    beside unresolved indirect edges form a bounded escape set.
+   Firmware-aware summaries preserve evidence-relevant ef- Program counters are classified as target, corridor, guide, escape,
+fects: sources return labeled strings; string summaries model unknown, or outside.
+copies, concatenation, tokenization, and bounded transfer; and         At each step, the execution engine forms three groups of
+format summaries retain fixed command fragments while bind- scheduling keys:
+ing only source-derived slots. Numeric conversions preserve
+lineage when their byte representation becomes constrained.                   F(s) ≜ (pc, dk , γ ; σc , σp , π, χ ; δΦ , ρ),
+                                                                                                                                (10)
+   Algorithm 1 presents the current bounded collection policy.                 π(s) ≜ σp (s) ∧ NearSink(s).
+E VALUATE I NSTANCE applies the direct or conditioned byte-
+view gate, the projected query rule, and full-store validation Semicolons separate corridor, evidence, and diversity keys.
+before a profile enters H. The collector retains Ready snapshots Here σc /σp denote source carriage and propagation, χ quote
+through the settle budget; S ELECT P RIMARY implements Eq. 3 context, δΦ a constraint digest, ρ a return signature, and γ
+and admits only complete, claimable direct matrix profiles. the corridor class. The bit π protects propagated source near
+If none is collected, the algorithm emits a typed resid- the sink. Lexicographic ranking prioritizes protection, corridor
+ual; AGGREGATE B OUNDED implements Eq. 7. The explicit class, source progress, and distance, then preserves bounded
+-first-ready-legacy mode returns at the first Ready semantic diversity by constraint, quote, program-counter, and
+snapshot only for compatibility and ablation. The frozen V20 return signatures. The adaptive cap reserves protected near-
+ledger is a historical first-Ready run and is reported as such sink, best source-carrying, and escape states before ranked fill;
+rather than silently regenerated under the current default. A later pressure contracts the remaining quota. Register-local source
+positive snapshot can therefore be exposed within the bounded liveness is intentionally incomplete. A source-dead stop is
+window, while an incomplete or non-positive collection cannot admissible only after its configured horizon and only when no
+be promoted to a candidate-wide negative result.                    strong source obligation, near-sink frontier, or protected state
+Algorithm 1 Contract-guided evidence construction                     contract; unknown wrappers remain unbound. A shell-vector
+Require: candidate c, binary F , matrix V, policy b               ∈   claim is possible only when the plugin’s semantic class and
+    {BOUNDED, LEGACY}                                                 the observed binding jointly satisfy Eq. 2.
+Ensure: one candidate-bound ledger record r
+    Phase I: candidate binding                                            The command capture records the first verified C-string
+ 1: ĉ ← N ORMALIZE A ND B IND(c, F )                                 terminator, the maximum modeled extent, fixed bytes, symbolic
+ 2: if ¬VALID C ANDIDATE(ĉ) then                                     bytes, and quote-prefix context. An incomplete snapshot can
+ 3:     return R ECORD R ESIDUAL(ĉ, I NVALID C ANDIDATE)             support a residual diagnosis but cannot support M-F ILT or
+ 4: S ← S EED S TATES(F, ĉ); H ← ∅                                   NMS. For each captured byte, TSDS constructs a bounded
+ 5: O ← N EW O BLIGATION(ĉ)
+                                                                      provenance DAG with source-variable, symbolic-variable, con-
+    Phase II: bounded search and instance collection
+ 6: while S ̸= ∅ and budgets remain do                                stant, transformation, annotation, sink-byte, and final-argument
+ 7:     S ← S CHEDULE C ORRIDOR(S, ĉ)                                nodes. A controlled offset is accepted only if a source-variable
+ 8:     S ← S TEP(S)                                                  node reaches that sink-byte node. The graph digest and all
+ 9:     Sort sink hits in scheduler order ≺c                          active paths are stored in the record. Thus a taint count cannot
+10:     for all s ∈ S INK H ITS(S) do                                 disagree silently with the serialized offset set.
+11:         (κ, B) ← B INDA ND C APTURE S INK(s, ĉ)
+12:         if R EADY(κ, B) then                                          Dynamic execution can preserve a command while losing
+13:               e IX , G, µ) ← R ESOLVE B YTE V IEW(s, B, ĉ)
+                (B,                                                   source lineage inside a vendor helper. TSDS therefore separates
+14:             if µ = ⊥ then                                         direct variables Xc observed in B(s) from fresh conditioned
+15:                 O ← U PDATE O BLIGATION(O, B YTE V IEW)           variables Xcrec . Let Afmt (s, B) denote an explicit format slot
+16:             else                                                  observed by the verified wrapper plugin (e.g., a rendered %s);
+17:                 ρs ← ⟨ĉ, s, B,
+                                 e Φs , κ, µ⟩
+18:                 ds ← E VALUATE I NSTANCE(ρs , IX , G, V)          it is a slot fact, not source ownership. Conditioned admission
+19:                 H ← H ∪ {(ρs , ds )}                              accepts Ast (c, T ) ∨ Afmt (s, B(s)), together with a Ready sink
+20:                 if b = LEGACY then                                and a compatible template. Let ac ≜ Anchor(T, B(s)) and
+21:                     return E MIT R ECORD(ρs , ds )                Λc ≜ Linkc (Xcrec , Xc , B(s)). Admission, reconstruction, and
+22:         else                                                      the promotion gate are
+23:             O ← U PDATE O BLIGATION(O, κ, B)
+        if b = BOUNDED ∧ SettleReached(S, H) then
+                                                                                                                                     
+24:                                                                         Rec(c, s, T ) ≜ Ready(s) ∧ Ast (c, T ) ∨ Afmt (s, B(s))
+25:         break
+                                                                                             ∧ Compat(T, B(s)) ∧ (ac ̸= ⊥),
+    Phase III: select, aggregate, and close
+26: Completeb ← C OLLECTION C OMPLETE(S, O, b)                                        Bc ≜ Instantiate(T, ac , Xcrec ),
+                                                                                       e
+27: if H ̸= ∅ then                                                                    ΨCv ≜ Φs ∪ ΓT ∪ {Pv (Bc )},
+                                                                                                              e
+28:     ρc ← S ELECT P RIMARY(H, ≺c )                                       CTFv (ρ, T ) ⇐⇒ SAT(Ψv ),   C
+29:     if ρc = ⊥ then
+30:         return R ECORD R ESIDUAL(ĉ, O, N O P RIMARY)              PromoteD (ρ, v) ⇒ Λc
+                                                                                             ∧ SAT ΨC
+                                                                                                                
+31:     Ab ← AGGREGATE B OUNDED(H, Completeb , O)                                                     v ∪ {Λc } .
+32:     return E MIT R ECORD(ρc , Ab )                                                                                            (12)
+33: if A DMIT S TATIC RULE(ĉ, O) then                                Here Linkc is a semantic relation, not a label: it binds each
+34:     return R ECORD S TATIC C LASS(ĉ, O)                          reconstructed slot byte to an admitted source through recorded
+35: return R ECORD R ESIDUAL(ĉ, O)                                   copy, format, truncation, or encoding constraints. Template
+                                                                      compatibility and full-store SAT over a fresh slot cannot create
+remains:                                                              that relation or restore missing dependence. The link admission
+        Glive (S, c) ≜ StrongSource(c) ∨ NearSink(S)                  checker additionally requires source offsets to remain within
+                       ∨ Protected(S),                                the declared input bound, sink offsets to precede the verified
+                                                     (11)             C-string terminator, and every mapped sink offset to belong
+  LivenessStop(S) ⇐⇒ D(S) ≥ L
+                       ∧ ¬Glive (S, c).                               to the declared output domain of its transform step; a failure
+                                                                      leaves the record conditioned or residual rather than promoting
+Here D(S) counts consecutive source-dead rounds, L is                 it. Freshness makes the distinction explicit:
+the horizon, and both set predicates are existential over S.
+Suppressed stops are logged, preventing a liveness heuristic                   Xcrec ∩ Vars(Φs ∪ B(s)) = ∅,
+                                                                                                                                 (13)
+from silently becoming a final classification.                                 CTFv (ρ, T ) ∧ (Λc = ⊥) ⇒ Mode(ρ) = C.
+C. Semantic Sink Binding and Byte Provenance                          until Linkc is conjoined. No conditioned record in this
+   Name matching alone is insufficient because firmware               evaluation establishes Λc ; all remain CT-SAT rather than direct
+wrappers expose different argument contracts. The sink reg-           SV-SAT. Thus cmd "%s" may support conditioned feasibility
+istry maps verified functions to semantic plugins. system             for a double-quoted substitution without proving source-to-slot
+and popen use a shell-string contract with a direct first-            traversal. ΓT fixes the template and a 24-byte non-NUL slot;
+argument ABI binding. Recognized vendor wrappers use a                records bind its anchor, digest, offsets, constraint count, and
+format-command contract and must materialize the rendered             recovery rule. Conditioned UNSAT or incomplete admission
+command. Direct exec* calls receive a non-shell argv                  remains residual and cannot emit M-F ILT or NMS.
+                              TABLE II                              Algorithm 2 Source-projected vector decision
+V ERSIONED SHELL - VECTOR SPECIFICATION (U: UNQUOTED ; DQ: DOUBLE   Require: full store Φ, command B, controlled offsets IX , vector v
+    QUOTED ). “:” IS THE SHELL NO - OP USED IN COMPLETE WITNESS     Ensure: decision dv ∈ D and optional witness wv
+                             TEMPLATES .
+                                                                        Phase I: instantiate a controlled placement
+                                                                     1: χ ← Q UOTE C ONTEXT(B)
+Effect          Vector ID(s)   Canonical witness(es)   Ctx.
+                                                                     2: Pv ← I NSTANTIATE P REDICATE(v, B, IX , χ)
+Shell list      semi., newline :;:;#, :\n:;#           U             3: if Pv has no grammar-complete controlled placement then
+Pipe. / async   pipe, amp.       :|:;#, :&:;#          U             4:     return (INC, ⊥)
+Cmd. subst.     backtick, $-sub. `:`, $(:)             U, DQ            Phase II: projected decision
+Param. exp.     $-exp.           $A                    U, DQ         5: (Φ⋆ , hf , hp ) ← P ROJECT F IXED P OINT(Φ, Pv , B[IX ])
+I/O redirect    output, input >/dev/null, </dev/null   U             6: ap ← S OLVE(Φ⋆ ∪ {Pv })
+Word split      IFS, tab         ${IFS}:, \t:          U             7: if ap = UNSAT then
+                                                                     8:     return (UNSAT, ⊥)
+D. Quote-Aware Shell-Vector Matrix                                   9: else if ap ̸= SAT then
+                                                                    10:     return (INC, ⊥)
+   The matrix is a versioned, content-addressed threat specifica-
+                                                                        Phase III: full-store validation
+tion with 11 vectors covering shell lists, substitution, expansion, 11: af ← S OLVE(Φ ∪ {Pv })
+redirection, and word splitting defined as a restricted shell       12: if af = SAT then
+fragment informed by POSIX shell semantics [12], [13]               13:     wv ← S ERIALIZE W ITNESS(af , hf , hp )
+(Table II). A deterministic automaton tracks unquoted, single-      14:     return (SAT, wv )
+quoted, and double-quoted contexts with backslash handling.         15: else if af = UNSAT then
+                                                                    16:     return (UNSAT, ⊥)
+Each vector is active only in declared contexts, and every          17: else
+witness template contains the complete syntax rather than an        18:     return (INC, ⊥)
+isolated metacharacter.
+   Let Wv = ⟨w0 , . . . , wmv −1 ⟩ be a canonical witness and let projects the path store through a variable hypergraph. Let
+Πv (B, χ) denote starts admitted by its grammar and quote Φ = ⟨ϕ , . . . , ϕ ⟩, and let N (R) collect variables from
+                                                                           1      m              Φ
+contexts. With Ext(IX ) the maximal contiguous controlled constraints incident on R:
+extents, the placement predicate is
+   Pv,p (B, IX ) ≜ ∃E ∈ Ext(IX ) :                                      R0 ≜ Vars(Pv ) ∪ Vars(B[IX ]),
+                     [p, p + mv ) ⊆ E ∧ B[p : p + mv ] = Wv ,        Rj+1 ≜ Rj ∪ NΦ (Rj ),
+  Pv (B, IX , χ) ≜ ∃p ∈ Πv (B, χ) : Pv,p (B, IX ).
+                                                             (14)       Φ⋆ ≜ { ϕ ∈ Φ | Vars(ϕ) = ∅ ∨ Vars(ϕ) ∩ R∞ ̸= ∅ }.
+                                                                                                                               (15)
+Here B[p : p + mv ] is byte-slice equality with the complete
+                                                                    Because Φ contains finitely many variables, the monotone
+witness. The evaluator rejects starts that cross τs , require
+                                                                    sequence reaches the least fixed point R∞ . Variable-free
+concrete source bytes, violate quote context, or leave one
+                                                                    constraints are retained, and both full and projected stores
+controlled extent. Here \n and \t are the single bytes 0x0A
+                                                                    receive structural digests for caching and record binding.
+and 0x09; parser calibration and the 16-case matrix replay are
+separate tracks. Table II therefore gives complete templates           Projection uses an asymmetric proof rule. Since Φ⋆ ⊆ Φ,
+rather than isolated metacharacters.
+   For single- or double-quoted prefixes, a quote-breakout                  UNSAT(Φ⋆ ∪ {Pv }) ⇒ UNSAT(Φ ∪ {Pv }).                 (16)
+candidate is considered only when its closing quote, witness,
+and suffix are all controlled. Unknown context, incomplete
+syntax, or solver error yields an inconclusive cell and blocks M-   Removing constraints can introduce models but cannot remove
+F ILT. For the current witness-bound revision, the matrix digest    them. Projected UNSAT is therefore an authoritative shortcut.
+covers the complete witness strings together with their contexts    Projected SAT is only a candidate model and must be
+and effect identities; changing a template therefore creates        revalidated under Φ. Algorithm 2 implements this rule and
+a new evidence domain. The matrix is a reviewable effect            fail-closes solver exceptions to inconclusive.
+specification, not a claim of complete POSIX-shell coverage.
+Its digest binds one contiguous extent and the constructs in
+Table II; multi-extent composition, here-documents, arithmetic      F. Guarded Refinement and Residual Accountability
+expansion, or nested interaction requires a new revision.
+Records remain comparable to the exact templates and contexts          Only an explicit residual can trigger a bounded summary. Ad-
+under which they were decided.                                      mission requires a resolvable target, medium/high confidence,
+                                                                    and kind-specific evidence: strong static source evidence for
+E. Source-Projected Constraint Solving                              source/format summaries, a source slot for format binding, or
+   Firmware states often contain constraints unrelated to           an explicit branch signal for environment summaries. For replay
+the source bytes or vector predicate. Inspired by program           sink state sh and command Bh , let ρh = ⟨c, sh , Bh , Φh , κh ⟩
+slicing and targeted symbolic execution [14], [15], TSDS            denote the corresponding selected replay instance. Admission
+obeys:                                                             callsites for warm and cold operational reuse; (4) Static-
+                                                                   dynamic reconciliation correlates static sink corridors with
+            Direct(h, c) ≜ Claimable(sh )                          runtime process discovery and listener evidence; and (5) Tool-
+                            ∧ CompleteCString(Bh )                 assisted review implements the decoupled standalone auditor
+                            ∧ ObservedProvXc (Bh )                 for zero-execution admission and schema integrity verification.
+                            ∧ IXc (Bh ) ̸= ∅                          Each closure executes within an isolated worker process. A
+                                                              (17)
+                            ∧ ∃v ∈ V : Qv (ρh ) = SAT,             POSIX forkserver preloads immutable binary context; workers
+            Admit(h, c) ⇒ Replay(h, c),                            enforce RLIMIT_AS, timeouts, step bounds, and frontier
+    PromoteSV-D (h, c) ⇒ Admit(h, c)                               caps: 45 s for the engine, 90 s after initialization, a 150-
+                            ∧ Direct(h, c).                        s outer envelope, 500 steps, an 8-GiB address-space limit,
+The replay must reconstruct observed controlled bytes and 20/60/120 active-state caps, four escape states, and a 2,048-
+satisfy Eq. 4 to enter direct SV-SAT. A replay satisfying only entry projection cache.
+the conditioned gate in Eq. 12 remains CT-SAT. All refinement         The append-only JSONL ledger binds candidate/binary
+outputs are labeled and remain outside the primary aggregate. identities, sink metadata, command projection, controlled
+   Every remaining residual records one root cause, confidence, offsets, provenance, matrix decisions and witnesses, projection
+sink distance, and follow-up obligation. Causes cover bounded- digests, scheduler state, conditioning, and residual obligations.
+search exits, incomplete snapshots, post-sink transfer, and A contract-focused Linux receipt (Python 3.10.12) records
+binding/semantic gaps, making unresolved work measurable 381 passing checks, 2 warnings, and 2 passing subtests, with
+without assigning vulnerability or safety.                         zero sanitizer-test exclusions. Separately, reference/replay and
+                                                                   cache comparisons over 27 R7000 analysis targets report
+                      V. I MPLEMENTATION                           zero recursive semantic differences. These receipts support
+                                                                   repeatability of the recorded interfaces; they are not an
+   TSDS is implemented as a dual-subsystem framework in independent semantic oracle or a firmware-wide correctness
+Python built on angr/claripy [10] and Z3 [16]. The core static proof.
+evidence engine comprises 524 Python source files (6.82 MB of
+code), while the accompanying runtime orchestration and dis-
+                                                                                          VI. E VALUATION
+covery subsystem (S IMULATION) contains 117 files (3.97 MB).
+Candidate binding, corridor search, matrix policy, projection, A. Questions, Corpus, and Protocol
+provenance, refinement, and standalone auditing are strictly
+modularized. The shell-vector matrix maintains a stable schema        We ask what evidence the contract constructs and how it
+and SHA-256 identity; changing any token, quote context, or        conserves   candidates (RQ1), whether effect-local witnesses
+syntax template creates a distinct, content-addressed evidence     cross  solver/parser/shell boundaries (RQ2), how mechanisms
+domain.                                                            affect  coverage  and  resources    (RQ3), whether records are
+   The evaluator supports 32-bit ARM/MIPS ELF binaries,            repeatable and  auditable (RQ4),  and  whether external front ends
+imported and vendor-wrapped sinks, delay slots, position-          and  a pre-shell bridge  preserve  the admission scope (RQ5).
+independent calls, and common firmware runtime libraries.             The corpus contains eight router images from four vendors
+A command is admitted as complete only upon encountering and ARM or MIPS service binaries. Operation Mango supplies
+a verified NUL terminator within its declared buffer bounds. 546 raw closures. Closures sharing normalized source and
+String append summaries first locate an observed destination sink instructions within a target form one audit unit; retaining
+terminator and then materialize the bounded append; when the shortest trace produces 518 records. This deduplicates
+that boundary is indeterminate, the evaluator avoids heuristic hypotheses, not root causes. Table III reports the current
+offset guessing and emits an explicit typed obligation. A Latin-1 bounded multi-state campaign; the historical V20 ledger is
+projection displays byte offsets without lossy Unicode or locale reported separately below.
+normalization, keeping unsummarized decoders and multibyte            The current r13 campaign uses bounded multi-state collection
+transformations reviewable. Direct system/popen bindings over the eight images and preserves a source/configuration
+strictly follow their ABIs, whereas vendor wrappers require a manifest by SHA-256. The frozen V20 producer run, used
+rendered-format registration keyed by binary digest, address, only for historical comparisons and ablations, used a se-
+and argument contract. Deterministic memory concretization quential 16-vCPU, 15-GiB Linux guest with Python 3.10.12,
+isolates unconstrained storage across parallel workers.            angr/claripy 9.2.94, and Z3 4.10.2. Mechanism attribution uses
+   For batch processing of large firmware collections, the a fixed 91-record set (at most 12 per target) and 10,000 paired-
+latest system architecture incorporates five specialized modules: bootstrap samples; scheduler and projection checks cover the
+(1) Binary slot provenance separates observed direct propaga- V20 records. Exported SMT-LIB and finite calibration tracks
+tion from reconstructed fillers; (2) Closure identity and deadline are separately bound. No firmware vulnerability labels are
+management enforces content-addressed closure tracking and available for the eight-image corpus, so we report contract yield,
+deterministic execution timeouts; (3) Multi-level static cache interface consistency, repeatability, calibration, and cost rather
+implements persistent disk-backed caching across common than firmware precision, recall, prevalence, or exploitability.
+                            TABLE III                                                        Direct SV-SAT                     Reached-sink            Residual
+ C URRENT BOUNDED MULTI - STATE CAMPAIGN . “C OMPLETE ” COUNTS                               Conditioned CT-SAT                Static evidence
+  DIRECT PROFILES WITH A VERIFIED COMPLETE C STRING ; “P REFIX ”
+ COUNTS OBSERVED - PREFIX PROFILES AND IS A WEAKER SCOPE . “S RC ”
+                                                                                                 (a) Evidence composition                                   (b) Coverage
+  AND “T PL” ARE STATIC OBLIGATIONS ; “R ES .” IS A TYPED RESIDUAL .
+
+                                                                                ASUS RT-BE57         19                                                               47%
+                                       Direct evidence     Static                                                                    Total N = 518
+Target              Arch. Records                                    Res.      D-Link DIR-878              49                                                      31%
+                                                                                                                                                                  Agg. 54.2%
+                                      Complete Prefix Src Tpl                 Netgear R6400v2                            75                                                67%
+
+ASUS RT-BE57 ARM                 19           3       0    0     0    16         Netgear R7000                                                   157                       65%
+D-Link DIR-878 MIPS              49           0       0    0     2    47           Tenda AC15                       64                                                50%
+Netgear R6400v2 ARM              75           4       0    0    36    35           Tenda AC18                  54                                                         56%
+Netgear R7000   ARM             157          12       2    0    71    72
+                                                                                  Tenda W20E         21                                                                52%
+Tenda AC15      ARM              64           3       0   18     0    43
+                                                                                Netgear XR300                            79                                          41%
+Tenda AC18      ARM              54           3       0   15     0    36
+Tenda W20E      ARM              21           1       0    0     0    20                         0        50                  100         150              0         50         100
+Netgear XR300 ARM                79          10       2    0    11    56                                        Records (N)                                    Coverage (%)
+Total                 –         518          36       4   33 120 325
+                                                                            Fig. 3. Historical V20 per-target contract outcomes. (a) Counts preserve
+                                                                            corpus size; positive profiles separate direct SV-SAT from conditioned CT-
+B. RQ1: From Warnings to Auditable Evidence                                 SAT, reached-sink profiles combine M-F ILT and NMS, and static evidence
+                                                                            combines both static classes. (b) Dots give non-residual rates for this frozen
+   The current campaign conserves 518 records. It retains 36                First-Ready ledger; the figure is not the current bounded-campaign result.
+complete-string direct profiles and 4 observed-prefix profiles,
+plus 33 static source-slot obligations, 120 static template                                  SAT      UNSAT         Inconclusive
+observations, and 325 typed residual obligations. Among 188
+                                                                                 (a) Decision profile                             (b) SAT share
+sink-reached records, 123 collections are bounded-complete                                                   Total N = 1,122
+and 65 are bounded-incomplete; no candidate-wide negative                      ;          52                32           18                  51%
+                                                                       newline            52                32           18                  51%
+flag is emitted. A complete matrix profile still describes the
+                                                                               |          52                32           18                  51%
+declared 11-vector fragment at a collected instance; it does not
+                                                                             &            52                32           18                  51%
+establish source realizability or device-level exploitability.         backtick                  83                    14                         81%
+   The direct positive profiles are split by command capture:               $()                  83                    14        Subst. ~82%      81%
+36 have a verified complete C string and 4 are observed-                      $                  84                    13                         82%
+prefix profiles. The latter are retained with their weaker scope              >           51                32          19                  50%
+and are not silently counted as complete-string SV-SAT.                       <           51                32          19                  50%
+
+Conditioned V20 profiles are likewise not merged into the               ${IFS}            51                32          19                  50%
+                                                                            tab               68                   27                          67%
+current direct count. Local matrix-UNSAT and no-modeled-
+source descriptors remain selected- or collection-scoped and                     0        25        50         75           102  0         50      100
+never become candidate-wide filtering conclusions.                                            Matrix decisions                      SAT   share (%)
+   For historical comparison, Figure 3 exposes target hetero-
+                                                                  Fig. 4. Historical V20 differential 11-vector profile over all 102 queried
+geneity in the frozen V20 ledger; its aggregate rate is not a records, including 14 residual profiles. (a) Stacked counts partition each row;
+firmware-quality metric and is not the current r13 yield.         (b) dots expose SAT share. Hatching and family separators provide redundant
+   The frozen V20 residual audit assigns all 237 historical grayscale encoding. The current r13 matrix totals are reported in the text and
+                                                                  use a separate denominator.
+residuals follow-up actions: 194 carry high-confidence cause
+labels; a separate coarse partition places 97 at sink-related and                                     TABLE IV
+140 at search/liveness boundaries. These are different partitions H ISTORICAL V20 COARSE NEXT- ACTION BOUNDARY GROUPS FOR ALL 237
+                                                                      RESIDUAL RECORDS . T HE DETAILED ROOT- CAUSE LABEL AND NEXT
+and work items, not safety conclusions. The current r13 residual ACTION REMAIN IN EACH LEDGER RECORD ; THESE COUNTS ARE NOT THE
+total is 325 and has a separate ledger; the V20 breakdown                              CURRENT R 13 RESIDUAL BREAKDOWN .
+below must not be applied to it.
+   The coarse groups are a lossless presentation of the detailed                   Boundary Coarse group                      n       %
+ledger: Timeout/steps combines 57 engine-timeout and 10                                          Binding / semantics 65 27.4
+                                                                                   Sink point
+step-budget records, whereas Frontier/saturation combines 34                       observed
+                                                                                                 Snapshot / transfer         23      9.7
+frontier-exhaustion, 25 guided-stagnation, and 1 state-explosion                                 Other contract               9      3.8
+record. The remaining source-liveness group contains 13                                          Timeout / steps             67 28.3
+records.                                                                           Unreached Frontier / saturation 60 25.3
+                                                                                                          Source liveness                         13        5.5
+C. RQ2: Effect-Local Evidence and Shell Calibration
+   The current r13 campaign contains 63 complete 11-vector                  denominator; they are not upgraded to a semantic class. The
+profiles and 693 cells: 271 SAT, 150 UNSAT, and 272                         historical V20 accounting is separate: 102 profiles comprise 88
+inconclusive. The 23 residual profiles are retained in the profile          non-residual profiles and 14 residual profiles, for 1,122 cells
+                            TABLE V                                                               TABLE VI
+ PAIRED 91- RECORD MECHANISM ATTRIBUTION . ∆t IS VARIANT MINUS          B OUNDED ADDITIONAL VALIDATION BY TRACK . I NPUTS AND CLAIM
+    FULL ; BRACKETS GIVE THE 95% PAIRED - BOOTSTRAP INTERVAL .        SCOPES ARE SEPARATE ; NO ROW ESTABLISHES FIRMWARE ACCURACY OR
+                                                                                            DEVICE EXPLOITABILITY.
+                 Semantic Sink-core        Mean ∆ time (s) RSS p95
+Variant           agree.    agree.            (95% CI)      (MiB)      Track                   Bound result
+Repeat            100.00%   100.00%    −0.11 [−0.33, 0.14]    1667     Current firmware      8 images; 23 selected; 23/23 process success; 0
+Scheduler off      80.22%   100.00%    −2.35 [−5.01, 0.01]    2565     smoke                 candidate-wide negatives
+Projection off    100.00%   100.00%  −0.94 [−1.68, −0.37]     1704     Semantic replay       R7000: 27/27; 0 recursive differences
+                                                                       Runtime replay        70 processes / 25 services; bindings 35/35
+Spawn workers     100.00%   100.00%    +0.15 [−0.13, 0.44]    1736
+                                                                       Wrapper-level runtime 83/83 receipts; 425/334 processes/edges; 39/15
+Provenance off    100.00%   100.00%    −0.06 [−0.27, 0.14]    1682                           services/listeners
+Refinement replay 76.92%    100.00% −13.67 [−19.94, −7.92]    1657     Controlled chain      24-case ELF; native 14+/10−; TSDS 24/24;
+                                                                                             B0/B2 FP 10/5
+(679/292/151 SAT/UNSAT/inconclusive). Figure 4 is the V20              Firmware query replay 1 image / 3 closures; 687 manifests; 1,374
+                                                                                             full/projected rows: 632 MATCH, 742
+visualization and is included to expose why one metacharacter                                NOT_APPLICABLE; 0
+is insufficient: expansion and substitution remain SAT most                                  MISMATCH/UNKNOWN; model comparison not
+often, whereas redirection and IFS splitting are blocked more                                applicable
+often. The current r13 totals use a different collection policy        Witness replay        151 entries; 41/41 gate/syntax; 41 completed; 0
+                                                                                             files
+and are not inferred from that figure.                                 Matrix oracle         16 cases; construction 176/176
+   Shell-parser calibration spans 15 vector cases and four             Solver replay         Z3 5.1.0: 154/154 applicable (132 SAT, 22
+                                                                                             UNSAT); 22 boundary rows excluded
+quote/boundary cases; this is a separate track from the 16-
+                                                                       Multi-state audit     24 cases; 78 profiles; complete 18/24; no
+case matrix replay below. Bash and Dash accept all 679 V20                                   primary-negative → later-positive case
+generated witnesses (378 unique commands) in no-execution              Static component      595 units; warm 6/8 and 3.865×; cold 5/8 and
+mode; the eight target BusyBox binaries parse all 264 context-                               4.462×
+sensitive forms, and 88 marker cases produce the expected
+marker in 704 canaries. These checks establish declared-set           E. RQ4: Record Integrity, Repeatability, and Cost
+syntax and control transfer, not source realizability, path replay, Generator and standalone audits check integrity and ad-
+or matrix completeness.                                          mission invariants for all 518 records. The standalone im-
+                                                                 plementation recomputes digests, offsets, matrix cardinality,
+                                                                 admission/recovery invariants, source bindings, and optional
+D. RQ3: Mechanism Contribution and Resource Behavior
+                                                                 no-execution parsing without angr, claripy, the evaluator, or a
+   Table V reports the paired variants. The full configuration solver. SAT/UNSAT cells remain analyzer-produced and digest-
+performs 1,021 scheduler prunes, constructs 6,037 provenance bound; “accepted” denotes structural and admission consistency,
+nodes, and makes 273 projected-UNSAT shortcuts. Projection not independent semantic replay.
+selects 111,379 of 352,888 constraints, a 68.4% reduction in        Figure 1 supplies a complete audit example: command
+solver-store entries. Every projected SAT result is nevertheless bytes, controlled offsets, a path-local matrix profile, a complete
+rechecked against the full store.                                witness, and content digests for a direct partial XR300 record.
+   Scheduler-off changes 18/91 labels and raises RSS p95 by         Two campaigns align on all 518 identities, every 146 sink-
+about 54% while preserving every sink-core record; full-corpus semantic record, and all 281 non-residual records. Stability
+replay retains 100% sink-core agreement (86.49% overall). is 516/518 (99.61%); two R7000 residuals change only from
+Projection-off preserves paired labels and 100% full-corpus stagnation to timeout, and consensus maps drift to residual.
+sink-core agreement (99.61% overall); its benefit is the 68.4%      Aggregate elapsed-time CV is 0.0056; median-time and
+solver-store reduction and the conservative rule in Eq. 16, not peak-RSS CVs are 0.0172 and 0.00042. Median/p95 time is
+runtime acceleration. Spawn preserves labels but raises mean 9.09/ 94.46 s; total worker time is 13,679 s. Median/p95 RSS
+peak RSS by 29.0 MiB (95% CI [22.1, 36.3]).                      is 352.0/2502.1 MiB, with a 4,034.7-MiB peak. All workers
+   Provenance-off preserves labels because byte-AST depen- enforce the 8-GiB limit. The 90-s budget starts after initial-
+dency still drives offsets, but removes the derivation DAG. ization, whereas the 150-s envelope includes startup/teardown,
+Refinement installs 26 summaries, reduces paired time by explaining the 94.46-s p95; the 44.1-s global startup is separate.
+44.87%, preserves sink-core outcomes, and moves six residuals These are sequential, not concurrent, resource figures.
+to static classes; these runs do not alter Table III.
+                                                                 F. Additional Validation and Scope Audit
+   These variants provide controlled baselines for scheduling,
+full-store solving, and byte dependency without a derivation        The current r13 ledger above is the primary bounded-
+DAG. They separate decision from audit value: scheduling campaign result. The frozen V20 First-Ready ledger is retained
+changes non-core closure and memory, projection changes as a historical comparison and ablation source. A separately
+store size rather than labels here, and provenance supplies dated batch tests reproducibility and calibration with indepen-
+the derivation object. Front-end closures are not treated as dently bound receipts; Table VI keeps these units outside both
+vulnerability ground truth.                                      firmware-corpus accuracy and efficiency denominators.
+      a) Original-program semantic calibration: A non-PIE               string/ observed-prefix direct positives and 63/693 profiles/cells
+ELF contains 24 pre-specified source-to-system cases cover-             (271/150/ 272 SAT/UNSAT/inconclusive), with no candidate-
+ing source, copying/formatting, filtering, quoting, truncation,         wide negative flag; it remains bounded evidence.
+and branches (14 positive, 10 negative). Reference labels are              The conditioned-link audit covers 44 records (34 historical
+fixed before TSDS is run; fixed inputs traverse the original            CT-SAT and 10 reconciled residuals); none satisfies the
+program. An interposer logs the final system string and                 release Linkc gate, so all remain open. A six-case declarative
+permits an allowlisted /bin/dash child to create only a                 source-trace preflight matched its expected statuses (3 PASS,
+temporary trigger. Native outcomes agree on 14/14 positives             1 MISMATCH, 1 TRACE_ONLY, 1 UNSUPPORTED) without
+and 10/10 negatives; TSDS matches 24/24 labels. Under the               firmware or shell execution; this tests only the preflight contract.
+same inputs, B0 marks every reached sink, B1 requires the               The 60-record blind-review package remains label-withheld.
+fixed source input to survive in the command with a shell                     c) Eight-firmware runtime grounding and efficiency: A
+metacharacter, and B2 scans for any metacharacter in the                separately dated eight-image wrapper/runtime batch records
+complete command. B0 and B2 produce 10 and 5 false positives,           83/83 execution receipts with zero wrapper or extraction
+respectively (precision 0.5833, F1 = 0.7368; precision 0.7368,          failures. It observes 425 process nodes, 334 edges, 39 runtime
+F1 = 0.8485). B1 and TSDS tie on these fixed labels (precision          services, 15 verified listeners, 156 static network services, and
+1.0000, F1 = 1.0000), while TSDS additionally emits precise             245 static candidates across eight targets. These receipts provide
+offsets, quote context, vector decisions, and a digest-bound            runtime-informed structural grounding; they do not establish
+record. This finite calibration demonstrates the value of source-       shell execution or closed-world exploitability.
+owned final-byte evidence without turning it into a firmware-              To characterize batch-oriented reuse, we evaluated the
+wide precision claim. A separate bounded replay covers 151              static analysis component across 595 common callsites under
+vector entries and 41 unique commands; all pass the offset-             identical workloads. This is a component-level proxy, not an
+subset, inert-template, and /bin/dash -n checks, and 41                 end-to-end distributed scalability claim. Under warm-cache
+complete under the empty environment without creating files.            execution, TSDS achieves a 3.865× wall-clock geometric mean
+This is shell-interface calibration, not source realizability or        speedup (faster on 6/8 targets; paired bootstrap 95% CI [1.557,
+firmware exploitability.                                                9.517]); under cold-cache execution with explicit host page-
+      b) Bounded semantic replay and multi-state calibration:           cache drops, the geometric mean is 4.462× (faster on 5/8
+A closed 16-case suite contains 16 cases and 176 cells                  targets). The measurement describes cache reuse for a shared
+covering positive witnesses, alphanumeric-only sources, fixed           static component and does not measure a cloud service, analyst
+metacharacters outside the controlled extent, explicit termi-           time, or end-to-end warning throughput.
+nation, and unknown quote prefixes; all construction labels
+match. Normalized SMT-LIB queries for 154 complete-context              G. RQ5: Front-End Portability and Confirmation Interface
+cells agree with a separately invoked Z3 5.1.0 replay on every             The external interfaces exercise interoperability while pre-
+SAT/UNSAT result. The remaining 22 boundary rows have no                serving the admission boundary. SaTC extraction on AC18
+complete query by design and follow the incomplete-context              yields 6 unique doSystemCmd candidates from a 32/313
+policy.                                                                 keyword slice. The adapter preserves origin digests and
+   A separate held-out semantic benchmark covers 48 finite-             withholds promotion because no admissible final-byte closure
+domain cases (32 development and 16 held out) and 1056                  is present. This checks schema portability and fail-closed
+native/oracle rows; all labels agree. Its 1000 differential probes      interoperability, not second-front-end semantic yield.
+run independently under both /bin/dash and /bin/bash:                      The QEMU/GDB bridge [17] samples positive and boundary
+each shell accepts 958 probes and returns parser status 2 for 42        attempt classes without executing ledger commands. Of 17
+probes. This is a shell-syntax differential track, not target-shell,    sink interceptions, 10 observe an inert token, representing
+firmware-ground-truth, or device-exploitability evidence.               6 token/callsite keys; the rest meet fixture/authentication
+   A current-source-locked r10 evaluator run (with a 16-file            boundaries, miss the sink, or reach it without the token.
+local source closure and source/matrix digests in its manifest)         Interception ends before shell execution and checks selected
+used bounded collection for all 24 controlled cases: it retains         token-to-sink consistency only.
+78 profiles, is bounded-complete for 18 cases, and preserves
+all 14 pre-specified positive cases in both the selected and                   VII. T HREATS TO VALIDITY AND D ISCUSSION
+existential sidecar results. Because the current primary selector          TSDS is a staged confirmation interface rather than a binary
+prefers a complete positive profile, this calibration is not a first-   vulnerability classifier. Direct SV-SAT is a source-local effect
+hit sensitivity comparison; it does not establish that an earlier       at one selected instance; CT-SAT exposes an open source-link
+First-Ready observation would make the same choice. No                  task; M-F ILT and NMS are local profiles; and residuals retain
+candidate-wide-negative flag is emitted. Remaining collections          the next admission boundary.
+are bounded-incomplete; this calibrates the aggregation contract,
+not exhaustive V20 firmware coverage. V20 remains the frozen            A. Threats to Validity
+historical First-Ready run. An independently audited full-corpus            a) Construct validity: The unit is a candidate-bound,
+r13 rerun of the same 546 closures reports 36/4 complete-               scheduler-selected command instance. Direct SV-SAT is
+existential only for that instance; M-F ILT and NMS depend on Smoosh formalize shell behavior [12], [13], while S2E, veritest-
+its source model, quote context, and versioned matrix. The 11- ing, Driller, SymQEMU, SAGE, slicing, chopped execution,
+vector matrix is an explicit semantic fragment, and CT-SAT is and CEGAR address multipath search [11], [14], [15], [19]–
+weaker because its reconstructed slot has no established Linkc [24]. TSDS complements these techniques with a versioned
+in this release.                                                      final-byte effect contract that separates observed provenance
+      b) Internal validity: The frozen V20 ledger uses determin- (SV-SAT) from conditioned feasibility (CT-SAT), and couples
+istic First-Ready selection and is reported as a historical track. provenance, effect satisfiability, selected-instance quantifiers,
+The current evaluator retains bounded snapshots through a and candidate conservation.
+settle window, prefers a complete admissible direct profile, and
+otherwise keeps a typed residual; -first-ready-legacy                                            IX. C ONCLUSION
+remains explicit. In the current campaign, 188 sink-reached              TSDS establishes a non-escalating final-byte boundary
+records are audited, with 123 bounded-complete and 65 between firmware-warning discovery and confirmation. In the
+bounded-incomplete collections. This is an execution-frontier current bounded campaign over eight images, it conserves 518
+account, not exhaustive path-space coverage, and the absence records while separating 36 complete-string direct profiles, 4
+of a candidate-wide negative flag is a policy outcome rather observed-prefix profiles, static obligations, and typed residual
+than a safety proof. The 24-case calibration tests bounded work. The historical V20 First-Ready ledger is retained as
+selection and aggregation, not V20 firmware path coverage; a separately scoped comparison. A separately bound 24-case
+campaign agreement and capped 91-record intervals remain calibration links source ownership, final system strings, and
+conditional.                                                          constrained native effects; same-input counterfactuals expose
+      c) External and conclusion validity: The eight-image/four- the false-positive cost of coarse reachability and full-command
+vendor corpus is an engineering audit set, not a prevalence metadata checks. Fresh Z3 replay of applicable exported
+estimate; wrappers, unsummarized decoders, multibyte trans- queries, held-out native/oracle parity, and bounded multi-state
+formations, and device entry remain outside the claim. SaTC checks support the stated contract interfaces. They do not
+tests schema portability. The standalone auditor checks hashes, establish firmware ground truth, exhaustive path coverage, or
+offsets, cardinalities, and admission invariants without analyzer device exploitability.
+or solver, establishing integrity and admission consistency,
+not SAT validity, an UNSAT proof, or solver replay. Shell,                                   X. DATA AVAILABILITY
+BusyBox, and QEMU cover declared syntax, markers, and
+selected token-to-sink consistency. The 24-case calibration              The artifact package provides source locks, schemas, replay
+adds pre-specified reference labels/native triggers but uses one      scripts,  calibration cases, and machine receipts; restricted
+synthetic ELF, fixed inputs, and an allowlisted child; it provides    firmware    inputs are represented by SHA-256 digests.
+neither firmware labels, generated-witness execution, nor device
+                                                                                                     R EFERENCES
+exploitability. Results are contract yield, repeatability, resources,
+and bounded chain calibration, not firmware precision, recall, or      [1] Y. Shoshitaishvili, R. Wang, C. Hauser et al., “Firmalice: Automatic
+exploitability. The current campaign’s 36 complete-string and              detection of authentication bypass vulnerabilities in binary firmware,” in
+                                                                           NDSS, 2015.
+4 observed-prefix direct profiles consequently carry different         [2] N. Redini, A. Machiry, D. Das et al., “Karonte: Detecting insecure
+evidence scopes.                                                           multi-binary interactions in embedded firmware,” in IEEE S&P, 2020,
+                                                                                 pp. 1544–1561.
+B. Residuals, Trust Boundary, and Extension                                  [3] L. Chen, Y. Wang, Q. Cai et al., “Sharing more and checking less:
+                                                                                 Leveraging common input keywords to detect bugs in embedded systems,”
+   All 325 current-campaign residuals remain in the denomi-                      in 30th USENIX Security Symposium (USENIX Security 21), 2021, pp.
+                                                                                 303–319.
+nator and carry a typed obligation. The historical V20 ledger                [4] Z. Gao, C. Zhang, H. Liu et al., “Faster and better: Detecting vulnera-
+has 237 residuals, with its separate 97/140 coarse partition;                    bilities in linux-based IoT firmware with optimized reaching definition
+those numbers are not transferred to r13. Records are content-                   analysis,” in NDSS, 2024.
+                                                                             [5] W. Gibbs, A. S. Raj, J. M. Vadayath et al., “Operation mango: Scalable
+bound and non-escalating, so changing the matrix or wrapper                      discovery of taint-style vulnerabilities in binary firmware services,” in
+registry changes the digest. The additional batch adds bounded                   33rd USENIX Security Symposium (USENIX Security 24), 2024, pp.
+multi-state, fresh-Z3, held-out semantic, and controlled-chain                   7123–7139.
+                                                                             [6] J. Ye, X. Fei, X. de Carné de Carnavalet et al., “Detecting command
+checks without turning them into firmware ground truth. The                      injection vulnerabilities in linux-based embedded firmware with LLM-
+conditioned-link audit leaves all 44 audited links open, and the                 based taint analysis of library functions,” Computers & Security, vol.
+60-record blind-review package has labels withheld. Local M-                     144, p. 103971, 2024.
+                                                                             [7] D. D. Chen, M. Woo, D. Brumley, and M. Egele, “Towards automated
+F ILT and NMS profiles remain instance- or collection-scoped.                    dynamic analysis for linux-based embedded firmware,” in NDSS, 2016.
+                                                                             [8] M. Kim, D. Kim, E. Kim et al., “FirmAE: Towards large-scale emulation
+                      VIII. R ELATED W ORK                                       of IoT firmware for dynamic analysis,” in ACSAC, 2020, pp. 733–745.
+                                                                             [9] C. Wright, W. A. Moeglein, S. Bagchi, M. Kulkarni, and A. A. Clements,
+     a) Positioning: Large-scale firmware studies and tools                      “Challenges in firmware re-hosting, emulation, and analysis,” ACM
+cover authentication, cross-binary, reaching-definition, and taint               Computing Surveys, vol. 54, no. 1, pp. 1–36, 2021.
+                                                                            [10] Y. Shoshitaishvili, R. Wang, C. Salls et al., “SoK: (state of) the art of
+analyses [1]–[6], [18]; rehosting systems and surveys address                    war: Offensive techniques in binary analysis,” in IEEE S&P, 2016, pp.
+environment recovery and its barriers [7]–[9]. POSIX and                         138–157.
+[11] R. Baldoni, E. Coppa, D. C. D’Elia, C. Demetrescu, and I. Finocchi,       [18] A. Costin, J. Zaddach, A. Francillon, and D. Balzarotti, “A large-scale
+     “A survey of symbolic execution techniques,” ACM Computing Surveys,            analysis of the security of embedded firmwares,” in 23rd USENIX Security
+     vol. 51, no. 3, pp. 1–39, 2018.                                                Symposium (USENIX Security 14), 2014, pp. 95–110.
+[12] IEEE and The Open Group, “IEEE/Open Group Standard for Informa-           [19] V. Chipounov, V. Kuznetsov, and G. Candea, “S2E: A platform for
+     tion Technology—Portable Operating System Interface (POSIX), Base              in-vivo multi-path analysis of software systems,” in ASPLOS, 2011, pp.
+     Specifications, Issue 8,” IEEE Std 1003.1-2024, 2024.                          265–278.
+[13] M. Greenberg and A. J. Blatt, “Executable formal semantics for the        [20] T. Avgerinos, A. Rebert, S. K. Cha, and D. Brumley, “Enhancing symbolic
+     POSIX shell,” Proceedings of the ACM on Programming Languages,                 execution with veritesting,” in ICSE, 2014, pp. 1083–1094.
+     vol. 4, no. POPL, pp. 43:1–43:30, 2020.                                   [21] N. Stephens, J. Grosen, C. Salls et al., “Driller: Augmenting fuzzing
+[14] M. Weiser, “Program slicing,” IEEE Transactions on Software Engineer-          through selective symbolic execution,” in NDSS, 2016.
+     ing, vol. SE-10, no. 4, pp. 352–357, 1984.                                [22] S. Poeplau and A. Francillon, “SymQEMU: Compilation-based symbolic
+[15] D. Trabish, A. Mattavelli, N. Rinetzky, and C. Cadar, “Chopped symbolic        execution for binaries,” in NDSS, 2021.
+     execution,” in ICSE, 2018, pp. 350–360.                                   [23] P. Godefroid, M. Y. Levin, and D. Molnar, “SAGE: Whitebox fuzzing
+[16] L. de Moura and N. Bjørner, “Z3: An efficient SMT solver,” in TACAS,           for security testing,” Communications of the ACM, vol. 55, no. 3, pp.
+     ser. Lecture Notes in Computer Science, vol. 4963, 2008, pp. 337–340.          40–44, 2012.
+[17] F. Bellard, “QEMU, a fast and portable dynamic translator,” in 2005       [24] E. Clarke, O. Grumberg, S. Jha, Y. Lu, and H. Veith, “Counterexample-
+     USENIX Annual Technical Conference (USENIX ATC 05), 2005, pp.                  guided abstraction refinement,” in CAV, ser. Lecture Notes in Computer
+     41–46.                                                                         Science, vol. 1855, 2000, pp. 154–169.
+

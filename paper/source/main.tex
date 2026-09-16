@@ -1,0 +1,87 @@
+\documentclass[10pt,conference]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{url}
+\usepackage{microtype}
+\usepackage{cite}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{placeins}
+\usepackage{flushend}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,shapes.geometric,decorations.pathreplacing,patterns,shadows}
+\pgfplotsset{compat=1.18}
+
+\setlength{\emergencystretch}{2em}
+\setlength{\textfloatsep}{4.5pt plus 1pt minus 1pt}
+\setlength{\floatsep}{4.5pt plus 1pt minus 1pt}
+\setlength{\intextsep}{4.5pt plus 1pt minus 1pt}
+\setlength{\dbltextfloatsep}{4.5pt plus 1pt minus 1pt}
+\setlength{\dblfloatsep}{4.5pt plus 1pt minus 1pt}
+\setlength{\abovecaptionskip}{3.0pt}
+\setlength{\belowcaptionskip}{1.5pt}
+
+\definecolor{tsdsblue}{HTML}{0072B2}
+\definecolor{tsdsorange}{HTML}{E69F00}
+\definecolor{tsdsgreen}{HTML}{009E73}
+\definecolor{tsdsred}{HTML}{D55E00}
+\definecolor{tsdspurple}{HTML}{CC79A7}
+\definecolor{tsdsgray}{HTML}{6F6F6F}
+\definecolor{tsdslight}{HTML}{F2F4F6}
+
+\newcommand{\tool}{TSDS\xspace}
+\newcommand{\mango}{Operation Mango\xspace}
+\newcommand{\svsat}{\textsc{SV-SAT}\xspace}
+\newcommand{\psat}{\textsc{P-SAT}\xspace}
+\newcommand{\ctsat}{\textsc{CT-SAT}\xspace}
+\newcommand{\mfilt}{\textsc{M-Filt}\xspace}
+\newcommand{\nms}{\textsc{NMS}\xspace}
+\newcommand{\residual}{\textsc{Residual}\xspace}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\input{evidence/manuscript_counts}
+\input{evidence/experiment_values}
+\input{evidence/post_review_values}
+
+\begin{document}
+
+\title{TSDS: Auditable Final-Byte Evidence for Command-Injection Triage in Edge Firmware}
+\input{author_metadata}
+
+\maketitle
+
+\input{sections/abstract}
+\input{sections/introduction}
+\input{sections/evidence_contract}
+\input{sections/overview}
+\input{sections/design}
+\input{sections/implementation}
+\input{sections/evaluation}
+\input{sections/discussion}
+\input{sections/related_work}
+\input{sections/conclusion}
+%\input{sections/data_availability}
+
+\bibliographystyle{IEEEtran}
+\let\oldthebibliography\thebibliography
+\let\endoldthebibliography\endthebibliography
+\renewenvironment{thebibliography}[1]{
+  \begin{oldthebibliography}{#1}
+    \setlength{\itemsep}{-2.2pt plus 0.1pt}
+    \setlength{\parskip}{0pt}
+}{
+  \end{oldthebibliography}
+}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,9 @@
+\begin{abstract}
+Centralized DevSecOps pipelines routinely ingest edge gateway firmware before deployment. However, static analyzers emit hundreds of unranked command-injection warnings; existing approaches often over-approximate exploitability because reachability does not imply final command-byte control. To eliminate this triage bottleneck, we present \tool, a candidate validation framework built on an executable \emph{final-byte evidence contract}. Complementary to upstream static analyzers, \tool binds sink argument semantics, reconstructs concrete C strings, tracks byte provenance, and evaluates an 11-dimensional shell effect matrix.
+
+Across eight commercial router firmware images spanning \TSDSReviewCampaignRecords{} static warnings, \tool validates \TSDSReviewCampaignCompleteDirect{} command-injection candidates with complete final-byte evidence (alongside \TSDSReviewCampaignObservedPrefixDirect{} observed-prefix candidates), reducing the number of candidates requiring manual semantic inspection by 92.1\% on the evaluated corpus while preserving all \TSDSReviewCampaignResidual{} unresolved cases as explicit typed obligations. Dynamic QEMU emulation reproduces command execution behaviors corresponding to 6 known CVE patterns alongside 5 safe boundary controls. On a 24-case controlled benchmark suite evaluating evidence classification rather than end-to-end vulnerability discovery, \tool achieves perfect classification accuracy, reducing unsupported reachability and regex warnings by isolating exact byte extents and quote contexts without claiming automated exploit synthesis.
+
+\begin{IEEEkeywords}
+Cloud computing, edge security, IoT firmware analysis, alert triage, symbolic execution, command injection, evidence contracts
+\end{IEEEkeywords}
+\end{abstract}

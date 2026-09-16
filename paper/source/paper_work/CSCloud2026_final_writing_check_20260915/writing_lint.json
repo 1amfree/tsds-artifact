@@ -1,0 +1,47 @@
+{
+  "summary": {
+    "verdict": "WARN",
+    "fail": 0,
+    "warn": 1,
+    "info": 3,
+    "total": 4
+  },
+  "mode": "plain",
+  "lang": "en",
+  "issues": [
+    {
+      "severity": "WARN",
+      "code": "AI_WORD",
+      "message": "AI 指纹词：'leveraging' ×1",
+      "line": 785,
+      "count": 1,
+      "examples": [
+        "leveraging"
+      ]
+    },
+    {
+      "severity": "INFO",
+      "code": "STYLE_PASSIVE",
+      "message": "被动结构 ≈65 处 / 623 句（10%）",
+      "line": 0,
+      "count": 1,
+      "examples": []
+    },
+    {
+      "severity": "INFO",
+      "code": "AI_EMDASH",
+      "message": "破折号 ×33（在阈值内）",
+      "line": 0,
+      "count": 33,
+      "examples": []
+    },
+    {
+      "severity": "INFO",
+      "code": "AI_MONOTONE",
+      "message": "句长 mean=15.7 sd=15.8 cv=1.01（min 1 / max 190）",
+      "line": 0,
+      "count": 1,
+      "examples": []
+    }
+  ]
+}

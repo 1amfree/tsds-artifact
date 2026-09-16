@@ -1,0 +1,424 @@
+% =========================================================================
+% TSDS System Architecture Diagram (Publication-Grade Systems Security)
+% Full 3-Stage Pipeline mirroring Fig 5.1 of Dissertation
+% Golden Proportion Canvas with Top-Left Engineering Stage Tabs
+% High-Legibility Sizing spanning 0.95\linewidth
+% =========================================================================
+
+\providecolor{stageBlue}{RGB}{20, 70, 135}
+\providecolor{stageGreen}{RGB}{20, 110, 55}
+\providecolor{stagePurple}{RGB}{95, 35, 125}
+\providecolor{stageRed}{RGB}{160, 25, 25}
+\providecolor{stageAmber}{RGB}{190, 85, 10}
+\providecolor{academicSlate}{RGB}{50, 60, 75}
+\providecolor{cardBg}{RGB}{250, 251, 253}
+
+% =========================================================================
+% VECTOR ICONS DEFINITIONS
+% =========================================================================
+
+\providecommand{\terminalSnap}[5]{%
+    \begin{scope}[shift={(#1,#2)}, scale=#3]
+        \fill[black!8, rounded corners=1.5pt] (0.02, -0.02) rectangle (1.37, 0.98);
+        \draw[line width=0.60pt, fill=academicSlate!95!black, draw=academicSlate!75!black, rounded corners=1.5pt] 
+            (0,0) rectangle (1.35, 0.96);
+        \fill[academicSlate!80!black] (0, 0.70) rectangle (1.35, 0.96);
+        \node[font=\fontsize{5.2}{6.2}\selectfont\ttfamily\bfseries, text=white] at (0.675, 0.83) {[Sink Snap]};
+        \node[font=\fontsize{5.0}{6.0}\selectfont\ttfamily, text=green!80!lime, anchor=west] at (0.06, 0.48) {#4};
+        \node[font=\fontsize{5.0}{6.0}\selectfont\ttfamily, text=yellow!85!orange, anchor=west] at (0.06, 0.20) {#5};
+    \end{scope}%
+}
+
+\providecommand{\elfDoc}[3]{%
+    \begin{scope}[shift={(#1,#2)}, scale=#3]
+        \fill[black!8, rounded corners=1pt] (0.02,-0.02) -- (0.02, 1.18) -- (0.64, 1.18) -- (0.86, 0.96) -- (0.86, -0.02) -- cycle;
+        \draw[line width=0.60pt, fill=cardBg, draw=stageBlue!85!black, rounded corners=1pt] 
+            (0,0) -- (0, 1.20) -- (0.64, 1.20) -- (0.84, 1.00) -- (0.84, 0) -- cycle;
+        \draw[line width=0.60pt, fill=stageBlue!15, draw=stageBlue!85!black] 
+            (0.64, 1.20) -- (0.64, 1.00) -- (0.84, 1.00) -- cycle;
+        \node[font=\fontsize{4.8}{5.8}\selectfont\ttfamily, text=stageBlue!85!black, align=center] at (0.42, 0.70) {01101\\10100\\01011};
+        \node[fill=stageBlue!85!black, text=white, font=\fontsize{5.4}{6.4}\selectfont\bfseries, rounded corners=1pt, inner sep=0.8pt] at (0.42, 0.26) {ELF};
+    \end{scope}%
+}
+
+\providecommand{\routerIcon}[3]{%
+    \begin{scope}[shift={(#1,#2)}, scale=#3]
+        \fill[black!10, rounded corners=1.5pt] (0.02, -0.02) rectangle (1.22, 0.52);
+        \draw[line width=0.9pt, draw=academicSlate!85!black, line cap=round] (0.22, 0.50) -- (0.16, 0.85);
+        \draw[line width=0.9pt, draw=academicSlate!85!black, line cap=round] (0.98, 0.50) -- (1.04, 0.85);
+        \fill[academicSlate!90!black] (0.16, 0.85) circle (0.035);
+        \fill[academicSlate!90!black] (1.04, 0.85) circle (0.035);
+        \draw[line width=0.65pt, fill=academicSlate!90!black, draw=academicSlate!65!black, rounded corners=1.5pt] 
+            (0, 0.05) rectangle (1.20, 0.50);
+        \draw[academicSlate!50!black, line width=0.4pt] (0, 0.22) -- (1.20, 0.22);
+        \fill[green!85!lime] (0.20, 0.13) circle (0.03);
+        \fill[green!85!lime] (0.35, 0.13) circle (0.03);
+        \fill[yellow!85!orange] (0.50, 0.13) circle (0.03);
+        \fill[cyan!85!blue] (0.65, 0.13) circle (0.03);
+        \fill[green!85!lime] (0.80, 0.13) circle (0.03);
+        \node[font=\fontsize{4.8}{5.8}\selectfont\ttfamily\bfseries, text=white] at (0.60, 0.36) {ROUTER HW};
+    \end{scope}%
+}
+
+\resizebox{0.94\linewidth}{!}{%
+\begin{tikzpicture}[
+    x=1cm, y=1cm, >=stealth,
+    actionTag/.style={font=\fontsize{5.2}{6.2}\selectfont\bfseries, fill=white, inner sep=0.8pt, text=academicSlate!95!black},
+    mainDownArrow/.style={line width=0.95pt, -{Stealth[length=2.2mm,width=1.6mm]}, draw=academicSlate!80!black},
+    stepArrow/.style={line width=0.75pt, ->, >=stealth, draw=academicSlate!75!black},
+    dataCard/.style={rectangle, draw=academicSlate!60, fill=cardBg, rounded corners=2pt, align=center, inner sep=2.5pt}
+]
+
+% =========================================================================
+% STAGE 1: Terminal Command Snapshot Delimitation & Grammar Modeling (Blue)
+% Box: [0.00, 6.40] to [17.60, 9.25], height = 2.85cm
+% =========================================================================
+\draw[line width=0.85pt, dashed, draw=stageBlue!85!black, rounded corners=3pt, fill=stageBlue!2] 
+    (0.00, 6.40) rectangle (17.60, 9.25);
+
+% Stage 1 Header Pill (Top-left aligned, crisp engineering tab)
+\node[anchor=west, fill=stageBlue!90!black, text=white, font=\fontsize{6.2}{7.2}\selectfont\bfseries, rounded corners=1.5pt, inner sep=2.2pt] 
+    at (0.25, 9.02) {\textsc{Stage 1}: Terminal Command Snapshot Delimitation \& Deterministic Grammar Modeling};
+
+% Card 1A: Sink Snapshot & Interval Delimitation [0.25, 5.65], width = 5.40cm, height = 2.25cm
+\begin{scope}[shift={(0.25, 6.55)}]
+    \draw[line width=0.75pt, draw=stageBlue!80!black, fill=white, rounded corners=2.5pt] (0, 0) rectangle (5.40, 2.25);
+    \node[font=\fontsize{6.2}{7.2}\selectfont\bfseries, text=stageBlue!95!black] at (2.70, 2.06) {Sink Snapshot \& Interval Delimitation};
+    
+    % High-Legibility Terminal Console: 1.85cm x 0.92cm (from x=0.12 to x=1.97)
+    \begin{scope}[shift={(0.12, 0.95)}]
+        \draw[fill=academicSlate!96!black, draw=academicSlate!75!black, rounded corners=2pt, line width=0.55pt] (0, 0) rectangle (1.85, 0.92);
+        \fill[academicSlate!80!black, rounded corners=1.5pt] (0, 0.67) rectangle (1.85, 0.92);
+        % Window dots
+        \fill[red!80!white] (0.11, 0.795) circle (0.028);
+        \fill[yellow!85!orange] (0.21, 0.795) circle (0.028);
+        \fill[green!80!lime] (0.31, 0.795) circle (0.028);
+        \node[font=\fontsize{4.6}{5.6}\selectfont\ttfamily\bfseries, text=white] at (0.88, 0.795) {[Sink Snap]};
+        \node[fill=stageBlue!85!black, text=white, font=\fontsize{4.0}{5.0}\selectfont\bfseries, rounded corners=0.8pt, inner sep=0.6pt] at (1.64, 0.795) {ELF};
+        % Code lines (generous breathing room, zero overflow)
+        \node[anchor=west, font=\fontsize{4.8}{5.8}\selectfont\ttfamily, text=green!80!lime] at (0.08, 0.46) {> system(cmd)};
+        \node[anchor=west, font=\fontsize{4.8}{5.8}\selectfont\ttfamily, text=yellow!85!orange] at (0.08, 0.18) {+ eval "\$I\_X"};
+    \end{scope}
+
+    % Delimiter Arrow (from x=2.10 to x=3.26)
+    \draw[-{Stealth[scale=0.55]}, line width=0.55pt, draw=stageBlue!85!black] (2.10, 1.41) -- (3.26, 1.41);
+    \node[font=\fontsize{4.8}{5.8}\selectfont\bfseries, text=stageBlue!95!black] at (2.68, 1.58) {\textbackslash 0 Delim};
+
+    % Buffer Bar Graphic: center at x=4.30, width 1.90cm (from x=3.35 to x=5.25)
+    \begin{scope}[shift={(4.30, 1.41)}]
+        \draw[fill=academicSlate!10, draw=academicSlate!60, line width=0.45pt] (-0.95, -0.16) rectangle (0.95, 0.16);
+        \draw[fill=stageAmber!25, draw=stageAmber!90!black, line width=0.55pt] (-0.55, -0.16) rectangle (0.22, 0.16);
+        \node[font=\fontsize{5.4}{6.4}\selectfont\ttfamily\bfseries, text=stageAmber!95!black] at (-0.16, 0) {$I_X$};
+        % NUL marker
+        \draw[fill=stageRed!25, draw=stageRed!85!black, line width=0.55pt] (0.58, -0.16) rectangle (0.95, 0.16);
+        \node[font=\fontsize{5.0}{6.0}\selectfont\ttfamily\bfseries, text=stageRed!95!black] at (0.76, 0) {\textbackslash 0};
+        \draw[stageRed!90!black, line width=0.85pt] (0.58, -0.19) -- (0.58, 0.19);
+        % Boundary marks
+        \node[font=\fontsize{5.0}{6.0}\selectfont, text=academicSlate!85!black] at (-0.95, -0.30) {$0$};
+        \node[font=\fontsize{4.8}{5.8}\selectfont\bfseries, text=stageAmber!90!black] at (-0.16, -0.30) {$[L_i, R_i]$};
+        \node[font=\fontsize{5.0}{6.0}\selectfont\bfseries, text=stageRed!90!black] at (0.58, -0.30) {$\tau$};
+    \end{scope}
+
+    % Structured Mathematical Pills
+    \node[draw=stageBlue!60, fill=stageBlue!4, rounded corners=1.5pt, font=\fontsize{5.5}{6.5}\selectfont\bfseries, text=stageBlue!95!black, inner sep=1.6pt] 
+        at (2.70, 0.65) {Snapshot Capture: $B_c = \operatorname{Snap}(s, a_{\mathrm{sink}})$};
+    \node[draw=stageAmber!80!black, fill=stageAmber!10, rounded corners=1.5pt, font=\fontsize{5.5}{6.5}\selectfont\bfseries, text=stageAmber!95!black, inner sep=1.6pt] 
+        at (2.70, 0.25) {Controlled Extent: $I_X = [L_i, R_i] \subseteq [0, \tau)$};
+\end{scope}
+
+% Arrow 1 -> Step 2
+\draw[stepArrow] (5.65, 7.68) -- node[above, actionTag] {Scan} (6.75, 7.68);
+
+% Card 1B: Deterministic Quote Automaton [6.75, 11.95], width = 5.20cm, height = 2.25cm
+\begin{scope}[shift={(6.75, 6.55)}]
+    \draw[line width=0.75pt, draw=stageBlue!80!black, fill=white, rounded corners=2.5pt] (0, 0) rectangle (5.20, 2.25);
+    \node[font=\fontsize{6.2}{7.2}\selectfont\bfseries, text=stageBlue!95!black] at (2.60, 2.06) {Deterministic Quote Automaton $\mathcal{A}_{\mathrm{quote}}$};
+    
+    % 3-State Automaton Vector Graphic
+    \begin{scope}[shift={(2.60, 1.34)}]
+        \node[circle, draw=stageBlue!85!black, fill=stageBlue!15, line width=0.55pt, inner sep=0pt, minimum size=0.44cm] 
+            (s0) at (0, 0.28) {\fontsize{5.4}{6.4}\selectfont\bfseries $S_{\mathrm{unq}}$};
+        \node[circle, draw=stageAmber!85!black, fill=stageAmber!18, line width=0.55pt, inner sep=0pt, minimum size=0.44cm] 
+            (s1) at (-0.92, -0.16) {\fontsize{5.4}{6.4}\selectfont\bfseries $S_{\mathrm{sq}}$};
+        \node[circle, draw=stageBlue!85!black, fill=stageBlue!15, line width=0.55pt, inner sep=0pt, minimum size=0.44cm] 
+            (s2) at (0.92, -0.16) {\fontsize{5.4}{6.4}\selectfont\bfseries $S_{\mathrm{dq}}$};
+
+        \draw[-{Stealth[scale=0.50]}, line width=0.50pt, draw=stageAmber!90!black] 
+            (s0) edge[bend right=15] node[left, font=\fontsize{5.4}{6.4}\selectfont\bfseries] {'} (s1);
+        \draw[-{Stealth[scale=0.50]}, line width=0.50pt, draw=stageAmber!90!black] 
+            (s1) edge[bend right=15] node[below, font=\fontsize{5.4}{6.4}\selectfont\bfseries] {'} (s0);
+        \draw[-{Stealth[scale=0.50]}, line width=0.50pt, draw=stageBlue!90!black] 
+            (s0) edge[bend left=15] node[right, font=\fontsize{5.4}{6.4}\selectfont\bfseries] {"} (s2);
+        \draw[-{Stealth[scale=0.50]}, line width=0.50pt, draw=stageBlue!90!black] 
+            (s2) edge[bend left=15] node[below, font=\fontsize{5.4}{6.4}\selectfont\bfseries] {"} (s0);
+        \draw[-{Stealth[scale=0.50]}, line width=0.50pt, draw=academicSlate!80!black] 
+            (s1) edge[loop left] node[left, font=\fontsize{5.0}{6.0}\selectfont\bfseries] {$\neg ' $} (s1);
+        \draw[-{Stealth[scale=0.50]}, line width=0.50pt, draw=academicSlate!80!black] 
+            (s2) edge[loop right] node[right, font=\fontsize{5.0}{6.0}\selectfont\bfseries] {$\neg " $} (s2);
+    \end{scope}
+
+    \node[fill=stageBlue!10, draw=stageBlue!70, rounded corners=1.5pt, font=\fontsize{5.5}{6.5}\selectfont\bfseries, inner sep=1.6pt] 
+        at (2.60, 0.58) {Context: $\chi(I_X) \in \{S_{\mathrm{unq}}, S_{\mathrm{sq}}, S_{\mathrm{dq}}\}$};
+    \node[font=\fontsize{5.0}{6.0}\selectfont\bfseries, text=academicSlate!90!black] at (2.60, 0.20) 
+        {Escape Boundary Analysis $\cdot$ Escape Lock};
+\end{scope}
+
+% Arrow 2 -> Step 3
+\draw[stepArrow] (11.95, 7.68) -- node[above, actionTag] {Map} (13.05, 7.68);
+
+% Card 1C: 11-Dimensional POSIX Shell Matrix [13.05, 17.35], width = 4.30cm, height = 2.25cm
+\begin{scope}[shift={(13.05, 6.55)}]
+    \draw[line width=0.75pt, draw=stageBlue!80!black, fill=white, rounded corners=2.5pt] (0, 0) rectangle (4.30, 2.25);
+    \node[font=\fontsize{6.2}{7.2}\selectfont\bfseries, text=stageBlue!95!black] at (2.15, 2.06) {11-D POSIX Effect Matrix};
+
+    % Matrix Grid
+    \draw[line width=0.45pt, fill=cardBg, draw=academicSlate!50, rounded corners=1.5pt] (0.12, 1.12) rectangle (4.18, 1.84);
+    \node[font=\fontsize{6.0}{7.0}\selectfont\ttfamily\bfseries, text=stageRed!95!black] at (2.15, 1.60) {;\quad |\quad \&\quad \texttt{\textasciigrave...\textasciigrave}\quad \$( )};
+    \node[font=\fontsize{5.2}{6.2}\selectfont\ttfamily\bfseries, text=academicSlate!90!black] at (2.15, 1.32) {\texttt{\$A}\enskip\texttt{>}\enskip\texttt{<}\enskip\texttt{\$\{IFS\}}\enskip\texttt{\textbackslash n}\enskip\texttt{\textbackslash t}};
+
+    \node[fill=stageBlue!10, draw=stageBlue!65, rounded corners=1.5pt, font=\fontsize{5.2}{6.2}\selectfont\bfseries, inner sep=1.5pt] 
+        at (2.15, 0.78) {$\mathcal{V} = [v_{\mathrm{sep}}, v_{\mathrm{pipe}}, v_{\mathrm{bg}}, \dots]_{11}$};
+    \node[fill=stageRed!8, draw=stageRed!65, rounded corners=1.5pt, font=\fontsize{5.0}{6.0}\selectfont\bfseries, text=stageRed!95!black, inner sep=1.4pt] 
+        at (2.15, 0.32) {Violation: $P_v \triangleq [p, p+m_v) \subseteq I_X$};
+\end{scope}
+
+% =========================================================================
+% DOWNWARD CONNECTOR 1
+% Gap: y in [5.88, 6.40], height = 0.52cm
+% =========================================================================
+\draw[mainDownArrow] (8.80, 6.40) -- (8.80, 5.88);
+\node[fill=white, draw=stageBlue!85!black, line width=0.80pt, rounded corners=2pt, font=\fontsize{6.0}{7.0}\selectfont\bfseries, inner sep=2.2pt] 
+    at (8.80, 6.14) {Handoff: Formal Constraint Tuple $\langle \Phi, I_X, P_v \rangle$};
+
+
+% =========================================================================
+% STAGE 2: Directional Constraint Projection & Isolated Solving (Green)
+% Box: [0.00, 3.05] to [17.60, 5.88], height = 2.83cm
+% =========================================================================
+\draw[line width=0.85pt, dashed, draw=stageGreen!85!black, rounded corners=3pt, fill=stageGreen!2] 
+    (0.00, 3.05) rectangle (17.60, 5.88);
+
+% Stage 2 Header Pill
+\node[anchor=west, fill=stageGreen!90!black, text=white, font=\fontsize{6.2}{7.2}\selectfont\bfseries, rounded corners=1.5pt, inner sep=2.2pt] 
+    at (0.25, 5.65) {\textsc{Stage 2}: Directional Constraint Projection \& Isolated Sandbox Solving};
+
+% Card 2A: Global Causal Hypergraph [0.25, 4.05], width = 3.80cm, height = 2.25cm
+\begin{scope}[shift={(0.25, 3.18)}]
+    \draw[line width=0.75pt, draw=stageGreen!80!black, fill=white, rounded corners=2.5pt] (0, 0) rectangle (3.80, 2.25);
+    \node[font=\fontsize{6.2}{7.2}\selectfont\bfseries, text=stageGreen!95!black] at (1.90, 2.06) {Global Causal Hypergraph};
+    
+    % Hypergraph vector diagram
+    \begin{scope}[shift={(1.90, 1.30)}]
+        \draw[stageGreen!60, dashed, fill=stageGreen!6, rounded corners=2.5pt] (-1.30, -0.38) rectangle (1.30, 0.38);
+        \node[circle, draw=stageBlue!85!black, fill=stageBlue!18, inner sep=0pt, minimum size=0.38cm, font=\fontsize{5.2}{6.2}\selectfont] (x1) at (-0.85, 0.15) {$x_1$};
+        \node[circle, draw=stageBlue!85!black, fill=stageBlue!18, inner sep=0pt, minimum size=0.38cm, font=\fontsize{5.2}{6.2}\selectfont] (x2) at (-0.85, -0.15) {$x_2$};
+        \node[circle, draw=stageAmber!90!black, fill=stageAmber!22, inner sep=0pt, minimum size=0.40cm, font=\fontsize{5.4}{6.4}\selectfont\bfseries] (y) at (0.0, 0.0) {$y$};
+        \node[circle, draw=stageGreen!90!black, fill=stageGreen!25, inner sep=0pt, minimum size=0.40cm, font=\fontsize{5.4}{6.4}\selectfont\bfseries] (z) at (0.85, 0.0) {$z_{\mathrm{sk}}$};
+        \draw[-{Stealth[scale=0.50]}, line width=0.48pt, draw=stageBlue!85!black] (x1) -- (y);
+        \draw[-{Stealth[scale=0.50]}, line width=0.48pt, draw=stageBlue!85!black] (x2) -- (y);
+        \draw[-{Stealth[scale=0.54]}, line width=0.54pt, draw=stageGreen!90!black] (y) -- (z);
+    \end{scope}
+
+    \node[fill=stageGreen!10, draw=stageGreen!70, rounded corners=1.5pt, font=\fontsize{5.6}{6.6}\selectfont\bfseries, inner sep=1.6pt] 
+        at (1.90, 0.58) {$\mathcal{H}_V = \langle V, \mathcal{E} \rangle, \Phi$};
+    \node[font=\fontsize{5.0}{6.0}\selectfont\bfseries, text=academicSlate!90!black] at (1.90, 0.20) {Global Symbolic Constraints};
+\end{scope}
+
+% Arrow -> Middle
+\draw[stepArrow] (4.05, 4.30) -- node[above, actionTag] {Slice} (5.15, 4.30);
+
+% Middle Card: Hypergraph Monotonic Closure Slicing [5.15, 12.45], width = 7.30cm, height = 2.25cm
+\begin{scope}[shift={(5.15, 3.18)}]
+    \draw[line width=0.75pt, draw=stageGreen!80!black, fill=white, rounded corners=2.5pt] (0, 0) rectangle (7.30, 2.25);
+    \node[font=\fontsize{6.2}{7.2}\selectfont\bfseries, text=stageGreen!95!black] at (3.65, 2.06) {Hypergraph Monotonic Closure Slicing};
+    
+    % Slicing vector diagram (Left side)
+    \begin{scope}[shift={(1.70, 1.12)}]
+        \draw[stageGreen!85!black, dashed, fill=stageGreen!6, rounded corners=2.5pt, line width=0.55pt] 
+            (-1.35, -0.48) rectangle (0.80, 0.40);
+        \node[anchor=south, font=\fontsize{5.2}{6.2}\selectfont\bfseries, text=stageGreen!95!black, fill=white, rounded corners=1pt, inner sep=0.8pt] 
+            at (-0.28, 0.40) {Monotonic Closure $\Phi^*$};
+        
+        \node[circle, draw=stageBlue!85!black, fill=stageBlue!18, inner sep=0pt, minimum size=0.34cm, font=\fontsize{5.0}{6.0}\selectfont] (tx1) at (-0.95, 0.12) {$x_1$};
+        \node[circle, draw=stageBlue!85!black, fill=stageBlue!18, inner sep=0pt, minimum size=0.34cm, font=\fontsize{5.0}{6.0}\selectfont] (tx2) at (-0.95, -0.18) {$x_2$};
+        \node[circle, draw=stageAmber!90!black, fill=stageAmber!22, inner sep=0pt, minimum size=0.36cm, font=\fontsize{5.2}{6.2}\selectfont\bfseries] (ty) at (-0.22, -0.03) {$y$};
+        \node[circle, draw=stageGreen!90!black, fill=stageGreen!25, inner sep=0pt, minimum size=0.36cm, font=\fontsize{5.2}{6.2}\selectfont\bfseries] (tz) at (0.45, -0.03) {$z_{\mathrm{sk}}$};
+        \draw[-{Stealth[scale=0.44]}, line width=0.42pt, draw=stageBlue!85!black] (tx1) -- (ty);
+        \draw[-{Stealth[scale=0.44]}, line width=0.42pt, draw=stageBlue!85!black] (tx2) -- (ty);
+        \draw[-{Stealth[scale=0.48]}, line width=0.48pt, draw=stageGreen!90!black] (ty) -- (tz);
+        
+        % Irrelevant nodes pruned outside
+        \node[circle, draw=gray!50, fill=gray!12, dashed, inner sep=0pt, minimum size=0.30cm, font=\fontsize{4.8}{5.8}\selectfont, text=gray!85!black] (u1) at (1.28, 0.14) {$u_1$};
+        \node[circle, draw=gray!50, fill=gray!12, dashed, inner sep=0pt, minimum size=0.30cm, font=\fontsize{4.8}{5.8}\selectfont, text=gray!85!black] (u2) at (1.28, -0.20) {$u_2$};
+        \draw[-{Stealth[scale=0.38]}, line width=0.35pt, draw=gray!60, dashed] (tz) -- (u1);
+        \draw[-{Stealth[scale=0.38]}, line width=0.35pt, draw=gray!60, dashed] (tz) -- (u2);
+        \node[font=\fontsize{4.8}{5.8}\selectfont\bfseries, text=gray!75!black] at (1.28, 0.36) {Pruned};
+        
+        \node[fill=stageGreen!10, draw=stageGreen!65, rounded corners=1.5pt, font=\fontsize{5.0}{6.0}\selectfont\bfseries, inner sep=1.4pt] 
+            at (-0.28, -0.64) {$\Phi^* = \operatorname{Proj}(\Phi, I_X)$};
+    \end{scope}
+
+    % Metrics & proof-scope badges (Right side)
+    \begin{scope}[shift={(5.40, 1.16)}]
+        \draw[fill=stageRed!10, draw=stageRed!75, line width=0.40pt, rounded corners=2pt] (-1.55, 0.10) rectangle (1.55, 0.46);
+        \node[font=\fontsize{5.8}{6.8}\selectfont\bfseries, text=stageRed!95!black] at (0, 0.28) {Source-directed slice};
+
+        \draw[fill=stageGreen!12, draw=stageGreen!80, line width=0.40pt, rounded corners=2pt] (-1.55, -0.52) rectangle (1.55, -0.04);
+        \node[font=\fontsize{5.2}{6.2}\selectfont\bfseries, text=stageGreen!95!black] at (0, -0.16) {UNSAT Subset Rule};
+        \node[font=\fontsize{4.8}{5.8}\selectfont\ttfamily\bfseries, text=stageGreen!90!black] at (0, -0.36) {$\Phi^*\subseteq\Phi$: UNSAT preserved};
+    \end{scope}
+
+    \node[font=\fontsize{5.0}{6.0}\selectfont\bfseries, text=academicSlate!90!black, align=center] at (3.65, 0.18) 
+        {Fixed-Point Slice $\cdot$ Full-Store SAT Recheck};
+\end{scope}
+
+% Inter-Chamber Arrow
+\draw[stepArrow] (12.45, 4.30) -- node[above, actionTag] {Solve} (13.55, 4.30);
+
+% Right Card: Forkserver Sandbox Solving Chamber [13.55, 17.35], width = 3.80cm, height = 2.25cm
+\begin{scope}[shift={(13.55, 3.18)}]
+    \draw[line width=0.75pt, draw=stageGreen!80!black, fill=white, rounded corners=2.5pt] (0, 0) rectangle (3.80, 2.25);
+    \node[font=\fontsize{6.2}{7.2}\selectfont\bfseries, text=stageGreen!95!black] at (1.90, 2.06) {Forkserver Isolated Solving};
+    
+    % Forkserver architecture
+    \begin{scope}[shift={(0.0, 1.30)}]
+        % Master Daemon Box
+        \draw[fill=stageBlue!12, draw=stageBlue!75, line width=0.40pt, rounded corners=1.5pt] (0.08, -0.26) rectangle (0.82, 0.26);
+        \node[font=\fontsize{5.2}{6.2}\selectfont\bfseries, text=stageBlue!95!black] at (0.45, 0.08) {Master};
+        \node[font=\fontsize{4.4}{5.4}\selectfont\ttfamily, text=academicSlate!90!black] at (0.45, -0.10) {Daemon};
+
+        % fork() arrow
+        \draw[-{Stealth[scale=0.50]}, line width=0.50pt, draw=stageAmber!90!black] (0.82, 0.0) -- (1.42, 0.0);
+        \node[font=\fontsize{4.8}{5.8}\selectfont\ttfamily\bfseries, text=stageAmber!95!black] at (1.12, 0.15) {fork()};
+
+        % Worker Sandbox
+        \draw[fill=stageGreen!12, draw=stageGreen!85, dashed, line width=0.50pt, rounded corners=1.5pt] (1.42, -0.26) rectangle (2.32, 0.26);
+        \node[font=\fontsize{5.2}{6.2}\selectfont\bfseries, text=stageGreen!95!black] at (1.87, 0.08) {Sandbox};
+        \node[font=\fontsize{4.4}{5.4}\selectfont\ttfamily\bfseries, text=stageGreen!85!black] at (1.87, -0.10) {Worker};
+
+        % Stability Badge
+        \draw[fill=stageGreen!15, draw=stageGreen!85, line width=0.40pt, rounded corners=1.5pt] (2.44, -0.26) rectangle (3.72, 0.26);
+        \node[font=\fontsize{5.0}{6.0}\selectfont\bfseries, text=stageGreen!95!black] at (3.08, 0.08) {Bounded};
+        \node[font=\fontsize{4.6}{5.6}\selectfont\bfseries, text=stageGreen!90!black] at (3.08, -0.10) {primary selector};
+    \end{scope}
+
+    \node[fill=stageGreen!10, draw=stageGreen!70, rounded corners=1.5pt, font=\fontsize{5.0}{6.0}\selectfont\bfseries, inner sep=1.5pt] 
+        at (1.90, 0.60) {Witness: $\operatorname{SAT}(\Phi\cup\{P_v\}) \Rightarrow W$};
+    \node[font=\fontsize{4.6}{5.6}\selectfont\bfseries, text=academicSlate!90!black, align=center] at (1.90, 0.20) 
+        {Envelope: 150s $\mid$ 8\,GiB $\mid$ Process Fuse \& Recovery};
+\end{scope}
+
+% =========================================================================
+% DOWNWARD CONNECTOR 2
+% Gap: y in [2.53, 3.05], height = 0.52cm
+% =========================================================================
+\draw[mainDownArrow] (8.80, 3.05) -- (8.80, 2.53);
+\node[fill=white, draw=stageGreen!85!black, line width=0.80pt, rounded corners=2pt, font=\fontsize{6.0}{7.0}\selectfont\bfseries, inner sep=2.2pt] 
+    at (8.80, 2.79) {Handoff: Solving Verdict \& Counterexample Witness $W$};
+
+
+% =========================================================================
+% STAGE 3: Evidence Classification, Runtime Checks & Audit (Purple)
+% Box: [0.00, 0.00] to [17.60, 2.53], height = 2.53cm
+% =========================================================================
+\draw[line width=0.85pt, dashed, draw=stagePurple!85!black, rounded corners=3pt, fill=stagePurple!2] 
+    (0.00, 0.00) rectangle (17.60, 2.53);
+
+% % Stage 3 Header Pill
+    \node[anchor=west, fill=stagePurple!90!black, text=white, font=\fontsize{6.2}{7.2}\selectfont\bfseries, rounded corners=1.5pt, inner sep=2.2pt] 
+    at (0.25, 2.30) {\textsc{Stage 3}: Evidence Classification, Runtime Checks \& Audit};
+
+% Card 3A: Outcome groups [0.25, 4.55], width = 4.30cm, height = 2.25cm
+\begin{scope}[shift={(0.25, -0.02)}]
+    \draw[line width=0.75pt, draw=stagePurple!80!black, fill=white, rounded corners=2.5pt] (0, 0) rectangle (4.30, 2.10);
+    \node[font=\fontsize{6.0}{7.0}\selectfont\bfseries, text=stagePurple!95!black] at (2.15, 1.93) {Current Campaign (518 Records)};
+
+    % The rows are a display grouping; Table I retains the seven record classes.
+    \draw[fill=stageRed!12, draw=stageRed!75, line width=0.40pt, rounded corners=1.5pt] (0.10, 1.44) rectangle (4.20, 1.72);
+    \node[anchor=west, fill=stageRed!90!black, text=white, font=\fontsize{4.6}{5.6}\selectfont\ttfamily\bfseries, rounded corners=1pt, inner sep=0.6pt] at (0.15, 1.58) {Direct};
+    \node[anchor=west, font=\fontsize{4.8}{5.8}\selectfont\bfseries, text=stageRed!95!black] at (1.10, 1.58) {Complete-byte SV-SAT};
+    \node[anchor=east, fill=stageRed!85!black, text=white, font=\fontsize{4.8}{5.8}\selectfont\ttfamily\bfseries, rounded corners=1pt, inner sep=0.6pt] at (4.15, 1.58) {36};
+
+    \draw[fill=stageAmber!12, draw=stageAmber!75, line width=0.40pt, rounded corners=1.5pt] (0.10, 1.16) rectangle (4.20, 1.40);
+    \node[anchor=west, fill=stageAmber!90!black, text=white, font=\fontsize{4.5}{5.5}\selectfont\ttfamily\bfseries, rounded corners=1pt, inner sep=0.6pt] at (0.15, 1.28) {Prefix};
+    \node[anchor=west, font=\fontsize{4.7}{5.7}\selectfont\bfseries, text=stageAmber!95!black] at (1.10, 1.28) {Observed-prefix direct};
+    \node[anchor=east, fill=stageAmber!85!black, text=white, font=\fontsize{4.8}{5.8}\selectfont\ttfamily\bfseries, rounded corners=1pt, inner sep=0.6pt] at (4.15, 1.28) {5};
+
+    \draw[fill=academicSlate!12, draw=academicSlate!70, line width=0.40pt, rounded corners=1.5pt] (0.10, 0.88) rectangle (4.20, 1.12);
+    \node[anchor=west, fill=academicSlate!90!black, text=white, font=\fontsize{4.5}{5.5}\selectfont\ttfamily\bfseries, rounded corners=1pt, inner sep=0.6pt] at (0.15, 1.00) {Local};
+    \node[anchor=west, font=\fontsize{4.8}{5.8}\selectfont\bfseries, text=academicSlate!95!black] at (1.10, 1.00) {Source-slot obligation};
+    \node[anchor=east, fill=academicSlate!90!black, text=white, font=\fontsize{4.8}{5.8}\selectfont\ttfamily\bfseries, rounded corners=1pt, inner sep=0.6pt] at (4.15, 1.00) {31};
+
+    \draw[fill=stageBlue!10, draw=stageBlue!65, line width=0.40pt, rounded corners=1.5pt] (0.10, 0.60) rectangle (4.20, 0.84);
+    \node[anchor=west, fill=stageBlue!85!black, text=white, font=\fontsize{4.5}{5.5}\selectfont\ttfamily\bfseries, rounded corners=1pt, inner sep=0.6pt] at (0.15, 0.72) {Static};
+    \node[anchor=west, font=\fontsize{4.8}{5.8}\selectfont\bfseries, text=stageBlue!95!black] at (1.10, 0.72) {Template observation};
+    \node[anchor=east, fill=stageBlue!85!black, text=white, font=\fontsize{4.8}{5.8}\selectfont\ttfamily\bfseries, rounded corners=1pt, inner sep=0.6pt] at (4.15, 0.72) {120};
+
+    \draw[fill=gray!12, draw=gray!60, line width=0.40pt, rounded corners=1.5pt] (0.10, 0.32) rectangle (4.20, 0.56);
+    \node[anchor=west, fill=gray!80!black, text=white, font=\fontsize{4.5}{5.5}\selectfont\ttfamily\bfseries, rounded corners=1pt, inner sep=0.6pt] at (0.15, 0.44) {Open};
+    \node[anchor=west, font=\fontsize{5.0}{6.0}\selectfont\bfseries, text=gray!90!black] at (1.10, 0.44) {Residual obligations};
+    \node[anchor=east, fill=gray!80!black, text=white, font=\fontsize{4.8}{5.8}\selectfont\ttfamily\bfseries, rounded corners=1pt, inner sep=0.6pt] at (4.15, 0.44) {326};
+
+    % Bottom Summary Pill
+    \node[fill=stagePurple!8, draw=stagePurple!65, rounded corners=1.5pt, font=\fontsize{4.9}{5.9}\selectfont\bfseries, text=stagePurple!95!black, inner sep=1.0pt]
+        at (2.15, 0.15) {$\sum = 518$ candidate records conserved};
+\end{scope}
+
+% Center Arrow -> Replay Chamber
+\draw[stepArrow] (4.55, 1.05) -- node[above, actionTag] {Witness} (5.55, 1.05);
+
+% Middle Card: Runtime consistency receipt [5.55, 12.65], width = 7.10cm, height = 2.10cm
+\begin{scope}[shift={(5.55, -0.02)}]
+    \draw[line width=0.75pt, draw=stagePurple!80!black, fill=white, rounded corners=2.5pt] (0, 0) rectangle (7.10, 2.10);
+    \node[font=\fontsize{6.0}{7.0}\selectfont\bfseries, text=stagePurple!95!black] at (3.55, 1.93) {Runtime Grounding / Selected Bridge};
+    
+    % Vector Router Hardware Icon
+    \begin{scope}[shift={(0.20, 1.00)}]
+        \routerIcon{0.0}{0.0}{0.85}
+    \end{scope}
+    \node[font=\fontsize{5.0}{6.0}\selectfont\bfseries, text=academicSlate!95!black, align=center] at (0.74, 0.72) 
+        {8 Routers\\[1.0pt]\fontsize{4.4}{5.4}\selectfont\ttfamily\color{academicSlate!85!black}MIPS/ARM};
+
+    % Academic Replay Console
+    \begin{scope}[shift={(1.65, 0.54)}]
+        \draw[fill=academicSlate!95!black, draw=academicSlate!75!black, rounded corners=2pt] (0, 0) rectangle (5.30, 1.15);
+        \fill[academicSlate!80!black] (0, 0.91) rectangle (5.30, 1.15);
+        \node[anchor=west, font=\fontsize{4.6}{5.6}\selectfont\ttfamily\bfseries, text=white] at (0.10, 1.03) {[Console: Separate Runtime Tracks]};
+        
+        \node[anchor=west, font=\fontsize{4.8}{5.8}\selectfont\ttfamily, text=yellow!85!orange] at (0.10, 0.72) {[receipt] wrapper / process binding};
+        \node[anchor=west, font=\fontsize{4.8}{5.8}\selectfont\ttfamily, text=cyan!85!blue] at (0.10, 0.46) {[profile] 64 / 704 matrix cells};
+        \node[anchor=west, font=\fontsize{4.8}{5.8}\selectfont\ttfamily, text=green!80!lime] at (0.10, 0.18) {[bridge] QEMU/GDB: 10 / 17 token};
+    \end{scope}
+
+    % Bottom Verification Banner
+    \draw[fill=stageGreen!15, draw=stageGreen!85, line width=0.40pt, rounded corners=1.8pt] (0.10, 0.04) rectangle (7.00, 0.42);
+    \node[font=\fontsize{5.2}{6.2}\selectfont\bfseries, text=stageGreen!95!black] at (3.55, 0.28) 
+        {83 / 83 wrapper/runtime receipts};
+    \node[font=\fontsize{4.6}{5.6}\selectfont\bfseries, text=stageGreen!90!black] at (3.55, 0.12) 
+        {selected QEMU/GDB bridge only; shell disabled};
+\end{scope}
+
+% Arrow -> Right
+\draw[stepArrow] (12.65, 1.05) -- node[above, actionTag] {Ledger} (13.65, 1.05);
+
+% Right Card: Standardized Audit Provenance Ledger Base [13.65, 17.35], width = 3.70cm, height = 2.10cm
+\begin{scope}[shift={(13.65, -0.02)}]
+    \draw[line width=0.75pt, draw=stagePurple!80!black, fill=white, rounded corners=2.5pt] (0, 0) rectangle (3.70, 2.10);
+    \node[font=\fontsize{6.0}{7.0}\selectfont\bfseries, text=stagePurple!95!black] at (1.85, 1.93) {Standardized Audit Provenance};
+
+    % 4 Structured Ledger Entries
+    \draw[fill=stagePurple!6, draw=stagePurple!50, rounded corners=1.5pt, line width=0.35pt] (0.12, 1.40) rectangle (3.58, 1.72);
+    \node[font=\fontsize{4.8}{5.8}\selectfont\bfseries, text=stagePurple!95!black] at (1.85, 1.56) {[Accounting]\enskip 518 Closed};
+
+    \draw[fill=stageBlue!6, draw=stageBlue!50, rounded corners=1.5pt, line width=0.35pt] (0.12, 0.98) rectangle (3.58, 1.30);
+    \node[font=\fontsize{4.8}{5.8}\selectfont\bfseries, text=stageBlue!95!black] at (1.85, 1.14) {[Provenance]\enskip SHA-256 Chain};
+
+    \draw[fill=stageGreen!6, draw=stageGreen!50, rounded corners=1.5pt, line width=0.35pt] (0.12, 0.56) rectangle (3.58, 0.88);
+    \node[font=\fontsize{4.8}{5.8}\selectfont\bfseries, text=stageGreen!95!black] at (1.85, 0.72) {[Scope]\enskip Local / Typed};
+
+    \draw[fill=stageRed!6, draw=stageRed!50, rounded corners=1.5pt, line width=0.35pt] (0.12, 0.14) rectangle (3.58, 0.46);
+    \node[font=\fontsize{4.8}{5.8}\selectfont\bfseries, text=stageRed!95!black] at (1.85, 0.30) {[Fail-Safe]\enskip Typed Isolation};
+\end{scope}
+
+\end{tikzpicture}%
+}

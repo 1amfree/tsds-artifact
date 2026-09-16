@@ -1,0 +1,212 @@
+\providecolor{navyblue}{RGB}{25,60,120}
+\providecolor{softblue}{RGB}{242,246,252}
+\providecolor{forestgreen}{RGB}{30,110,50}
+\providecolor{softgreen}{RGB}{242,248,243}
+\providecolor{darkred}{RGB}{140,25,25}
+\providecolor{softred}{RGB}{253,242,242}
+\providecolor{amber}{RGB}{175,90,15}
+\providecolor{softamber}{RGB}{255,247,238}
+\providecolor{cardborder}{RGB}{190,200,215}
+\providecolor{codebg}{RGB}{248,249,251}
+\providecolor{slate}{RGB}{70,80,95}
+
+\tikzset{
+  pics/docicon/.style args={#1/#2}{
+    code={
+      \filldraw[fill=#1, draw=#2, line width=0.6pt, rounded corners=0.5pt]
+        (-0.20,-0.25) -- (-0.20,0.25) -- (0.07,0.25) -- (0.20,0.12) -- (0.20,-0.25) -- cycle;
+      \filldraw[fill=white, draw=#2, line width=0.45pt]
+        (0.07,0.25) -- (0.07,0.12) -- (0.20,0.12) -- cycle;
+      \draw[#2, line width=0.45pt]
+        (-0.13,0.12) -- (0.01,0.12)
+        (-0.13,0.01) -- (0.13,0.01)
+        (-0.13,-0.09) -- (0.13,-0.09)
+        (-0.13,-0.18) -- (0.05,-0.18);
+    }
+  },
+  pics/cpuicon/.style args={#1/#2}{
+    code={
+      \filldraw[fill=#1, draw=#2, line width=0.65pt, rounded corners=1.2pt]
+        (-0.28,-0.28) rectangle (0.28,0.28);
+      \filldraw[fill=white, draw=#2, line width=0.4pt]
+        (-0.16,-0.16) rectangle (0.16,0.16);
+      \node[font=\fontsize{4.8}{5.8}\selectfont\bfseries, text=#2] at (0,0) {CPU};
+      \foreach \x in {-0.18, -0.06, 0.06, 0.18} {
+        \draw[#2, line width=0.45pt] (\x, 0.28) -- (\x, 0.36);
+        \draw[#2, line width=0.45pt] (\x, -0.28) -- (\x, -0.36);
+        \draw[#2, line width=0.45pt] (0.28, \x) -- (0.36, \x);
+        \draw[#2, line width=0.45pt] (-0.28, \x) -- (-0.36, \x);
+      }
+    }
+  },
+  pics/terminalicon/.style args={#1/#2}{
+    code={
+      \filldraw[fill=#1, draw=#2, line width=0.6pt, rounded corners=1pt]
+        (-0.28,-0.20) rectangle (0.28,0.20);
+      \node[font=\fontsize{5.6}{6.6}\selectfont\bfseries, text=#2] at (-0.10, 0) {$>\_$};
+      \fill[#2] (0.07,-0.07) rectangle (0.16,-0.02);
+    }
+  },
+  pics/shieldbadge/.style args={#1/#2}{
+    code={
+      \filldraw[fill=#1, draw=#2, line width=0.65pt]
+        (0,0.25) -- (0.21,0.16) -- (0.21,-0.03)
+        arc (0:-90:0.21cm and 0.21cm) -- (0,-0.25)
+        -- (-0.01,-0.25) arc (-90:-180:0.21cm and 0.21cm)
+        -- (-0.21,-0.03) -- (-0.21,0.16) -- cycle;
+      \draw[#2, line width=0.8pt] (-0.08,0.01) -- (-0.02,-0.05) -- (0.10,0.08);
+    }
+  }
+}
+
+\resizebox{0.96\linewidth}{!}{%
+\begin{tikzpicture}[x=1cm, y=1cm]
+
+% =========================================================================
+% ROW 1: Frontend HTTP Request Dispatch & Dangerous Sink Assembly Slice
+% Bounds: [0, 6.20] to [18.0, 8.20], height = 2.00cm
+% =========================================================================
+
+% Card 1: Illustrative Source Context (Left) [0, 6.20] to [8.2, 8.20]
+\draw[draw=navyblue, fill=softblue!40, line width=0.75pt, rounded corners=2pt] (0.0, 6.20) rectangle (8.2, 8.20);
+\pic at (0.45, 7.88) {docicon={white/navyblue}};
+\node[anchor=west, font=\fontsize{7.8pt}{9.2pt}\bfseries\selectfont, text=navyblue] at (0.85, 7.88) {Illustrative Source Context (\texttt{setup.cgi})};
+
+\node[anchor=north west, font=\fontsize{7.1pt}{8.8pt}\selectfont, text=black!90, text width=7.5cm, align=left] at (0.25, 7.58) {
+  \textbf{Context}: \texttt{POST /setup.cgi?todo=qos\_dev\_edit} \hfill \mbox{\textcolor{slate}{\scriptsize[schematic]}}\\
+  \textbf{Example source bytes}: \texttt{todo=qos\_dev\_edit\&dev=\textcolor{darkred}{\textbf{127.0.0.1;reboot}}}\\
+  \textbf{Source-model binding}: Field \texttt{"dev"} $\longrightarrow$ Symbolic Slot $X_{\mathrm{dev}}$
+};
+
+% Card 2: Sink ABI Binding Slice (Right) [9.8, 6.20] to [18.0, 8.20]
+\draw[draw=black!55, fill=codebg, line width=0.75pt, rounded corners=2pt] (9.8, 6.20) rectangle (18.0, 8.20);
+\pic at (10.25, 7.88) {cpuicon={softblue/navyblue}};
+\node[anchor=west, font=\fontsize{7.8pt}{9.2pt}\bfseries\selectfont, text=black!90] at (10.7, 7.88) {Sink ABI Binding Slice (\texttt{system @ 0x19a48})};
+
+\node[anchor=north west, font=\fontsize{7.0pt}{8.6pt}\ttfamily\selectfont, text=black!90, text width=7.7cm, align=left] at (10.05, 7.58) {
+  0x00019a3c: lw    \$s0, 16(\$sp)      /* Buffer ptr */\\
+  0x00019a40: move  \$a0, \$s0          /* Bind cmd ABI arg0 */\\
+  0x00019a48: jal   system            /* Sink @ 0x19a48 */\\
+  0x00019a4c: nop                     /* Delay slot pad */
+};
+
+% Dataflow connector
+\draw[->, >=Stealth, line width=0.85pt, navyblue] (8.2, 7.15) -- 
+  node[above=0.8pt, font=\fontsize{6.2pt}{7.2pt}\bfseries\selectfont, text=navyblue, fill=white, inner sep=1pt] {Cross-Component}
+  node[below=0.8pt, font=\fontsize{6.2pt}{7.2pt}\bfseries\selectfont, text=navyblue, fill=white, inner sep=1pt] {Dataflow} 
+  (9.8, 7.15);
+
+% Connector Row 1 -> Row 2
+\draw[->, >=Stealth, line width=0.85pt, navyblue] (13.9, 6.20) -- 
+  node[right=1.2mm, font=\fontsize{6.5pt}{7.5pt}\bfseries\selectfont, text=navyblue] {Captured Command Argument $B$} 
+  (13.9, 5.80);
+
+% =========================================================================
+% ROW 2: Captured Shell Argument Byte Strip & Deterministic Quote Automaton
+% Bounds: [0, 3.60] to [18.0, 5.80], height = 2.20cm
+% =========================================================================
+\draw[draw=navyblue, fill=softblue!30, line width=0.75pt, rounded corners=2pt] (0.0, 3.60) rectangle (18.0, 5.80);
+
+% Row 2 Header
+\pic at (0.45, 5.55) {terminalicon={codebg/slate}};
+\node[anchor=west, font=\fontsize{7.6pt}{9.0pt}\bfseries\selectfont, text=navyblue] at (0.85, 5.55) {Captured Shell Argument Byte Strip $B$ \& Deterministic Quote Automaton};
+\node[anchor=east, font=\fontsize{6.8pt}{8.0pt}\selectfont, text=slate] at (17.7, 5.55) {\textbf{Binding}: $\operatorname{Claimable}(s) \triangleq \mathsf{shell\_command} \wedge \mathsf{direct\_abi\_arg0} = \mathbf{true}$};
+
+% Byte Strip Boxes
+% 1) Static Prefix [0.3, 4.40] to (4.7, 5.05)
+\draw[draw=black!55, fill=white, line width=0.55pt] (0.3, 4.40) rectangle (4.7, 5.05);
+\node[font=\fontsize{6.3pt}{7.3pt}\selectfont, text=black!75] at (2.50, 5.23) {Static Prefix ($b_0 \dots b_{16}$, 17 B)};
+\node[font=\fontsize{7.4pt}{8.4pt}\selectfont\ttfamily] at (2.50, 4.72) {tc qdisc del dev\textvisiblespace};
+
+% 2) Source-Controlled Slot
+\draw[draw=amber, fill=softamber, line width=0.9pt] (4.7, 4.40) rectangle (13.1, 5.05);
+\node[font=\fontsize{6.3pt}{7.3pt}\bfseries\selectfont, text=amber!90!black] at (8.90, 5.23) {Source-Controlled Slot $I_X = [17, 47]$ (31 Bytes, Highlighted)};
+\node[font=\fontsize{7.3pt}{8.4pt}\selectfont\ttfamily] at (8.90, 4.72) {\textcolor{darkred}{\textbf{127.0.0.1;reboot\dots\dots}} \quad \textcolor{slate}{\scriptsize(Witness: \texttt{A\$(:)AA\dots})}};
+
+% 3) Static Suffix
+\draw[draw=black!55, fill=white, line width=0.55pt] (13.1, 4.40) rectangle (16.0, 5.05);
+\node[font=\fontsize{6.3pt}{7.3pt}\selectfont, text=black!75] at (14.55, 5.23) {Static Suffix ($b_{48} \dots b_{51}$)};
+\node[font=\fontsize{7.4pt}{8.4pt}\selectfont\ttfamily] at (14.55, 4.72) {\textvisiblespace root};
+
+% 4) Terminator
+\draw[draw=darkred, fill=softred, line width=0.9pt] (16.0, 4.40) rectangle (17.7, 5.05);
+\node[font=\fontsize{6.3pt}{7.3pt}\bfseries\selectfont, text=darkred] at (16.85, 5.23) {NUL ($b_{52}$)};
+\node[font=\fontsize{7.4pt}{8.4pt}\bfseries\selectfont\ttfamily, text=darkred] at (16.85, 4.72) {\textbackslash 0};
+
+% Row 2 Subtext
+\node[anchor=west, font=\fontsize{7.0pt}{8.3pt}\selectfont, text=black!90] at (0.3, 4.08) {
+  \textbf{Deterministic Quote Automaton}: Prefix $b_0 \dots b_{16}$ has no open quotes $\Longrightarrow q_0 = S_{\mathrm{unq}}$ (Unquoted context, direct shell exposure)
+};
+\node[anchor=east, font=\fontsize{6.8pt}{8.0pt}\selectfont, text=slate] at (17.7, 4.08) {
+  $\operatorname{PlaceCond} = \mathbf{true}$
+};
+
+\node[anchor=west, text width=15.9cm, align=left,
+      font=\fontsize{6.8pt}{7.9pt}\selectfont, text=navyblue] at (0.3, 3.80) {
+  \textbf{C-string}: $\tau_s=52$ verified $\Longrightarrow$
+  complete C string $\land$ claimable sink $\Longrightarrow$ Ready
+};
+\node[anchor=east, font=\fontsize{6.8pt}{8.0pt}\selectfont, text=slate] at (17.7, 3.80) {
+  Controlled: $|I_X| = 31\text{ B}$
+};
+
+% Connectors Row 2 -> Row 3
+\draw[->, >=Stealth, line width=0.85pt, forestgreen] (4.3, 3.60) -- 
+  node[right=1.0mm, font=\fontsize{6.4pt}{7.4pt}\selectfont, text=forestgreen] {Syntax obligations} 
+  (4.3, 3.20);
+\draw[->, >=Stealth, line width=0.85pt, forestgreen] (13.5, 3.60) -- 
+  node[right=1.0mm, font=\fontsize{6.4pt}{7.4pt}\selectfont, text=forestgreen] {Directional SMT query} 
+  (13.5, 3.20);
+
+% =========================================================================
+% ROW 3: Decision Matrix (Left) & SMT Projection Witness (Right)
+% Bounds: [0, 1.10] to [18.0, 3.20], height = 2.10cm
+% =========================================================================
+
+% Card 4: 11-Dimensional Decision Matrix (Left)
+\draw[draw=forestgreen, fill=softgreen!40, line width=0.75pt, rounded corners=2pt] (0.0, 1.10) rectangle (8.6, 3.20);
+\pic at (0.45, 2.92) {shieldbadge={softgreen/forestgreen}};
+\node[anchor=west, font=\fontsize{7.6pt}{9.0pt}\bfseries\selectfont, text=forestgreen] at (0.85, 2.92) {11-Dimensional Shell Effect Decision Matrix $\mathcal{V}$};
+
+\node[anchor=north west, font=\fontsize{7.0pt}{8.6pt}\selectfont, text=black!90, text width=8.2cm, align=left] at (0.25, 2.65) {
+  $\bullet$ \textbf{Effect vector}: \texttt{; (0x3B)} $\Longrightarrow \mathbf{v}[0] = 1$ (modeled separator)\\
+  $\bullet$ \textbf{Witness effect}: \texttt{reboot} / \texttt{id} is represented as a separate command node\\
+  $\bullet$ \textbf{Syntax result}: the selected instance admits a shell-effect template\\
+  $\blacktriangleright$ \textbf{Classification}: \textcolor{darkred}{\textbf{SV-SAT (Direct Source-Local Evidence)}}
+};
+
+% Card 5: Directional SMT Projection & Witness Verification (Right)
+\draw[draw=forestgreen, fill=softgreen!40, line width=0.75pt, rounded corners=2pt] (9.0, 1.10) rectangle (18.0, 3.20);
+\pic at (9.45, 2.92) {cpuicon={softgreen/forestgreen}};
+\node[anchor=west, font=\fontsize{7.6pt}{9.0pt}\bfseries\selectfont, text=forestgreen] at (9.85, 2.92) {Directional SMT Projection \& Counterexample Witness};
+
+\node[anchor=north west, font=\fontsize{6.9pt}{8.4pt}\selectfont, text=black!90, text width=8.6cm, align=left] at (9.25, 2.65) {
+  $\bullet$ \textbf{Source-directed slice}: $\Phi^*\subseteq\Phi$; SAT is rechecked against the full store\\
+  $\bullet$ \textbf{Matrix profile}: an 11-cell selected-instance fragment with explicit SAT/UNSAT/INC outcomes\\
+  $\bullet$ \textbf{Command-byte witness}: \texttt{"tc qdisc del dev A\$(\!:\!)AA... root"}\\
+  $\blacktriangleright$ \textbf{Audit outcome}: integrity/admission checks pass; shell execution is not performed
+};
+
+% Connectors Row 3 -> Row 4
+\draw[->, >=Stealth, line width=0.85pt, navyblue] (4.3, 1.10) -- (4.3, 0.85);
+\draw[->, >=Stealth, line width=0.85pt, navyblue] (13.5, 1.10) -- (13.5, 0.85);
+
+% =========================================================================
+% ROW 4: Conserved Ledger Record & Auditor Trust Boundary (Bottom Banner)
+% Bounds: [0, 0.0] to [18.0, 0.85], height = 0.85cm
+% =========================================================================
+\draw[draw=navyblue, fill=softblue!45, line width=0.75pt, rounded corners=2pt] (0.0, 0.0) rectangle (18.0, 0.85);
+\draw[darkred, line width=1.3pt] (0.0, 0.85) -- (18.0, 0.85);
+
+\pic at (0.45, 0.44) {docicon={white/navyblue}};
+
+\node[font=\fontsize{7.4pt}{8.8pt}\selectfont, text=black!90, text width=17.0cm, align=center] at (9.2, 0.58) {
+  $\operatorname{Claimable}(s) \land \operatorname{CompleteCString}(B) \land |I_X|=31 \land (4\,\mathsf{SAT}, 7\,\mathsf{UNSAT}) \implies \textcolor{darkred}{\mathbf{SV\text{-}SAT}\text{ \textbf{(direct, selected-instance profile)}}}$
+};
+
+\node[font=\fontsize{6.8pt}{8.0pt}\selectfont, text=slate, text width=17.0cm, align=center] at (9.2, 0.22) {
+  \textbf{Auditor Trust Boundary}: $\operatorname{Audit}(r) = \mathsf{accept} \implies \operatorname{Integrity}(r) \land \operatorname{Admission}(r) \quad \mid \quad \text{Conserved Record Digest } h_r = H(\operatorname{canon}(\mathcal{R}_r)) = \mathtt{0x7e29\dots f14a}$
+};
+
+\end{tikzpicture}%
+}

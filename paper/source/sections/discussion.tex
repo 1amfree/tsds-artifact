@@ -1,0 +1,7 @@
+\section{Limitations and Discussion}
+\label{sec:discussion}
+
+\tool is designed for evidence-based triage rather than complete vulnerability discovery. Several key limitations and validity boundaries remain:
+\emph{(1)~Instance-Level Evidence vs.\ Firmware Safety:} Bounded symbolic execution provides instance-level evidence along an explored corridor, but does not establish firmware-wide absence of vulnerabilities. Search timeouts capture an execution frontier rather than exhaustive coverage; \tool never emits negative safety claims, preserving all \TSDSReviewCampaignResidual{} unresolved cases as explicit typed obligations.
+\emph{(2)~Bounded Shell Syntax Matrix:} The current 11-vector matrix models a bounded set of dominant POSIX and BusyBox \texttt{ash} injection primitives (chaining, substitution, piping, redirection) and does not cover all POSIX shell behaviors. Complex syntax (e.g., arithmetic expansion \texttt{\$((...))}, here-documents \texttt{<<}) is unmodeled; \tool defaults fail-closed to \textsc{Inconclusive} with typed review flags.
+\emph{(3)~Sink Argument Semantics:} Semantic binding relies on modeled signatures for standard libc and vendor wrappers; unknown vendor wrappers require semantic plugins and cannot be automatically inferred, defaulting to unpromoted residuals. While dynamic QEMU emulation reproduces command execution corresponding to 6 known CVE patterns, proprietary NVRAM peripherals constrain full-system emulation. We deliberately prioritize final-byte verifiability over speculative alert volume.

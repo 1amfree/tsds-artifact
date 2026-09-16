@@ -1,0 +1,9 @@
+\begin{abstract}
+Cloud-connected edge gateways inherit critical vulnerabilities directly from embedded firmware. While static analyzers scale candidate discovery, raw taint closures do not identify which bytes control the final shell command or which syntax effects remain feasible, triggering severe triage fatigue. We present \tool, a candidate-conserving triage framework for edge-firmware warnings built around an executable \emph{final-byte evidence contract}. \tool binds sink argument semantics, reconstructs concrete C strings, tracks byte provenance, and solves a versioned quote-aware 11-vector shell effect matrix.
+
+Evaluated on eight commercial router firmware images with \TSDSReviewCampaignRecords{} warnings, \tool isolates \TSDSReviewCampaignCompleteDirect{} complete-string and \TSDSReviewCampaignObservedPrefixDirect{} observed-prefix injection profiles, reducing manual triage volume by 92.3\% while strictly preserving all \TSDSReviewCampaignResidual{} unresolved cases as typed obligations. Dynamic execution under QEMU system emulation confirms that synthesized command witnesses trigger live shell execution across commercial services (including Netgear, Tenda, and D-Link). In controlled baseline comparisons, \tool achieves 100\% precision and =1.0$, eliminating 10 false positives from raw reachability and 5 from regex scanning, while uniquely emitting exact byte extents and cryptographic audit receipts.
+
+\begin{IEEEkeywords}
+Cloud computing, edge security, IoT firmware analysis, alert triage, symbolic execution, command injection, evidence contracts
+\end{IEEEkeywords}
+\end{abstract}

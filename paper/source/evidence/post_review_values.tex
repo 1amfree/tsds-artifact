@@ -1,0 +1,162 @@
+% Values generated from the dated scope-audit report 20260912, the
+% Ubuntu-only reviewer-gap calibrations completed 20260913, and the current-
+% source r10 bounded rerun completed 20260914, plus current-source
+% independent semantic and interface replays completed on the same date.
+% These values belong to a dated additional validation batch and do not share
+% the denominator of the frozen V20 final-byte ledger.
+\newcommand{\TSDSReviewExitMultiState}{261}
+\newcommand{\TSDSReviewExitMultiStatePct}{50.39\%}
+\newcommand{\TSDSReviewExitZeroState}{140}
+\newcommand{\TSDSReviewExitMedian}{2}
+\newcommand{\TSDSReviewExitPninetyFive}{21}
+\newcommand{\TSDSReviewStrictTargets}{27}
+\newcommand{\TSDSReviewSemanticDiffs}{0}
+\newcommand{\TSDSReviewRuntimeProcesses}{70}
+\newcommand{\TSDSReviewRuntimeServices}{25}
+\newcommand{\TSDSReviewRuntimeCandidates}{35}
+\newcommand{\TSDSReviewRuntimeReceipts}{35}
+\newcommand{\TSDSReviewContractTests}{381}
+\newcommand{\TSDSReviewContractWarnings}{2}
+\newcommand{\TSDSReviewContractSubtests}{2}
+\newcommand{\TSDSReviewCurrentRuns}{83}
+\newcommand{\TSDSReviewCurrentProcesses}{425}
+\newcommand{\TSDSReviewCurrentEdges}{334}
+\newcommand{\TSDSReviewCurrentRuntimeServices}{39}
+\newcommand{\TSDSReviewCurrentListeners}{15}
+% Original-program semantic calibration: one synthetic ELF, 24 independent
+% case specifications, and an allowlisted native shell-effect oracle.
+\newcommand{\TSDSReviewControlledCases}{24}
+\newcommand{\TSDSReviewControlledPositive}{14}
+\newcommand{\TSDSReviewControlledNegative}{10}
+\newcommand{\TSDSReviewControlledNativePositive}{14}
+\newcommand{\TSDSReviewControlledNativeNegative}{10}
+\newcommand{\TSDSReviewControlledMatches}{24}
+\newcommand{\TSDSReviewControlledMismatches}{0}
+\newcommand{\TSDSReviewControlledUnresolved}{0}
+\newcommand{\TSDSReviewBZeroFP}{10}
+\newcommand{\TSDSReviewBZeroPrecision}{0.5833}
+\newcommand{\TSDSReviewBZeroFone}{0.7368}
+\newcommand{\TSDSReviewBOneFP}{0}
+\newcommand{\TSDSReviewBOnePrecision}{1.0000}
+\newcommand{\TSDSReviewBOneFone}{1.0000}
+\newcommand{\TSDSReviewBTwoFP}{5}
+\newcommand{\TSDSReviewBTwoPrecision}{0.7368}
+\newcommand{\TSDSReviewBTwoFone}{0.8485}
+\newcommand{\TSDSReviewTSDSFP}{0}
+\newcommand{\TSDSReviewTSDSPrecision}{1.0000}
+\newcommand{\TSDSReviewTSDSFone}{1.0000}
+\newcommand{\TSDSReviewFairUnits}{595}
+\newcommand{\TSDSReviewFairFasterTargets}{6}
+\newcommand{\TSDSReviewColdFasterTargets}{5}
+\newcommand{\TSDSReviewComponentTargets}{8}
+\newcommand{\TSDSReviewFairGeomean}{3.865}
+\newcommand{\TSDSReviewColdGeomean}{4.462}
+% Bounded reviewer-gap calibration.  These numbers are intentionally kept in
+% a separate scope from the frozen V20 ledger above.
+\newcommand{\TSDSReviewMatrixCases}{16}
+\newcommand{\TSDSReviewMatrixCells}{176}
+\newcommand{\TSDSReviewMatrixGroundTruthPass}{176}
+\newcommand{\TSDSReviewMatrixReplayCells}{154}
+\newcommand{\TSDSReviewMatrixReplayPass}{154}
+% Independent replay added for the CSCloud transfer.  It is separate from the
+% frozen V20 producer run and covers only rows with an exported SMT query.
+\newcommand{\TSDSReviewZVersion}{5.1.0}
+\newcommand{\TSDSReviewZApplicable}{154}
+\newcommand{\TSDSReviewZPass}{154}
+\newcommand{\TSDSReviewZSat}{132}
+\newcommand{\TSDSReviewZUnsat}{22}
+\newcommand{\TSDSReviewZBoundary}{22}
+\newcommand{\TSDSReviewFirmwareQueryRows}{1{,}374}
+\newcommand{\TSDSReviewFirmwareQueryMatches}{632}
+\newcommand{\TSDSReviewFirmwareQueryNotApplicable}{742}
+% Full exported-query cross-solver replay and model-binding audit (2026-09-15/16)
+\newcommand{\TSDSCrossSolverTargets}{7}
+\newcommand{\TSDSCrossSolverPairs}{62{,}618}
+\newcommand{\TSDSCrossSolverSat}{37{,}343}
+\newcommand{\TSDSCrossSolverUnsat}{25{,}275}
+\newcommand{\TSDSCrossSolverDisagreements}{0}
+% Higher-budget positive replay (2026-09-16)
+\newcommand{\TSDSHighBudgetTotal}{41}
+\newcommand{\TSDSHighBudgetSatRetained}{41}
+\newcommand{\TSDSHighBudgetCompleted}{35}
+\newcommand{\TSDSHighBudgetWarnings}{6}
+\newcommand{\TSDSHighBudgetNegativeFlags}{0}
+% Current-campaign witness replay across multiple shells (2026-09-16)
+\newcommand{\TSDSReviewWitnessEntriesNew}{275}
+\newcommand{\TSDSReviewWitnessUniqueNew}{177}
+\newcommand{\TSDSReviewWitnessBashPass}{177}
+\newcommand{\TSDSReviewWitnessDashPass}{177}
+% Multi-state late-positive selection in full campaign audit (2026-09-16)
+\newcommand{\TSDSMultiStateAuditedRecords}{193}
+\newcommand{\TSDSMultiStateBoundedProfiles}{1{,}862}
+\newcommand{\TSDSMultiStateLatePositiveSelected}{3}
+% Full controlled-benchmark bounded multi-state audit, rerun with the current
+% source-locked runner/evaluator/aggregation implementation (r10, 2026-09-14).
+% The fetched manifest records the corresponding SHA-256 digests.
+\newcommand{\TSDSReviewMultiStateCases}{24}
+\newcommand{\TSDSReviewMultiStateCompleted}{24}
+\newcommand{\TSDSReviewMultiStateCollectedProfiles}{78}
+\newcommand{\TSDSReviewMultiStateCompleteCases}{18}
+\newcommand{\TSDSReviewMultiStatePrimaryPositive}{14}
+\newcommand{\TSDSReviewMultiStateSidecarPositive}{14}
+\newcommand{\TSDSReviewMultiStateLatePositive}{0}
+\newcommand{\TSDSReviewMultiStateNegativeFlags}{0}
+% Current bounded-policy integration smoke on the eight real firmware images.
+% This is a separate denominator from the frozen V20 ledger and is not a
+% firmware-wide accuracy or exploitability result.
+\newcommand{\TSDSReviewFirmwareSmokeImages}{8}
+\newcommand{\TSDSReviewFirmwareSmokeSelected}{23}
+\newcommand{\TSDSReviewFirmwareSmokeSuccess}{23}
+\newcommand{\TSDSReviewFirmwareSmokeNegativeFlags}{0}
+% Bounded replay of serialized witnesses under the exact inert-template gate.
+\newcommand{\TSDSReviewWitnessEntries}{151}
+\newcommand{\TSDSReviewWitnessUnique}{41}
+\newcommand{\TSDSReviewWitnessGatePass}{41}
+\newcommand{\TSDSReviewWitnessSyntaxPass}{41}
+\newcommand{\TSDSReviewWitnessExecuted}{41}
+\newcommand{\TSDSReviewWitnessZeroReturn}{37}
+\newcommand{\TSDSReviewWitnessNonzeroReturn}{4}
+\newcommand{\TSDSReviewWitnessOffsetFailures}{0}
+% Independent finite-domain semantic calibration rerun with the current
+% Ubuntu environment.  Native C output is compared with a separate oracle;
+% shell probes are syntax-only and are not firmware ground truth.
+\newcommand{\TSDSReviewSemanticCases}{48}
+\newcommand{\TSDSReviewSemanticDevelopment}{32}
+\newcommand{\TSDSReviewSemanticHeldOut}{16}
+\newcommand{\TSDSReviewSemanticRows}{1056}
+\newcommand{\TSDSReviewSemanticProbes}{1000}
+\newcommand{\TSDSReviewDashSyntaxPass}{958}
+\newcommand{\TSDSReviewDashSyntaxErrors}{42}
+\newcommand{\TSDSReviewBashSyntaxPass}{958}
+\newcommand{\TSDSReviewBashSyntaxErrors}{42}
+
+% Full-corpus post-review rerun with the current source-locked bounded
+% multi-state policy (campaign r13 / 2026-09-16). This is a separately bound
+% validation track over the same eight images and 546 input closures. It is
+% not merged into the frozen V20 First-Ready ledger above.
+\newcommand{\TSDSReviewCampaignClosures}{546}
+\newcommand{\TSDSReviewCampaignRecords}{518}
+\newcommand{\TSDSReviewCampaignTargets}{8}
+\newcommand{\TSDSReviewCampaignDirectSat}{36}
+\newcommand{\TSDSReviewCampaignPrefixSat}{5}
+% The current bounded campaign separates complete C-string direct evidence
+% from observed-prefix profiles. The latter are not complete-string records.
+\newcommand{\TSDSReviewCampaignCompleteDirect}{36}
+\newcommand{\TSDSReviewCampaignObservedPrefixDirect}{5}
+\newcommand{\TSDSReviewCampaignDirectTotal}{41}
+\newcommand{\TSDSReviewCampaignStaticSource}{31}
+\newcommand{\TSDSReviewCampaignStaticReduction}{120}
+\newcommand{\TSDSReviewCampaignResidual}{326}
+\newcommand{\TSDSReviewCampaignProfiles}{64}
+\newcommand{\TSDSReviewCampaignCells}{704}
+\newcommand{\TSDSReviewCampaignVectorSatCells}{275}
+\newcommand{\TSDSReviewCampaignMatrixUnsatCells}{150}
+\newcommand{\TSDSReviewCampaignInconclusiveCells}{279}
+\newcommand{\TSDSReviewCampaignSinkReached}{193}
+\newcommand{\TSDSReviewCampaignAuditedSinkReached}{193}
+\newcommand{\TSDSReviewCampaignCompleteCollections}{124}
+\newcommand{\TSDSReviewCampaignIncompleteCollections}{69}
+\newcommand{\TSDSReviewCampaignNegativeFlags}{0}
+\newcommand{\TSDSReviewCampaignContractIssues}{0}
+\newcommand{\TSDSReviewCampaignVectorIssues}{0}
+\newcommand{\TSDSReviewVerificationChecks}{393}
